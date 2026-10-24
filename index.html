@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NYC CVI Resource Connections</title>
+  <style>
+    :root { --fg: #1a1a1a; --muted: #5c5c5c; --line: #ddd; --bg: #fff; --accent: #0b5cad; }
+    * { box-sizing: border-box; }
+    [hidden] { display: none !important; }
+    body { margin: 0; font: 16px/1.5 system-ui, sans-serif; color: var(--fg); background: var(--bg); }
+    main { max-width: 900px; margin: 0 auto; padding: 16px; }
+    h1 { font-size: 1.5rem; margin: 0 0 12px; }
+    form { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+    input, select, button { font: inherit; padding: 8px 10px; border: 1px solid var(--line); border-radius: 6px; }
+    input { flex: 1 1 240px; }
+    button { background: var(--accent); color: #fff; border-color: var(--accent); cursor: pointer; }
+    #status { color: var(--muted); margin: 0 0 12px; }
+    #status.error { color: #b00020; }
+    ul { list-style: none; padding: 0; margin: 0; }
+    #results li { border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; margin-bottom: 10px; }
+    #results li h2 { font-size: 1.1rem; margin: 0 0 4px; }
+    .meta { color: var(--muted); font-size: 0.9rem; }
+    .tag { display: inline-block; font-size: 0.8rem; padding: 1px 8px; margin: 4px 4px 0 0; border-radius: 999px; background: #eef3fa; }
+    .tag.hotline { background: #fdf0e6; }
+    #setup-help { border: 1px solid #e6b800; background: #fffbea; border-radius: 8px; padding: 14px 16px; margin-bottom: 16px; }
+    #setup-help h2 { font-size: 1.1rem; margin: 0 0 6px; }
+    #setup-help ol { margin: 8px 0; padding-left: 20px; }
+    #setup-help code { background: #f3f3f3; padding: 1px 4px; border-radius: 4px; font-size: 0.9em; }
+    #setup-help .detail { color: var(--muted); font-size: 0.85rem; margin: 8px 0 0; word-break: break-word; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>NYC CVI Resource Connections</h1>
+
+    <!-- Shown by showSetupHelp() when the page cannot reach the Supabase database. -->
+    <section id="setup-help" hidden>
+      <h2>Can't load resources</h2>
+      <p id="setup-reason"></p>
+      <p>The Supabase connection is in <code>config.js</code>, next to <code>index.html</code>. To fix it:</p>
+      <ol>
+        <li>Make sure you have the latest code (<code>git pull</code>), which includes <code>config.js</code>.</li>
+        <li>Serve the repo folder over HTTP, for example with <code>npm run dev</code>, and open
+          <code>http://localhost:5173</code>.</li>
+        <li>If the Supabase project has changed, update <code>SUPABASE_URL</code> and
+          <code>SUPABASE_PUBLISHABLE_KEY</code> in <code>config.js</code>. A teammate in the <strong>KAVI</strong>
+          Supabase organization can find both in the Supabase dashboard under Project Settings &rarr; API Keys.</li>
+      </ol>
+      <p>Never put the secret key (<code>sb_secret_&hellip;</code>) in <code>config.js</code>: this page sends it to every visitor.
+        Full steps are in README.md under "Running the resource directory page".</p>
+      <p class="detail" id="setup-detail"></p>
+    </section>
+
+    <form id="search">
+      <input id="q" type="search" placeholder="Search organization or description" aria-label="Keyword">
+      <select id="category" aria-label="Category">
+        <option value="">All categories</option>
+      </select>
+      <button type="submit">Search</button>
+    </form>
+
+    <p id="status">Loading…</p>
+    <ul id="results"></ul>
+  </main>
+
+  <!-- config.js (committed) sets window.APP_CONFIG: the Supabase URL and publishable key. -->
+  <script src="config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.3/dist/umd/supabase.js"></script>
+  <script>
+    const statusEl = document.getElementById('status');
+    const resultsEl = document.getElementById('results');
+
+    function setStatus(text, isError = false) {
+      statusEl.textContent = text;
+      statusEl.classList.toggle('error', isError);
+    }
+
+    function showSetupHelp(reason, detail = '') {
+      document.getElementById('setup-reason').textContent = reason;
+      document.getElementById('setup-detail').textContent = detail ? `Technical detail: ${detail}` : '';
+      document.getElementById('setup-help').hidden = false;
+      document.getElementById('search').hidden = true;
+      statusEl.hidden = true;
+      resultsEl.innerHTML = '';
+    }
+
+    // Turns a Supabase error into a sentence a teammate can act on.
+    function explainError(error) {
+      const message = error?.message ?? String(error);
+      if (/failed to fetch|networkerror|load failed/i.test(message)) {
+        return 'The page could not reach the Supabase project. SUPABASE_URL in config.js may be wrong, or you may be offline.';
+      }
+      if (/invalid api key|no api key|jwt|unauthorized/i.test(message)) {
+        return 'Supabase rejected the key. SUPABASE_PUBLISHABLE_KEY in config.js is missing, mistyped or from a different project.';
+      }
+      if (/could not find the table|does not exist/i.test(message)) {
+        return 'The Supabase project has no resources table yet. Someone with database access needs to run supabase db push.';
+      }
+      return null;
+    }
+
+    const config = window.APP_CONFIG;
+    if (!config?.SUPABASE_URL || !config?.SUPABASE_PUBLISHABLE_KEY) {
+      showSetupHelp('This page has no Supabase connection details: config.js is missing or does not set SUPABASE_URL and SUPABASE_PUBLISHABLE_KEY.');
+      throw new Error('Missing window.APP_CONFIG');
+    }
+    if (config.SUPABASE_PUBLISHABLE_KEY.startsWith('sb_secret_')) {
+      showSetupHelp('config.js holds a secret key. Replace it with the publishable key (sb_publishable_…) and rotate the secret key in the Supabase dashboard, because it has been exposed.');
+      throw new Error('Secret key in config.js');
+    }
+
+    const db = supabase.createClient(config.SUPABASE_URL, config.SUPABASE_PUBLISHABLE_KEY);
+
+    function escapeHtml(value) {
+      return String(value ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
+    }
+
+    function formatAddress(r) {
+      const street = [r.street_number, r.street].filter(Boolean).join(' ');
+      const cityLine = [r.city, [r.state, r.zip_code].filter(Boolean).join(' ')].filter(Boolean).join(', ');
+      return [street, r.address_line_2, cityLine].filter(Boolean).join(', ');
+    }
+
+    function render(rows) {
+      resultsEl.innerHTML = rows.map((r) => {
+        const address = formatAddress(r);
+        return `
+        <li>
+          <h2>${escapeHtml(r.organization_name || '(No organization name)')}</h2>
+          <div class="meta">
+            ${address ? escapeHtml(address) : 'No physical address'}
+            ${r.phone_number ? ` · ${escapeHtml(r.phone_number)}` : ''}
+            ${r.website ? ` · ${escapeHtml(r.website)}` : ''}
+          </div>
+          ${r.description ? `<p>${escapeHtml(r.description)}</p>` : ''}
+          ${!address ? '<span class="tag hotline">Phone / online</span>' : ''}
+          ${[r.category, r.subcategory].filter(Boolean).map((c) => `<span class="tag">${escapeHtml(c)}</span>`).join('')}
+          ${r.spanish_speaking ? '<span class="tag">Spanish-speaking</span>' : ''}
+        </li>`;
+      }).join('');
+    }
+
+    async function loadCategories() {
+      const { data, error } = await db.from('resources').select('category').not('category', 'is', null);
+      if (error) return;
+      const select = document.getElementById('category');
+      for (const c of [...new Set(data.map((r) => r.category))].sort()) {
+        select.add(new Option(c, c));
+      }
+    }
+
+    async function load() {
+      const q = document.getElementById('q').value.trim();
+      const category = document.getElementById('category').value;
+      setStatus('Loading…');
+
+      let query = db.from('resources').select('*', { count: 'exact' }).order('organization_name').limit(200);
+      if (category) query = query.eq('category', category);
+      if (q) {
+        // Strip characters that PostgREST's or() filter syntax treats as separators.
+        const term = q.replace(/[,()%*]/g, ' ');
+        query = query.or(`organization_name.ilike.%${term}%,description.ilike.%${term}%`);
+      }
+
+      const { data, error, count } = await query;
+      if (error) {
+        const reason = explainError(error);
+        if (reason) showSetupHelp(reason, error.message);
+        else setStatus(`Supabase error: ${error.message}`, true);
+        return;
+      }
+      setStatus(count > data.length
+        ? `Showing ${data.length} of ${count} resources`
+        : `${count} resource${count === 1 ? '' : 's'}`);
+      render(data);
+    }
+
+    document.getElementById('search').addEventListener('submit', (e) => {
+      e.preventDefault();
+      load();
+    });
+    loadCategories();
+    load();
+  </script>
+</body>
+</html>

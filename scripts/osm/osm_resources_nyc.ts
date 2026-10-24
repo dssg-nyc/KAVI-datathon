@@ -5,9 +5,9 @@
 // Each borough is an admin_level=7 boundary inside the City of New York (relation 175905); the
 // query prints the borough's area before its members, so the borough of a row is the last area seen.
 //
-// Writes a CSV and a GeoJSON with the same rows; map.html reads the GeoJSON.
+// Writes data/nyc_osm_resources.{csv,geojson} (same rows); scripts/osm/map.html reads the GeoJSON.
 //
-//   node scripts/osm_resources_nyc.ts [out.csv]      (Node >= 22.18, no dependencies)
+//   node scripts/osm/osm_resources_nyc.ts [out.csv]      (Node >= 22.18, no dependencies)
 
 import { mkdirSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
@@ -70,7 +70,7 @@ interface Element {
 }
 
 async function main(): Promise<void> {
-  const out = process.argv[2] ?? join(import.meta.dirname, 'data', 'nyc_osm_resources.csv')
+  const out = process.argv[2] ?? join(import.meta.dirname, '..', '..', 'data', 'nyc_osm_resources.csv')
   // The public server answers 429/502/504 when busy; back off and retry.
   let resp: Response | undefined
   for (let attempt = 0, waitS = 15; attempt < 5; attempt++, waitS *= 2) {

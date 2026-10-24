@@ -1,0 +1,11 @@
+.agents/*
+.claude/*
+skills-lock.json
+
+
+# Supabase secret key (config.js holds only browser-safe values and is committed)
+.env
+node_modules/
+
+# macOS Finder metadata
+.DS_Store

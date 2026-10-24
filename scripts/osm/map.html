@@ -156,7 +156,7 @@ $('q').oninput = render
 $('borough').onchange = render
 
 // The list works as soon as the data arrives; the map layer joins when the style has loaded.
-const dataReady = fetch('data/nyc_osm_resources.geojson').then((r) => r.json()).then((data) => {
+const dataReady = fetch('../../data/nyc_osm_resources.geojson').then((r) => r.json()).then((data) => {
   all = data.features
   const boroughs = [...new Set(all.map((f) => f.properties.borough))].sort()
   $('borough').innerHTML += boroughs.map((b) => `<option>${esc(b)}</option>`).join('')
