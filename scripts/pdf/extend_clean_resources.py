@@ -24,11 +24,14 @@
 #   - the resource is not in the PDF at all.
 #
 # description_keyword_types is multi-label: every service type whose pattern in SERVICE_PATTERNS
-# matches the row's text. For now it is filled only for rows service_type_extended leaves blank
-# (see "Remaining work" in scripts/pdf/README.md). A row whose description only says "See X listing
-# for full description" uses X's text instead ("pointer:<resource_id of X>").
+# matches the row's text, computed for every row regardless of whether service_type_extended is
+# already set, so an organization's secondary services surface alongside its primary one. A row
+# whose description only says "See X listing for full description" uses X's text instead
+# ("pointer:<resource_id of X>").
 # description_service_types is the row's entry in reviewed_service_types.csv when it has one, else
-# description_keyword_types.
+# description_keyword_types. reviewed_service_types.csv only covers rows that had no
+# service_type_extended at review time, so rows that already had a primary type get unreviewed
+# keyword tags here (description_service_types_source == "description_keywords").
 #
 # Writes data/cleaned/resources_extended.csv. Run extract_listings.py first.
 #
@@ -181,8 +184,6 @@ def main():
     # Two passes, so a pointer row reads its target's keyword types and never types the target
     # got from the review or from the PDF chapter it is printed in.
     for r, text in zip(out, texts):
-        if r["service_type_extended"]:
-            continue
         pointer = POINTER.match(r["description"])
         target = by_org.get(norm(pointer.group(1))) if pointer else None
         if target:
@@ -193,8 +194,6 @@ def main():
             r["description_keyword_types"] = service_types_in(text)
             r["description_service_types_source"] = "description_keywords" if r["description_keyword_types"] else ""
     for r in out:
-        if r["service_type_extended"]:
-            continue
         types = r["description_keyword_types"]
         if r["resource_id"] in reviewed:
             types = reviewed[r["resource_id"]]["reviewed_service_types"]
@@ -223,6 +222,9 @@ def main():
     right = sum(len(k & e) for k, e in pairs)
     print(f"  keyword types vs reviewed: precision {right}/{sum(len(k) for k, _ in pairs)}, recall {right}/{sum(len(e) for _, e in pairs)}")
     print(f"  still no service type at all: {count(lambda r: not r['service_types_all'])}")
+    multi = lambda field: count(lambda r: len(list(filter(None, r[field].split("; ")))) > 1)
+    print(f"  rows with more than one type in service_types_all: {multi('service_types_all')} "
+          f"(service_type_extended alone: {count(lambda r: r['service_type_extended'] and not r['description_service_types'])})")
     print(f"  pdf_audiences filled: {count(lambda r: r['pdf_audiences'])}")
     print(f"  pdf_contradiction: {count(lambda r: r['pdf_contradiction'])} "
           f"(service_type {count(lambda r: 'service_type is' in r['pdf_contradiction'])}, "

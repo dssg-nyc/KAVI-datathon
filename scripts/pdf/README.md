@@ -57,7 +57,7 @@ All columns of `resources_clean.csv` come first, unchanged.
 | `service_type_extended` | `service_type` if the notebook set it, otherwise filled from the PDF. Never overrides. |
 | `service_type_extended_source` | `pr:<service_type_source>`, `pdf_section`, `pdf_other_listings` (every other listing agrees), `pdf_candidates` (they disagree; left blank), or `unassigned`. |
 | `service_subtype_extended` | `service_subtype` of the row's own PDF section, when that section's type is `service_type_extended`. |
-| `description_keyword_types` | Every service type whose pattern in `SERVICE_PATTERNS` matches the row's description (plus the PDF's listing text), or, for a row whose description only says "See X listing for full description", X's description. Multi-label. **Only filled where `service_type_extended` is blank**; see Remaining work. |
+| `description_keyword_types` | Every service type whose pattern in `SERVICE_PATTERNS` matches the row's description (plus the PDF's listing text), or, for a row whose description only says "See X listing for full description", X's description. Multi-label, and computed for every row, including rows that already have a `service_type_extended` from the guide or PDF — a resource's primary type never changes, but its secondary services (e.g. a housing org that also runs a food pantry) now surface in `description_service_types` and `service_types_all`. |
 | `description_service_types` | The row's types from `reviewed_service_types.csv` when it has an entry there, otherwise `description_keyword_types`. Multi-label. |
 | `description_service_types_source` | `reviewed`, `description_keywords`, or `pointer:<resource_id>` (types taken from X's description). |
 | `service_types_all` | `service_type_extended`, `pdf_org_service_types`, and `description_service_types` together, for map filters that show an organization under every service it offers. |
@@ -97,11 +97,13 @@ care" in a legal organization's description of the cases it takes still reads as
 
 ## Remaining work
 
-- **Tag the other 613 rows.** `description_keyword_types` is only filled where `service_type_extended` is blank.
-  Rows that already have one `service_type` (from the notebook or the PDF) are often multi-service organizations
-  too, and `service_types_all` should get their description types as well. The code change is removing the
-  `if r["service_type_extended"]: continue` checks; the work is reviewing the new tags the same way and adding them to
-  `reviewed_service_types.csv`, and deciding whether description types may sit next to a type the guide assigned.
+- **A person should check the newly added secondary tags.** `description_keyword_types` is now computed for
+  every row, including ones that already have a `service_type_extended` from the guide or PDF, so a resource's
+  secondary services (e.g. a housing org that also runs a food pantry) surface in `description_service_types`
+  and `service_types_all` without changing its primary type. `reviewed_service_types.csv` only covers rows that
+  had no primary type at review time, so these new secondary tags are still unreviewed keyword matches
+  (`description_service_types_source == "description_keywords"`); the precision/recall numbers above, measured
+  only against the reviewed set, are a rough guide for them, not an exact figure.
 - **A person should check `reviewed_service_types.csv`.** The reviewer was Claude, not someone who knows these
   organizations.
 - **The 25 rows with no type at all** offer services outside the 10 types: disability services and independent

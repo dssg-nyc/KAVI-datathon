@@ -16,6 +16,7 @@ Scripts are grouped by what they work on. Run them from the repo root. The Node 
 | `pdf/` | `extract_listings.py` | Reads `data/NYPL_JPS_Connections_2026.pdf` (not in git) and writes every listing with its chapter, section, and subheading to `data/extracted/connections_pdf_listings.csv`. Headings are read from fixed font sizes and checked against the PDF's bookmarks. | `uv run scripts/pdf/extract_listings.py` |
 | `pdf/` | `compare_to_csv.py` | Matches each row of `data/NYPL Connections Resources.csv` to a PDF listing and writes `data/extracted/connections_pdf_vs_csv.csv` with whether the chapter and section agree. Run `extract_listings.py` first. | `uv run scripts/pdf/compare_to_csv.py` |
 | `pdf/` | `extend_clean_resources.py` | Adds PDF chapter, section, service subtype, audience, contradiction, and multi-label description service type columns (reviewed in `pdf/reviewed_service_types.csv`) to `data/cleaned/resources_clean.csv`, and fills blank service types, in `data/cleaned/resources_extended.csv`. See [`pdf/README.md`](pdf/README.md). | `uv run scripts/pdf/extend_clean_resources.py` |
+| `tests/` | `extend_clean_resources.test.py` | Unit tests for the script above's description-keyword tagging; no file I/O. | `uv run scripts/tests/extend_clean_resources.test.py` |
 
 Every script reads from and writes to the top-level [`data/`](../data) folder. Database schema changes go in [`supabase/migrations/`](../supabase/migrations), not here.
 

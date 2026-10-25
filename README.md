@@ -21,6 +21,16 @@ config.js       Supabase URL + publishable key for index.html (committed; browse
 .env.example    template for .env, which holds only the secret key for data imports
 ```
 
+## Data pipeline
+
+Raw Connections Guide export → cleaned, enriched CSV → Supabase → finder. Each step only adds columns; none of them edit a column an earlier step set.
+
+1. **Clean** — [`scripts/cleaning/data_cleaning_added_features.ipynb`](scripts/cleaning/README.md): `data/NYPL Connections Resources.csv` → `data/cleaned/resources_clean.csv`. Normalizes names, addresses, ZIPs and websites; derives `borough` and `row_type`; and makes a first, conservative pass at `service_type` (the guide's `Category`/`Subcategory` mapped to a standard type, then an unambiguous description keyword as a fallback). Ambiguous or unsupported rows are left blank rather than guessed.
+2. **Extend with the PDF** — [`scripts/pdf/extract_listings.py`](scripts/pdf/README.md) → `compare_to_csv.py` → `extend_clean_resources.py`: matches each row to its listing in the printed guide PDF, fills still-blank `service_type`s from the PDF section it's printed under, and runs a multi-label keyword search (`SERVICE_PATTERNS`) over every row's description — including rows that already have a type — to catch the secondary services a resource's description mentions beyond its primary one (e.g. a reentry org whose description also offers housing and legal help). Everything is combined into `service_types_all`, the column the finder actually filters on. Writes `data/cleaned/resources_extended.csv`.
+3. **Human review** — [`data/review/`](data/review/README.md): a person's proposed fixes (new service types, corrections to keyword- or PDF-based guesses) live here as CSVs. Nothing reads these back into step 2 automatically yet; it's a checklist for the team, not a closed loop. The same is true of the unreviewed secondary tags step 2 now adds (`description_service_types_source == "description_keywords"`).
+4. **Load into Supabase** — [`scripts/database/import-resources.mjs`](scripts/README.md): joins the geocoded GeoJSON, the NoMatch extras, and `resources_extended.csv` into `public.resources`. `"; "`-joined CSV columns such as `service_types_all` and `pdf_audiences` become Postgres `text[]`.
+5. **Finder** — `finder/resources.js`, `index.html`: reads `public.resources` straight from Supabase; `service_types_all` drives the "What kind of help?" filter and the map pin color.
+
 ## Accessing the resources
 
 ### 1. Data files: `data/`
