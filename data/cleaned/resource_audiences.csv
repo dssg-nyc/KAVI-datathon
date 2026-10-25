@@ -1,0 +1,760 @@
+resource_id,org_name,pdf_audiences,confirmed_pdf_audiences,unconfirmed_pdf_audiences,pdf_audience_check,name_audiences,description_audiences,pdf_text_audiences,restricted_audiences,focus_audiences,audience_restriction,restriction_evidence,everyone_basis,audiences_all,audience_needs_review,audience_reviewed
+1,Suffolk County Reentry Task Force,Formerly Incarcerated People,Formerly Incarcerated People,,confirmed,Formerly Incarcerated People,,,,Formerly Incarcerated People,not_stated,,assumed,Formerly Incarcerated People; Everyone,False,False
+2,Ulster County Reentry Task Force,Formerly Incarcerated People,Formerly Incarcerated People,,confirmed,Formerly Incarcerated People,,,,Formerly Incarcerated People,not_stated,,assumed,Formerly Incarcerated People; Everyone,False,False
+3,Westchester County Reentry Task Force,Formerly Incarcerated People,Formerly Incarcerated People,,confirmed,Formerly Incarcerated People,,,,Formerly Incarcerated People,not_stated,,assumed,Formerly Incarcerated People; Everyone,False,False
+4,Brooklyn Public Library (BPL)—Justice Initiatives—Welcome Home,Formerly Incarcerated People,Formerly Incarcerated People,,confirmed,,Formerly Incarcerated People,Formerly Incarcerated People,,,not_stated,,assumed,Formerly Incarcerated People; Everyone,False,False
+5,"Queens Public Library—Prison, Jails, and Reentry Outreach - 1 (Central Branch)",Formerly Incarcerated People,Formerly Incarcerated People,,confirmed,Formerly Incarcerated People,Formerly Incarcerated People,Formerly Incarcerated People,,Formerly Incarcerated People,not_stated,,assumed,Formerly Incarcerated People; Everyone,False,False
+6,"Queens Public Library—Prison, Jails, and Reentry Outreach - 2 (Ravenswood Community Learning Center)",Formerly Incarcerated People,Formerly Incarcerated People,,confirmed,Formerly Incarcerated People,Formerly Incarcerated People,Formerly Incarcerated People,,Formerly Incarcerated People,not_stated,,assumed,Formerly Incarcerated People; Everyone,False,False
+7,Alliance of Families for Justice (AFJ),Formerly Incarcerated People,Formerly Incarcerated People,,confirmed,,Youth; Formerly Incarcerated People,Youth; Formerly Incarcerated People,,,not_stated,,assumed,Formerly Incarcerated People; Youth; Everyone,False,False
+8,Black Veterans for Social Justice (BVSJ)—Incarcerated Veterans Transitional Program (IVTP),Formerly Incarcerated People,,Formerly Incarcerated People,not confirmed,Veterans,Veterans,Veterans,,Veterans,not_stated,,assumed,Formerly Incarcerated People; Veterans; Everyone,True,False
+9,Bowery Residents' Committee (BRC),Formerly Incarcerated People,,Formerly Incarcerated People,not confirmed,,Older People; People without homes,Older People; People without homes,,,not_stated,,assumed,Formerly Incarcerated People; Older People; People without homes; Everyone,True,False
+10,Brooklyn District Attorney's Office—Community Resources & Re-Entry Bureau,Formerly Incarcerated People,Formerly Incarcerated People,,confirmed,Formerly Incarcerated People,Formerly Incarcerated People,Formerly Incarcerated People,,Formerly Incarcerated People,not_stated,,assumed,Formerly Incarcerated People; Everyone,False,False
+11,Center for Alternative Sentencing and Employment Services (CASES),Formerly Incarcerated People,,Formerly Incarcerated People,not confirmed,,Youth,Youth,,,not_stated,,assumed,Formerly Incarcerated People; Youth; Everyone,True,False
+12,Center for Community Alternatives (CCA),Formerly Incarcerated People,,Formerly Incarcerated People,not confirmed,,Youth,Youth,,,not_stated,,assumed,Formerly Incarcerated People; Youth; Everyone,True,False
+13,Center for Employment Opportunities (CEO),Formerly Incarcerated People,,Formerly Incarcerated People,not confirmed,,,,,,not_stated,,assumed,Formerly Incarcerated People; Everyone,True,False
+14,Center for Justice Innovation (CJI),Formerly Incarcerated People,Formerly Incarcerated People,,confirmed,,Formerly Incarcerated People,Formerly Incarcerated People,,,not_stated,,assumed,Formerly Incarcerated People; Everyone,False,False
+15,Center for Justice Innovation (CJI)—the Staten Island Justice Center,Formerly Incarcerated People,Formerly Incarcerated People,,confirmed,,Youth; Formerly Incarcerated People,Youth; Formerly Incarcerated People,,Youth; Formerly Incarcerated People,not_stated,,assumed,Formerly Incarcerated People; Youth; Everyone,False,False
+16,Circles of Support,Formerly Incarcerated People,Formerly Incarcerated People,,confirmed,,Youth; Formerly Incarcerated People,Youth; Formerly Incarcerated People,,,not_stated,,assumed,Formerly Incarcerated People; Youth; Everyone,False,False
+17,Community Service Society (CSS)—Next Door Project,Formerly Incarcerated People,,Formerly Incarcerated People,not confirmed,,People with Disabilities,People with Disabilities,,,not_stated,,assumed,Formerly Incarcerated People; People with Disabilities; Everyone,True,False
+18,Defy Ventures,Formerly Incarcerated People,Formerly Incarcerated People,,confirmed,,Formerly Incarcerated People,Formerly Incarcerated People,,Formerly Incarcerated People,not_stated,,assumed,Formerly Incarcerated People; Everyone,False,False
+19,Drive Change,Formerly Incarcerated People,Formerly Incarcerated People,,confirmed,,Youth; Formerly Incarcerated People,Youth; Formerly Incarcerated People,Youth,Youth; Formerly Incarcerated People,restricted,ages 18–25,,Formerly Incarcerated People; Youth,True,False
+20,Education Justice Project (EJP)—Mapping Your Future: National Edition,Formerly Incarcerated People,Formerly Incarcerated People,,confirmed,,Formerly Incarcerated People,Formerly Incarcerated People,,,not_stated,,assumed,Formerly Incarcerated People; Everyone,False,False
+21,Exodus Transitional Community,Formerly Incarcerated People,Formerly Incarcerated People,,confirmed,,Youth; Formerly Incarcerated People,Youth; Formerly Incarcerated People,,Youth; Formerly Incarcerated People,not_stated,,assumed,Formerly Incarcerated People; Youth; Everyone,False,False
+22,Exponents,Formerly Incarcerated People,Formerly Incarcerated People,,confirmed,,Formerly Incarcerated People,Formerly Incarcerated People,,,not_stated,,assumed,Formerly Incarcerated People; Everyone,False,False
+23,The Focus Forward Project,Formerly Incarcerated People,Formerly Incarcerated People,,confirmed,,Formerly Incarcerated People,Formerly Incarcerated People,,,not_stated,,assumed,Formerly Incarcerated People; Everyone,False,False
+24,Forging Ahead for Community Empowerment and Support (FACES)—Striving Towards Achieving Rewarding Skills (STARS),Formerly Incarcerated People,,Formerly Incarcerated People,not confirmed,,,,,,not_stated,,assumed,Formerly Incarcerated People; Everyone,True,False
+25,The Fortune Society,Formerly Incarcerated People,,Formerly Incarcerated People,not confirmed,,,,,,not_stated,,assumed,Formerly Incarcerated People; Everyone,True,False
+26,Getting Out and Staying Out (GOSO),Formerly Incarcerated People; Youth,Formerly Incarcerated People; Youth,,confirmed,,Youth; Formerly Incarcerated People,Youth; Formerly Incarcerated People,Youth,Youth,restricted,ages 16–24,,Formerly Incarcerated People; Youth,True,False
+27,Housing Works Community Healthcare—Reentry Program,Formerly Incarcerated People,Formerly Incarcerated People,,confirmed,Formerly Incarcerated People,Formerly Incarcerated People,Formerly Incarcerated People,,Formerly Incarcerated People,not_stated,,assumed,Formerly Incarcerated People; Everyone,False,False
+28,Justice Through Code at Columbia University,Formerly Incarcerated People,Formerly Incarcerated People,,confirmed,,Formerly Incarcerated People,Formerly Incarcerated People,,,not_stated,,assumed,Formerly Incarcerated People; Everyone,False,False
+29,Justleadershipusa,Formerly Incarcerated People,Formerly Incarcerated People,,confirmed,,Formerly Incarcerated People,Formerly Incarcerated People,,Formerly Incarcerated People,not_stated,,assumed,Formerly Incarcerated People; Everyone,False,False
+30,Liberty Fund NYC—the Ror Program,Formerly Incarcerated People,,Formerly Incarcerated People,not confirmed,,,,,,not_stated,,assumed,Formerly Incarcerated People; Everyone,True,False
+31,Music on the Inside (MOTI),Formerly Incarcerated People,Formerly Incarcerated People,,confirmed,,Youth; Formerly Incarcerated People,Youth; Formerly Incarcerated People,,Youth; Formerly Incarcerated People,not_stated,,assumed,Formerly Incarcerated People; Youth; Everyone,False,False
+32,"Network Support Services, Inc.",Formerly Incarcerated People,Formerly Incarcerated People,,confirmed,,Formerly Incarcerated People,Formerly Incarcerated People,,,not_stated,,assumed,Formerly Incarcerated People; Everyone,False,False
+33,NYC Mayor's Office of Criminal Justice (MOCJ),Formerly Incarcerated People,Formerly Incarcerated People,,confirmed,,Formerly Incarcerated People,Formerly Incarcerated People,,Formerly Incarcerated People,not_stated,,assumed,Formerly Incarcerated People; Everyone,False,False
+34,"New York County Lawyers Association (NYCLA)—Certificates Project, Sealing Project, & Project Restore",Formerly Incarcerated People,,Formerly Incarcerated People,not confirmed,,People with Disabilities,People with Disabilities,,,not_stated,,assumed,Formerly Incarcerated People; People with Disabilities; Everyone,True,False
+35,Osborne Association - 1 (Bronx),Formerly Incarcerated People; LGBTQI+; Parents & Caregivers; Youth,Formerly Incarcerated People,LGBTQI+; Parents & Caregivers; Youth,partly confirmed,,Formerly Incarcerated People,Formerly Incarcerated People,,,not_stated,,assumed,Formerly Incarcerated People; LGBTQI+; Parents & Caregivers; Youth; Everyone,True,False
+36,Osborne Association - 2 (Brooklyn),Formerly Incarcerated People; LGBTQI+; Parents & Caregivers; Youth,Formerly Incarcerated People,LGBTQI+; Parents & Caregivers; Youth,partly confirmed,,,Formerly Incarcerated People,,,not_stated,,assumed,Formerly Incarcerated People; LGBTQI+; Parents & Caregivers; Youth; Everyone,True,False
+37,Social Justice Network (SJN),Formerly Incarcerated People,Formerly Incarcerated People,,confirmed,,Formerly Incarcerated People,Formerly Incarcerated People,,,not_stated,,assumed,Formerly Incarcerated People; Everyone,False,False
+38,Swop Behind Bars (SWBB),Formerly Incarcerated People,Formerly Incarcerated People,,confirmed,,Formerly Incarcerated People; Survivors of violence,Formerly Incarcerated People; Survivors of violence,,,not_stated,,assumed,Formerly Incarcerated People; Survivors of violence; Everyone,False,False
+39,Thrive for Life Prison Project,Formerly Incarcerated People,Formerly Incarcerated People,,confirmed,,Formerly Incarcerated People,Formerly Incarcerated People,,Formerly Incarcerated People,not_stated,,assumed,Formerly Incarcerated People; Everyone,False,False
+40,Women's Prison Association (WPA),Formerly Incarcerated People; Women,Formerly Incarcerated People; Women,,confirmed,Women,Women; Formerly Incarcerated People,Women; Formerly Incarcerated People,,Women; Formerly Incarcerated People,not_stated,,assumed,Formerly Incarcerated People; Women; Everyone,False,False
+41,Correctional Association of NY (CANY),Formerly Incarcerated People,,Formerly Incarcerated People,not confirmed,,,,,,not_stated,,assumed,Formerly Incarcerated People; Everyone,True,False
+42,Court Watch NYC,Formerly Incarcerated People,,Formerly Incarcerated People,not confirmed,,,,,,not_stated,,assumed,Formerly Incarcerated People; Everyone,True,False
+43,Crip Justice,Formerly Incarcerated People,Formerly Incarcerated People,,confirmed,,People with Disabilities; Formerly Incarcerated People,People with Disabilities; Formerly Incarcerated People,,,not_stated,,assumed,Formerly Incarcerated People; People with Disabilities; Everyone,False,False
+44,Critical Resistance—New York City,Formerly Incarcerated People,,Formerly Incarcerated People,not confirmed,,Immigrants,Immigrants,,,not_stated,,assumed,Formerly Incarcerated People; Immigrants; Everyone,True,False
+45,Freedom Agenda,Formerly Incarcerated People,Formerly Incarcerated People,,confirmed,,Formerly Incarcerated People,Formerly Incarcerated People,,Formerly Incarcerated People,not_stated,,assumed,Formerly Incarcerated People; Everyone,False,False
+46,Industrial Workers of the World (IWW)—Incarcerated Workers Organizing Committee (IWOC),Formerly Incarcerated People,,Formerly Incarcerated People,not confirmed,,,,,,not_stated,,assumed,Formerly Incarcerated People; Everyone,True,False
+47,Jmacforfamilies (JUST MAKING A CHANGE FOR FAMILIES OR JMAC),Formerly Incarcerated People,,Formerly Incarcerated People,not confirmed,,,,,,not_stated,,assumed,Formerly Incarcerated People; Everyone,True,False
+48,The Marshall Project,Formerly Incarcerated People,Formerly Incarcerated People,,confirmed,,Formerly Incarcerated People,Formerly Incarcerated People,,,not_stated,,assumed,Formerly Incarcerated People; Everyone,False,False
+49,New York Campaign for Alternatives to Isolated Confinement (NYCAIC),Formerly Incarcerated People,,Formerly Incarcerated People,not confirmed,,,,,,open,all people,stated,Formerly Incarcerated People; Everyone,True,False
+50,Prison Legal News,Formerly Incarcerated People,,Formerly Incarcerated People,not confirmed,,,,,,not_stated,,assumed,Formerly Incarcerated People; Everyone,True,False
+51,Prison Policy Initiative,Formerly Incarcerated People,,Formerly Incarcerated People,not confirmed,,,,,,not_stated,,assumed,Formerly Incarcerated People; Everyone,True,False
+52,Release Aging People in Prison Project (RAPP),Formerly Incarcerated People,,Formerly Incarcerated People,not confirmed,Older People,Older People,Older People,,Older People,not_stated,,assumed,Formerly Incarcerated People; Older People; Everyone,True,False
+53,Surveillance Technology Oversight Project (S.T.O.P.),Formerly Incarcerated People,,Formerly Incarcerated People,not confirmed,,,,,,not_stated,,assumed,Formerly Incarcerated People; Everyone,True,False
+54,Vocal-NY,Formerly Incarcerated People,,Formerly Incarcerated People,not confirmed,,People without homes,People without homes,,,not_stated,,assumed,Formerly Incarcerated People; People without homes; Everyone,True,False
+55,Worth Rises,Formerly Incarcerated People,,Formerly Incarcerated People,not confirmed,,,,,,not_stated,,assumed,Formerly Incarcerated People; Everyone,True,False
+56,The New York Public Library (NYPL)—Free English Classes,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+57,Brooklyn Public Library (BPL)—Adult Learning Centers,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+58,Queens Public Library—Adult Learner Program & New Americans Program - 1 (Adult Learner Program),,,,,Immigrants,,Immigrants,,Immigrants,not_stated,,assumed,Immigrants; Everyone,False,False
+59,Queens Public Library—Adult Learner Program & New Americans Program - 2 (New Americans Program),,,,,Immigrants,Immigrants,Immigrants,,Immigrants,not_stated,,assumed,Immigrants; Everyone,False,False
+60,NYS Department of Education—High School Equivalency (HSE),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+61,NYC Department of Education—Adult Education,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+62,Bronx Community College—Adult Education & Training Program,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+63,Chinese-American Planning Council—Adult Literacy Program,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+64,City University of New York (CUNY)—Adult Literacy Program,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+65,Exponents (Education Listing),Formerly Incarcerated People,,Formerly Incarcerated People,not confirmed,,,,,,not_stated,,assumed,Formerly Incarcerated People; Everyone,True,False
+66,Goddard Riverside—Options Center,,,,,,Youth; Older People,Youth; Older People,,,not_stated,,assumed,Youth; Older People; Everyone,False,False
+67,"Imani House, Inc.—Adult Literacy Program",,,,,,,,,,not_stated,,assumed,Everyone,False,False
+68,John Jay College—Institute for Justice and Opportunity—Pathways to GED Program,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+69,Literacy Partners,,,,,,Parents & Caregivers,Parents & Caregivers,,Parents & Caregivers,not_stated,,assumed,Parents & Caregivers; Everyone,False,False
+70,Opportunities for a Better Tomorrow (OBT),Immigrants,,Immigrants,not confirmed,,Youth,Youth,,Youth,not_stated,,assumed,Immigrants; Youth; Everyone,True,False
+71,Per Scholas Institute for Technology - 1 (Bronx),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+72,Per Scholas Institute for Technology - 2 (Brooklyn),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+73,Union Settlement—Adult Education,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+74,The Fortune Society—Digital Equity Program,,,,,,Formerly Incarcerated People,Formerly Incarcerated People,,Formerly Incarcerated People,not_stated,,assumed,Formerly Incarcerated People; Everyone,False,False
+75,NYC Public Libraries—Neighborhood Tech Help,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+76,The New York Public Library (NYPL)—Techconnect,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+77,Brooklyn Public Library (BPL) (Tech Workshops),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+78,Queens Public Library (Tech Workshops),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+79,NYC Office of Technology & Innovation—Digital Equity,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+80,Bard Prison Initiative (BPI)—Bard Microcolleges,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+81,Bronx Community College—Future Now,,,,,,,,,Youth,not_stated,ages 17–24,assumed,Youth; Everyone,False,False
+82,College & Community Fellowship (CCF),,,,,,Women,Women,,Women,not_stated,,assumed,Women; Everyone,False,False
+83,Columbia Law School—Paralegal Pathways Initiative,,,,,,Formerly Incarcerated People,Formerly Incarcerated People,,,not_stated,,assumed,Formerly Incarcerated People; Everyone,False,False
+84,Lehman College—Reentry@Lehman,,,,,Formerly Incarcerated People,Formerly Incarcerated People,Formerly Incarcerated People,,Formerly Incarcerated People,not_stated,,assumed,Formerly Incarcerated People; Everyone,False,False
+85,John Jay College—Institute for Justice and Opportunity,,,,,,Formerly Incarcerated People,Formerly Incarcerated People,,Formerly Incarcerated People,not_stated,,assumed,Formerly Incarcerated People; Everyone,False,False
+86,State University of New York (SUNY),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+87,City University of New York (CUNY),,,,,,Formerly Incarcerated People,Formerly Incarcerated People,,,not_stated,,assumed,Formerly Incarcerated People; Everyone,False,False
+88,City University of New York (CUNY)—CUNY Fatherhood Academy (CFA),,,,,,Parents & Caregivers,Parents & Caregivers,,,not_stated,,assumed,Parents & Caregivers; Everyone,False,False
+89,Us Department of Education—Free Application for Federal Student Aid (FAFSA),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+90,NYS Higher Education Services Corporation,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+91,Finaid,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+92,The Institute of Student Loan Advisors (TISLA),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+93,Student Borrower Protection Center,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+94,Prison Scholar Fund,,,,,,Formerly Incarcerated People,Formerly Incarcerated People,,,not_stated,,assumed,Formerly Incarcerated People; Everyone,False,False
+95,American Indian College Fund,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+96,Asian & Pacific Islander American Scholarship Fund,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+97,Hispanic Scholarship Fund,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+98,Shawn Carter Foundation—Scholarship Fund,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+99,United Negro College Fund (UNCF),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+100,Bard College—Bard Prison Initiative (BPI),,,,,,Formerly Incarcerated People,Formerly Incarcerated People,,,not_stated,,assumed,Formerly Incarcerated People; Everyone,False,False
+101,Cornell University—Cornell Prison Education Program (CPEP),,,,,,Formerly Incarcerated People,Formerly Incarcerated People,,,not_stated,,assumed,Formerly Incarcerated People; Everyone,False,False
+102,Hudson Link for Higher Education in Prison [Incomplete - Segment Cut Off Mid-Entry],,,,,,Formerly Incarcerated People,Formerly Incarcerated People,,,open,Anyone,stated,Formerly Incarcerated People; Everyone,False,False
+103,HUDSON LINK FOR HIGHER EDUCATION IN PRISON [CORRECTED/COMPLETE — replaces incomplete row from Segment 1 file],,,,,,Formerly Incarcerated People,Formerly Incarcerated People,,,open,Anyone,stated,Formerly Incarcerated People; Everyone,False,False
+104,John Jay College—Institute for Justice and Opportunity—Prison-to-College Pathways (P2CP),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+105,Marymount Manhattan College—Bedford Hills College Program (BHCP),,,,,,Older People,Older People,,,not_stated,,assumed,Older People; Everyone,False,False
+106,New York University—Prison Education Program (NYU PEP),,,,,,Formerly Incarcerated People,Formerly Incarcerated People,,,not_stated,,assumed,Formerly Incarcerated People; Everyone,False,False
+107,North County Community College (NCCC)—Second Chance Pell Program,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+108,"Rising Hope, Inc.—Program in Ministry and Human Services",,,,,,,,,,not_stated,,assumed,Everyone,False,False
+109,NYC Department of Homeless Services (DHS),,,,,People without homes,Immigrants,Immigrants,,People without homes,not_stated,,assumed,People without homes; Immigrants; Everyone,False,False
+110,NYC Department of Homeless Services (DHS)—Intake Centers,,,,,People without homes,Youth; People without homes,Youth; People without homes,,People without homes,open,all people,stated,People without homes; Youth; Everyone,False,False
+111,30Th Street Intake for Men,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+112,Franklin Shelter and Intake Center for Women,,,,,Women,Women,Women,,Women,not_stated,,assumed,Women; Everyone,False,False
+113,Camba—the Gathering Place,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+114,Grand Central Neighborhood Social Services Corporation—Mainchance Drop-in Center,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+115,Project Hospitality - 1 (Main Office),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+116,Project Hospitality - 2 (Drop-in Center),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+117,Urban Pathways—Olivieri Drop-in Center,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+118,NYC Department of Homeless Services (DHS)—Prevention Assistance & Temporary Housing (PATH),,,,,People without homes,Parents & Caregivers,Parents & Caregivers,,People without homes,not_stated,,assumed,People without homes; Parents & Caregivers; Everyone,False,False
+119,NYC Department of Homeless Services (DHS)—Adult Family Intake Center (AFIC),,,,,People without homes,Youth,,,People without homes,not_stated,,assumed,People without homes; Youth; Everyone,False,False
+120,Abraham House,,,,,,Formerly Incarcerated People,Formerly Incarcerated People,,Formerly Incarcerated People,not_stated,,assumed,Formerly Incarcerated People; Everyone,False,False
+121,"Acacia Network—Greenhope Services for Women, Inc.",Women,Women,,confirmed,Women,Women; Formerly Incarcerated People,Women; Formerly Incarcerated People,,Women; Formerly Incarcerated People,not_stated,,assumed,Women; Formerly Incarcerated People; Everyone,False,False
+122,Black Veterans for Social Justice (BVSJ)—Homeless Veterans' Reintegration Program (HVRP),,,,,Veterans; People without homes,Veterans; People without homes,Veterans; People without homes,,Veterans; People without homes,not_stated,,assumed,Veterans; People without homes; Everyone,False,False
+123,Center for Urban Community Services (CUCS),,,,,,People without homes,People without homes,,,not_stated,,assumed,People without homes; Everyone,False,False
+124,"The Doe Fund—Ready, Willing & Able (RWA)—Transitional Employment and Housing",,,,,,Formerly Incarcerated People; People without homes,Formerly Incarcerated People; People without homes,,Formerly Incarcerated People; People without homes,not_stated,,assumed,Formerly Incarcerated People; People without homes; Everyone,False,False
+125,The Fortune Society (Housing Listing),Formerly Incarcerated People,,Formerly Incarcerated People,not confirmed,,People without homes,People without homes,,People without homes,not_stated,,assumed,Formerly Incarcerated People; People without homes; Everyone,True,False
+126,Hour Children,Parents & Caregivers; Women,Women,Parents & Caregivers,partly confirmed,,Women; Formerly Incarcerated People,Women; Formerly Incarcerated People,,Women; Formerly Incarcerated People,not_stated,,assumed,Parents & Caregivers; Women; Formerly Incarcerated People; Everyone,True,False
+127,Osborne Association (Housing Listing),Formerly Incarcerated People; LGBTQI+; Parents & Caregivers; Youth,Formerly Incarcerated People,LGBTQI+; Parents & Caregivers; Youth,partly confirmed,,Women; Formerly Incarcerated People; People without homes,Women; Formerly Incarcerated People; People without homes,,,not_stated,,assumed,Formerly Incarcerated People; LGBTQI+; Parents & Caregivers; Youth; Women; People without homes; Everyone,True,False
+128,Part of the Solution (POTS) - 1,,,,,,People without homes,People without homes,,,not_stated,,assumed,People without homes; Everyone,False,False
+129,Part of the Solution (POTS) - 2,,,,,,,People without homes,,,not_stated,,assumed,People without homes; Everyone,False,False
+130,Project Renewal,,,,,,Formerly Incarcerated People,Formerly Incarcerated People,,,not_stated,,assumed,Formerly Incarcerated People; Everyone,False,False
+131,Providence House,Women,Women,,confirmed,,Women,Women,,Women,not_stated,,assumed,Women; Everyone,False,False
+132,Women's Prison Association (WPA) (Housing Listing),Formerly Incarcerated People; Women,Formerly Incarcerated People; Women,,confirmed,Women,Women; Formerly Incarcerated People; People without homes,Women; Formerly Incarcerated People; People without homes,,Women,not_stated,,assumed,Formerly Incarcerated People; Women; People without homes; Everyone,False,False
+133,Ace Programs for the Homeless,,,,,People without homes,,,,People without homes,not_stated,,assumed,People without homes; Everyone,False,False
+134,The Bowery Mission,,,,,,People without homes,People without homes,,People without homes,not_stated,,assumed,People without homes; Everyone,False,False
+135,Breaking Ground,,,,,,Youth; Veterans; Older People; People without homes,Youth; Veterans; Older People; People without homes,,,not_stated,,assumed,Youth; Veterans; Older People; People without homes; Everyone,False,False
+136,Bronxworks—Homeless Outreach Team,,,,,People without homes,,,,People without homes,not_stated,,assumed,People without homes; Everyone,False,False
+137,Coalition for the Homeless,,,,,People without homes,People without homes,People without homes,,People without homes,not_stated,,assumed,People without homes; Everyone,False,False
+138,Covenant House New York,Youth,Youth,,confirmed,,Youth; People without homes,Youth; People without homes,Youth,Youth; People without homes,restricted,ages 16–21,,Youth; People without homes,True,False
+139,Housing Works,,,,,,Formerly Incarcerated People; People without homes,Formerly Incarcerated People; People without homes,,,not_stated,,assumed,Formerly Incarcerated People; People without homes; Everyone,False,False
+140,NYC Housing Authority (NYCHA) - 1 (Bronx/Manhattan/Queens Contact Center),,,,,,,Survivors of violence,,,not_stated,,assumed,Survivors of violence; Everyone,False,False
+141,NYC Housing Authority (NYCHA) - 2 (Brooklyn/Staten Island/Queens Contact Center),,,,,,,Survivors of violence,,,not_stated,,assumed,Survivors of violence; Everyone,False,False
+142,Family Reentry Program,,,,,Formerly Incarcerated People,Formerly Incarcerated People,Formerly Incarcerated People,,Formerly Incarcerated People,not_stated,,assumed,Formerly Incarcerated People; Everyone,False,False
+143,NYC Department of Housing Preservation and Development (HPD),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+144,NYC Human Resources Administration (HRA)—Homebase,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+145,NYC Department of Housing Preservation and Development (HPD)—NYC Housing Connect (AFFORDABLE RENTAL LOTTERIES),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+146,Metropolitan Council on Housing,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+147,NYS Division of Homes and Community Renewal (DHCR)—Office of Rent Administration,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+148,NYC Department of Housing Preservation and Development (HPD)—Tenant Rights,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+149,NYC Housing Authority (NYCHA)—Maintenance Complaint,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+150,NYC Human Resources Administration (HRA)—Legal Services for Tenants,,,,,,Immigrants,Immigrants,,Immigrants,open,regardless of,stated,Immigrants; Everyone,False,False
+151,NYC Tenant Protection Cabinet,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+152,Housing Court Answers,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+153,Justfix.NYC,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+154,Neighborhood Association for Inter-Cultural Affairs (NAICA)—Legal Services,,,,,,Older People,Older People,,,not_stated,,assumed,Older People; Everyone,False,False
+155,New York Peace Institute,Older People; Parents & Caregivers; Youth,,Older People; Parents & Caregivers; Youth,not confirmed,,,,,,not_stated,,assumed,Older People; Parents & Caregivers; Youth; Everyone,True,False
+156,Supportive Housing Organized and United Tenants (SHOUT!),,,,,,LGBTQI+; Veterans; Older People; People with Disabilities; Survivors of violence; People without homes,LGBTQI+; Veterans; Older People; People with Disabilities; Survivors of violence; People without homes,,,not_stated,,assumed,LGBTQI+; Veterans; Older People; People with Disabilities; Survivors of violence; People without homes; Everyone,False,False
+157,Unlock NYC,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+158,NYC Human Resources Administration (HRA),,,,,,Survivors of violence,Survivors of violence,,Survivors of violence,not_stated,,assumed,Survivors of violence; Everyone,False,False
+159,Access NYC,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+160,Volunteers of Legal Service (VOLS)—Benefits Law Project (BLP),,,,,,Older People; People with Disabilities,Older People; People with Disabilities,,,not_stated,,assumed,Older People; People with Disabilities; Everyone,False,False
+161,NYC Human Resources Administration (HRA)—Cash Assistance,,,,,,Immigrants,Immigrants,,,not_stated,,assumed,Immigrants; Everyone,False,False
+162,NYC Human Resources Administration (HRA)—Emergency Assistance,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+163,NYC Human Resources Administration (HRA)—Snap,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+164,NYC 311—Food Pantries and Soup Kitchens,,,,,,Older People,Older People,,Older People,not_stated,,assumed,Older People; Everyone,False,False
+165,Food Help NYC,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+166,Coalition for the Homeless—Resource Guide,,,,,People without homes,,People without homes,,People without homes,not_stated,,assumed,People without homes; Everyone,False,False
+167,Food Bank for New York City,,,,,,Older People,Older People,,,not_stated,,assumed,Older People; Everyone,False,False
+168,Cathedral Community Cares,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+169,Coalition for the Homeless—Grand Central Food Program,,,,,People without homes,People without homes,People without homes,,People without homes,not_stated,,assumed,People without homes; Everyone,False,False
+170,Grownyc,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+171,Holy Apostles Soup Kitchen,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+172,Neighbors Together,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+173,Riverside Church—Social Services,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+174,St. John's Bread and Life,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+175,NYC Department of Sanitation—Donatenyc,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+176,NYC NEON—Clothing Closets,,,,,,Immigrants,Immigrants,,,open,open to all,stated,Immigrants; Everyone,False,False
+177,Medicaid,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+178,Medicare,Older People,Older People,,confirmed,,Older People,Older People,,Older People,not_stated,,assumed,Older People; Everyone,False,False
+179,Elderly Pharmaceutical Insurance Coverage (EPIC),Older People,Older People,,confirmed,Older People,Older People,Older People,,Older People,not_stated,,assumed,Older People; Everyone,False,False
+180,Community Health Advocates,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+181,Dollar for,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+182,Fair Fares NYC Program,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+183,Metropolitan Transportation Authority (MTA)—Reduced-Fare Program,Older People,Older People,,confirmed,,Older People; People with Disabilities,Older People; People with Disabilities,,Older People,not_stated,,assumed,Older People; People with Disabilities; Everyone,False,False
+184,NYC Public Schools—Student Omny Cards,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+185,Federal Trade Commission (FTC)—Bureau of Consumer Protection,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+186,NYS Office of Victim Services,,,,,,Survivors of violence,Survivors of violence,,,not_stated,,assumed,Survivors of violence; Everyone,False,False
+187,NYC Free Tax Prep,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+188,Internal Revenue Service (IRS),,,,,,Older People,Older People,,,not_stated,,assumed,Older People; Everyone,False,False
+189,Taxpayer Advocate Services (TAS) - 1 (General),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+190,Taxpayer Advocate Services (TAS) - 2 (Albany),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+191,Taxpayer Advocate Services (TAS) - 3 (Brookhaven),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+192,Taxpayer Advocate Services (TAS) - 4 (Brooklyn),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+193,Taxpayer Advocate Services (TAS) - 5 (Buffalo),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+194,Taxpayer Advocate Services (TAS) - 6 (Manhattan),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+195,The New York Public Library (NYPL)—Financial Literacy Services,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+196,Brooklyn Public Library (BPL)—Financial Services,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+197,NYC Department of Consumer and Worker Protection (DCWP)—Financial Empowerment Centers,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+198,Camba,,,,,,Youth; Immigrants,Youth; Immigrants,,,not_stated,,assumed,Youth; Immigrants; Everyone,False,False
+199,Community Service Society (CSS),,,,,,Youth; Older People; Formerly Incarcerated People,Youth; Older People; Formerly Incarcerated People,,,not_stated,,assumed,Youth; Older People; Formerly Incarcerated People; Everyone,False,False
+200,New Economy Project—NYC Financial Justice Hotline,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+201,Money Management International (MMI),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+202,New York County Lawyers Association (NYCLA)—Volunteer Lawyer for the Day Consumer Debt Program,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+203,Urban Upbound,,,,,,Youth,Youth,,,not_stated,,assumed,Youth; Everyone,False,False
+204,NYC Health + Hospitals—Correctional Health Services (CHS) - 1 (Main),,,,,,Formerly Incarcerated People,Formerly Incarcerated People,,,open,all people,stated,Formerly Incarcerated People; Everyone,False,False
+205,NYC Health + Hospitals—Correctional Health Services (CHS) - 2 (CRAN - Bronx),,,,,,,Formerly Incarcerated People,,,not_stated,,assumed,Formerly Incarcerated People; Everyone,False,False
+206,NYC Health + Hospitals—Correctional Health Services (CHS) - 3 (CRAN - Brooklyn),,,,,,,Formerly Incarcerated People,,,not_stated,,assumed,Formerly Incarcerated People; Everyone,False,False
+207,NYC Health + Hospitals—Correctional Health Services (CHS) - 4 (CRAN - Manhattan),,,,,,,Formerly Incarcerated People,,,not_stated,,assumed,Formerly Incarcerated People; Everyone,False,False
+208,NYC Health + Hospitals—Correctional Health Services (CHS) - 5 (CRAN - Queens),,,,,,,Formerly Incarcerated People,,,not_stated,,assumed,Formerly Incarcerated People; Everyone,False,False
+209,NYC Health + Hospitals—Correctional Health Services (CHS) - 6 (CRAN - Staten Island),,,,,,,Formerly Incarcerated People,,,not_stated,,assumed,Formerly Incarcerated People; Everyone,False,False
+210,NYC Health + Hospitals—Correctional Health Services (CHS) - 7 (PORT Practice - Bellevue Hospital),,,,,,,Formerly Incarcerated People,,,not_stated,,assumed,Formerly Incarcerated People; Everyone,False,False
+211,NYC Health + Hospitals—Correctional Health Services (CHS) - 8 (PORT Practice - Kings County Hospital),,,,,,,Formerly Incarcerated People,,,not_stated,,assumed,Formerly Incarcerated People; Everyone,False,False
+212,Mount Sinai Institute for Advanced Medicine—Jack Martin Fund Center Clinic—Coming Home Program,,,,,,Formerly Incarcerated People,Formerly Incarcerated People,,Formerly Incarcerated People,not_stated,,assumed,Formerly Incarcerated People; Everyone,False,False
+213,NYC Health—Sexual Health Clinics,,,,,,Immigrants,Immigrants,,,open,anyone,stated,Immigrants; Everyone,False,False
+214,The Alliance for Positive Change,,,,,,Formerly Incarcerated People,Formerly Incarcerated People,,,not_stated,,assumed,Formerly Incarcerated People; Everyone,False,False
+215,The Bedford-Stuyvesant Family Health Center - 1 (Main),,,,,,,Women,,,not_stated,,assumed,Women; Everyone,False,False
+216,The Bedford-Stuyvesant Family Health Center - 2 (Broadway Family Health Center),,,,,,,Women,,,not_stated,,assumed,Women; Everyone,False,False
+217,The Bedford-Stuyvesant Family Health Center - 3 (Women Infants Center / WIC),,,,,Women,,Women,,Women,not_stated,,assumed,Women; Everyone,False,False
+218,The Bedford-Stuyvesant Family Health Center - 4 (Wellness Center Program),,,,,,,Women,,,not_stated,,assumed,Women; Everyone,False,False
+219,Charles B. Wang Community Health Center,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+220,Community Healthcare Network,,,,,,,,,,open,regardless of,stated,Everyone,False,False
+221,The Institute for Family Health—the Trauma-Informed Linkage to Care (TLC) Clinic,,,,,,Immigrants; Survivors of violence,Immigrants; Survivors of violence,,Survivors of violence,open,anyone,stated,Immigrants; Survivors of violence; Everyone,False,False
+222,NYC Care,,,,,,Immigrants,Immigrants,,,not_stated,,assumed,Immigrants; Everyone,False,False
+223,NYC Health + Hospitals—Street Health Outreach & Wellness (SHOW) Mobile Units,,,,,,People without homes,People without homes,,,not_stated,,assumed,People without homes; Everyone,False,False
+224,NYS Department of Health—Advance Care Planning,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+225,NYS Department of Health—Office of Professional Medical Conduct (OPMC),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+226,NYC Department of Health and Mental Hygiene,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+227,World Health Organization (WHO),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+228,Children’s Hospital of Philadelphia—Vaccine Education Center,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+229,Cleveland Clinic—Health Library,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+230,Mayo Clinic—Drugs and Supplements,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+231,Voices for Vaccines,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+232,Brooklyn Public Library (BPL)—Community Health & Social Work,,,,,,Older People,Older People,,,not_stated,,assumed,Older People; Everyone,False,False
+233,NYC Tuberculosis Provider Hotline,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+234,American Cancer Society Helpline,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+235,The Poison Control Center Hotline,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+236,Aclu—Reproductive Freedom Project,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+237,NYC Health—Abortion Access Hub,,,,,,Immigrants,Immigrants,,,open,regardless of,stated,Immigrants; Everyone,False,False
+238,NYC Health—Doula Care,,,,,,Parents & Caregivers,Parents & Caregivers,,,not_stated,,assumed,Parents & Caregivers; Everyone,False,False
+239,NYC 311—Stillbirth or Miscarriage Certificate,,,,,,Parents & Caregivers,Parents & Caregivers,Parents & Caregivers,,mixed,only a parent | Anyone,stated,Parents & Caregivers; Everyone,True,False
+240,Family Planning Benefit Program (FPBP),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+241,New York Abortion Access Fund (NYAAF),,,,,,Survivors of violence,Survivors of violence,,,not_stated,,assumed,Survivors of violence; Everyone,False,False
+242,Postpartum Resource Center in New York,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+243,Repro Legal Helpline,Women,,Women,not confirmed,,Youth; Immigrants,Youth; Immigrants,,,not_stated,,assumed,Women; Youth; Immigrants; Everyone,True,False
+244,NYS Department of Health—Health Plan Marketplace,,,,,,People with Disabilities,Older People; People with Disabilities,,People with Disabilities,not_stated,,assumed,People with Disabilities; Older People; Everyone,False,False
+245,NYS Department of Health—HIV/AIDS Information,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+246,NYC Department of Health and Mental Hygiene (DOH) - HIV/AIDS,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+247,NYC Human Resources Administration—HIV/AIDS Services Administration (HASA),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+248,NYS Department of Health—Uninsured Care Programs,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+249,Argus Community—Access Program,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+250,Boom!Health - 1 (Harm Reduction Center),,,,,,,Youth,,,not_stated,,assumed,Youth; Everyone,False,False
+251,Boom!Health - 2 (Wellness Center),,,,,,Youth,Youth,,,not_stated,,assumed,Youth; Everyone,False,False
+252,Bridging Access to Care - 1,,,,,,Parents & Caregivers; Formerly Incarcerated People; People without homes,Parents & Caregivers; Formerly Incarcerated People; People without homes,,,not_stated,,assumed,Parents & Caregivers; Formerly Incarcerated People; People without homes; Everyone,False,False
+253,Bridging Access to Care - 2,,,,,,,Parents & Caregivers; Formerly Incarcerated People; People without homes,,,not_stated,,assumed,Parents & Caregivers; Formerly Incarcerated People; People without homes; Everyone,False,False
+254,Community Health Action of Staten Island,,,,,,LGBTQI+; Formerly Incarcerated People,LGBTQI+; Formerly Incarcerated People,,,not_stated,,assumed,LGBTQI+; Formerly Incarcerated People; Everyone,False,False
+255,Forging Ahead for Community Empowerment and Support (FACES),,,,,,Formerly Incarcerated People; People without homes,Formerly Incarcerated People; People without homes,,,not_stated,,assumed,Formerly Incarcerated People; People without homes; Everyone,False,False
+256,The Fortune Society,Formerly Incarcerated People,,Formerly Incarcerated People,not confirmed,,,,,,not_stated,,assumed,Formerly Incarcerated People; Everyone,True,False
+257,Gmhc,,,,,,Youth; LGBTQI+,Youth; LGBTQI+,,Youth; LGBTQI+,not_stated,,assumed,Youth; LGBTQI+; Everyone,False,False
+258,Haitian-American Community Coalition (HCC),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+259,"The Hispanic AIDS Forum, Inc.",,,,,,LGBTQI+,LGBTQI+,,,open,anyone,stated,LGBTQI+; Everyone,False,False
+260,Planned Parenthood of NYC—Project Street Beat,,,,,,Youth; Immigrants,Youth; Immigrants,,Youth,open,regardless of,stated,Youth; Immigrants; Everyone,False,False
+261,Prisoners’ Legal Services of New York (PLSNY),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+262,NYC Commission on Human Rights,LGBTQI+; Older People,,LGBTQI+; Older People,not confirmed,,Veterans; Immigrants; People with Disabilities,Veterans; Immigrants; People with Disabilities,,,not_stated,,assumed,LGBTQI+; Older People; Veterans; Immigrants; People with Disabilities; Everyone,True,False
+263,NYC Health—Hepatitis C,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+264,American Liver Foundation,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+265,Us Air Quality Index,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+266,NYC Health Climate and Health,,,,,,Older People; People with Disabilities,Older People; People with Disabilities,,Older People,not_stated,,assumed,Older People; People with Disabilities; Everyone,False,False
+267,Notify NYC,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+268,NYC Cool Options,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+269,Body Politic—Covid-19,,,,,,People with Disabilities,People with Disabilities,,,not_stated,,assumed,People with Disabilities; Everyone,False,False
+270,NYS Office of Mental Health—Covid-19 Resources,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+271,NYC Human Resources Administration—Office of Burial Services,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+272,NYS Office of Mental Health—Bronx Psychiatric Center,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+273,Baltic Street Wellness Solutions,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+274,Black Veterans for Social Justice (BVSJ)—Ssgt Fox Program,,,,,Veterans,Veterans,Veterans,,Veterans,not_stated,,assumed,Veterans; Everyone,False,False
+275,Center for Alternative Sentencing and Employment Services (CASES)—Nathaniel Clinics - 1 (Bronx),,,,,,Formerly Incarcerated People,Formerly Incarcerated People,,,not_stated,,assumed,Formerly Incarcerated People; Everyone,False,False
+276,Center for Alternative Sentencing and Employment Services (CASES)—Nathaniel Clinics - 2 (Harlem),,,,,,,Formerly Incarcerated People,,,not_stated,,assumed,Formerly Incarcerated People; Everyone,False,False
+277,Community Access - 1 (Main),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+278,Community Access - 2 (Blueprint Supported Education),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+279,Community Access - 3 (Howie the Harp Advocacy Center),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+280,Fountain House - 1 (Central Location),,,,,,Older People,Older People,,,not_stated,,assumed,Older People; Everyone,False,False
+281,Fountain House - 2 (Bronx Clubhouse),,,,,,,Older People,,,not_stated,,assumed,Older People; Everyone,False,False
+282,Fountain House - 3 (Harlem Clubhouse),,,,,,,Older People,,,not_stated,,assumed,Older People; Everyone,False,False
+283,Goodwill Industries—Bronx Ace Program & Pal Program,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+284,Harlem East Life Plan (HELP),,,,,,Survivors of violence,Survivors of violence,,,not_stated,,assumed,Survivors of violence; Everyone,False,False
+285,The Jewish Board—Mental Health Clinics,,,,,,Youth; People with Disabilities; Survivors of violence,Youth; People with Disabilities; Survivors of violence,,,not_stated,,assumed,Youth; People with Disabilities; Survivors of violence; Everyone,False,False
+286,National Alliance on Mental Illness (NAMI),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+287,National Alliance on Mental Illness (NAMI)—NYC Metro,,,,,,Youth,Youth,,,not_stated,,assumed,Youth; Everyone,False,False
+288,Revcore Recovery Center - 1 (Brooklyn),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+289,Revcore Recovery Center - 2 (Manhattan),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+290,Revcore Recovery Center - 3 (Jackson Heights),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+291,Services for the Underserved (S:US),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+292,Venture House - 1 (Bronx),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+293,Venture House - 2 (Brooklyn),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+294,Venture House - 3 (Queens),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+295,Venture House - 4 (Staten Island),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+296,Just Detention International (JDI),,,,,,Survivors of violence,Survivors of violence,,,not_stated,,assumed,Survivors of violence; Everyone,False,False
+297,Mustard Seed Counseling Services,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+298,New York Counseling for Change,,,,,,Survivors of violence,Survivors of violence,,,not_stated,,assumed,Survivors of violence; Everyone,False,False
+299,Shiloh Consulting,,,,,,Survivors of violence,Survivors of violence,,,not_stated,,assumed,Survivors of violence; Everyone,False,False
+300,Stop It Now!,,,,,,Survivors of violence,Survivors of violence,,,not_stated,,assumed,Survivors of violence; Everyone,False,False
+301,1in6,,,,,,Survivors of violence,Survivors of violence,,Survivors of violence,open,anyone,stated,Survivors of violence; Everyone,False,False
+302,A Call for Change,,,,,,Survivors of violence,Survivors of violence,,,not_stated,,assumed,Survivors of violence; Everyone,False,False
+303,Anti-Violence Project (AVP),LGBTQI+,LGBTQI+,,confirmed,,LGBTQI+; Survivors of violence,LGBTQI+; Survivors of violence,,LGBTQI+,not_stated,,assumed,LGBTQI+; Survivors of violence; Everyone,False,False
+304,Crime Victims Treatment Center (CVTC),Women,,Women,not confirmed,Survivors of violence,Survivors of violence,Survivors of violence,,Survivors of violence,not_stated,,assumed,Women; Survivors of violence; Everyone,True,False
+305,Malesurvivor,,,,,,Survivors of violence,Survivors of violence,,Survivors of violence,not_stated,,assumed,Survivors of violence; Everyone,False,False
+306,988 Suicide & Crisis Lifeline,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+307,Call Blackline,,,,,,LGBTQI+,LGBTQI+,,,not_stated,,assumed,LGBTQI+; Everyone,False,False
+308,Peer Support Space,,,,,,People with Disabilities,People with Disabilities,,,not_stated,,assumed,People with Disabilities; Everyone,False,False
+309,Project Lets,,,,,,People with Disabilities,People with Disabilities,,,not_stated,,assumed,People with Disabilities; Everyone,False,False
+310,Anxiety and Depression Association of America (ADAA),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+311,Children and Adults with Attention-Deficit/Hyperactivity Disorder (CHADD),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+312,Depression and Bipolar Support Alliance (DBSA),,,,,,Parents & Caregivers,Parents & Caregivers,,Parents & Caregivers,not_stated,,assumed,Parents & Caregivers; Everyone,False,False
+313,Disaster Distress Helpline,,,,,,,,,,open,all residents,stated,Everyone,False,False
+314,International Ocd Foundation,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+315,National Association of Anorexia Nervosa & Associated Disorders (ANAD),,,,,,,,,,open,anyone,stated,Everyone,False,False
+316,National Eating Disorders Association (NEDA),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+317,Schizophrenia & Psychosis Action Alliance,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+318,Tara,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+319,NYC Mobile Crisis Teams (MCT),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+320,Latinx Therapy,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+321,National Queer and Trans Therapists of Color Network (NQTTCN),,,,,LGBTQI+,LGBTQI+,LGBTQI+,,LGBTQI+,not_stated,,assumed,LGBTQI+; Everyone,False,False
+322,Therapy for Black Girls,,,,,Women,Women,Women,,Women,not_stated,,assumed,Women; Everyone,False,False
+323,Substance Abuse and Mental Health Services Administration (SAMHSA)—Find Treatment Services Locator,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+324,NYS Office of Addiction Services and Supports (OASAS),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+325,Addiction Care Interventions (ACI) - 1 (Inpatient Services),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+326,Addiction Care Interventions (ACI) - 2 (Outpatient Services),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+327,Brooklyn Center for Psychotherapy—New Directions Substance Use Clinic,,,,,,Parents & Caregivers; Survivors of violence,Parents & Caregivers; Survivors of violence,,,not_stated,,assumed,Parents & Caregivers; Survivors of violence; Everyone,False,False
+328,Center for Community Alternatives (CCA)—Crossroads,,,,,,Formerly Incarcerated People,Formerly Incarcerated People,,Formerly Incarcerated People,open,all individuals,stated,Formerly Incarcerated People; Everyone,False,False
+329,Exodus Transitional Community—Wellness Center,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+330,Exponents,Formerly Incarcerated People,,Formerly Incarcerated People,not confirmed,,,,,,not_stated,,assumed,Formerly Incarcerated People; Everyone,True,False
+331,Realization Center - 1 (Brooklyn),,,,,,LGBTQI+; Parents & Caregivers; Formerly Incarcerated People,LGBTQI+; Parents & Caregivers; Formerly Incarcerated People,,,not_stated,,assumed,LGBTQI+; Parents & Caregivers; Formerly Incarcerated People; Everyone,False,False
+332,Realization Center - 2 (Manhattan),,,,,,,LGBTQI+; Parents & Caregivers; Formerly Incarcerated People,,,not_stated,,assumed,LGBTQI+; Parents & Caregivers; Formerly Incarcerated People; Everyone,False,False
+333,Albert Einstein College of Medicine—Montefiore-Einstein Division of Substance Abuse - 1 (Melrose),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+334,Albert Einstein College of Medicine—Montefiore-Einstein Division of Substance Abuse - 2 (Port Morris),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+335,Albert Einstein College of Medicine—Montefiore-Einstein Division of Substance Abuse - 3 (Waters Place),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+336,Argus Community,,,,,,Youth; Formerly Incarcerated People,Youth; Formerly Incarcerated People,,,not_stated,,assumed,Youth; Formerly Incarcerated People; Everyone,False,False
+337,Arms Acres—Outpatient Services - 1 (Bronx),,,,,,,,,,open,No referral needed,stated,Everyone,False,False
+338,Arms Acres—Outpatient Services - 2 (Jamaica),,,,,,,,,,open,No referral needed,stated,Everyone,False,False
+339,The Bowery Mission,,,,,,People without homes,People without homes,,,not_stated,,assumed,People without homes; Everyone,False,False
+340,"Create, Inc.",,,,,,Youth; Older People; People without homes,Youth; Older People; People without homes,,,not_stated,,assumed,Youth; Older People; People without homes; Everyone,False,False
+341,"Elmcor Youth and Adult Activities, Inc.",,,,,Youth,,,,Youth,not_stated,,assumed,Youth; Everyone,False,False
+342,Greenwich House—Center for Healing,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+343,Lower Eastside Service Center (LESC),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+344,Odyssey House,,,,,,Youth,Youth,,,not_stated,,assumed,Youth; Everyone,False,False
+345,Phoenix House,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+346,"Queens Village Committee for Mental Health for J-Cap, Inc.",,,,,,,,,,not_stated,,assumed,Everyone,False,False
+347,Samaritan Daytop Village - 1 (Administrative Headquarters),,,,,,Youth; Veterans,Youth; Veterans,,,not_stated,,assumed,Youth; Veterans; Everyone,False,False
+348,Samaritan Daytop Village - 2 (Central Admissions - The Richard Pruss Wellness Center),,,,,,,Youth; Veterans,,,not_stated,,assumed,Youth; Veterans; Everyone,False,False
+349,Start Care Inc.,,,,,,Youth,Youth,,Youth,not_stated,,assumed,Youth; Everyone,False,False
+350,Vip Community Services,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+351,Al-Anon—NYC,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+352,Alcoholics Anonymous (AA)—New York,,,,,,,,,,open,open to all,stated,Everyone,False,False
+353,Gam-Anon for New York,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+354,Narcotics Anonymous (NA)—Greater New York Region,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+355,New York Crystal Meth Anonymous Intergroup,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+356,Pills Anonymous,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+357,Sexual Compulsives Anonymous of New York,,,,,,,,,,open,anyone,stated,Everyone,False,False
+358,NYS Smokers’ Quitline,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+359,NYC Department of Health and Mental Hygiene (DOH)—NYC Quits,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+360,American Heart Association,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+361,National Association for Shoplifting Prevention,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+362,NYS Hopeline,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+363,NYC 988,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+364,Onpoint NYC - 1 (East Harlem),,,,,,People with Disabilities,People with Disabilities,,,not_stated,,assumed,People with Disabilities; Everyone,False,False
+365,Onpoint NYC - 2 (Washington Heights),,,,,,People with Disabilities,People with Disabilities,,,not_stated,,assumed,People with Disabilities; Everyone,False,False
+366,Vocal-NY,Formerly Incarcerated People,,Formerly Incarcerated People,not confirmed,,People with Disabilities,People with Disabilities,,,not_stated,,assumed,Formerly Incarcerated People; People with Disabilities; Everyone,True,False
+367,After Hours Project - 1 (Main Office),,,,,,People without homes,People without homes,,,not_stated,,assumed,People without homes; Everyone,False,False
+368,After Hours Project - 2 (Wellness Center),,,,,,,People without homes,,,not_stated,,assumed,People without homes; Everyone,False,False
+369,After Hours Project - 3 (Housing),,,,,,,People without homes,,,not_stated,,assumed,People without homes; Everyone,False,False
+370,St. Ann’s Corner of Harm Reduction,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+371,The Bronx Defenders,,,,,,Immigrants; Parents & Caregivers; Formerly Incarcerated People,Immigrants; Parents & Caregivers; Formerly Incarcerated People,,,not_stated,,assumed,Immigrants; Parents & Caregivers; Formerly Incarcerated People; Everyone,False,False
+372,Brooklyn Defender Services (BDS) - 1 (Main Office),,,,,,Immigrants; Parents & Caregivers; Formerly Incarcerated People,Immigrants; Parents & Caregivers; Formerly Incarcerated People,,,not_stated,,assumed,Immigrants; Parents & Caregivers; Formerly Incarcerated People; Everyone,False,False
+373,Brooklyn Defender Services (BDS) - 2 (Brooklyn Visitor Center),,,,,,,Immigrants; Parents & Caregivers; Formerly Incarcerated People,,,not_stated,,assumed,Immigrants; Parents & Caregivers; Formerly Incarcerated People; Everyone,False,False
+374,Brooklyn Defender Services (BDS) - 3 (Queens Office),,,,,,,Immigrants; Parents & Caregivers; Formerly Incarcerated People,,,not_stated,,assumed,Immigrants; Parents & Caregivers; Formerly Incarcerated People; Everyone,False,False
+375,Brooklyn Defender Services (BDS) - 4 (Jamaica Office),,,,,,,Immigrants; Parents & Caregivers; Formerly Incarcerated People,,,not_stated,,assumed,Immigrants; Parents & Caregivers; Formerly Incarcerated People; Everyone,False,False
+376,Community Justice Connect - 1 (Bronx),,,,,,Immigrants; Survivors of violence,Immigrants; Survivors of violence,,,not_stated,,assumed,Immigrants; Survivors of violence; Everyone,False,False
+377,Community Justice Connect - 2 (Brooklyn),,,,,,,Immigrants; Survivors of violence,,,not_stated,,assumed,Immigrants; Survivors of violence; Everyone,False,False
+378,Community Justice Connect - 3 (Jamaica),,,,,,,Immigrants; Survivors of violence,,,not_stated,,assumed,Immigrants; Survivors of violence; Everyone,False,False
+379,The Exoneration Initiative (EXI),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+380,Federal Defenders of New York - 1 (Eastern District),,,,,,Formerly Incarcerated People,Formerly Incarcerated People,,,not_stated,,assumed,Formerly Incarcerated People; Everyone,False,False
+381,Federal Defenders of New York - 2 (Southern District),,,,,,Formerly Incarcerated People,Formerly Incarcerated People,,,not_stated,,assumed,Formerly Incarcerated People; Everyone,False,False
+382,Good Call,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+383,Innocence Project,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+384,Lambda Legal,LGBTQI+,LGBTQI+,,confirmed,,LGBTQI+,LGBTQI+,,LGBTQI+,not_stated,,assumed,LGBTQI+; Everyone,False,False
+385,Legal Action Center (LAC),,,,,,People with Disabilities; Formerly Incarcerated People,People with Disabilities; Formerly Incarcerated People,,,not_stated,,assumed,People with Disabilities; Formerly Incarcerated People; Everyone,False,False
+386,Legal Aid Society,,,,,,Immigrants; People with Disabilities; Survivors of violence; People without homes,Immigrants; People with Disabilities; Survivors of violence; People without homes,,,not_stated,,assumed,Immigrants; People with Disabilities; Survivors of violence; People without homes; Everyone,False,False
+387,Legal Services NYC,,,,,,Immigrants,Immigrants,,,not_stated,,assumed,Immigrants; Everyone,False,False
+388,Lgbt Bar Association of Greater New York,LGBTQI+,LGBTQI+,,confirmed,LGBTQI+,LGBTQI+,LGBTQI+,,LGBTQI+,not_stated,,assumed,LGBTQI+; Everyone,False,False
+389,Mobilization for Justice - 1 (Bronx),,,,,,Older People; People with Disabilities,Older People; People with Disabilities,,,not_stated,,assumed,Older People; People with Disabilities; Everyone,False,False
+390,Mobilization for Justice - 2 (Manhattan),,,,,,,Older People; People with Disabilities,,,not_stated,,assumed,Older People; People with Disabilities; Everyone,False,False
+391,New York City Bar Legal Referral Service,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+392,New York County Lawyers Association (NYCLA)—Legal Counseling Project & Civil Appeals Project,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+393,New York Legal Assistance Group,,,,,,LGBTQI+; Immigrants; Survivors of violence,LGBTQI+; Immigrants; Survivors of violence,,,not_stated,,assumed,LGBTQI+; Immigrants; Survivors of violence; Everyone,False,False
+394,New York Peace Institute,Older People; Parents & Caregivers; Youth,Parents & Caregivers; Youth,Older People,partly confirmed,,Youth; Parents & Caregivers,Youth; Parents & Caregivers,,,not_stated,,assumed,Older People; Parents & Caregivers; Youth; Everyone,True,False
+395,Parole Preparation Project,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+396,Prisoners’ Legal Services of New York (PLSNY) - 1 (Central Office - Albany),,,,,,Youth; Immigrants; Formerly Incarcerated People,Youth; Immigrants; Formerly Incarcerated People,,,not_stated,,assumed,Youth; Immigrants; Formerly Incarcerated People; Everyone,False,False
+397,Prisoners’ Legal Services of New York (PLSNY) - 2 (Buffalo Office),,,,,,,Youth; Immigrants; Formerly Incarcerated People,,,not_stated,,assumed,Youth; Immigrants; Formerly Incarcerated People; Everyone,False,False
+398,Prisoners’ Legal Services of New York (PLSNY) - 3 (Ithaca Office),,,,,,,Youth; Immigrants; Formerly Incarcerated People,,,not_stated,,assumed,Youth; Immigrants; Formerly Incarcerated People; Everyone,False,False
+399,Prisoners’ Legal Services of New York (PLSNY) - 4 (Newburgh Office),,,,,,,Youth; Immigrants; Formerly Incarcerated People,,,not_stated,,assumed,Youth; Immigrants; Formerly Incarcerated People; Everyone,False,False
+400,Urban Justice Center,,,,,,Youth; Immigrants; Survivors of violence,Youth; Immigrants; Survivors of violence,,,not_stated,,assumed,Youth; Immigrants; Survivors of violence; Everyone,False,False
+401,Columbia Human Rights Law Review—a Jailhouse Lawyer’s Manual (JLM),,,,,,Immigrants,Immigrants,,,not_stated,,assumed,Immigrants; Everyone,False,False
+402,The Jailhouse Lawyer’s Handbook - 1 (Center for Constitutional Rights),,,,,,Formerly Incarcerated People,Formerly Incarcerated People,,,not_stated,,assumed,Formerly Incarcerated People; Everyone,False,False
+403,"The Jailhouse Lawyer’s Handbook - 2 (National Lawyers Guild, National Office)",,,,,,,Formerly Incarcerated People,,,not_stated,,assumed,Formerly Incarcerated People; Everyone,False,False
+404,Prison Book Program—the Insider’s Guide to Jailhouse Law,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+405,Lawhelpny,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+406,Public Access Law Libraries - 1 (Bronx Supreme Court Law Library),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+407,Public Access Law Libraries - 2 (Kings County Supreme Court Law Library),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+408,Public Access Law Libraries - 3 (New York County Law Library),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+409,Public Access Law Libraries - 4 (Queens Supreme Court Law Library),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+410,Public Access Law Libraries - 5 (Richmond County Law Library),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+411,NYC Department of Correction (DOC)—Bail Payment Locations - 1 (Rikers Island),,,,,,,,,,open,regardless of,stated,Everyone,False,False
+412,NYC Department of Correction (DOC)—Bail Payment Locations - 2 (Manhattan Detention Complex / The Tombs),,,,,,,,,,open,regardless of,stated,Everyone,False,False
+413,NYC Department of Correction (DOC)—Bail Payment Locations - 3 (Bronx Criminal Court),,,,,,,,,,open,regardless of,stated,Everyone,False,False
+414,NYC Department of Correction (DOC)—Bail Payment Locations - 4 (Brooklyn Criminal Court),,,,,,,,,,open,regardless of,stated,Everyone,False,False
+415,NYC Department of Correction (DOC)—Bail Payment Locations - 5 (Queens Courts),,,,,,Youth,,,,open,regardless of,stated,Youth; Everyone,False,False
+416,NYS Department of Corrections and Community Supervision—Office of Special Investigations (OSI),,,,,,Survivors of violence,,,,open,anyone,stated,Survivors of violence; Everyone,False,False
+417,NYC Board of Correction (BOC),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+418,Federal Trade Commission (FTC)—Identity Theft Recovery,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+419,USA.gov—Complaints,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+420,NYS Division of Human Rights—Hate and Bias Prevention Unit,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+421,NYC—311,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+422,NYC Civilian Complaint Review Board,,,,,,Formerly Incarcerated People,Formerly Incarcerated People,,,not_stated,,assumed,Formerly Incarcerated People; Everyone,False,False
+423,NYC Commission on Human Rights - 1 (Main/General),LGBTQI+; Older People,,LGBTQI+; Older People,not confirmed,,Veterans; Immigrants; People with Disabilities; Parents & Caregivers; Survivors of violence,Veterans; Immigrants; People with Disabilities; Parents & Caregivers; Survivors of violence,,,open,Anyone,stated,LGBTQI+; Older People; Veterans; Immigrants; People with Disabilities; Parents & Caregivers; Survivors of violence; Everyone,True,False
+424,NYC Commission on Human Rights - 2 (Bronx Office),LGBTQI+; Older People,,LGBTQI+; Older People,not confirmed,,,Veterans; Immigrants; People with Disabilities; Parents & Caregivers; Survivors of violence,,,open,Anyone,stated,LGBTQI+; Older People; Veterans; Immigrants; People with Disabilities; Parents & Caregivers; Survivors of violence; Everyone,True,False
+425,NYC Commission on Human Rights - 3 (Brooklyn Office),LGBTQI+; Older People,,LGBTQI+; Older People,not confirmed,,,Veterans; Immigrants; People with Disabilities; Parents & Caregivers; Survivors of violence,,,open,Anyone,stated,LGBTQI+; Older People; Veterans; Immigrants; People with Disabilities; Parents & Caregivers; Survivors of violence; Everyone,True,False
+426,NYC Commission on Human Rights - 4 (Manhattan Office),LGBTQI+; Older People,,LGBTQI+; Older People,not confirmed,,,Veterans; Immigrants; People with Disabilities; Parents & Caregivers; Survivors of violence,,,open,Anyone,stated,LGBTQI+; Older People; Veterans; Immigrants; People with Disabilities; Parents & Caregivers; Survivors of violence; Everyone,True,False
+427,NYC Commission on Human Rights - 5 (Queens/Jamaica Office),LGBTQI+; Older People,,LGBTQI+; Older People,not confirmed,,,Veterans; Immigrants; People with Disabilities; Parents & Caregivers; Survivors of violence,,,open,Anyone,stated,LGBTQI+; Older People; Veterans; Immigrants; People with Disabilities; Parents & Caregivers; Survivors of violence; Everyone,True,False
+428,NYC Commission on Human Rights - 6 (Staten Island Office),LGBTQI+; Older People,,LGBTQI+; Older People,not confirmed,,,Veterans; Immigrants; People with Disabilities; Parents & Caregivers; Survivors of violence,,,open,Anyone,stated,LGBTQI+; Older People; Veterans; Immigrants; People with Disabilities; Parents & Caregivers; Survivors of violence; Everyone,True,False
+429,NYC Department of Consumer and Worker Protection (DCWP),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+430,NYC Public Advocate,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+431,NYS DOCCS—Office of Special Investigations (OSI) Intake Unit (PREA Reporting),,,,,,Formerly Incarcerated People; Survivors of violence,,,,open,anyone,stated,Formerly Incarcerated People; Survivors of violence; Everyone,False,False
+432,NYS Commission of Correction,,,,,,Survivors of violence,Formerly Incarcerated People; Survivors of violence,,,open,anyone,stated,Survivors of violence; Formerly Incarcerated People; Everyone,False,False
+433,Office of the State Inspector General,,,,,,Survivors of violence,Formerly Incarcerated People; Survivors of violence,,,open,anyone,stated,Survivors of violence; Formerly Incarcerated People; Everyone,False,False
+434,NYC Department of Correction (DOC),,,,,,Survivors of violence,,,,not_stated,,assumed,Survivors of violence; Everyone,False,False
+435,City of New York Department of Investigation—Complaint Bureau,,,,,,Survivors of violence,,,,not_stated,,assumed,Survivors of violence; Everyone,False,False
+436,New York State Justice Center,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+437,"Federal Bureau of Prisons (BOP)—National PREA Coordinator, Reentry Services Division",,,,,Formerly Incarcerated People,Formerly Incarcerated People; Survivors of violence,,,Formerly Incarcerated People,not_stated,,assumed,Formerly Incarcerated People; Survivors of violence; Everyone,False,False
+438,Federal Bureau of Prisons (BOP)—Office of Internal Affairs,,,,,,Survivors of violence,,,,not_stated,,assumed,Survivors of violence; Everyone,False,False
+439,National Sexual Assault Hotline,,,,,Survivors of violence,Survivors of violence,Formerly Incarcerated People; Survivors of violence,,Survivors of violence,not_stated,,assumed,Survivors of violence; Formerly Incarcerated People; Everyone,False,False
+440,US Immigration and Customs Enforcement (ICE)—Office of Professional Responsibility,,,,,Immigrants,Survivors of violence,,,Immigrants,not_stated,,assumed,Immigrants; Survivors of violence; Everyone,False,False
+441,"ICE Detention, Removals, and Information Line (DRIL)",,,,,,Survivors of violence,Immigrants; Survivors of violence,,,not_stated,,assumed,Survivors of violence; Immigrants; Everyone,False,False
+442,DHS Office of Inspector General,,,,,,Survivors of violence,Immigrants; Survivors of violence,,,not_stated,,assumed,Survivors of violence; Immigrants; Everyone,False,False
+443,National Immigration Detention Hotline,,,,,Immigrants,Immigrants; Survivors of violence,Immigrants; Survivors of violence,,Immigrants,not_stated,,assumed,Immigrants; Survivors of violence; Everyone,False,False
+444,The New York Public Library (NYPL)—Services for Immigrants,Immigrants,Immigrants,,confirmed,Immigrants,Immigrants,Immigrants,,Immigrants,open,all ages,stated,Immigrants; Everyone,False,False
+445,Brooklyn Public Library (BPL)—Immigrant Services,Immigrants,Immigrants,,confirmed,Immigrants,Immigrants,Immigrants,,Immigrants,not_stated,,assumed,Immigrants; Everyone,False,False
+446,Queens Public Library—New Americans Program,Immigrants,Immigrants,,confirmed,Immigrants,Immigrants,Immigrants,,Immigrants,not_stated,,assumed,Immigrants; Everyone,False,False
+447,US Citizenship and Immigration Services (USCIS)—Green Cards,Immigrants,Immigrants,,confirmed,Immigrants,,,,Immigrants,not_stated,,assumed,Immigrants; Everyone,False,False
+448,NYS Office for New Americans (ONA),Immigrants,Immigrants,,confirmed,Immigrants,Immigrants,Immigrants,,Immigrants,not_stated,,assumed,Immigrants; Everyone,False,False
+449,NYC Mayor’s Office of Immigrant Affairs—Immigration Legal Services,Immigrants,Immigrants,,confirmed,Immigrants,Immigrants; Parents & Caregivers,Immigrants; Parents & Caregivers,,Immigrants,not_stated,,assumed,Immigrants; Parents & Caregivers; Everyone,False,False
+450,BronxWorks—Immigration Services,Immigrants,Immigrants,,confirmed,Immigrants,Immigrants,Immigrants,,Immigrants,not_stated,,assumed,Immigrants; Everyone,False,False
+451,Brooklyn Defender Services (BDS)—Immigration Practice,Immigrants,Immigrants,,confirmed,Immigrants,Immigrants,Immigrants,,Immigrants,not_stated,,assumed,Immigrants; Everyone,False,False
+452,Cabrini Immigrant Services of NYC,Immigrants,Immigrants,,confirmed,Immigrants,Immigrants,Immigrants,,Immigrants,not_stated,,assumed,Immigrants; Everyone,False,False
+453,CAMBA—Immigration Legal Services,Immigrants,Immigrants,,confirmed,Immigrants,,,,Immigrants,not_stated,,assumed,Immigrants; Everyone,False,False
+454,Catholic Charities—Immigration Legal Services,Immigrants,Immigrants,,confirmed,Immigrants,Immigrants,Immigrants,,Immigrants,not_stated,,assumed,Immigrants; Everyone,False,False
+455,Chinese-American Planning Council,Immigrants,Immigrants,,confirmed,,Youth; Immigrants; Older People,Youth; Immigrants; Older People,,Immigrants,open,all ages,stated,Immigrants; Youth; Older People; Everyone,False,False
+456,City University of New York (CUNY)—Citizenship NOW!,Immigrants,Immigrants,,confirmed,,Immigrants,Immigrants,,,not_stated,,assumed,Immigrants; Everyone,False,False
+457,Education Justice Project—A New Path: A Guide to the Challenges & Opportunities After Deportation,Immigrants,,Immigrants,not confirmed,,Formerly Incarcerated People,Formerly Incarcerated People,,,not_stated,,assumed,Immigrants; Formerly Incarcerated People; Everyone,True,False
+458,Emerald Isle Immigration Center (EIIC) - 1,Immigrants,Immigrants,,confirmed,Immigrants,Immigrants,Immigrants,,Immigrants,not_stated,,assumed,Immigrants; Everyone,False,False
+459,Emerald Isle Immigration Center (EIIC) - 2,Immigrants,Immigrants,,confirmed,Immigrants,Immigrants,Immigrants,,Immigrants,not_stated,,assumed,Immigrants; Everyone,False,False
+460,Emma’s Torch,Immigrants,Immigrants,,confirmed,,Immigrants; Survivors of violence,Immigrants; Survivors of violence,,Immigrants; Survivors of violence,not_stated,,assumed,Immigrants; Survivors of violence; Everyone,False,False
+461,Envision Freedom Fund,Immigrants,Immigrants,,confirmed,,Immigrants,Immigrants,,,not_stated,,assumed,Immigrants; Everyone,False,False
+462,Families for Freedom (FFF),Immigrants,Immigrants,,confirmed,,Immigrants,Immigrants,,,open,anyone,stated,Immigrants; Everyone,False,False
+463,Freedom for Immigrants,Immigrants,Immigrants,,confirmed,Immigrants,Immigrants,Immigrants,,Immigrants,not_stated,,assumed,Immigrants; Everyone,False,False
+464,Immigrant Defense Project,Immigrants,Immigrants,,confirmed,Immigrants,Immigrants,Immigrants,,Immigrants,not_stated,,assumed,Immigrants; Everyone,False,False
+465,Immigration Advocates Network (IAN)—National Immigration Legal Services Directory,Immigrants,Immigrants,,confirmed,Immigrants,Immigrants,Immigrants,,Immigrants,not_stated,,assumed,Immigrants; Everyone,False,False
+466,Immigration Equality,Immigrants,Immigrants,,confirmed,Immigrants,LGBTQI+; Immigrants,LGBTQI+; Immigrants,,Immigrants,not_stated,,assumed,Immigrants; LGBTQI+; Everyone,False,False
+467,Informed Immigrant,Immigrants,Immigrants,,confirmed,Immigrants,Immigrants,Immigrants,,Immigrants,not_stated,,assumed,Immigrants; Everyone,False,False
+468,Make the Road New York - 1,Immigrants,Immigrants,,confirmed,,Youth; LGBTQI+; Immigrants,Youth; LGBTQI+; Immigrants,,,not_stated,,assumed,Immigrants; Youth; LGBTQI+; Everyone,False,False
+469,Make the Road New York - 2,Immigrants,Immigrants,,confirmed,,,Youth; LGBTQI+; Immigrants,,,not_stated,,assumed,Immigrants; Youth; LGBTQI+; Everyone,False,False
+470,Make the Road New York - 3,Immigrants,Immigrants,,confirmed,,,Youth; LGBTQI+; Immigrants,,,not_stated,,assumed,Immigrants; Youth; LGBTQI+; Everyone,False,False
+471,Mercy Center—Immigration Services - 1,Immigrants,Immigrants,,confirmed,Immigrants,Immigrants,Immigrants,,Immigrants,not_stated,,assumed,Immigrants; Everyone,False,False
+472,Mercy Center—Immigration Services - 2,Immigrants,Immigrants,,confirmed,Immigrants,Immigrants,Immigrants,,Immigrants,not_stated,,assumed,Immigrants; Everyone,False,False
+473,Mixteca Organization Inc.,Immigrants,Immigrants,,confirmed,,Youth; Immigrants; Survivors of violence,Youth; Immigrants; Survivors of violence,,,not_stated,,assumed,Immigrants; Youth; Survivors of violence; Everyone,False,False
+474,The New York Historical—The Citizenship Project,Immigrants,Immigrants,,confirmed,,Immigrants,Immigrants,,,not_stated,,assumed,Immigrants; Everyone,False,False
+475,New Women New Yorkers (NWNY),Immigrants,Immigrants,,confirmed,Women,Women; Immigrants,Women; Immigrants,,Women,not_stated,,assumed,Immigrants; Women; Everyone,False,False
+476,Northern Manhattan Coalition for Immigrant Rights (NMCIR),Immigrants,Immigrants,,confirmed,Immigrants,Immigrants,Immigrants,,Immigrants,not_stated,,assumed,Immigrants; Everyone,False,False
+477,Opportunities for a Better Tomorrow (OBT),Immigrants,Immigrants,,confirmed,,Youth; Immigrants,Youth; Immigrants,,,not_stated,,assumed,Immigrants; Youth; Everyone,False,False
+478,Safe Passage Project,Immigrants,Immigrants,,confirmed,,Youth; Immigrants,Youth; Immigrants,,Immigrants,not_stated,,assumed,Immigrants; Youth; Everyone,False,False
+479,Team TLC NYC,Immigrants,Immigrants,,confirmed,,Immigrants,Immigrants,,Immigrants,not_stated,,assumed,Immigrants; Everyone,False,False
+480,UnLocal,Immigrants,Immigrants,,confirmed,,Women; LGBTQI+; Immigrants,Women; LGBTQI+; Immigrants,,,not_stated,,assumed,Immigrants; Women; LGBTQI+; Everyone,False,False
+481,Military and Trans Rights (website resource),Veterans,Veterans,,confirmed,LGBTQI+; Veterans,LGBTQI+; Veterans,,,LGBTQI+; Veterans,not_stated,,assumed,Veterans; LGBTQI+; Everyone,False,False
+482,US Department of Veterans Affairs (VA) - 1 (VA Regional Benefits Office),Veterans,Veterans,,confirmed,Veterans,Veterans; People with Disabilities; Formerly Incarcerated People; People without homes,Veterans; People with Disabilities; Formerly Incarcerated People; People without homes,,Veterans,not_stated,,assumed,Veterans; People with Disabilities; Formerly Incarcerated People; People without homes; Everyone,False,False
+483,"US Department of Veterans Affairs (VA) - 2 (Local Veterans Center, Bronx)",Veterans,Veterans,,confirmed,Veterans,Veterans,Veterans; People with Disabilities; Formerly Incarcerated People; People without homes,,Veterans,not_stated,,assumed,Veterans; People with Disabilities; Formerly Incarcerated People; People without homes; Everyone,False,False
+484,"US Department of Veterans Affairs (VA) - 3 (Local Veterans Center, Brooklyn)",Veterans,Veterans,,confirmed,Veterans,Veterans,Veterans; People with Disabilities; Formerly Incarcerated People; People without homes,,Veterans,not_stated,,assumed,Veterans; People with Disabilities; Formerly Incarcerated People; People without homes; Everyone,False,False
+485,"US Department of Veterans Affairs (VA) - 4 (Local Veterans Center, Manhattan)",Veterans,Veterans,,confirmed,Veterans,Veterans,Veterans; People with Disabilities; Formerly Incarcerated People; People without homes,,Veterans,not_stated,,assumed,Veterans; People with Disabilities; Formerly Incarcerated People; People without homes; Everyone,False,False
+486,"US Department of Veterans Affairs (VA) - 5 (Local Veterans Center, Ridgewood/Queens)",Veterans,Veterans,,confirmed,Veterans,Veterans,Veterans; People with Disabilities; Formerly Incarcerated People; People without homes,,Veterans,not_stated,,assumed,Veterans; People with Disabilities; Formerly Incarcerated People; People without homes; Everyone,False,False
+487,"US Department of Veterans Affairs (VA) - 6 (Local Veterans Center, Staten Island)",Veterans,Veterans,,confirmed,Veterans,Veterans,Veterans; People with Disabilities; Formerly Incarcerated People; People without homes,,Veterans,not_stated,,assumed,Veterans; People with Disabilities; Formerly Incarcerated People; People without homes; Everyone,False,False
+488,James J. Peters VA Medical Center,Veterans,,Veterans,not confirmed,,,,,,not_stated,,assumed,Veterans; Everyone,True,False
+489,NYS Department of Veterans’ Services,Veterans,Veterans,,confirmed,Veterans,Veterans; Formerly Incarcerated People,Veterans; Formerly Incarcerated People,,Veterans,not_stated,,assumed,Veterans; Formerly Incarcerated People; Everyone,False,False
+490,NYC Department of Veterans’ Services,Veterans,Veterans,,confirmed,Veterans,Veterans,Veterans,,Veterans,not_stated,,assumed,Veterans; Everyone,False,False
+491,NYC Department of Small Business Services—Priority1,Veterans,Veterans,,confirmed,,Veterans,Veterans,,,not_stated,,assumed,Veterans; Everyone,False,False
+492,About Face,Veterans,Veterans,,confirmed,,Veterans,Veterans,,,not_stated,,assumed,Veterans; Everyone,False,False
+493,American Immigration Lawyers Association (AILA)—Military Assistance Program (MAP),Veterans,Veterans,,confirmed,Veterans; Immigrants,Veterans; Immigrants,Veterans; Immigrants,,Veterans; Immigrants,not_stated,,assumed,Veterans; Immigrants; Everyone,False,False
+494,Black Veterans for Social Justice (BVSJ),Veterans,Veterans,,confirmed,Veterans,Veterans,Veterans,,Veterans,not_stated,,assumed,Veterans; Everyone,False,False
+495,City Bar Justice Center—Veterans Assistance Project,Veterans,Veterans,,confirmed,Veterans,Veterans; Formerly Incarcerated People,Veterans; Formerly Incarcerated People,,Veterans,not_stated,,assumed,Veterans; Formerly Incarcerated People; Everyone,False,False
+496,City University of New York (CUNY)—Office of Veterans Affairs (COVA),Veterans,Veterans,,confirmed,Veterans,Veterans,Veterans,,Veterans,not_stated,,assumed,Veterans; Everyone,False,False
+497,The GI Rights Hotline,Veterans,Veterans,,confirmed,,,Veterans,,,not_stated,,assumed,Veterans; Everyone,False,False
+498,Northeast ADA Center (inferred name — see note),People with Disabilities,People with Disabilities,,confirmed,,People with Disabilities,,,,not_stated,,assumed,People with Disabilities; Everyone,False,False
+499,Disability Rights New York,People with Disabilities,People with Disabilities,,confirmed,People with Disabilities,People with Disabilities,People with Disabilities,People with Disabilities,People with Disabilities,restricted,limited to disabilit,,People with Disabilities,True,False
+500,Disability Rights New York,People with Disabilities,People with Disabilities,,confirmed,People with Disabilities,People with Disabilities,People with Disabilities,People with Disabilities,People with Disabilities,restricted,limited to disabilit,,People with Disabilities,True,False
+501,JBI Library,People with Disabilities,People with Disabilities,,confirmed,,People with Disabilities,People with Disabilities,,People with Disabilities,not_stated,,assumed,People with Disabilities; Everyone,False,False
+502,The New York Public Library (NYPL)—Andrew Heiskell Braille and Talking Book Library,People with Disabilities,People with Disabilities,,confirmed,,People with Disabilities,People with Disabilities,,People with Disabilities,not_stated,,assumed,People with Disabilities; Everyone,False,False
+503,The New York Public Library (NYPL)—Services for People with Disabilities,People with Disabilities,People with Disabilities,,confirmed,People with Disabilities,People with Disabilities,People with Disabilities,,People with Disabilities,not_stated,,assumed,People with Disabilities; Everyone,False,False
+504,NYS Commission for the Blind (NYSCB),People with Disabilities,People with Disabilities,,confirmed,People with Disabilities,People with Disabilities,People with Disabilities,People with Disabilities,People with Disabilities,restricted,must be blind,,People with Disabilities,True,False
+505,NYS Department of Education—ACCES-VR (Vocational Rehabilitation) - 1 (Main/Albany),People with Disabilities,,People with Disabilities,not confirmed,,,,,,not_stated,,assumed,People with Disabilities; Everyone,True,False
+506,NYS Department of Education—ACCES-VR (Vocational Rehabilitation) - 2 (Bronx residents),People with Disabilities,,People with Disabilities,not confirmed,,,,,,not_stated,,assumed,People with Disabilities; Everyone,True,False
+507,NYS Department of Education—ACCES-VR (Vocational Rehabilitation) - 3 (Brooklyn residents),People with Disabilities,,People with Disabilities,not confirmed,,,,,,not_stated,,assumed,People with Disabilities; Everyone,True,False
+508,NYS Department of Education—ACCES-VR (Vocational Rehabilitation) - 4 (Manhattan residents),People with Disabilities,,People with Disabilities,not confirmed,,,,,,not_stated,,assumed,People with Disabilities; Everyone,True,False
+509,NYS Department of Education—ACCES-VR (Vocational Rehabilitation) - 5 (Harlem Office),People with Disabilities,,People with Disabilities,not confirmed,,,,,,not_stated,,assumed,People with Disabilities; Everyone,True,False
+510,NYS Department of Education—ACCES-VR (Vocational Rehabilitation) - 6 (Queens residents),People with Disabilities,,People with Disabilities,not confirmed,,,,,,not_stated,,assumed,People with Disabilities; Everyone,True,False
+511,NYS Department of Education—ACCES-VR (Vocational Rehabilitation) - 7 (Staten Island Office),People with Disabilities,,People with Disabilities,not confirmed,,,,,,not_stated,,assumed,People with Disabilities; Everyone,True,False
+512,NYS Office for People with Developmental Disabilities,People with Disabilities,People with Disabilities,,confirmed,People with Disabilities,People with Disabilities,People with Disabilities,,People with Disabilities,not_stated,,assumed,People with Disabilities; Everyone,False,False
+513,NYC Department of Transportation—Parking Permits for People with Disabilities,People with Disabilities,People with Disabilities,,confirmed,People with Disabilities,,,,People with Disabilities,not_stated,,assumed,People with Disabilities; Everyone,False,False
+514,NYC Mayor’s Office for People with Disabilities,People with Disabilities,People with Disabilities,,confirmed,People with Disabilities,,,,People with Disabilities,not_stated,,assumed,People with Disabilities; Everyone,False,False
+515,NYC Taxi and Limousine Commission—Accessibility Dispatch Program,People with Disabilities,,People with Disabilities,not confirmed,,,,,,not_stated,,assumed,People with Disabilities; Everyone,True,False
+516,Barrier Free Living,People with Disabilities,People with Disabilities,,confirmed,,Women; People with Disabilities; Survivors of violence,Women; People with Disabilities; Survivors of violence,,People with Disabilities; Survivors of violence,not_stated,,assumed,People with Disabilities; Women; Survivors of violence; Everyone,False,False
+517,Center for Hearing and Communication,People with Disabilities,People with Disabilities,,confirmed,,People with Disabilities,People with Disabilities,,People with Disabilities,not_stated,,assumed,People with Disabilities; Everyone,False,False
+518,The Deaf Hotline,People with Disabilities,People with Disabilities,,confirmed,People with Disabilities,Survivors of violence,Survivors of violence,,People with Disabilities,not_stated,,assumed,People with Disabilities; Survivors of violence; Everyone,False,False
+519,Fedcap Rehabilitation Services,People with Disabilities,People with Disabilities,,confirmed,,Veterans; People with Disabilities,Veterans; People with Disabilities,,Veterans; People with Disabilities,not_stated,,assumed,People with Disabilities; Veterans; Everyone,False,False
+520,Hearing Loss Association of America (HLAA)—NYC Chapter,People with Disabilities,,People with Disabilities,not confirmed,,,,,,not_stated,,assumed,People with Disabilities; Everyone,True,False
+521,Center for Independence of the Disabled in New York (CIDNY),People with Disabilities,People with Disabilities,,confirmed,,People with Disabilities,People with Disabilities,,People with Disabilities,open,all people,stated,People with Disabilities; Everyone,False,False
+522,Bronx Independent Living Services,People with Disabilities,People with Disabilities,,confirmed,People with Disabilities,People with Disabilities,People with Disabilities,,People with Disabilities,open,all people,stated,People with Disabilities; Everyone,False,False
+523,Brooklyn Center for Independence of the Disabled,People with Disabilities,People with Disabilities,,confirmed,,People with Disabilities,People with Disabilities,,People with Disabilities,open,all people,stated,People with Disabilities; Everyone,False,False
+524,Harlem Independent Living Center,People with Disabilities,People with Disabilities,,confirmed,People with Disabilities,People with Disabilities,People with Disabilities,,People with Disabilities,open,all people,stated,People with Disabilities; Everyone,False,False
+525,Queens Center for Independence of the Disabled NY,People with Disabilities,People with Disabilities,,confirmed,,People with Disabilities,People with Disabilities,,People with Disabilities,open,all people,stated,People with Disabilities; Everyone,False,False
+526,Staten Island Center for Independent Living,People with Disabilities,People with Disabilities,,confirmed,People with Disabilities,People with Disabilities,People with Disabilities,,People with Disabilities,open,all people,stated,People with Disabilities; Everyone,False,False
+527,Job Path,People with Disabilities,People with Disabilities,,confirmed,,People with Disabilities,People with Disabilities,,,not_stated,,assumed,People with Disabilities; Everyone,False,False
+528,Lighthouse Guild Vision Plus Health,People with Disabilities,People with Disabilities,,confirmed,,People with Disabilities,People with Disabilities,,People with Disabilities,open,all ages,stated,People with Disabilities; Everyone,False,False
+529,Metropolitan Transportation Authority (MTA),People with Disabilities,People with Disabilities,,confirmed,,People with Disabilities,People with Disabilities,,People with Disabilities,not_stated,,assumed,People with Disabilities; Everyone,False,False
+530,New York Center for Law and Justice—Legal Services Program,People with Disabilities,People with Disabilities,,confirmed,,Immigrants; People with Disabilities,Immigrants; People with Disabilities,,,not_stated,,assumed,People with Disabilities; Immigrants; Everyone,False,False
+531,New York County Lawyers Association (NYCLA)—Social Security SDNY Project,People with Disabilities,People with Disabilities,,confirmed,,People with Disabilities,People with Disabilities,,,not_stated,,assumed,People with Disabilities; Everyone,False,False
+532,The Partnership for Inclusive Disaster Strategies—Disability & Disaster Hotline,People with Disabilities,People with Disabilities,,confirmed,People with Disabilities,People with Disabilities,People with Disabilities,,People with Disabilities,not_stated,,assumed,People with Disabilities; Everyone,False,False
+533,Visions - 1 (Headquarters),People with Disabilities,People with Disabilities,,confirmed,,People with Disabilities; Parents & Caregivers,People with Disabilities; Parents & Caregivers,,,open,all ages,stated,People with Disabilities; Parents & Caregivers; Everyone,False,False
+534,Visions - 2 (at Selis Manor),People with Disabilities,People with Disabilities,,confirmed,,,People with Disabilities; Parents & Caregivers,,,open,all ages,stated,People with Disabilities; Parents & Caregivers; Everyone,False,False
+535,A Beautiful Heart Ministries,Women,Women,,confirmed,,Women; LGBTQI+; Formerly Incarcerated People,Women; LGBTQI+; Formerly Incarcerated People,,Women; Formerly Incarcerated People,not_stated,,assumed,Women; LGBTQI+; Formerly Incarcerated People; Everyone,False,False
+536,"Acacia Network—GreenHope Services for Women, Inc.",Women,Women,,confirmed,Women,Women; Parents & Caregivers,Women; Parents & Caregivers,,Women,not_stated,,assumed,Women; Parents & Caregivers; Everyone,False,False
+537,Hour Children,Parents & Caregivers; Women,Women,Parents & Caregivers,partly confirmed,,Women; Formerly Incarcerated People,Women; Formerly Incarcerated People,,,not_stated,,assumed,Parents & Caregivers; Women; Formerly Incarcerated People; Everyone,True,False
+538,The Ladies of Hope Ministries (The LOHM),Women,Women,,confirmed,,Women; Formerly Incarcerated People; Survivors of violence,Women; Formerly Incarcerated People; Survivors of violence,,Women; Formerly Incarcerated People,not_stated,,assumed,Women; Formerly Incarcerated People; Survivors of violence; Everyone,False,False
+539,Providence House,Women,Women,,confirmed,,Women,Women,,Women,not_stated,,assumed,Women; Everyone,False,False
+540,Rising Ground—Steps to End Family Violence,Women,,Women,not confirmed,,Survivors of violence,Survivors of violence,,Survivors of violence,not_stated,,assumed,Women; Survivors of violence; Everyone,True,False
+541,Volunteers of Legal Service (VOLS)—Incarcerated Mothers Law Project,Women,Women,,confirmed,Women,Women,Women,,Women,not_stated,,assumed,Women; Everyone,False,False
+542,Wildcat—The Women’s Project (TWP),Women,Women,,confirmed,Women,Women,Women,,Women,not_stated,,assumed,Women; Everyone,False,False
+543,Women’s Prison Association (WPA),Formerly Incarcerated People; Women,Formerly Incarcerated People; Women,,confirmed,Women,Women; Formerly Incarcerated People,Women; Formerly Incarcerated People,,Women; Formerly Incarcerated People,not_stated,,assumed,Formerly Incarcerated People; Women; Everyone,False,False
+544,"NYS Department of Health—Women, Infants, and Children (WIC) Program",Women,Women,,confirmed,Women,,,,Women,not_stated,,assumed,Women; Everyone,False,False
+545,NYC Mayor’s Office to Combat Domestic Violence—Family Justice Centers (FJC),Older People; Parents & Caregivers; Women,,Older People; Parents & Caregivers; Women,not confirmed,Survivors of violence,Immigrants; Survivors of violence,Immigrants; Survivors of violence,,Survivors of violence,open,regardless of,stated,Older People; Parents & Caregivers; Women; Survivors of violence; Immigrants; Everyone,True,False
+546,The Bowery Mission—Women’s Centers,Women,Women,,confirmed,Women,Women,Women,,Women,not_stated,,assumed,Women; Everyone,False,False
+547,NYS Cancer Services Program,Women,Women,,confirmed,,,Women,,,not_stated,,assumed,Women; Everyone,False,False
+548,MSK Ralph Lauren Center,Women,Women,,confirmed,,Women,Women,,Women,not_stated,,assumed,Women; Everyone,False,False
+549,Evelyn H. Lauder Breast Center,Women,Women,,confirmed,,,Women,,,not_stated,,assumed,Women; Everyone,False,False
+550,American-Italian Cancer Foundation’s Mammogram Bus,Women,Women,,confirmed,,Women,Women,,,not_stated,,assumed,Women; Everyone,False,False
+551,Crime Victims Treatment Center (CVTC),Women,,Women,not confirmed,Survivors of violence,Survivors of violence,Survivors of violence,,Survivors of violence,not_stated,,assumed,Women; Survivors of violence; Everyone,True,False
+552,Grace Institute,Women,Women,,confirmed,,Women,Women,,Women,not_stated,,assumed,Women; Everyone,False,False
+553,Hot Bread Kitchen,Women,Women,,confirmed,,Women; Immigrants,Women; Immigrants,,Women; Immigrants,not_stated,,assumed,Women; Immigrants; Everyone,False,False
+554,Nontraditional Employment for Women (NEW),Women,Women,,confirmed,Women,Women,Women,,Women,not_stated,,assumed,Women; Everyone,False,False
+555,Planned Parenthood of Greater New York,Women,,Women,not confirmed,,LGBTQI+; Immigrants,LGBTQI+; Immigrants,,,open,everyone,stated,Women; LGBTQI+; Immigrants; Everyone,True,False
+556,Safe Horizon,Parents & Caregivers; Women,,Parents & Caregivers; Women,not confirmed,,Survivors of violence,Survivors of violence,,Survivors of violence,open,anyone,stated,Parents & Caregivers; Women; Survivors of violence; Everyone,True,False
+557,Sakhi for South Asian Survivors,Women,,Women,not confirmed,,Youth; Immigrants,Youth; Immigrants,,,open,open to all,stated,Women; Youth; Immigrants; Everyone,True,False
+558,Win NYC,Parents & Caregivers; Women,Women,Parents & Caregivers,partly confirmed,,Women,Women,,Women,not_stated,,assumed,Parents & Caregivers; Women; Everyone,True,False
+559,American Cancer Society—New York,Women,,Women,not confirmed,,,,,,not_stated,,assumed,Women; Everyone,True,False
+560,The Growing Up Healthy Hotline,Women,,Women,not confirmed,,Youth,Youth,,,not_stated,,assumed,Women; Youth; Everyone,True,False
+561,Intimate Partner and Sexual Violence Helpline,Women,,Women,not confirmed,Survivors of violence,,,,Survivors of violence,not_stated,,assumed,Women; Survivors of violence; Everyone,True,False
+562,National Domestic Violence Hotline,Women,,Women,not confirmed,Survivors of violence,Survivors of violence,Survivors of violence,,Survivors of violence,open,anyone,stated,Women; Survivors of violence; Everyone,True,False
+563,Repro Legal Helpline,Women,,Women,not confirmed,,Youth; Immigrants,Youth; Immigrants,,,not_stated,,assumed,Women; Youth; Immigrants; Everyone,True,False
+564,StrongHearts Native Helpline,Women,,Women,not confirmed,,Survivors of violence,Survivors of violence,,,not_stated,,assumed,Women; Survivors of violence; Everyone,True,False
+565,Osborne Association—Elder Reentry Initiative Project (ERI),Older People,,Older People,not confirmed,Formerly Incarcerated People,,,,Formerly Incarcerated People,not_stated,,assumed,Older People; Formerly Incarcerated People; Everyone,True,False
+566,Brooklyn Public Library (BPL)—Services for Older Adults,Older People,Older People,,confirmed,Older People,Older People; People with Disabilities; Parents & Caregivers,Older People; People with Disabilities; Parents & Caregivers,,Older People,not_stated,,assumed,Older People; People with Disabilities; Parents & Caregivers; Everyone,False,False
+567,NYS Office of Children and Family Services—Adult Protective Services (APS),Older People,,Older People,not confirmed,,Parents & Caregivers; Survivors of violence,Parents & Caregivers; Survivors of violence,,,not_stated,,assumed,Older People; Parents & Caregivers; Survivors of violence; Everyone,True,False
+568,NYC Department for the Aging (DFTA),Older People,Older People,,confirmed,Older People,Older People; Parents & Caregivers; Survivors of violence,Older People; Parents & Caregivers; Survivors of violence,,Older People,not_stated,,assumed,Older People; Parents & Caregivers; Survivors of violence; Everyone,False,False
+569,Chinese-American Planning Council—Senior Services,Older People,Older People,,confirmed,Older People,Older People,,,Older People,not_stated,,assumed,Older People; Everyone,False,False
+570,Dorot,Older People,Older People,,confirmed,,Older People,Older People,,Older People,not_stated,,assumed,Older People; Everyone,False,False
+571,Metropolitan Transportation Authority (MTA)—Reduced-Fare Program,Older People,Older People,,confirmed,,Older People,Older People,,Older People,not_stated,,assumed,Older People; Everyone,False,False
+572,Reserve—Silver Stars Program,Older People,,Older People,not confirmed,,,,,,not_stated,,assumed,Older People; Everyone,True,False
+573,Senior Planet from AARP,Older People,Older People,,confirmed,Older People,Older People,Older People,,Older People,not_stated,,assumed,Older People; Everyone,False,False
+574,Service Program for Older People (SPOP),Older People,Older People,,confirmed,Older People,Older People,Older People,,Older People,open,all ages,stated,Older People; Everyone,False,False
+575,Services and Advocacy for LGBTQ+ Elders (SAGE),LGBTQI+; Older People,LGBTQI+,Older People,partly confirmed,LGBTQI+,LGBTQI+,LGBTQI+,,LGBTQI+,not_stated,,assumed,LGBTQI+; Older People; Everyone,True,False
+576,Volunteers of Legal Service (VOLS)—Senior Law Project,Older People,Older People,,confirmed,Older People,Older People,Older People,,Older People,not_stated,,assumed,Older People; Everyone,False,False
+577,"Health Insurance Information, Counseling, and Assistance Program (HIICAP)",Older People,Older People,,confirmed,,Older People; Formerly Incarcerated People,,,,not_stated,,assumed,Older People; Formerly Incarcerated People; Everyone,False,False
+578,Medicare,Older People,Older People,,confirmed,,Older People,Older People,,Older People,not_stated,,assumed,Older People; Everyone,False,False
+579,Elderly Pharmaceutical Insurance Coverage (EPIC),Older People,Older People,,confirmed,Older People,Older People,Older People,,Older People,not_stated,,assumed,Older People; Everyone,False,False
+580,Medicare Rights Center,Older People,Older People,,confirmed,,Older People; People with Disabilities,Older People; People with Disabilities,,Older People; People with Disabilities,not_stated,,assumed,Older People; People with Disabilities; Everyone,False,False
+581,NYC Housing Authority (NYCHA)—Family Reentry Program,Older People,,Older People,not confirmed,Formerly Incarcerated People,Formerly Incarcerated People,Formerly Incarcerated People,,Formerly Incarcerated People,not_stated,,assumed,Older People; Formerly Incarcerated People; Everyone,True,False
+582,Centers Healthcare,Older People,,Older People,not confirmed,,,,,,not_stated,,assumed,Older People; Everyone,True,False
+583,NYC Comptroller’s Office—LGBTQ+ Guide,LGBTQI+,LGBTQI+,,confirmed,LGBTQI+,LGBTQI+,LGBTQI+,,LGBTQI+,not_stated,,assumed,LGBTQI+; Everyone,False,False
+584,Advocates for Trans Equality (A4TE),LGBTQI+,LGBTQI+,,confirmed,LGBTQI+,LGBTQI+,LGBTQI+,,LGBTQI+,not_stated,,assumed,LGBTQI+; Everyone,False,False
+585,Ali Forney Center (AFC),LGBTQI+; Youth,LGBTQI+; Youth,,confirmed,,Youth; LGBTQI+; People without homes,Youth; LGBTQI+; People without homes,,,not_stated,,assumed,LGBTQI+; Youth; People without homes; Everyone,False,False
+586,Anti-Violence Project (AVP),LGBTQI+,LGBTQI+,,confirmed,,LGBTQI+; Survivors of violence,LGBTQI+; Survivors of violence,,LGBTQI+,not_stated,,assumed,LGBTQI+; Survivors of violence; Everyone,False,False
+587,Black & Pink NYC,LGBTQI+,LGBTQI+,,confirmed,,LGBTQI+; Formerly Incarcerated People,LGBTQI+; Formerly Incarcerated People,,,not_stated,,assumed,LGBTQI+; Formerly Incarcerated People; Everyone,False,False
+588,Callen-Lorde Community Health Center - 1 (Brooklyn),LGBTQI+,LGBTQI+,,confirmed,,Youth; Women; LGBTQI+,Youth; Women; LGBTQI+,,LGBTQI+,open,regardless of,stated,LGBTQI+; Youth; Women; Everyone,False,False
+589,Callen-Lorde Community Health Center - 2 (Manhattan),LGBTQI+,LGBTQI+,,confirmed,,,Youth; Women; LGBTQI+,,,open,regardless of,stated,LGBTQI+; Youth; Women; Everyone,False,False
+590,Center for Anti-Violence Education,LGBTQI+,LGBTQI+,,confirmed,,Youth; Women; LGBTQI+,Youth; Women; LGBTQI+,,Women; LGBTQI+,open,anyone,stated,LGBTQI+; Youth; Women; Everyone,False,False
+591,Chosen Family Law Center,LGBTQI+,LGBTQI+,,confirmed,,LGBTQI+; Parents & Caregivers,LGBTQI+; Parents & Caregivers,,,not_stated,,assumed,LGBTQI+; Parents & Caregivers; Everyone,False,False
+592,Destination Tomorrow,LGBTQI+,LGBTQI+,,confirmed,,Youth; LGBTQI+,Youth; LGBTQI+,,,not_stated,,assumed,LGBTQI+; Youth; Everyone,False,False
+593,Hetrick-Martin Institute (HMI),LGBTQI+; Youth,LGBTQI+; Youth,,confirmed,,Youth; LGBTQI+,Youth; LGBTQI+,Youth,Youth; LGBTQI+,restricted,ages 13–24,,LGBTQI+; Youth,True,False
+594,Identity House,LGBTQI+,LGBTQI+,,confirmed,,LGBTQI+,LGBTQI+,,LGBTQI+,not_stated,,assumed,LGBTQI+; Everyone,False,False
+595,Lambda Legal,LGBTQI+,LGBTQI+,,confirmed,,LGBTQI+,LGBTQI+,,LGBTQI+,not_stated,,assumed,LGBTQI+; Everyone,False,False
+596,"Lesbian, Gay, Bisexual, and Transgender Community Center (The Center)",LGBTQI+,LGBTQI+,,confirmed,LGBTQI+,Youth; LGBTQI+,Youth; LGBTQI+,,LGBTQI+,not_stated,,assumed,LGBTQI+; Youth; Everyone,False,False
+597,National Center for LGBTQ Rights (NCLR),LGBTQI+,LGBTQI+,,confirmed,LGBTQI+,LGBTQI+,LGBTQI+,,LGBTQI+,not_stated,,assumed,LGBTQI+; Everyone,False,False
+598,National Center for LGBTQ Rights (NCLR),LGBTQI+,LGBTQI+,,confirmed,LGBTQI+,LGBTQI+,LGBTQI+,,LGBTQI+,not_stated,,assumed,LGBTQI+; Everyone,False,False
+599,New Pride Agenda (NPA),LGBTQI+,LGBTQI+,,confirmed,,LGBTQI+,LGBTQI+,,LGBTQI+,not_stated,,assumed,LGBTQI+; Everyone,False,False
+600,NYC Health + Hospitals—LGBTQ+ Healthcare,LGBTQI+,LGBTQI+,,confirmed,LGBTQI+,Youth; Women; LGBTQI+,Youth; Women; LGBTQI+,,LGBTQI+,not_stated,,assumed,LGBTQI+; Youth; Women; Everyone,False,False
+601,Osborne Association (LGBTQIA+ Services),Formerly Incarcerated People; LGBTQI+; Parents & Caregivers; Youth,Formerly Incarcerated People; LGBTQI+,Parents & Caregivers; Youth,partly confirmed,LGBTQI+,LGBTQI+; Formerly Incarcerated People,LGBTQI+; Formerly Incarcerated People,,LGBTQI+,not_stated,,assumed,Formerly Incarcerated People; LGBTQI+; Parents & Caregivers; Youth; Everyone,True,False
+602,Point of Pride,LGBTQI+,LGBTQI+,,confirmed,,LGBTQI+,LGBTQI+,,LGBTQI+,not_stated,,assumed,LGBTQI+; Everyone,False,False
+603,Services and Advocacy for LGBTQ+ Elders (SAGE) - 1 (Main/General),LGBTQI+; Older People,LGBTQI+; Older People,,confirmed,LGBTQI+,LGBTQI+; Veterans; Older People,LGBTQI+; Veterans; Older People,,LGBTQI+,not_stated,,assumed,LGBTQI+; Older People; Veterans; Everyone,False,False
+604,Services and Advocacy for LGBTQ+ Elders (SAGE) - 2 (SAGE Center Bronx at Crotona Pride House),LGBTQI+; Older People,LGBTQI+; Older People,,confirmed,LGBTQI+,LGBTQI+; Veterans,LGBTQI+; Veterans; Older People,,LGBTQI+,not_stated,,assumed,LGBTQI+; Older People; Veterans; Everyone,False,False
+605,Services and Advocacy for LGBTQ+ Elders (SAGE) - 3 (SAGE Center Brooklyn at Stonewall House),LGBTQI+; Older People,LGBTQI+; Older People,,confirmed,LGBTQI+,LGBTQI+; Veterans,LGBTQI+; Veterans; Older People,,LGBTQI+,not_stated,,assumed,LGBTQI+; Older People; Veterans; Everyone,False,False
+606,Services and Advocacy for LGBTQ+ Elders (SAGE) - 4 (SAGE Center Harlem),LGBTQI+; Older People,LGBTQI+; Older People,,confirmed,LGBTQI+,LGBTQI+; Veterans,LGBTQI+; Veterans; Older People,,LGBTQI+,not_stated,,assumed,LGBTQI+; Older People; Veterans; Everyone,False,False
+607,Services and Advocacy for LGBTQ+ Elders (SAGE) - 5 (Edie Windsor SAGE Center),LGBTQI+; Older People,LGBTQI+; Older People,,confirmed,LGBTQI+,LGBTQI+; Veterans,LGBTQI+; Veterans; Older People,,LGBTQI+,not_stated,,assumed,LGBTQI+; Older People; Veterans; Everyone,False,False
+608,Services and Advocacy for LGBTQ+ Elders (SAGE) - 6 (SAGE-Pride Center of Staten Island),LGBTQI+; Older People,LGBTQI+; Older People,,confirmed,LGBTQI+,LGBTQI+; Veterans,LGBTQI+; Veterans; Older People,,LGBTQI+,not_stated,,assumed,LGBTQI+; Older People; Veterans; Everyone,False,False
+609,Sylvia Rivera Law Project,LGBTQI+,LGBTQI+,,confirmed,,LGBTQI+; Immigrants,LGBTQI+; Immigrants,,,not_stated,,assumed,LGBTQI+; Immigrants; Everyone,False,False
+610,Trans Lifeline,LGBTQI+,LGBTQI+,,confirmed,LGBTQI+,LGBTQI+,LGBTQI+,,LGBTQI+,not_stated,,assumed,LGBTQI+; Everyone,False,False
+611,Transgender Law Center (TLC),LGBTQI+,LGBTQI+,,confirmed,LGBTQI+,LGBTQI+; Immigrants; Formerly Incarcerated People,LGBTQI+; Immigrants; Formerly Incarcerated People,Formerly Incarcerated People,LGBTQI+,restricted,currently incarcerated people only,,LGBTQI+; Immigrants; Formerly Incarcerated People,True,False
+612,Scarleteen—Kicked Out: A Survival Guide (resource series),Youth,Youth,,confirmed,,Youth,,,Youth,not_stated,,assumed,Youth; Everyone,False,False
+613,Advocates for Children (AFC),Youth,Youth,,confirmed,,Youth; Immigrants; People with Disabilities; Parents & Caregivers; People without homes,Youth; Immigrants; People with Disabilities; Parents & Caregivers; People without homes,,,not_stated,,assumed,Youth; Immigrants; People with Disabilities; Parents & Caregivers; People without homes; Everyone,False,False
+614,The Animation Project (TAP),Youth,,Youth,not confirmed,,,,,Youth,not_stated,ages 18–24,assumed,Youth; Everyone,True,False
+615,Artistic Noise,Youth,Youth,,confirmed,,Youth; Formerly Incarcerated People; People without homes,Youth; Formerly Incarcerated People; People without homes,,Youth; People without homes,not_stated,,assumed,Youth; Formerly Incarcerated People; People without homes; Everyone,False,False
+616,Avenues for Justice (AFJ),Youth,Youth,,confirmed,,Youth,Youth,Youth,Youth,restricted,ages 13–24,,Youth,True,False
+617,BronxConnect,Youth,Youth,,confirmed,,Youth; Formerly Incarcerated People,Youth; Formerly Incarcerated People,,,not_stated,,assumed,Youth; Formerly Incarcerated People; Everyone,False,False
+618,"Center for Alternative Sentencing and Employment Services (CASES)—Education, Career & Enrichment (ECE)",Youth,Youth,,confirmed,,Youth,Youth,,Youth,not_stated,,assumed,Youth; Everyone,False,False
+619,Center for Community Alternatives (CCA)—Youth Services NYC,Youth,Youth,,confirmed,Youth,Youth,Youth,,Youth,not_stated,,assumed,Youth; Everyone,False,False
+620,The Children’s Village - 1 (Bronx),Youth,Youth,,confirmed,,Youth; Immigrants; People without homes,Youth; Immigrants; People without homes,,Youth; Immigrants,not_stated,,assumed,Youth; Immigrants; People without homes; Everyone,False,False
+621,The Children’s Village - 2 (Manhattan),Youth,Youth,,confirmed,,,Youth; Immigrants; People without homes,,,not_stated,,assumed,Youth; Immigrants; People without homes; Everyone,False,False
+622,Elite Learners—Reentry Services - 1 (Headquarters),Youth,Youth,,confirmed,Formerly Incarcerated People,Youth,Youth,,Formerly Incarcerated People; Youth,not_stated,,assumed,Youth; Formerly Incarcerated People; Everyone,False,False
+623,Elite Learners—Reentry Services - 2 (Anti-Violence Hub),Youth,Youth,,confirmed,Formerly Incarcerated People,Formerly Incarcerated People,Youth,,Formerly Incarcerated People,not_stated,,assumed,Youth; Formerly Incarcerated People; Everyone,False,False
+624,Elite Learners—Reentry Services - 3 (Brownsville Office),Youth,Youth,,confirmed,Formerly Incarcerated People,Formerly Incarcerated People,Youth,,Formerly Incarcerated People,not_stated,,assumed,Youth; Formerly Incarcerated People; Everyone,False,False
+625,Exalt Youth,Youth,Youth,,confirmed,Youth,Youth,Youth,Youth,Youth,restricted,ages 15–19,,Youth,True,False
+626,Exodus Transitional Community—Women & Girls Project,Youth,,Youth,not confirmed,Women,Women; Formerly Incarcerated People,Women; Formerly Incarcerated People,,Women; Youth,not_stated,ages 15–24,assumed,Youth; Women; Formerly Incarcerated People; Everyone,True,False
+627,Getting Out and Staying Out (GOSO),Formerly Incarcerated People; Youth,Formerly Incarcerated People; Youth,,confirmed,,Youth; Formerly Incarcerated People,Youth; Formerly Incarcerated People,Youth,Youth,restricted,ages 16–24,,Formerly Incarcerated People; Youth,True,False
+628,Getting Out and Staying Out (GOSO),Formerly Incarcerated People; Youth,Formerly Incarcerated People; Youth,,confirmed,,,Youth; Formerly Incarcerated People,Youth,,restricted,ages 16–24,,Formerly Incarcerated People; Youth,True,False
+629,Girl Vow,Youth,Youth,,confirmed,Women,Youth; LGBTQI+; People without homes,Youth; LGBTQI+; People without homes,,Women; Youth; LGBTQI+; People without homes,not_stated,,assumed,Youth; Women; LGBTQI+; People without homes; Everyone,False,False
+630,How Our Lives Link Altogether (H.O.L.L.A!),Youth,Youth,,confirmed,,Youth; LGBTQI+,Youth; LGBTQI+,,,not_stated,,assumed,Youth; LGBTQI+; Everyone,False,False
+631,Osborne Association (Children of Incarcerated Parents),Formerly Incarcerated People; LGBTQI+; Parents & Caregivers; Youth,Formerly Incarcerated People; Parents & Caregivers,LGBTQI+; Youth,partly confirmed,Parents & Caregivers,Parents & Caregivers; Formerly Incarcerated People,Parents & Caregivers; Formerly Incarcerated People,,Parents & Caregivers,not_stated,,assumed,Formerly Incarcerated People; LGBTQI+; Parents & Caregivers; Youth; Everyone,True,False
+632,Police Athletic League (PAL)—Juvenile Justice - 1 (Brooklyn — MAAP),Youth,Youth,,confirmed,,Youth,Youth,Youth,Youth,restricted,ages 12–21,,Youth,True,False
+633,Police Athletic League (PAL)—Juvenile Justice - 2 (Harlem — Teen Programming),Youth,Youth,,confirmed,Youth,Youth,Youth,Youth,Youth,restricted,ages 13–19,,Youth,True,False
+634,Possibility Project—Youth Justice Program,Youth,Youth,,confirmed,Youth,Youth,Youth,Youth,Youth,restricted,ages 15–21,,Youth,True,False
+635,Youth Justice Network - 1 (Main Office—Harlem),Youth,Youth,,confirmed,Youth,Youth; Formerly Incarcerated People,Youth; Formerly Incarcerated People,Youth,Youth,restricted,ages 16–24,,Youth; Formerly Incarcerated People,True,False
+636,Youth Justice Network - 2 (Bronx Office),Youth,Youth,,confirmed,Youth,Youth,Youth; Formerly Incarcerated People,Youth,Youth,restricted,ages 16–24,,Youth; Formerly Incarcerated People,True,False
+637,Youth Justice Network - 3 (Brooklyn Office),Youth,Youth,,confirmed,Youth,Youth,Youth; Formerly Incarcerated People,Youth,Youth,restricted,ages 16–24,,Youth; Formerly Incarcerated People,True,False
+638,Youth Justice Network - 4 (Family Matters Office),Youth,Youth,,confirmed,Youth,Youth,Youth; Formerly Incarcerated People,Youth,Youth,restricted,ages 16–24,,Youth; Formerly Incarcerated People,True,False
+639,Youth Represent,Youth,Youth,,confirmed,Youth,Youth,Youth,,Youth,not_stated,,assumed,Youth; Everyone,False,False
+640,Brooklyn Public Library (BPL)—Youth & Family Services,Youth,Youth,,confirmed,Youth,Youth; People with Disabilities,Youth; People with Disabilities,,Youth,not_stated,,assumed,Youth; People with Disabilities; Everyone,False,False
+641,NYC Administration for Children’s Services (ACS)—Juvenile Justice,Youth,,Youth,not confirmed,,,,,,not_stated,,assumed,Youth; Everyone,True,False
+642,NYC Department of Youth and Community Development (DYCD),Youth,Youth,,confirmed,Youth,Youth,Youth,,Youth,not_stated,,assumed,Youth; Everyone,False,False
+643,NYC Health—NYC Teenspace,Youth,Youth,,confirmed,,Youth; Parents & Caregivers,Youth; Parents & Caregivers,Youth,Youth,mixed,ages 13–17 | regardless of,stated,Youth; Parents & Caregivers; Everyone,True,False
+644,Ali Forney Center (AFC) - 1 (Headquarters),LGBTQI+; Youth,LGBTQI+; Youth,,confirmed,,Youth; LGBTQI+; People without homes,Youth; LGBTQI+; People without homes,,,not_stated,,assumed,LGBTQI+; Youth; People without homes; Everyone,False,False
+645,Ali Forney Center (AFC) - 2 (Drop-In Center),LGBTQI+; Youth,LGBTQI+; Youth,,confirmed,,,Youth; LGBTQI+; People without homes,,,not_stated,,assumed,LGBTQI+; Youth; People without homes; Everyone,False,False
+646,Covenant House New York,Youth,Youth,,confirmed,,Youth; People without homes,Youth; People without homes,Youth,Youth; People without homes,restricted,ages 16–21,,Youth; People without homes,True,False
+647,The Door,Youth,Youth,,confirmed,,Youth,Youth,Youth,Youth,restricted,ages 12–24,,Youth,True,False
+648,Generation NYC,Youth,Youth,,confirmed,,Youth,Youth,,Youth,not_stated,,assumed,Youth; Everyone,False,False
+649,Girls Educational and Mentoring Services (GEMS),Youth,,Youth,not confirmed,Women,Women; Survivors of violence,Women; Survivors of violence,,Women,not_stated,,assumed,Youth; Women; Survivors of violence; Everyone,True,False
+650,Hetrick-Martin Institute (HMI),LGBTQI+; Youth,LGBTQI+; Youth,,confirmed,,Youth; LGBTQI+; People without homes,Youth; LGBTQI+; People without homes,Youth,Youth; LGBTQI+,restricted,ages 13–24,,LGBTQI+; Youth; People without homes,True,False
+651,Love Is Respect,Youth,Youth,,confirmed,,Youth; Survivors of violence,Youth; Survivors of violence,,Youth,not_stated,,assumed,Youth; Survivors of violence; Everyone,False,False
+652,Safe Horizon—Streetwork Project Drop-In Centers - 1 (Harlem),Youth,Youth,,confirmed,,Youth; People without homes,Youth; People without homes,,,not_stated,,assumed,Youth; People without homes; Everyone,False,False
+653,Safe Horizon—Streetwork Project Drop-In Centers - 2 (Lower East Side),Youth,Youth,,confirmed,,,Youth; People without homes,,,not_stated,,assumed,Youth; People without homes; Everyone,False,False
+654,Sam & Devorah Foundation for Trans Youth—Trans Mentor Project,Youth,Youth,,confirmed,Youth; LGBTQI+,Youth; LGBTQI+,Youth; LGBTQI+,Youth,Youth; LGBTQI+,restricted,ages 13–24,,Youth; LGBTQI+,True,False
+655,The Trevor Project,Youth,Youth,,confirmed,,Youth; LGBTQI+,Youth; LGBTQI+,,,not_stated,,assumed,Youth; LGBTQI+; Everyone,False,False
+656,Unfriend the NYPD,Youth,Youth,,confirmed,,Youth,Youth,,Youth,not_stated,,assumed,Youth; Everyone,False,False
+657,WhatsOK,Youth,Youth,,confirmed,,Youth,Youth,Youth,Youth,restricted,ages 14–21,,Youth,True,False
+658,The Child Center of NY,Parents & Caregivers,Parents & Caregivers,,confirmed,,Youth; People with Disabilities; Parents & Caregivers,Youth; People with Disabilities; Parents & Caregivers,,,not_stated,,assumed,Parents & Caregivers; Youth; People with Disabilities; Everyone,False,False
+659,"Children of Promise, NYC (CPNYC) - 1 (Bronx)",Parents & Caregivers,Parents & Caregivers,,confirmed,,Parents & Caregivers; Formerly Incarcerated People,Parents & Caregivers; Formerly Incarcerated People,,Formerly Incarcerated People,not_stated,,assumed,Parents & Caregivers; Formerly Incarcerated People; Everyone,False,False
+660,"Children of Promise, NYC (CPNYC) - 2 (Brooklyn)",Parents & Caregivers,Parents & Caregivers,,confirmed,,,Parents & Caregivers; Formerly Incarcerated People,,,not_stated,,assumed,Parents & Caregivers; Formerly Incarcerated People; Everyone,False,False
+661,Children’s Aid,Parents & Caregivers,Parents & Caregivers,,confirmed,,Youth; Parents & Caregivers,Youth; Parents & Caregivers,,Youth,not_stated,,assumed,Parents & Caregivers; Youth; Everyone,False,False
+662,Community Connections for Youth (CCFY)—Parent Peer Support Program,Parents & Caregivers,Parents & Caregivers,,confirmed,Youth; Parents & Caregivers,Youth; Parents & Caregivers,Youth; Parents & Caregivers,,Youth; Parents & Caregivers,not_stated,,assumed,Parents & Caregivers; Youth; Everyone,False,False
+663,Hour Children,Parents & Caregivers; Women,Parents & Caregivers; Women,,confirmed,,Youth; Women; Parents & Caregivers; Formerly Incarcerated People,Youth; Women; Parents & Caregivers; Formerly Incarcerated People,,,not_stated,,assumed,Parents & Caregivers; Women; Youth; Formerly Incarcerated People; Everyone,False,False
+664,National Resource Center on Children and Families of the Incarcerated,Parents & Caregivers,Parents & Caregivers,,confirmed,,Parents & Caregivers,Parents & Caregivers,,Parents & Caregivers,not_stated,,assumed,Parents & Caregivers; Everyone,False,False
+665,Osborne Association (Caregiver Support Groups & Reentry Case Management),Formerly Incarcerated People; LGBTQI+; Parents & Caregivers; Youth,Formerly Incarcerated People; Parents & Caregivers; Youth,LGBTQI+,partly confirmed,Parents & Caregivers; Formerly Incarcerated People,Youth; Women; Parents & Caregivers; Formerly Incarcerated People,Youth; Women; Parents & Caregivers; Formerly Incarcerated People,,Parents & Caregivers; Formerly Incarcerated People; Women,not_stated,,assumed,Formerly Incarcerated People; LGBTQI+; Parents & Caregivers; Youth; Women; Everyone,True,False
+666,Single Parent Resource Center,Parents & Caregivers,Parents & Caregivers,,confirmed,Parents & Caregivers,Parents & Caregivers; Formerly Incarcerated People,Parents & Caregivers; Formerly Incarcerated People,,Parents & Caregivers,not_stated,,assumed,Parents & Caregivers; Formerly Incarcerated People; Everyone,False,False
+667,NYC Public Libraries—Culture Pass,Parents & Caregivers,,Parents & Caregivers,not confirmed,,,,,,not_stated,,assumed,Parents & Caregivers; Everyone,True,False
+668,The New York Public Library (NYPL)—Family & Cultural Programming,Parents & Caregivers,,Parents & Caregivers,not confirmed,,Youth,Youth,,Youth,open,all ages,stated,Parents & Caregivers; Youth; Everyone,True,False
+669,Brooklyn Public Library (BPL)—Justice Initiatives—TeleStory,Parents & Caregivers,,Parents & Caregivers,not confirmed,,,,,,not_stated,,assumed,Parents & Caregivers; Everyone,True,False
+670,NYS Council on Children and Families (CCF)—Help Hub for Families,Parents & Caregivers,,Parents & Caregivers,not confirmed,,People with Disabilities,People with Disabilities,,,not_stated,,assumed,Parents & Caregivers; People with Disabilities; Everyone,True,False
+671,NYC Department of Education (DOE)—Infant and Toddler Programs,Parents & Caregivers,Parents & Caregivers,,confirmed,,Parents & Caregivers,Parents & Caregivers,,Parents & Caregivers,not_stated,,assumed,Parents & Caregivers; Everyone,False,False
+672,NYC Mayor’s Office to Combat Domestic Violence—Family Justice Centers (FJC) - 1 (Bronx),Older People; Parents & Caregivers; Women,,Older People; Parents & Caregivers; Women,not confirmed,Survivors of violence,Immigrants; Survivors of violence,Immigrants; Survivors of violence,,Survivors of violence,open,regardless of,stated,Older People; Parents & Caregivers; Women; Survivors of violence; Immigrants; Everyone,True,False
+673,NYC Mayor’s Office to Combat Domestic Violence—Family Justice Centers (FJC) - 2 (Brooklyn),Older People; Parents & Caregivers; Women,,Older People; Parents & Caregivers; Women,not confirmed,Survivors of violence,Survivors of violence,Immigrants; Survivors of violence,,Survivors of violence,open,regardless of,stated,Older People; Parents & Caregivers; Women; Survivors of violence; Immigrants; Everyone,True,False
+674,NYC Mayor’s Office to Combat Domestic Violence—Family Justice Centers (FJC) - 3 (Manhattan),Older People; Parents & Caregivers; Women,,Older People; Parents & Caregivers; Women,not confirmed,Survivors of violence,Survivors of violence,Immigrants; Survivors of violence,,Survivors of violence,open,regardless of,stated,Older People; Parents & Caregivers; Women; Survivors of violence; Immigrants; Everyone,True,False
+675,NYC Mayor’s Office to Combat Domestic Violence—Family Justice Centers (FJC) - 4 (Queens/Kew Gardens),Older People; Parents & Caregivers; Women,,Older People; Parents & Caregivers; Women,not confirmed,Survivors of violence,Survivors of violence,Immigrants; Survivors of violence,,Survivors of violence,open,regardless of,stated,Older People; Parents & Caregivers; Women; Survivors of violence; Immigrants; Everyone,True,False
+676,NYC Mayor’s Office to Combat Domestic Violence—Family Justice Centers (FJC) - 5 (Staten Island),Older People; Parents & Caregivers; Women,,Older People; Parents & Caregivers; Women,not confirmed,Survivors of violence,Survivors of violence,Immigrants; Survivors of violence,,Survivors of violence,open,regardless of,stated,Older People; Parents & Caregivers; Women; Survivors of violence; Immigrants; Everyone,True,False
+677,New York Foundling,Parents & Caregivers,Parents & Caregivers,,confirmed,,Youth; Parents & Caregivers; Formerly Incarcerated People,Youth; Parents & Caregivers; Formerly Incarcerated People,,,not_stated,,assumed,Parents & Caregivers; Youth; Formerly Incarcerated People; Everyone,False,False
+678,Safe Horizon,Parents & Caregivers; Women,Women,Parents & Caregivers,partly confirmed,,Women; LGBTQI+; Immigrants; Survivors of violence,Women; LGBTQI+; Immigrants; Survivors of violence,,Survivors of violence,open,all ages,stated,Parents & Caregivers; Women; LGBTQI+; Immigrants; Survivors of violence; Everyone,True,False
+679,Sanctuary for Families,Parents & Caregivers,Parents & Caregivers,,confirmed,,Youth; Women; Parents & Caregivers; Survivors of violence,Youth; Women; Parents & Caregivers; Survivors of violence,,Survivors of violence,not_stated,,assumed,Parents & Caregivers; Youth; Women; Survivors of violence; Everyone,False,False
+680,SCO Family of Services,Parents & Caregivers,,Parents & Caregivers,not confirmed,,Youth; Women; People with Disabilities,Youth; Women; People with Disabilities,,,not_stated,,assumed,Parents & Caregivers; Youth; Women; People with Disabilities; Everyone,True,False
+681,United Activities Unlimited (UAU)—Fatherhood Matters,Parents & Caregivers,,Parents & Caregivers,not confirmed,,,,,,not_stated,,assumed,Parents & Caregivers; Everyone,True,False
+682,Win NYC,Parents & Caregivers; Women,Women,Parents & Caregivers,partly confirmed,,Women,Women; People without homes,,Women,not_stated,,assumed,Parents & Caregivers; Women; People without homes; Everyone,True,False
+683,Center for Family Representation (CFR) - 1 (Administrative and Manhattan Office),Parents & Caregivers,Parents & Caregivers,,confirmed,,Youth; Parents & Caregivers,Youth; Parents & Caregivers,,,not_stated,,assumed,Parents & Caregivers; Youth; Everyone,False,False
+684,Center for Family Representation (CFR) - 2 (Bronx Office),Parents & Caregivers,Parents & Caregivers,,confirmed,,,Youth; Parents & Caregivers,,,not_stated,,assumed,Parents & Caregivers; Youth; Everyone,False,False
+685,Center for Family Representation (CFR) - 3 (Queens Community Office),Parents & Caregivers,Parents & Caregivers,,confirmed,,,Youth; Parents & Caregivers,,,not_stated,,assumed,Parents & Caregivers; Youth; Everyone,False,False
+686,Center for Family Representation (CFR) - 4 (Staten Island Office),Parents & Caregivers,Parents & Caregivers,,confirmed,,,Youth; Parents & Caregivers,,,not_stated,,assumed,Parents & Caregivers; Youth; Everyone,False,False
+687,Family Legal Care,Parents & Caregivers,Parents & Caregivers,,confirmed,,Youth; Parents & Caregivers; Formerly Incarcerated People,Youth; Parents & Caregivers,,,not_stated,,assumed,Parents & Caregivers; Youth; Formerly Incarcerated People; Everyone,False,False
+688,NYC Administration for Children’s Services (ACS)—Office of Advocacy,Parents & Caregivers,Parents & Caregivers,,confirmed,,Parents & Caregivers,Parents & Caregivers,,,not_stated,,assumed,Parents & Caregivers; Everyone,False,False
+689,NYS Office of Temporary and Disability Assistance—Child Support Services,Parents & Caregivers,Parents & Caregivers,,confirmed,People with Disabilities,Parents & Caregivers,Parents & Caregivers,,People with Disabilities,not_stated,,assumed,Parents & Caregivers; People with Disabilities; Everyone,False,False
+690,NYC Human Resources Administration (HRA)—Office of Child Support Services (OCSS) - 1 (Manhattan — Customer Services Walk-In Center),Parents & Caregivers,Parents & Caregivers,,confirmed,,Parents & Caregivers,Parents & Caregivers,,Parents & Caregivers,not_stated,,assumed,Parents & Caregivers; Everyone,False,False
+691,NYC Human Resources Administration (HRA)—Office of Child Support Services (OCSS) - 2 (Bronx Borough Office),Parents & Caregivers,Parents & Caregivers,,confirmed,,,Parents & Caregivers,,,not_stated,,assumed,Parents & Caregivers; Everyone,False,False
+692,NYC Human Resources Administration (HRA)—Office of Child Support Services (OCSS) - 3 (Brooklyn Borough Office),Parents & Caregivers,Parents & Caregivers,,confirmed,,,Parents & Caregivers,,,not_stated,,assumed,Parents & Caregivers; Everyone,False,False
+693,NYC Human Resources Administration (HRA)—Office of Child Support Services (OCSS) - 4 (Manhattan/Staten Island Borough Office),Parents & Caregivers,Parents & Caregivers,,confirmed,,,Parents & Caregivers,,,not_stated,,assumed,Parents & Caregivers; Everyone,False,False
+694,NYC Human Resources Administration (HRA)—Office of Child Support Services (OCSS) - 5 (Queens Borough Office),Parents & Caregivers,Parents & Caregivers,,confirmed,,,Parents & Caregivers,,,not_stated,,assumed,Parents & Caregivers; Everyone,False,False
+695,Child Find of America—Parent Help,Parents & Caregivers,Parents & Caregivers,,confirmed,Parents & Caregivers,Parents & Caregivers,Parents & Caregivers,,Parents & Caregivers,not_stated,,assumed,Parents & Caregivers; Everyone,False,False
+696,Community Mediation Services (CMS),Parents & Caregivers,,Parents & Caregivers,not confirmed,,Youth,Youth,,,not_stated,,assumed,Parents & Caregivers; Youth; Everyone,True,False
+697,NYS Child Protective Services Abuse Hotline,Parents & Caregivers,,Parents & Caregivers,not confirmed,,,,,,not_stated,,assumed,Parents & Caregivers; Everyone,True,False
+698,NYS Domestic and Sexual Violence Hotline,Parents & Caregivers,,Parents & Caregivers,not confirmed,Survivors of violence,,,,Survivors of violence,not_stated,,assumed,Parents & Caregivers; Survivors of violence; Everyone,True,False
+699,NYC Health—Child Care,Parents & Caregivers,,Parents & Caregivers,not confirmed,,,,,,not_stated,,assumed,Parents & Caregivers; Everyone,True,False
+700,Growing Up NYC,Parents & Caregivers,,Parents & Caregivers,not confirmed,,Youth,,,,not_stated,,assumed,Parents & Caregivers; Youth; Everyone,True,False
+701,National Parent & Youth Helpline,Parents & Caregivers,Parents & Caregivers,,confirmed,Youth; Parents & Caregivers,Youth; Parents & Caregivers,Youth; Parents & Caregivers,,Youth; Parents & Caregivers,open,all ages,stated,Parents & Caregivers; Youth; Everyone,False,False
+702,BronxWorks [CORRECTED/COMPLETE -- replaces BronxWorks--Immigration Services pointer row from Segment 8 file],,,,,Immigrants,Youth; Immigrants; Older People; People without homes,Youth; Immigrants; Older People; People without homes,,Immigrants,not_stated,,assumed,Immigrants; Youth; Older People; People without homes; Everyone,False,False
+703,Center for Employment Opportunities (CEO) [PARTIAL/POINTER ONLY -- full listing on page 31 not yet captured],Formerly Incarcerated People,,Formerly Incarcerated People,not confirmed,,,,,,not_stated,,assumed,Formerly Incarcerated People; Everyone,True,False
+704,Defy Ventures,Formerly Incarcerated People,Formerly Incarcerated People,,confirmed,,Formerly Incarcerated People,Formerly Incarcerated People,,,not_stated,,assumed,Formerly Incarcerated People; Everyone,False,False
+705,"The Doe Fund--Ready, Willing & Able",,,,,,Formerly Incarcerated People; People without homes,Formerly Incarcerated People; People without homes,,Formerly Incarcerated People; People without homes,not_stated,,assumed,Formerly Incarcerated People; People without homes; Everyone,False,False
+706,Drive Change,Formerly Incarcerated People,Formerly Incarcerated People,,confirmed,,Youth; Formerly Incarcerated People,Youth; Formerly Incarcerated People,Youth,Youth; Formerly Incarcerated People,restricted,ages 18-25,,Formerly Incarcerated People; Youth,True,False
+707,Exponents [PARTIAL/POINTER ONLY -- full listing on page 34 not yet captured],Formerly Incarcerated People,,Formerly Incarcerated People,not confirmed,,,,,,not_stated,,assumed,Formerly Incarcerated People; Everyone,True,False
+708,The Horticultural Society of New York (The Hort)--HortNYC (Horticulture and Open Streets Resident Training in NYC),,,,,,Youth; Formerly Incarcerated People,Youth; Formerly Incarcerated People,,,open,all ages,stated,Youth; Formerly Incarcerated People; Everyone,False,False
+709,Nadap,,,,,,Youth,Youth,,,not_stated,,assumed,Youth; Everyone,False,False
+710,The New York Public Library (NYPL)--Career Services - 1 (Stavros Niarchos Foundation Library / SNFL),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+711,The New York Public Library (NYPL)--Career Services - 2 (Bronx Library Center),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+712,Brooklyn Public Library (BPL)--Business & Career Services,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+713,Queens Public Library--Job & Business Academy (JBA),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+714,NYS Department of Labor--Federal Bonding Program,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+715,NYC Department of Small Business Services--Workforce 1 (WF1) Career Centers,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+716,NYC Housing Authority (NYCHA)--Jobs-Plus -- East Side House,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+717,NYC Housing Authority (NYCHA)--Jobs-Plus -- BronxWorks,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+718,NYC Housing Authority (NYCHA)--Jobs-Plus -- Bedford Stuyvesant Restoration Corporation,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+719,NYC Housing Authority (NYCHA)--Jobs-Plus -- America Works of New York (Brooklyn),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+720,NYC Housing Authority (NYCHA)--Jobs-Plus -- FEDCAP,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+721,NYC Housing Authority (NYCHA)--Jobs-Plus -- NYCHA REES,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+722,NYC Housing Authority (NYCHA)--Jobs-Plus -- Henry Street Settlement,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+723,NYC Housing Authority (NYCHA)--Jobs-Plus -- America Works of New York (Queens),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+724,NYC Housing Authority (NYCHA)--Jobs-Plus -- Urban Upbound (Astoria),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+725,NYC Housing Authority (NYCHA)--Jobs-Plus -- Urban Upbound (Long Island City),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+726,NYC Housing Authority (NYCHA)--Jobs-Plus -- Equus Workforce Solutions,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+727,America Works,,,,,,Veterans,Veterans,,,not_stated,,assumed,Veterans; Everyone,False,False
+728,Black Veterans for Social Justice (BVSJ)--Homeless Veterans' Reintegration Program (HVRP),,,,,Veterans; People without homes,Veterans; People without homes,Veterans; People without homes,,Veterans; People without homes,not_stated,,assumed,Veterans; People without homes; Everyone,False,False
+729,Brooklyn Workforce Innovations (BWI),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+730,Dress for Success--New York Program,,,,,,Women,Women,,Women,not_stated,,assumed,Women; Everyone,False,False
+731,EPRA--Job Placement Services,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+732,Goodwill NYNJ--Workforce Development,,,,,,People with Disabilities,People with Disabilities,,,not_stated,,assumed,People with Disabilities; Everyone,False,False
+733,The Hope Program,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+734,The Hope Program,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+735,Hot Bread Kitchen [CORRECTED/COMPLETE -- replaces Hot Bread Kitchen pointer row from Segment 11 file],Women,Women,,confirmed,,Women; Immigrants,Women; Immigrants,,Women; Immigrants,not_stated,,assumed,Women; Immigrants; Everyone,False,False
+736,Nontraditional Employment for Women (NEW) [CORRECTED/COMPLETE -- replaces Nontraditional Employment for Women (NEW) pointer row from Segment 11 file],Women,Women,,confirmed,Women,Women,Women,,Women,not_stated,,assumed,Women; Everyone,False,False
+737,Opportunities for a Better Tomorrow (OBT) [CORRECTED/COMPLETE -- replaces OBT pointer rows from Segment 8 and Segment 11 files] - 1 (Bushwick Office),Immigrants,,Immigrants,not confirmed,,Youth,Youth,,Youth,not_stated,,assumed,Immigrants; Youth; Everyone,True,False
+738,Opportunities for a Better Tomorrow (OBT) [CORRECTED/COMPLETE -- replaces OBT pointer rows from Segment 8 and Segment 11 files] - 2 (Sunset Park Office),Immigrants,,Immigrants,not confirmed,,,Youth,,,not_stated,,assumed,Immigrants; Youth; Everyone,True,False
+739,Opportunities for a Better Tomorrow (OBT) [CORRECTED/COMPLETE -- replaces OBT pointer rows from Segment 8 and Segment 11 files] - 3 (Innovation Lab),Immigrants,,Immigrants,not confirmed,,,Youth,,,not_stated,,assumed,Immigrants; Youth; Everyone,True,False
+740,Opportunities for a Better Tomorrow (OBT) [CORRECTED/COMPLETE -- replaces OBT pointer rows from Segment 8 and Segment 11 files] - 4 (Jamaica Office),Immigrants,,Immigrants,not confirmed,,,Youth,,,not_stated,,assumed,Immigrants; Youth; Everyone,True,False
+741,Streetwise Partners,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+742,Strive International,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+743,Workers Defense League (WDL),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+744,Legal Action Center--National H.I.R.E. Network,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+745,Bureau of Labor Statistics--The Occupational Outlook Handbook,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+746,NYS Department of Labor,,,,,,Veterans,Veterans,,,not_stated,,assumed,Veterans; Everyone,False,False
+747,NYS Department of Labor--CareerZone,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+748,"Jobs NYC [NOTE: no description text follows this entry in the source -- may be a bare listing, or may be cut off at the end of this chapter/segment]",,,,,,,,,,not_stated,,assumed,Everyone,False,False
+749,NYC Department of Consumer and Worker Protection (DCWP),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+750,NYC Small Business Services,,,,,,Women,Women,,,not_stated,,assumed,Women; Everyone,False,False
+751,Business Outreach Center Network (BOC),,,,,,,,,,not_stated,,assumed,Everyone,False,False
+752,SCORE New York City,,,,,,Veterans,Veterans,,,not_stated,,assumed,Veterans; Everyone,False,False
+753,Start Small Think Big,,,,,,,,,,not_stated,,assumed,Everyone,False,False
+754,NYS Department of Corrections and Community Supervision (DOCCS)--Certificate Review Unit,,,,,,People with Disabilities,,,People with Disabilities,not_stated,,assumed,People with Disabilities; Everyone,False,False
+755,Legal Action Center,,,,,,,Veterans,,,not_stated,,assumed,Veterans; Everyone,False,False
+756,Community Service Society--Next Door Project,,,,,,People with Disabilities,,,People with Disabilities,not_stated,,assumed,People with Disabilities; Everyone,False,False
+757,NYS Criminal Justice Services--Legal Services Office (Record Review Unit),,,,,,,Veterans,,,not_stated,,assumed,Veterans; Everyone,False,False
+758,FBI CJIS Division--Summary Request (Identity History Summary / Federal Rap Sheet),,,,,,,Veterans,,,not_stated,,assumed,Veterans; Everyone,False,False
+759,NYS Division of Human Rights,,,,,,,,,,not_stated,,assumed,Everyone,False,False
