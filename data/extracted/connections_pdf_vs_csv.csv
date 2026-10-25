@@ -1,0 +1,843 @@
+csv_row,csv_name,csv_category,csv_subcategory,match_method,pdf_listings_with_name,listing_id,pdf_name,pdf_chapter,pdf_section,pdf_preceding_subheading,guide_page,chapter_agrees,section_agrees
+2,SUFFOLK COUNTY REENTRY TASK FORCE,Formerly Incarcerated People,County Reentry Task Forces,exact,1,21,SUFFOLK COUNTY REENTRY TASK FORCE,Formerly Incarcerated People,Reentry Task Force by NYS County,,27,yes,no
+3,ULSTER COUNTY REENTRY TASK FORCE,Formerly Incarcerated People,County Reentry Task Forces,exact,1,22,ULSTER COUNTY REENTRY TASK FORCE,Formerly Incarcerated People,Reentry Task Force by NYS County,,27,yes,no
+4,WESTCHESTER COUNTY REENTRY TASK FORCE,Formerly Incarcerated People,County Reentry Task Forces,exact,1,23,WESTCHESTER COUNTY REENTRY TASK FORCE,Formerly Incarcerated People,Reentry Task Force by NYS County,,27,yes,no
+5,BROOKLYN PUBLIC LIBRARY (BPL)—JUSTICE INITIATIVES—WELCOME HOME,Formerly Incarcerated People,,exact,1,24,BROOKLYN PUBLIC LIBRARY (BPL)—JUSTICE INITIATIVES—WELCOME HOME,Formerly Incarcerated People,Organizations,,27,yes,csv_blank
+6,"QUEENS PUBLIC LIBRARY—PRISON, JAILS, AND REENTRY OUTREACH - 1 (Central Branch)",Formerly Incarcerated People,,suffix_removed,1,25,"QUEENS PUBLIC LIBRARY—PRISON, JAILS, AND REENTRY OUTREACH",Formerly Incarcerated People,Organizations,,28,yes,csv_blank
+7,"QUEENS PUBLIC LIBRARY—PRISON, JAILS, AND REENTRY OUTREACH - 2 (Ravenswood Community Learning Center)",Formerly Incarcerated People,,suffix_removed,1,25,"QUEENS PUBLIC LIBRARY—PRISON, JAILS, AND REENTRY OUTREACH",Formerly Incarcerated People,Organizations,,28,yes,csv_blank
+8,ALLIANCE OF FAMILIES FOR JUSTICE (AFJ),Formerly Incarcerated People,,exact,1,26,ALLIANCE OF FAMILIES FOR JUSTICE (AFJ),Formerly Incarcerated People,Organizations,,28,yes,csv_blank
+9,BLACK VETERANS FOR SOCIAL JUSTICE (BVSJ)—INCARCERATED VETERANS TRANSITIONAL PROGRAM (IVTP),Formerly Incarcerated People,,exact,1,27,BLACK VETERANS FOR SOCIAL JUSTICE (BVSJ)—INCARCERATED VETERANS TRANSITIONAL PROGRAM (IVTP),Formerly Incarcerated People,Organizations,,29,yes,csv_blank
+10,BOWERY RESIDENTS' COMMITTEE (BRC),Formerly Incarcerated People,,exact,1,28,BOWERY RESIDENTS’ COMMITTEE (BRC),Formerly Incarcerated People,Organizations,,29,yes,csv_blank
+11,BROOKLYN DISTRICT ATTORNEY'S OFFICE—COMMUNITY RESOURCES & RE-ENTRY BUREAU,Formerly Incarcerated People,,exact,1,29,BROOKLYN DISTRICT ATTORNEY’S OFFICE—COMMUNITY RESOURCES & RE-ENTRY BUREAU,Formerly Incarcerated People,Organizations,,29,yes,csv_blank
+12,CENTER FOR ALTERNATIVE SENTENCING AND EMPLOYMENT SERVICES (CASES),Formerly Incarcerated People,,exact,1,30,CENTER FOR ALTERNATIVE SENTENCING AND EMPLOYMENT SERVICES (CASES),Formerly Incarcerated People,Organizations,,30,yes,csv_blank
+13,CENTER FOR COMMUNITY ALTERNATIVES (CCA),Formerly Incarcerated People,,exact,1,31,CENTER FOR COMMUNITY ALTERNATIVES (CCA),Formerly Incarcerated People,Organizations,,30,yes,csv_blank
+14,CENTER FOR EMPLOYMENT OPPORTUNITIES (CEO),Formerly Incarcerated People,,exact,2,32,CENTER FOR EMPLOYMENT OPPORTUNITIES (CEO),Formerly Incarcerated People,Organizations,,31,yes,csv_blank
+15,CENTER FOR JUSTICE INNOVATION (CJI),Formerly Incarcerated People,,exact,1,33,CENTER FOR JUSTICE INNOVATION (CJI),Formerly Incarcerated People,Organizations,,31,yes,csv_blank
+16,CENTER FOR JUSTICE INNOVATION (CJI)—THE STATEN ISLAND JUSTICE CENTER,Formerly Incarcerated People,,exact,1,34,CENTER FOR JUSTICE INNOVATION (CJI)—THE STATEN ISLAND JUSTICE CENTER,Formerly Incarcerated People,Organizations,,31,yes,csv_blank
+17,CIRCLES OF SUPPORT,Formerly Incarcerated People,,exact,1,35,CIRCLES OF SUPPORT,Formerly Incarcerated People,Organizations,,32,yes,csv_blank
+18,COMMUNITY SERVICE SOCIETY (CSS)—NEXT DOOR PROJECT,Formerly Incarcerated People,,exact,1,36,COMMUNITY SERVICE SOCIETY (CSS)—NEXT DOOR PROJECT,Formerly Incarcerated People,Organizations,,32,yes,csv_blank
+19,DEFY VENTURES,Formerly Incarcerated People,,exact,2,37,DEFY VENTURES,Formerly Incarcerated People,Organizations,,33,yes,csv_blank
+20,DRIVE CHANGE,Formerly Incarcerated People,,exact,2,38,DRIVE CHANGE,Formerly Incarcerated People,Organizations,,33,yes,csv_blank
+21,EDUCATION JUSTICE PROJECT (EJP)—MAPPING YOUR FUTURE: NATIONAL EDITION,Formerly Incarcerated People,,exact,1,39,EDUCATION JUSTICE PROJECT (EJP)—MAPPING YOUR FUTURE: NATIONAL EDITION,Formerly Incarcerated People,Organizations,,33,yes,csv_blank
+22,EXODUS TRANSITIONAL COMMUNITY,Formerly Incarcerated People,,exact,1,40,EXODUS TRANSITIONAL COMMUNITY,Formerly Incarcerated People,Organizations,,34,yes,csv_blank
+23,EXPONENTS,Formerly Incarcerated People,,exact,4,41,EXPONENTS,Formerly Incarcerated People,Organizations,,34,yes,csv_blank
+24,THE FOCUS FORWARD PROJECT,Formerly Incarcerated People,,exact,1,42,THE FOCUS FORWARD PROJECT,Formerly Incarcerated People,Organizations,,34,yes,csv_blank
+25,FORGING AHEAD FOR COMMUNITY EMPOWERMENT AND SUPPORT (FACES)—STRIVING TOWARDS ACHIEVING REWARDING SKILLS (STARS),Formerly Incarcerated People,,exact,1,43,FORGING AHEAD FOR COMMUNITY EMPOWERMENT AND SUPPORT (FACES)—STRIVING TOWARDS ACHIEVING REWARDING SKILLS (STARS),Formerly Incarcerated People,Organizations,,35,yes,csv_blank
+26,THE FORTUNE SOCIETY,Formerly Incarcerated People,,exact,3,44,THE FORTUNE SOCIETY,Formerly Incarcerated People,Organizations,,35,yes,csv_blank
+27,GETTING OUT AND STAYING OUT (GOSO),Formerly Incarcerated People,,exact,2,45,GETTING OUT AND STAYING OUT (GOSO),Formerly Incarcerated People,Organizations,,36,yes,csv_blank
+28,HOUSING WORKS COMMUNITY HEALTHCARE—REENTRY PROGRAM,Formerly Incarcerated People,,exact,1,46,HOUSING WORKS COMMUNITY HEALTHCARE—REENTRY PROGRAM,Formerly Incarcerated People,Organizations,,36,yes,csv_blank
+29,JUSTICE THROUGH CODE AT COLUMBIA UNIVERSITY,Formerly Incarcerated People,,exact,1,47,JUSTICE THROUGH CODE AT COLUMBIA UNIVERSITY,Formerly Incarcerated People,Organizations,,36,yes,csv_blank
+30,JUSTLEADERSHIPUSA,Formerly Incarcerated People,,exact,1,48,JUSTLEADERSHIPUSA,Formerly Incarcerated People,Organizations,,36,yes,csv_blank
+31,LIBERTY FUND NYC—THE ROR PROGRAM,Formerly Incarcerated People,,exact,1,49,LIBERTY FUND NYC—THE ROR PROGRAM,Formerly Incarcerated People,Organizations,,37,yes,csv_blank
+32,MUSIC ON THE INSIDE (MOTI),Formerly Incarcerated People,,exact,1,50,MUSIC ON THE INSIDE (MOTI),Formerly Incarcerated People,Organizations,,37,yes,csv_blank
+33,"NETWORK SUPPORT SERVICES, INC.",Formerly Incarcerated People,,exact,1,51,"NETWORK SUPPORT SERVICES, INC.",Formerly Incarcerated People,Organizations,,38,yes,csv_blank
+34,NYC MAYOR'S OFFICE OF CRIMINAL JUSTICE (MOCJ),Formerly Incarcerated People,,exact,1,52,NYC MAYOR’S OFFICE OF CRIMINAL JUSTICE (MOCJ),Formerly Incarcerated People,Organizations,,38,yes,csv_blank
+35,"NEW YORK COUNTY LAWYERS ASSOCIATION (NYCLA)—CERTIFICATES PROJECT, SEALING PROJECT, & PROJECT RESTORE",Formerly Incarcerated People,,exact,1,53,"NEW YORK COUNTY LAWYERS ASSOCIATION (NYCLA)—CERTIFICATES PROJECT, SEALING PROJECT, & PROJECT RESTORE",Formerly Incarcerated People,Organizations,,39,yes,csv_blank
+36,OSBORNE ASSOCIATION - 1 (Bronx),Formerly Incarcerated People,,suffix_removed,5,54,OSBORNE ASSOCIATION,Formerly Incarcerated People,Organizations,,39,yes,csv_blank
+37,OSBORNE ASSOCIATION - 2 (Brooklyn),Formerly Incarcerated People,,suffix_removed,5,54,OSBORNE ASSOCIATION,Formerly Incarcerated People,Organizations,,39,yes,csv_blank
+38,SOCIAL JUSTICE NETWORK (SJN),Formerly Incarcerated People,,exact,1,55,SOCIAL JUSTICE NETWORK (SJN),Formerly Incarcerated People,Organizations,,40,yes,csv_blank
+39,SWOP BEHIND BARS (SWBB),Formerly Incarcerated People,,exact,1,56,SWOP BEHIND BARS (SWBB),Formerly Incarcerated People,Organizations,,40,yes,csv_blank
+40,THRIVE FOR LIFE PRISON PROJECT,Formerly Incarcerated People,,exact,1,57,THRIVE FOR LIFE PRISON PROJECT,Formerly Incarcerated People,Organizations,,41,yes,csv_blank
+41,WOMEN'S PRISON ASSOCIATION (WPA),Formerly Incarcerated People,,exact,3,58,WOMEN’S PRISON ASSOCIATION (WPA),Formerly Incarcerated People,Organizations,,41,yes,csv_blank
+42,CORRECTIONAL ASSOCIATION OF NY (CANY),Formerly Incarcerated People,"Advocacy, Organizing, & News Resources",exact,1,59,CORRECTIONAL ASSOCIATION OF NY (CANY),Formerly Incarcerated People,"Advocacy, Organizing, & News Resources",,42,yes,yes
+43,COURT WATCH NYC,Formerly Incarcerated People,"Advocacy, Organizing, & News Resources",exact,1,60,COURT WATCH NYC,Formerly Incarcerated People,"Advocacy, Organizing, & News Resources",,42,yes,yes
+44,CRIP JUSTICE,Formerly Incarcerated People,"Advocacy, Organizing, & News Resources",exact,1,61,CRIP JUSTICE,Formerly Incarcerated People,"Advocacy, Organizing, & News Resources",,43,yes,yes
+45,CRITICAL RESISTANCE—NEW YORK CITY,Formerly Incarcerated People,"Advocacy, Organizing, & News Resources",exact,1,62,CRITICAL RESISTANCE—NEW YORK CITY,Formerly Incarcerated People,"Advocacy, Organizing, & News Resources",,43,yes,yes
+46,FREEDOM AGENDA,Formerly Incarcerated People,"Advocacy, Organizing, & News Resources",exact,1,63,FREEDOM AGENDA,Formerly Incarcerated People,"Advocacy, Organizing, & News Resources",,43,yes,yes
+47,INDUSTRIAL WORKERS OF THE WORLD (IWW)—INCARCERATED WORKERS ORGANIZING COMMITTEE (IWOC),Formerly Incarcerated People,"Advocacy, Organizing, & News Resources",exact,1,64,INDUSTRIAL WORKERS OF THE WORLD (IWW)—INCARCERATED WORKERS ORGANIZING COMMITTEE (IWOC),Formerly Incarcerated People,"Advocacy, Organizing, & News Resources",,44,yes,yes
+48,JMACFORFAMILIES (JUST MAKING A CHANGE FOR FAMILIES OR JMAC),Formerly Incarcerated People,"Advocacy, Organizing, & News Resources",exact,1,65,JMACFORFAMILIES (JUST MAKING A CHANGE FOR FAMILIES OR JMAC),Formerly Incarcerated People,"Advocacy, Organizing, & News Resources",,44,yes,yes
+49,THE MARSHALL PROJECT,Formerly Incarcerated People,"Advocacy, Organizing, & News Resources",exact,1,66,THE MARSHALL PROJECT,Formerly Incarcerated People,"Advocacy, Organizing, & News Resources",,44,yes,yes
+50,NEW YORK CAMPAIGN FOR ALTERNATIVES TO ISOLATED CONFINEMENT (NYCAIC),Formerly Incarcerated People,"Advocacy, Organizing, & News Resources",exact,1,67,NEW YORK CAMPAIGN FOR ALTERNATIVES TO ISOLATED CONFINEMENT (NYCAIC),Formerly Incarcerated People,"Advocacy, Organizing, & News Resources",,45,yes,yes
+51,PRISON LEGAL NEWS,Formerly Incarcerated People,"Advocacy, Organizing, & News Resources",exact,1,68,PRISON LEGAL NEWS,Formerly Incarcerated People,"Advocacy, Organizing, & News Resources",,46,yes,yes
+52,PRISON POLICY INITIATIVE,Formerly Incarcerated People,"Advocacy, Organizing, & News Resources",exact,1,69,PRISON POLICY INITIATIVE,Formerly Incarcerated People,"Advocacy, Organizing, & News Resources",,46,yes,yes
+53,RELEASE AGING PEOPLE IN PRISON PROJECT (RAPP),Formerly Incarcerated People,"Advocacy, Organizing, & News Resources",exact,1,70,RELEASE AGING PEOPLE IN PRISON PROJECT (RAPP),Formerly Incarcerated People,"Advocacy, Organizing, & News Resources",,46,yes,yes
+54,SURVEILLANCE TECHNOLOGY OVERSIGHT PROJECT (S.T.O.P.),Formerly Incarcerated People,"Advocacy, Organizing, & News Resources",exact,1,71,SURVEILLANCE TECHNOLOGY OVERSIGHT PROJECT (S.T.O.P.),Formerly Incarcerated People,"Advocacy, Organizing, & News Resources",,47,yes,yes
+55,VOCAL-NY,Formerly Incarcerated People,"Advocacy, Organizing, & News Resources",exact,2,72,VOCAL-NY,Formerly Incarcerated People,"Advocacy, Organizing, & News Resources",,47,yes,yes
+56,WORTH RISES,Formerly Incarcerated People,"Advocacy, Organizing, & News Resources",exact,1,73,WORTH RISES,Formerly Incarcerated People,"Advocacy, Organizing, & News Resources",,47,yes,yes
+57,THE NEW YORK PUBLIC LIBRARY (NYPL)—FREE ENGLISH CLASSES,Education,"Adult Literacy, HSE, & ESOL",exact,1,74,THE NEW YORK PUBLIC LIBRARY (NYPL)—FREE ENGLISH CLASSES,Education,"Adult Literacy, High School Equivalency (HSE), & English for Speakers of Other Languages (ESOL)",Replacing lost HSE diplomas or transcripts,52,yes,no
+58,BROOKLYN PUBLIC LIBRARY (BPL)—ADULT LEARNING CENTERS,Education,"Adult Literacy, HSE, & ESOL",exact,1,75,BROOKLYN PUBLIC LIBRARY (BPL)—ADULT LEARNING CENTERS,Education,"Adult Literacy, High School Equivalency (HSE), & English for Speakers of Other Languages (ESOL)",Replacing lost HSE diplomas or transcripts,53,yes,no
+59,QUEENS PUBLIC LIBRARY—ADULT LEARNER PROGRAM & NEW AMERICANS PROGRAM - 1 (Adult Learner Program),Education,"Adult Literacy, HSE, & ESOL",suffix_removed,1,76,QUEENS PUBLIC LIBRARY—ADULT LEARNER PROGRAM & NEW AMERICANS PROGRAM,Education,"Adult Literacy, High School Equivalency (HSE), & English for Speakers of Other Languages (ESOL)",Replacing lost HSE diplomas or transcripts,53,yes,no
+60,QUEENS PUBLIC LIBRARY—ADULT LEARNER PROGRAM & NEW AMERICANS PROGRAM - 2 (New Americans Program),Education,"Adult Literacy, HSE, & ESOL",suffix_removed,1,76,QUEENS PUBLIC LIBRARY—ADULT LEARNER PROGRAM & NEW AMERICANS PROGRAM,Education,"Adult Literacy, High School Equivalency (HSE), & English for Speakers of Other Languages (ESOL)",Replacing lost HSE diplomas or transcripts,53,yes,no
+61,NYS DEPARTMENT OF EDUCATION—HIGH SCHOOL EQUIVALENCY (HSE),Education,"Adult Literacy, HSE, & ESOL",exact,1,77,NYS DEPARTMENT OF EDUCATION—HIGH SCHOOL EQUIVALENCY (HSE),Education,"Adult Literacy, High School Equivalency (HSE), & English for Speakers of Other Languages (ESOL)",Replacing lost HSE diplomas or transcripts,54,yes,no
+62,NYC DEPARTMENT OF EDUCATION—ADULT EDUCATION,Education,"Adult Literacy, HSE, & ESOL",exact,1,78,NYC DEPARTMENT OF EDUCATION—ADULT EDUCATION,Education,"Adult Literacy, High School Equivalency (HSE), & English for Speakers of Other Languages (ESOL)",Replacing lost HSE diplomas or transcripts,54,yes,no
+63,BRONX COMMUNITY COLLEGE—ADULT EDUCATION & TRAINING PROGRAM,Education,"Adult Literacy, HSE, & ESOL",exact,1,79,BRONX COMMUNITY COLLEGE—ADULT EDUCATION & TRAINING PROGRAM,Education,"Adult Literacy, High School Equivalency (HSE), & English for Speakers of Other Languages (ESOL)",Replacing lost HSE diplomas or transcripts,55,yes,no
+64,CHINESE-AMERICAN PLANNING COUNCIL—ADULT LITERACY PROGRAM,Education,"Adult Literacy, HSE, & ESOL",exact,1,80,CHINESE-AMERICAN PLANNING COUNCIL—ADULT LITERACY PROGRAM,Education,"Adult Literacy, High School Equivalency (HSE), & English for Speakers of Other Languages (ESOL)",Replacing lost HSE diplomas or transcripts,55,yes,no
+65,CITY UNIVERSITY OF NEW YORK (CUNY)—ADULT LITERACY PROGRAM,Education,"Adult Literacy, HSE, & ESOL",exact,1,81,CITY UNIVERSITY OF NEW YORK (CUNY)—ADULT LITERACY PROGRAM,Education,"Adult Literacy, High School Equivalency (HSE), & English for Speakers of Other Languages (ESOL)",Replacing lost HSE diplomas or transcripts,56,yes,no
+66,EXPONENTS (Education Listing),Education,"Adult Literacy, HSE, & ESOL",suffix_removed,4,82,EXPONENTS,Education,"Adult Literacy, High School Equivalency (HSE), & English for Speakers of Other Languages (ESOL)",Replacing lost HSE diplomas or transcripts,56,yes,no
+67,GODDARD RIVERSIDE—OPTIONS CENTER,Education,"Adult Literacy, HSE, & ESOL",exact,1,83,GODDARD RIVERSIDE—OPTIONS CENTER,Education,"Adult Literacy, High School Equivalency (HSE), & English for Speakers of Other Languages (ESOL)",Replacing lost HSE diplomas or transcripts,56,yes,no
+68,"IMANI HOUSE, INC.—ADULT LITERACY PROGRAM",Education,"Adult Literacy, HSE, & ESOL",exact,1,84,"IMANI HOUSE, INC.—ADULT LITERACY PROGRAM",Education,"Adult Literacy, High School Equivalency (HSE), & English for Speakers of Other Languages (ESOL)",Replacing lost HSE diplomas or transcripts,56,yes,no
+69,JOHN JAY COLLEGE—INSTITUTE FOR JUSTICE AND OPPORTUNITY—PATHWAYS TO GED PROGRAM,Education,"Adult Literacy, HSE, & ESOL",exact,1,85,JOHN JAY COLLEGE—INSTITUTE FOR JUSTICE AND OPPORTUNITY—PATHWAYS TO GED PROGRAM,Education,"Adult Literacy, High School Equivalency (HSE), & English for Speakers of Other Languages (ESOL)",Replacing lost HSE diplomas or transcripts,57,yes,no
+70,LITERACY PARTNERS,Education,"Adult Literacy, HSE, & ESOL",exact,1,86,LITERACY PARTNERS,Education,"Adult Literacy, High School Equivalency (HSE), & English for Speakers of Other Languages (ESOL)",Replacing lost HSE diplomas or transcripts,57,yes,no
+71,OPPORTUNITIES FOR A BETTER TOMORROW (OBT),Education,"Adult Literacy, HSE, & ESOL",exact,3,87,OPPORTUNITIES FOR A BETTER TOMORROW (OBT),Education,"Adult Literacy, High School Equivalency (HSE), & English for Speakers of Other Languages (ESOL)",Replacing lost HSE diplomas or transcripts,57,yes,no
+72,PER SCHOLAS INSTITUTE FOR TECHNOLOGY - 1 (Bronx),Education,"Adult Literacy, HSE, & ESOL",suffix_removed,1,88,PER SCHOLAS INSTITUTE FOR TECHNOLOGY,Education,"Adult Literacy, High School Equivalency (HSE), & English for Speakers of Other Languages (ESOL)",Replacing lost HSE diplomas or transcripts,58,yes,no
+73,PER SCHOLAS INSTITUTE FOR TECHNOLOGY - 2 (Brooklyn),Education,"Adult Literacy, HSE, & ESOL",suffix_removed,1,88,PER SCHOLAS INSTITUTE FOR TECHNOLOGY,Education,"Adult Literacy, High School Equivalency (HSE), & English for Speakers of Other Languages (ESOL)",Replacing lost HSE diplomas or transcripts,58,yes,no
+74,UNION SETTLEMENT—ADULT EDUCATION,Education,"Adult Literacy, HSE, & ESOL",exact,1,89,UNION SETTLEMENT—ADULT EDUCATION,Education,"Adult Literacy, High School Equivalency (HSE), & English for Speakers of Other Languages (ESOL)",Replacing lost HSE diplomas or transcripts,58,yes,no
+75,THE FORTUNE SOCIETY—DIGITAL EQUITY PROGRAM,Education,Computer Literacy & Digital Life Skills,exact,1,90,THE FORTUNE SOCIETY—DIGITAL EQUITY PROGRAM,Education,Computer Literacy & Digital Life Skills,,59,yes,yes
+76,NYC PUBLIC LIBRARIES—NEIGHBORHOOD TECH HELP,Education,Computer Literacy & Digital Life Skills,exact,1,91,NYC PUBLIC LIBRARIES—NEIGHBORHOOD TECH HELP,Education,Computer Literacy & Digital Life Skills,,60,yes,yes
+77,THE NEW YORK PUBLIC LIBRARY (NYPL)—TECHCONNECT,Education,Computer Literacy & Digital Life Skills,exact,1,92,THE NEW YORK PUBLIC LIBRARY (NYPL)—TECHCONNECT,Education,Computer Literacy & Digital Life Skills,,60,yes,yes
+78,BROOKLYN PUBLIC LIBRARY (BPL) (Tech Workshops),Education,Computer Literacy & Digital Life Skills,annotation_removed,1,93,BROOKLYN PUBLIC LIBRARY (BPL),Education,Computer Literacy & Digital Life Skills,,61,yes,yes
+79,QUEENS PUBLIC LIBRARY (Tech Workshops),Education,Computer Literacy & Digital Life Skills,annotation_removed,1,94,QUEENS PUBLIC LIBRARY,Education,Computer Literacy & Digital Life Skills,,61,yes,yes
+80,NYC OFFICE OF TECHNOLOGY & INNOVATION—DIGITAL EQUITY,Education,Computer Literacy & Digital Life Skills,exact,1,95,NYC OFFICE OF TECHNOLOGY & INNOVATION—DIGITAL EQUITY,Education,Computer Literacy & Digital Life Skills,,61,yes,yes
+81,BARD PRISON INITIATIVE (BPI)—BARD MICROCOLLEGES,Education,Continuing Education,exact,1,97,BARD PRISON INITIATIVE (BPI)—BARD MICROCOLLEGES,Education,Continuing Education,,63,yes,yes
+82,BRONX COMMUNITY COLLEGE—FUTURE NOW,Education,Continuing Education,exact,1,98,BRONX COMMUNITY COLLEGE—FUTURE NOW,Education,Continuing Education,,63,yes,yes
+83,COLLEGE & COMMUNITY FELLOWSHIP (CCF),Education,Continuing Education,exact,1,99,COLLEGE & COMMUNITY FELLOWSHIP (CCF),Education,Continuing Education,,63,yes,yes
+84,COLUMBIA LAW SCHOOL—PARALEGAL PATHWAYS INITIATIVE,Education,Continuing Education,exact,1,100,COLUMBIA LAW SCHOOL—PARALEGAL PATHWAYS INITIATIVE,Education,Continuing Education,,64,yes,yes
+85,LEHMAN COLLEGE—REENTRY@LEHMAN,Education,Continuing Education,exact,1,101,LEHMAN COLLEGE—REENTRY@LEHMAN,Education,Continuing Education,,64,yes,yes
+86,JOHN JAY COLLEGE—INSTITUTE FOR JUSTICE AND OPPORTUNITY,Education,Continuing Education,exact,1,102,JOHN JAY COLLEGE—INSTITUTE FOR JUSTICE AND OPPORTUNITY,Education,Continuing Education,,65,yes,yes
+87,STATE UNIVERSITY OF NEW YORK (SUNY),Education,Continuing Education,exact,1,103,STATE UNIVERSITY OF NEW YORK (SUNY),Education,Continuing Education,,65,yes,yes
+88,CITY UNIVERSITY OF NEW YORK (CUNY),Education,Continuing Education,exact,1,104,CITY UNIVERSITY OF NEW YORK (CUNY),Education,Continuing Education,,66,yes,yes
+89,CITY UNIVERSITY OF NEW YORK (CUNY)—CUNY FATHERHOOD ACADEMY (CFA),Education,Continuing Education,exact,1,105,CITY UNIVERSITY OF NEW YORK (CUNY)—CUNY FATHERHOOD ACADEMY (CFA),Education,Continuing Education,Submit your supporting documents,68,yes,yes
+90,US DEPARTMENT OF EDUCATION—FREE APPLICATION FOR FEDERAL STUDENT AID (FAFSA),Education,Financial Aid,exact,1,106,US DEPARTMENT OF EDUCATION—FREE APPLICATION FOR FEDERAL STUDENT AID (FAFSA),Education,Financial Aid,Tuition Assistance Program (TAP),72,yes,yes
+91,NYS HIGHER EDUCATION SERVICES CORPORATION,Education,Financial Aid,exact,1,107,NYS HIGHER EDUCATION SERVICES CORPORATION,Education,Financial Aid,Tuition Assistance Program (TAP),72,yes,yes
+92,FINAID,Education,Financial Aid,exact,1,108,FINAID,Education,Financial Aid,Tuition Assistance Program (TAP),72,yes,yes
+93,THE INSTITUTE OF STUDENT LOAN ADVISORS (TISLA),Education,Financial Aid,exact,1,109,THE INSTITUTE OF STUDENT LOAN ADVISORS (TISLA),Education,Financial Aid,Tuition Assistance Program (TAP),73,yes,yes
+94,STUDENT BORROWER PROTECTION CENTER,Education,Financial Aid,exact,1,110,STUDENT BORROWER PROTECTION CENTER,Education,Financial Aid,Tuition Assistance Program (TAP),73,yes,yes
+95,PRISON SCHOLAR FUND,Education,Financial Aid,exact,1,111,PRISON SCHOLAR FUND,Education,Financial Aid,Tuition Assistance Program (TAP),73,yes,yes
+96,AMERICAN INDIAN COLLEGE FUND,Education,Financial Aid,exact,1,112,AMERICAN INDIAN COLLEGE FUND,Education,Financial Aid,Tuition Assistance Program (TAP),74,yes,yes
+97,ASIAN & PACIFIC ISLANDER AMERICAN SCHOLARSHIP FUND,Education,Financial Aid,exact,1,113,ASIAN & PACIFIC ISLANDER AMERICAN SCHOLARSHIP FUND,Education,Financial Aid,Tuition Assistance Program (TAP),74,yes,yes
+98,HISPANIC SCHOLARSHIP FUND,Education,Financial Aid,exact,1,114,HISPANIC SCHOLARSHIP FUND,Education,Financial Aid,Tuition Assistance Program (TAP),74,yes,yes
+99,SHAWN CARTER FOUNDATION—SCHOLARSHIP FUND,Education,Financial Aid,exact,1,115,SHAWN CARTER FOUNDATION—SCHOLARSHIP FUND,Education,Financial Aid,Tuition Assistance Program (TAP),75,yes,yes
+100,UNITED NEGRO COLLEGE FUND (UNCF),Education,Financial Aid,exact,1,116,UNITED NEGRO COLLEGE FUND (UNCF),Education,Financial Aid,Tuition Assistance Program (TAP),75,yes,yes
+101,BARD COLLEGE—BARD PRISON INITIATIVE (BPI),Education,College Programs in Prison,exact,1,117,BARD COLLEGE—BARD PRISON INITIATIVE (BPI),Education,College Programs in Prison,,75,yes,yes
+102,CORNELL UNIVERSITY—CORNELL PRISON EDUCATION PROGRAM (CPEP),Education,College Programs in Prison,exact,1,118,CORNELL UNIVERSITY—CORNELL PRISON EDUCATION PROGRAM (CPEP),Education,College Programs in Prison,,76,yes,yes
+103,HUDSON LINK FOR HIGHER EDUCATION IN PRISON [INCOMPLETE - SEGMENT CUT OFF MID-ENTRY],Education,College Programs in Prison,annotation_removed,1,119,HUDSON LINK FOR HIGHER EDUCATION IN PRISON,Education,College Programs in Prison,,77,yes,yes
+104,HUDSON LINK FOR HIGHER EDUCATION IN PRISON [CORRECTED/COMPLETE — replaces incomplete row from Segment 1 file],Education,College Programs in Prison,annotation_removed,1,119,HUDSON LINK FOR HIGHER EDUCATION IN PRISON,Education,College Programs in Prison,,77,yes,yes
+105,JOHN JAY COLLEGE—INSTITUTE FOR JUSTICE AND OPPORTUNITY—PRISON-TO-COLLEGE PATHWAYS (P2CP),Education,College Programs in Prison,exact,1,120,JOHN JAY COLLEGE—INSTITUTE FOR JUSTICE AND OPPORTUNITY—PRISON-TO-COLLEGE PATHWAYS (P2CP),Education,College Programs in Prison,,78,yes,yes
+106,MARYMOUNT MANHATTAN COLLEGE—BEDFORD HILLS COLLEGE PROGRAM (BHCP),Education,College Programs in Prison,exact,1,121,MARYMOUNT MANHATTAN COLLEGE—BEDFORD HILLS COLLEGE PROGRAM (BHCP),Education,College Programs in Prison,,79,yes,yes
+107,NEW YORK UNIVERSITY—PRISON EDUCATION PROGRAM (NYU PEP),Education,College Programs in Prison,exact,1,122,NEW YORK UNIVERSITY—PRISON EDUCATION PROGRAM (NYU PEP),Education,College Programs in Prison,,79,yes,yes
+108,NORTH COUNTY COMMUNITY COLLEGE (NCCC)—SECOND CHANCE PELL PROGRAM,Education,College Programs in Prison,exact,1,123,NORTH COUNTY COMMUNITY COLLEGE (NCCC)—SECOND CHANCE PELL PROGRAM,Education,College Programs in Prison,,80,yes,yes
+109,"RISING HOPE, INC.—PROGRAM IN MINISTRY AND HUMAN SERVICES",Education,College Programs in Prison,exact,1,124,"RISING HOPE, INC.—PROGRAM IN MINISTRY AND HUMAN SERVICES",Education,College Programs in Prison,,81,yes,yes
+110,NYC DEPARTMENT OF HOMELESS SERVICES (DHS),Housing,Shelters,exact,1,125,NYC DEPARTMENT OF HOMELESS SERVICES (DHS),Housing,Shelters,,83,yes,yes
+111,NYC DEPARTMENT OF HOMELESS SERVICES (DHS)—INTAKE CENTERS,Housing,Shelters,exact,1,126,NYC DEPARTMENT OF HOMELESS SERVICES (DHS)—INTAKE CENTERS,Housing,Intake Centers for Single Adults,,84,yes,no
+112,30TH STREET INTAKE FOR MEN,Housing,Shelters,exact,1,127,30TH STREET INTAKE FOR MEN,Housing,Intake Centers for Single Adults,What to expect,85,yes,no
+113,FRANKLIN SHELTER AND INTAKE CENTER FOR WOMEN,Housing,Shelters,exact,1,128,FRANKLIN SHELTER AND INTAKE CENTER FOR WOMEN,Housing,Intake Centers for Single Adults,What to expect,86,yes,no
+114,CAMBA—THE GATHERING PLACE,Housing,Drop-In Centers for Single Adults,exact,1,129,CAMBA—THE GATHERING PLACE,Housing,Drop-In Centers for Single Adults,,86,yes,yes
+115,GRAND CENTRAL NEIGHBORHOOD SOCIAL SERVICES CORPORATION—MAINCHANCE DROP-IN CENTER,Housing,Drop-In Centers for Single Adults,exact,1,130,GRAND CENTRAL NEIGHBORHOOD SOCIAL SERVICES CORPORATION—MAINCHANCE DROP-IN CENTER,Housing,Drop-In Centers for Single Adults,,86,yes,yes
+116,PROJECT HOSPITALITY - 1 (Main Office),Housing,Drop-In Centers for Single Adults,suffix_removed,1,131,PROJECT HOSPITALITY,Housing,Drop-In Centers for Single Adults,,87,yes,yes
+117,PROJECT HOSPITALITY - 2 (Drop-in Center),Housing,Drop-In Centers for Single Adults,suffix_removed,1,131,PROJECT HOSPITALITY,Housing,Drop-In Centers for Single Adults,,87,yes,yes
+118,URBAN PATHWAYS—OLIVIERI DROP-IN CENTER,Housing,Drop-In Centers for Single Adults,exact,1,132,URBAN PATHWAYS—OLIVIERI DROP-IN CENTER,Housing,Drop-In Centers for Single Adults,,87,yes,yes
+119,NYC DEPARTMENT OF HOMELESS SERVICES (DHS)—PREVENTION ASSISTANCE & TEMPORARY HOUSING (PATH),Housing,Securing Shelter for Homeless Families,exact,1,133,NYC DEPARTMENT OF HOMELESS SERVICES (DHS)—PREVENTION ASSISTANCE & TEMPORARY HOUSING (PATH),Housing,Securing Shelter for Homeless Families,Families with children,88,yes,yes
+120,NYC DEPARTMENT OF HOMELESS SERVICES (DHS)—ADULT FAMILY INTAKE CENTER (AFIC),Housing,Securing Shelter for Homeless Families,exact,1,134,NYC DEPARTMENT OF HOMELESS SERVICES (DHS)—ADULT FAMILY INTAKE CENTER (AFIC),Housing,Securing Shelter for Homeless Families,What to expect,90,yes,yes
+121,ABRAHAM HOUSE,Housing,Organizations for People Without Homes,exact,1,135,ABRAHAM HOUSE,Housing,Organizations for People Without Homes,,93,yes,yes
+122,"ACACIA NETWORK—GREENHOPE SERVICES FOR WOMEN, INC.",Housing,Organizations for People Without Homes,exact,2,136,"ACACIA NETWORK—GREENHOPE SERVICES FOR WOMEN, INC.",Housing,Organizations for People Without Homes,,94,yes,yes
+123,BLACK VETERANS FOR SOCIAL JUSTICE (BVSJ)—HOMELESS VETERANS' REINTEGRATION PROGRAM (HVRP),Housing,Organizations for People Without Homes,exact,2,137,BLACK VETERANS FOR SOCIAL JUSTICE (BVSJ)—HOMELESS VETERANS’ REINTEGRATION PROGRAM (HVRP),Housing,Organizations for People Without Homes,,94,yes,yes
+124,CENTER FOR URBAN COMMUNITY SERVICES (CUCS),Housing,Organizations for People Without Homes,exact,1,138,CENTER FOR URBAN COMMUNITY SERVICES (CUCS),Housing,Organizations for People Without Homes,,94,yes,yes
+125,"THE DOE FUND—READY, WILLING & ABLE (RWA)—TRANSITIONAL EMPLOYMENT AND HOUSING",Housing,Organizations for People Without Homes,exact,1,139,"THE DOE FUND—READY, WILLING & ABLE (RWA)—TRANSITIONAL EMPLOYMENT AND HOUSING",Housing,Organizations for People Without Homes,,95,yes,yes
+126,THE FORTUNE SOCIETY (Housing Listing),Housing,Organizations for People Without Homes,suffix_removed,3,140,THE FORTUNE SOCIETY,Housing,Organizations for People Without Homes,,95,yes,yes
+127,HOUR CHILDREN,Housing,Organizations for People Without Homes,exact,3,141,HOUR CHILDREN,Housing,Organizations for People Without Homes,,95,yes,yes
+128,OSBORNE ASSOCIATION (Housing Listing),Housing,Organizations for People Without Homes,suffix_removed,5,142,OSBORNE ASSOCIATION,Housing,Organizations for People Without Homes,,96,yes,yes
+129,PART OF THE SOLUTION (POTS) - 1,Housing,Organizations for People Without Homes,suffix_removed,1,143,PART OF THE SOLUTION (POTS),Housing,Organizations for People Without Homes,,96,yes,yes
+130,PART OF THE SOLUTION (POTS) - 2,Housing,Organizations for People Without Homes,suffix_removed,1,143,PART OF THE SOLUTION (POTS),Housing,Organizations for People Without Homes,,96,yes,yes
+131,PROJECT RENEWAL,Housing,Organizations for People Without Homes,exact,1,144,PROJECT RENEWAL,Housing,Organizations for People Without Homes,,97,yes,yes
+132,PROVIDENCE HOUSE,Housing,Organizations for People Without Homes,exact,2,145,PROVIDENCE HOUSE,Housing,Organizations for People Without Homes,,97,yes,yes
+133,WOMEN'S PRISON ASSOCIATION (WPA) (Housing Listing),Housing,Organizations for People Without Homes,suffix_removed,3,146,WOMEN’S PRISON ASSOCIATION (WPA),Housing,Organizations for People Without Homes,,98,yes,yes
+134,ACE PROGRAMS FOR THE HOMELESS,Housing,Organizations for People Without Homes,exact,1,147,ACE PROGRAMS FOR THE HOMELESS,Housing,Organizations for People Without Homes,,98,yes,yes
+135,THE BOWERY MISSION,Housing,Organizations for People Without Homes,exact,2,148,THE BOWERY MISSION,Housing,Organizations for People Without Homes,,98,yes,yes
+136,BREAKING GROUND,Housing,Organizations for People Without Homes,exact,1,149,BREAKING GROUND,Housing,Organizations for People Without Homes,,99,yes,yes
+137,BRONXWORKS—HOMELESS OUTREACH TEAM,Housing,Organizations for People Without Homes,exact,1,150,BRONXWORKS—HOMELESS OUTREACH TEAM,Housing,Organizations for People Without Homes,,99,yes,yes
+138,COALITION FOR THE HOMELESS,Housing,Organizations for People Without Homes,exact,1,151,COALITION FOR THE HOMELESS,Housing,Organizations for People Without Homes,,100,yes,yes
+139,COVENANT HOUSE NEW YORK,Housing,Organizations for People Without Homes,exact,2,152,COVENANT HOUSE NEW YORK,Housing,Organizations for People Without Homes,,100,yes,yes
+140,HOUSING WORKS,Housing,Organizations for People Without Homes,exact,1,153,HOUSING WORKS,Housing,Organizations for People Without Homes,,100,yes,yes
+141,NYC HOUSING AUTHORITY (NYCHA) - 1 (Bronx/Manhattan/Queens Contact Center),Housing,Housing Assistance,suffix_removed,1,154,NYC HOUSING AUTHORITY (NYCHA),Housing,Housing Assistance,,101,yes,yes
+142,NYC HOUSING AUTHORITY (NYCHA) - 2 (Brooklyn/Staten Island/Queens Contact Center),Housing,Housing Assistance,suffix_removed,1,154,NYC HOUSING AUTHORITY (NYCHA),Housing,Housing Assistance,,101,yes,yes
+143,FAMILY REENTRY PROGRAM,Housing,Housing Assistance,exact,1,155,FAMILY REENTRY PROGRAM,Housing,Housing Assistance,,102,yes,yes
+144,NYC DEPARTMENT OF HOUSING PRESERVATION AND DEVELOPMENT (HPD),Housing,Housing Assistance,exact,1,156,NYC DEPARTMENT OF HOUSING PRESERVATION AND DEVELOPMENT (HPD),Housing,Housing Assistance,,102,yes,yes
+145,NYC HUMAN RESOURCES ADMINISTRATION (HRA)—HOMEBASE,Housing,Housing Assistance,exact,1,157,NYC HUMAN RESOURCES ADMINISTRATION (HRA)—HOMEBASE,Housing,Housing Assistance,,103,yes,yes
+146,NYC DEPARTMENT OF HOUSING PRESERVATION AND DEVELOPMENT (HPD)—NYC HOUSING CONNECT (AFFORDABLE RENTAL LOTTERIES),Housing,Rentals,exact,1,158,NYC DEPARTMENT OF HOUSING PRESERVATION AND DEVELOPMENT (HPD)—NYC HOUSING CONNECT (AFFORDABLE RENTAL LOTTERIES),Housing,Rentals,Fairness in Apartment Rentals Act (Fare Act),104,yes,yes
+147,METROPOLITAN COUNCIL ON HOUSING,Housing,Rentals,exact,1,159,METROPOLITAN COUNCIL ON HOUSING,Housing,Rentals,Fairness in Apartment Rentals Act (Fare Act),105,yes,yes
+148,NYS DIVISION OF HOMES AND COMMUNITY RENEWAL (DHCR)—OFFICE OF RENT ADMINISTRATION,Housing,Tenant Rights & Housing Discrimination,exact,1,160,NYS DIVISION OF HOMES AND COMMUNITY RENEWAL (DHCR)—OFFICE OF RENT ADMINISTRATION,Housing,Tenant Rights & Housing Discrimination,Tenant Organizing Resources,111,yes,yes
+149,NYC DEPARTMENT OF HOUSING PRESERVATION AND DEVELOPMENT (HPD)—TENANT RIGHTS,Housing,Tenant Rights & Housing Discrimination,exact,1,161,NYC DEPARTMENT OF HOUSING PRESERVATION AND DEVELOPMENT (HPD)—TENANT RIGHTS,Housing,Tenant Rights & Housing Discrimination,Tenant Organizing Resources,111,yes,yes
+150,NYC HOUSING AUTHORITY (NYCHA)—MAINTENANCE COMPLAINT,Housing,Tenant Rights & Housing Discrimination,exact,1,162,NYC HOUSING AUTHORITY (NYCHA)—MAINTENANCE COMPLAINT,Housing,Tenant Rights & Housing Discrimination,Tenant Organizing Resources,112,yes,yes
+151,NYC HUMAN RESOURCES ADMINISTRATION (HRA)—LEGAL SERVICES FOR TENANTS,Housing,Tenant Rights & Housing Discrimination,exact,1,163,NYC HUMAN RESOURCES ADMINISTRATION (HRA)—LEGAL SERVICES FOR TENANTS,Housing,Tenant Rights & Housing Discrimination,Tenant Organizing Resources,112,yes,yes
+152,NYC TENANT PROTECTION CABINET,Housing,Tenant Rights & Housing Discrimination,exact,1,164,NYC TENANT PROTECTION CABINET,Housing,Tenant Rights & Housing Discrimination,Tenant Organizing Resources,112,yes,yes
+153,HOUSING COURT ANSWERS,Housing,Tenant Rights & Housing Discrimination,exact,1,165,HOUSING COURT ANSWERS,Housing,Tenant Rights & Housing Discrimination,Tenant Organizing Resources,113,yes,yes
+154,JUSTFIX.NYC,Housing,Tenant Rights & Housing Discrimination,exact,1,166,JUSTFIX.NYC,Housing,Tenant Rights & Housing Discrimination,Tenant Organizing Resources,113,yes,yes
+155,NEIGHBORHOOD ASSOCIATION FOR INTER-CULTURAL AFFAIRS (NAICA)—LEGAL SERVICES,Housing,Tenant Rights & Housing Discrimination,exact,1,167,NEIGHBORHOOD ASSOCIATION FOR INTER-CULTURAL AFFAIRS (NAICA)—LEGAL SERVICES,Housing,Tenant Rights & Housing Discrimination,Tenant Organizing Resources,114,yes,yes
+156,NEW YORK PEACE INSTITUTE,Housing,Tenant Rights & Housing Discrimination,exact,5,168,NEW YORK PEACE INSTITUTE,Housing,Tenant Rights & Housing Discrimination,Tenant Organizing Resources,114,yes,yes
+157,SUPPORTIVE HOUSING ORGANIZED AND UNITED TENANTS (SHOUT!),Housing,Tenant Rights & Housing Discrimination,exact,1,169,SUPPORTIVE HOUSING ORGANIZED AND UNITED TENANTS (SHOUT!),Housing,Tenant Rights & Housing Discrimination,Tenant Organizing Resources,114,yes,yes
+158,UNLOCK NYC,Housing,Tenant Rights & Housing Discrimination,exact,1,170,UNLOCK NYC,Housing,Tenant Rights & Housing Discrimination,Tenant Organizing Resources,115,yes,yes
+159,NYC HUMAN RESOURCES ADMINISTRATION (HRA),Financial Assistance,Public Benefits,exact,1,171,NYC HUMAN RESOURCES ADMINISTRATION (HRA),Financial Assistance,Public Benefits,,119,yes,yes
+160,ACCESS NYC,Financial Assistance,Public Benefits,exact,1,172,ACCESS NYC,Financial Assistance,Public Benefits,,119,yes,yes
+161,VOLUNTEERS OF LEGAL SERVICE (VOLS)—BENEFITS LAW PROJECT (BLP),Financial Assistance,Public Benefits,exact,1,173,VOLUNTEERS OF LEGAL SERVICE (VOLS)—BENEFITS LAW PROJECT (BLP),Financial Assistance,Public Benefits,,120,yes,yes
+162,NYC HUMAN RESOURCES ADMINISTRATION (HRA)—CASH ASSISTANCE,Financial Assistance,Temporary Cash Assistance,exact,1,174,NYC HUMAN RESOURCES ADMINISTRATION (HRA)—CASH ASSISTANCE,Financial Assistance,Temporary Cash Assistance,,120,yes,yes
+163,NYC HUMAN RESOURCES ADMINISTRATION (HRA)—EMERGENCY ASSISTANCE,Financial Assistance,Emergency Assistance,exact,1,175,NYC HUMAN RESOURCES ADMINISTRATION (HRA)—EMERGENCY ASSISTANCE,Financial Assistance,Emergency Assistance,,121,yes,yes
+164,NYC HUMAN RESOURCES ADMINISTRATION (HRA)—SNAP,Financial Assistance,Food Stamps (SNAP),exact,1,176,NYC HUMAN RESOURCES ADMINISTRATION (HRA)—SNAP,Financial Assistance,Food Stamps (SNAP),,121,yes,yes
+165,NYC 311—FOOD PANTRIES AND SOUP KITCHENS,Financial Assistance,Food,exact,1,177,NYC 311—FOOD PANTRIES AND SOUP KITCHENS,Financial Assistance,Food,,122,yes,yes
+166,FOOD HELP NYC,Financial Assistance,Food,exact,1,178,FOOD HELP NYC,Financial Assistance,Food,,122,yes,yes
+167,COALITION FOR THE HOMELESS—RESOURCE GUIDE,Financial Assistance,Food,exact,1,179,COALITION FOR THE HOMELESS—RESOURCE GUIDE,Financial Assistance,Food,,122,yes,yes
+168,FOOD BANK FOR NEW YORK CITY,Financial Assistance,Food,exact,1,180,FOOD BANK FOR NEW YORK CITY,Financial Assistance,Food,,122,yes,yes
+169,CATHEDRAL COMMUNITY CARES,Financial Assistance,Food,exact,1,181,CATHEDRAL COMMUNITY CARES,Financial Assistance,Food,,123,yes,yes
+170,COALITION FOR THE HOMELESS—GRAND CENTRAL FOOD PROGRAM,Financial Assistance,Food,exact,1,182,COALITION FOR THE HOMELESS—GRAND CENTRAL FOOD PROGRAM,Financial Assistance,Food,,123,yes,yes
+171,GROWNYC,Financial Assistance,Food,exact,1,183,GROWNYC,Financial Assistance,Food,,123,yes,yes
+172,HOLY APOSTLES SOUP KITCHEN,Financial Assistance,Food,exact,1,184,HOLY APOSTLES SOUP KITCHEN,Financial Assistance,Food,,124,yes,yes
+173,NEIGHBORS TOGETHER,Financial Assistance,Food,exact,1,185,NEIGHBORS TOGETHER,Financial Assistance,Food,,124,yes,yes
+174,RIVERSIDE CHURCH—SOCIAL SERVICES,Financial Assistance,Food,exact,1,186,RIVERSIDE CHURCH—SOCIAL SERVICES,Financial Assistance,Food,,125,yes,yes
+175,ST. JOHN'S BREAD AND LIFE,Financial Assistance,Food,exact,1,187,ST. JOHN’S BREAD AND LIFE,Financial Assistance,Food,,125,yes,yes
+176,NYC DEPARTMENT OF SANITATION—DONATENYC,Financial Assistance,Clothing,exact,1,188,NYC DEPARTMENT OF SANITATION—DONATENYC,Financial Assistance,Clothing,,126,yes,yes
+177,NYC NEON—CLOTHING CLOSETS,Financial Assistance,Clothing,exact,1,189,NYC NEON—CLOTHING CLOSETS,Financial Assistance,Clothing,,126,yes,yes
+178,MEDICAID,Financial Assistance,Health Insurance & Medical Costs Assistance,exact,1,190,MEDICAID,Financial Assistance,Health Insurance & Medical Costs Assistance,,127,yes,yes
+179,MEDICARE,Financial Assistance,Health Insurance & Medical Costs Assistance,exact,2,191,MEDICARE,Financial Assistance,Health Insurance & Medical Costs Assistance,,127,yes,yes
+180,ELDERLY PHARMACEUTICAL INSURANCE COVERAGE (EPIC),Financial Assistance,Health Insurance & Medical Costs Assistance,exact,2,192,ELDERLY PHARMACEUTICAL INSURANCE COVERAGE (EPIC),Financial Assistance,Health Insurance & Medical Costs Assistance,,127,yes,yes
+181,COMMUNITY HEALTH ADVOCATES,Financial Assistance,Health Insurance & Medical Costs Assistance,exact,1,193,COMMUNITY HEALTH ADVOCATES,Financial Assistance,Health Insurance & Medical Costs Assistance,,127,yes,yes
+182,DOLLAR FOR,Financial Assistance,Health Insurance & Medical Costs Assistance,exact,1,194,DOLLAR FOR,Financial Assistance,Health Insurance & Medical Costs Assistance,,127,yes,yes
+183,FAIR FARES NYC PROGRAM,Financial Assistance,Transportation,exact,1,195,FAIR FARES NYC PROGRAM,Financial Assistance,Transportation,,128,yes,yes
+184,METROPOLITAN TRANSPORTATION AUTHORITY (MTA)—REDUCED-FARE PROGRAM,Financial Assistance,Transportation,exact,2,196,METROPOLITAN TRANSPORTATION AUTHORITY (MTA)—REDUCED-FARE PROGRAM,Financial Assistance,Transportation,,128,yes,yes
+185,NYC PUBLIC SCHOOLS—STUDENT OMNY CARDS,Financial Assistance,Transportation,exact,1,197,NYC PUBLIC SCHOOLS—STUDENT OMNY CARDS,Financial Assistance,Transportation,,129,yes,yes
+186,FEDERAL TRADE COMMISSION (FTC)—BUREAU OF CONSUMER PROTECTION,Financial Assistance,Victim Assistance,exact,1,198,FEDERAL TRADE COMMISSION (FTC)—BUREAU OF CONSUMER PROTECTION,Financial Assistance,Victim Assistance,,129,yes,yes
+187,NYS OFFICE OF VICTIM SERVICES,Financial Assistance,Victim Assistance,exact,1,199,NYS OFFICE OF VICTIM SERVICES,Financial Assistance,Victim Assistance,,129,yes,yes
+188,NYC FREE TAX PREP,Financial Assistance,Taxes,exact,1,200,NYC FREE TAX PREP,Financial Assistance,Taxes,,130,yes,yes
+189,INTERNAL REVENUE SERVICE (IRS),Financial Assistance,Taxes,exact,1,201,INTERNAL REVENUE SERVICE (IRS),Financial Assistance,Taxes,,130,yes,yes
+190,TAXPAYER ADVOCATE SERVICES (TAS) - 1 (General),Financial Assistance,Taxes,suffix_removed,1,202,TAXPAYER ADVOCATE SERVICES (TAS),Financial Assistance,Taxes,,131,yes,yes
+191,TAXPAYER ADVOCATE SERVICES (TAS) - 2 (Albany),Financial Assistance,Taxes,suffix_removed,1,202,TAXPAYER ADVOCATE SERVICES (TAS),Financial Assistance,Taxes,,131,yes,yes
+192,TAXPAYER ADVOCATE SERVICES (TAS) - 3 (Brookhaven),Financial Assistance,Taxes,suffix_removed,1,202,TAXPAYER ADVOCATE SERVICES (TAS),Financial Assistance,Taxes,,131,yes,yes
+193,TAXPAYER ADVOCATE SERVICES (TAS) - 4 (Brooklyn),Financial Assistance,Taxes,suffix_removed,1,202,TAXPAYER ADVOCATE SERVICES (TAS),Financial Assistance,Taxes,,131,yes,yes
+194,TAXPAYER ADVOCATE SERVICES (TAS) - 5 (Buffalo),Financial Assistance,Taxes,suffix_removed,1,202,TAXPAYER ADVOCATE SERVICES (TAS),Financial Assistance,Taxes,,131,yes,yes
+195,TAXPAYER ADVOCATE SERVICES (TAS) - 6 (Manhattan),Financial Assistance,Taxes,suffix_removed,1,202,TAXPAYER ADVOCATE SERVICES (TAS),Financial Assistance,Taxes,,131,yes,yes
+196,THE NEW YORK PUBLIC LIBRARY (NYPL)—FINANCIAL LITERACY SERVICES,Financial Assistance,Financial Counseling & Rights,exact,1,203,THE NEW YORK PUBLIC LIBRARY (NYPL)—FINANCIAL LITERACY SERVICES,Financial Assistance,Financial Counseling & Rights,,132,yes,yes
+197,BROOKLYN PUBLIC LIBRARY (BPL)—FINANCIAL SERVICES,Financial Assistance,Financial Counseling & Rights,exact,1,204,BROOKLYN PUBLIC LIBRARY (BPL)—FINANCIAL SERVICES,Financial Assistance,Financial Counseling & Rights,,132,yes,yes
+198,NYC DEPARTMENT OF CONSUMER AND WORKER PROTECTION (DCWP)—FINANCIAL EMPOWERMENT CENTERS,Financial Assistance,Financial Counseling & Rights,exact,1,205,NYC DEPARTMENT OF CONSUMER AND WORKER PROTECTION (DCWP)—FINANCIAL EMPOWERMENT CENTERS,Financial Assistance,Financial Counseling & Rights,,133,yes,yes
+199,CAMBA,Financial Assistance,Financial Counseling & Rights,exact,1,206,CAMBA,Financial Assistance,Financial Counseling & Rights,,133,yes,yes
+200,COMMUNITY SERVICE SOCIETY (CSS),Financial Assistance,Financial Counseling & Rights,exact,3,207,COMMUNITY SERVICE SOCIETY (CSS),Financial Assistance,Financial Counseling & Rights,,133,yes,yes
+201,NEW ECONOMY PROJECT—NYC FINANCIAL JUSTICE HOTLINE,Financial Assistance,Financial Counseling & Rights,exact,1,208,NEW ECONOMY PROJECT—NYC FINANCIAL JUSTICE HOTLINE,Financial Assistance,Financial Counseling & Rights,,134,yes,yes
+202,MONEY MANAGEMENT INTERNATIONAL (MMI),Financial Assistance,Financial Counseling & Rights,exact,1,209,MONEY MANAGEMENT INTERNATIONAL (MMI),Financial Assistance,Financial Counseling & Rights,,134,yes,yes
+203,NEW YORK COUNTY LAWYERS ASSOCIATION (NYCLA)—VOLUNTEER LAWYER FOR THE DAY CONSUMER DEBT PROGRAM,Financial Assistance,Financial Counseling & Rights,no_match,0,,,,,,,,
+204,URBAN UPBOUND,Financial Assistance,Financial Counseling & Rights,exact,1,211,URBAN UPBOUND,Financial Assistance,Financial Counseling & Rights,,135,yes,yes
+205,NYC HEALTH + HOSPITALS—CORRECTIONAL HEALTH SERVICES (CHS) - 1 (Main),Physical & Mental Health,Free & Low-Cost Medical Care,suffix_removed,1,212,NYC HEALTH + HOSPITALS—CORRECTIONAL HEALTH SERVICES (CHS),Physical & Mental Health,Free & Low-Cost Medical Care,,138,yes,yes
+206,NYC HEALTH + HOSPITALS—CORRECTIONAL HEALTH SERVICES (CHS) - 2 (CRAN - Bronx),Physical & Mental Health,Free & Low-Cost Medical Care,suffix_removed,1,212,NYC HEALTH + HOSPITALS—CORRECTIONAL HEALTH SERVICES (CHS),Physical & Mental Health,Free & Low-Cost Medical Care,,138,yes,yes
+207,NYC HEALTH + HOSPITALS—CORRECTIONAL HEALTH SERVICES (CHS) - 3 (CRAN - Brooklyn),Physical & Mental Health,Free & Low-Cost Medical Care,suffix_removed,1,212,NYC HEALTH + HOSPITALS—CORRECTIONAL HEALTH SERVICES (CHS),Physical & Mental Health,Free & Low-Cost Medical Care,,138,yes,yes
+208,NYC HEALTH + HOSPITALS—CORRECTIONAL HEALTH SERVICES (CHS) - 4 (CRAN - Manhattan),Physical & Mental Health,Free & Low-Cost Medical Care,suffix_removed,1,212,NYC HEALTH + HOSPITALS—CORRECTIONAL HEALTH SERVICES (CHS),Physical & Mental Health,Free & Low-Cost Medical Care,,138,yes,yes
+209,NYC HEALTH + HOSPITALS—CORRECTIONAL HEALTH SERVICES (CHS) - 5 (CRAN - Queens),Physical & Mental Health,Free & Low-Cost Medical Care,suffix_removed,1,212,NYC HEALTH + HOSPITALS—CORRECTIONAL HEALTH SERVICES (CHS),Physical & Mental Health,Free & Low-Cost Medical Care,,138,yes,yes
+210,NYC HEALTH + HOSPITALS—CORRECTIONAL HEALTH SERVICES (CHS) - 6 (CRAN - Staten Island),Physical & Mental Health,Free & Low-Cost Medical Care,suffix_removed,1,212,NYC HEALTH + HOSPITALS—CORRECTIONAL HEALTH SERVICES (CHS),Physical & Mental Health,Free & Low-Cost Medical Care,,138,yes,yes
+211,NYC HEALTH + HOSPITALS—CORRECTIONAL HEALTH SERVICES (CHS) - 7 (PORT Practice - Bellevue Hospital),Physical & Mental Health,Free & Low-Cost Medical Care,suffix_removed,1,212,NYC HEALTH + HOSPITALS—CORRECTIONAL HEALTH SERVICES (CHS),Physical & Mental Health,Free & Low-Cost Medical Care,,138,yes,yes
+212,NYC HEALTH + HOSPITALS—CORRECTIONAL HEALTH SERVICES (CHS) - 8 (PORT Practice - Kings County Hospital),Physical & Mental Health,Free & Low-Cost Medical Care,suffix_removed,1,212,NYC HEALTH + HOSPITALS—CORRECTIONAL HEALTH SERVICES (CHS),Physical & Mental Health,Free & Low-Cost Medical Care,,138,yes,yes
+213,MOUNT SINAI INSTITUTE FOR ADVANCED MEDICINE—JACK MARTIN FUND CENTER CLINIC—COMING HOME PROGRAM,Physical & Mental Health,Free & Low-Cost Medical Care,exact,1,213,MOUNT SINAI INSTITUTE FOR ADVANCED MEDICINE—JACK MARTIN FUND CENTER CLINIC—COMING HOME PROGRAM,Physical & Mental Health,Free & Low-Cost Medical Care,Community Re-entry Assistant Network (CRAN),140,yes,yes
+214,NYC HEALTH—SEXUAL HEALTH CLINICS,Physical & Mental Health,Free & Low-Cost Medical Care,exact,1,214,NYC HEALTH—SEXUAL HEALTH CLINICS,Physical & Mental Health,Free & Low-Cost Medical Care,Community Re-entry Assistant Network (CRAN),140,yes,yes
+215,THE ALLIANCE FOR POSITIVE CHANGE,Physical & Mental Health,Free & Low-Cost Medical Care,exact,1,215,THE ALLIANCE FOR POSITIVE CHANGE,Physical & Mental Health,Free & Low-Cost Medical Care,Community Re-entry Assistant Network (CRAN),141,yes,yes
+216,THE BEDFORD-STUYVESANT FAMILY HEALTH CENTER - 1 (Main),Physical & Mental Health,Free & Low-Cost Medical Care,suffix_removed,1,216,THE BEDFORD-STUYVESANT FAMILY HEALTH CENTER,Physical & Mental Health,Free & Low-Cost Medical Care,Community Re-entry Assistant Network (CRAN),141,yes,yes
+217,THE BEDFORD-STUYVESANT FAMILY HEALTH CENTER - 2 (Broadway Family Health Center),Physical & Mental Health,Free & Low-Cost Medical Care,suffix_removed,1,216,THE BEDFORD-STUYVESANT FAMILY HEALTH CENTER,Physical & Mental Health,Free & Low-Cost Medical Care,Community Re-entry Assistant Network (CRAN),141,yes,yes
+218,THE BEDFORD-STUYVESANT FAMILY HEALTH CENTER - 3 (Women Infants Center / WIC),Physical & Mental Health,Free & Low-Cost Medical Care,suffix_removed,1,216,THE BEDFORD-STUYVESANT FAMILY HEALTH CENTER,Physical & Mental Health,Free & Low-Cost Medical Care,Community Re-entry Assistant Network (CRAN),141,yes,yes
+219,THE BEDFORD-STUYVESANT FAMILY HEALTH CENTER - 4 (Wellness Center Program),Physical & Mental Health,Free & Low-Cost Medical Care,suffix_removed,1,216,THE BEDFORD-STUYVESANT FAMILY HEALTH CENTER,Physical & Mental Health,Free & Low-Cost Medical Care,Community Re-entry Assistant Network (CRAN),141,yes,yes
+220,CHARLES B. WANG COMMUNITY HEALTH CENTER,Physical & Mental Health,Free & Low-Cost Medical Care,exact,1,217,CHARLES B. WANG COMMUNITY HEALTH CENTER,Physical & Mental Health,Free & Low-Cost Medical Care,Community Re-entry Assistant Network (CRAN),142,yes,yes
+221,COMMUNITY HEALTHCARE NETWORK,Physical & Mental Health,Free & Low-Cost Medical Care,exact,1,218,COMMUNITY HEALTHCARE NETWORK,Physical & Mental Health,Free & Low-Cost Medical Care,Community Re-entry Assistant Network (CRAN),142,yes,yes
+222,THE INSTITUTE FOR FAMILY HEALTH—THE TRAUMA-INFORMED LINKAGE TO CARE (TLC) CLINIC,Physical & Mental Health,Free & Low-Cost Medical Care,exact,1,219,THE INSTITUTE FOR FAMILY HEALTH—THE TRAUMA- INFORMED LINKAGE TO CARE (TLC) CLINIC,Physical & Mental Health,Free & Low-Cost Medical Care,Community Re-entry Assistant Network (CRAN),143,yes,yes
+223,NYC CARE,Physical & Mental Health,Free & Low-Cost Medical Care,exact,1,220,NYC CARE,Physical & Mental Health,Free & Low-Cost Medical Care,Community Re-entry Assistant Network (CRAN),143,yes,yes
+224,NYC HEALTH + HOSPITALS—STREET HEALTH OUTREACH & WELLNESS (SHOW) MOBILE UNITS,Physical & Mental Health,Free & Low-Cost Medical Care,exact,1,221,NYC HEALTH + HOSPITALS—STREET HEALTH OUTREACH & WELLNESS (SHOW) MOBILE UNITS,Physical & Mental Health,Free & Low-Cost Medical Care,Community Re-entry Assistant Network (CRAN),143,yes,yes
+225,NYS DEPARTMENT OF HEALTH—ADVANCE CARE PLANNING,Physical & Mental Health,General Health Information Resources,exact,1,222,NYS DEPARTMENT OF HEALTH—ADVANCE CARE PLANNING,Physical & Mental Health,General Health Information Resources,,144,yes,yes
+226,NYS DEPARTMENT OF HEALTH—OFFICE OF PROFESSIONAL MEDICAL CONDUCT (OPMC),Physical & Mental Health,General Health Information Resources,exact,1,223,NYS DEPARTMENT OF HEALTH—OFFICE OF PROFESSIONAL MEDICAL CONDUCT (OPMC),Physical & Mental Health,General Health Information Resources,,144,yes,yes
+227,NYC DEPARTMENT OF HEALTH AND MENTAL HYGIENE,Physical & Mental Health,General Health Information Resources,exact,1,224,NYC DEPARTMENT OF HEALTH AND MENTAL HYGIENE,Physical & Mental Health,General Health Information Resources,,144,yes,yes
+228,WORLD HEALTH ORGANIZATION (WHO),Physical & Mental Health,General Health Information Resources,exact,1,225,WORLD HEALTH ORGANIZATION (WHO),Physical & Mental Health,General Health Information Resources,,144,yes,yes
+229,CHILDREN’S HOSPITAL OF PHILADELPHIA—VACCINE EDUCATION CENTER,Physical & Mental Health,General Health Information Resources,exact,1,226,CHILDREN’S HOSPITAL OF PHILADELPHIA—VACCINE EDUCATION CENTER,Physical & Mental Health,General Health Information Resources,,145,yes,yes
+230,CLEVELAND CLINIC—HEALTH LIBRARY,Physical & Mental Health,General Health Information Resources,exact,1,227,CLEVELAND CLINIC—HEALTH LIBRARY,Physical & Mental Health,General Health Information Resources,,145,yes,yes
+231,MAYO CLINIC—DRUGS AND SUPPLEMENTS,Physical & Mental Health,General Health Information Resources,exact,1,228,MAYO CLINIC—DRUGS AND SUPPLEMENTS,Physical & Mental Health,General Health Information Resources,,145,yes,yes
+232,VOICES FOR VACCINES,Physical & Mental Health,General Health Information Resources,exact,1,229,VOICES FOR VACCINES,Physical & Mental Health,General Health Information Resources,,145,yes,yes
+233,BROOKLYN PUBLIC LIBRARY (BPL)—COMMUNITY HEALTH & SOCIAL WORK,Physical & Mental Health,General Health Information Resources,exact,1,230,BROOKLYN PUBLIC LIBRARY (BPL)—COMMUNITY HEALTH & SOCIAL WORK,Physical & Mental Health,General Health Information Resources,,145,yes,yes
+234,NYC TUBERCULOSIS PROVIDER HOTLINE,Physical & Mental Health,Helplines: Physical Health,exact,1,231,NYC TUBERCULOSIS PROVIDER HOTLINE,Physical & Mental Health,Helplines: Physical Health,,146,yes,yes
+235,AMERICAN CANCER SOCIETY HELPLINE,Physical & Mental Health,Helplines: Physical Health,exact,1,232,AMERICAN CANCER SOCIETY HELPLINE,Physical & Mental Health,Helplines: Physical Health,,146,yes,yes
+236,THE POISON CONTROL CENTER HOTLINE,Physical & Mental Health,Helplines: Physical Health,exact,1,233,THE POISON CONTROL CENTER HOTLINE,Physical & Mental Health,Helplines: Physical Health,,146,yes,yes
+237,ACLU—REPRODUCTIVE FREEDOM PROJECT,Physical & Mental Health,Reproductive Health Information & Resources,exact,1,234,ACLU—REPRODUCTIVE FREEDOM PROJECT,Physical & Mental Health,Reproductive Health Information & Resources,Emergency Contraception (EC),148,yes,yes
+238,NYC HEALTH—ABORTION ACCESS HUB,Physical & Mental Health,Reproductive Health Information & Resources,exact,1,235,NYC HEALTH—ABORTION ACCESS HUB,Physical & Mental Health,Reproductive Health Information & Resources,Emergency Contraception (EC),149,yes,yes
+239,NYC HEALTH—DOULA CARE,Physical & Mental Health,Reproductive Health Information & Resources,exact,1,236,NYC HEALTH—DOULA CARE,Physical & Mental Health,Reproductive Health Information & Resources,The following are tips on avoiding fake clinics,150,yes,yes
+240,NYC 311—STILLBIRTH OR MISCARRIAGE CERTIFICATE,Physical & Mental Health,Reproductive Health Information & Resources,exact,1,237,NYC 311—STILLBIRTH OR MISCARRIAGE CERTIFICATE,Physical & Mental Health,Reproductive Health Information & Resources,The following are tips on avoiding fake clinics,151,yes,yes
+241,FAMILY PLANNING BENEFIT PROGRAM (FPBP),Physical & Mental Health,Reproductive Health Information & Resources,exact,1,238,FAMILY PLANNING BENEFIT PROGRAM (FPBP),Physical & Mental Health,Reproductive Health Information & Resources,The following are tips on avoiding fake clinics,152,yes,yes
+242,NEW YORK ABORTION ACCESS FUND (NYAAF),Physical & Mental Health,Reproductive Health Information & Resources,exact,1,239,NEW YORK ABORTION ACCESS FUND (NYAAF),Physical & Mental Health,Reproductive Health Information & Resources,The following are tips on avoiding fake clinics,152,yes,yes
+243,POSTPARTUM RESOURCE CENTER IN NEW YORK,Physical & Mental Health,Reproductive Health Information & Resources,exact,1,240,POSTPARTUM RESOURCE CENTER IN NEW YORK,Physical & Mental Health,Reproductive Health Information & Resources,The following are tips on avoiding fake clinics,153,yes,yes
+244,REPRO LEGAL HELPLINE,Physical & Mental Health,Reproductive Health Information & Resources,exact,2,241,REPRO LEGAL HELPLINE,Physical & Mental Health,Reproductive Health Information & Resources,The following are tips on avoiding fake clinics,153,yes,yes
+245,NYS DEPARTMENT OF HEALTH—HEALTH PLAN MARKETPLACE,Physical & Mental Health,Health Insurance,exact,1,242,NYS DEPARTMENT OF HEALTH—HEALTH PLAN MARKETPLACE,Physical & Mental Health,Health Insurance,,154,yes,yes
+246,NYS DEPARTMENT OF HEALTH—HIV/AIDS INFORMATION,Physical & Mental Health,HIV & AIDS,exact,1,244,NYS DEPARTMENT OF HEALTH—HIV/AIDS INFORMATION,Physical & Mental Health,HIV & AIDS,,155,yes,yes
+247,NYC DEPARTMENT OF HEALTH AND MENTAL HYGIENE (DOH) - HIV/AIDS,Physical & Mental Health,HIV & AIDS,annotation_removed,1,245,NYC DEPARTMENT OF HEALTH AND MENTAL HYGIENE (DOH),Physical & Mental Health,HIV & AIDS,,156,yes,yes
+248,NYC HUMAN RESOURCES ADMINISTRATION—HIV/AIDS SERVICES ADMINISTRATION (HASA),Physical & Mental Health,HIV & AIDS,exact,1,246,NYC HUMAN RESOURCES ADMINISTRATION—HIV/AIDS SERVICES ADMINISTRATION (HASA),Physical & Mental Health,HIV & AIDS,,156,yes,yes
+249,NYS DEPARTMENT OF HEALTH—UNINSURED CARE PROGRAMS,Physical & Mental Health,HIV & AIDS,exact,1,247,NYS DEPARTMENT OF HEALTH—UNINSURED CARE PROGRAMS,Physical & Mental Health,HIV & AIDS,,156,yes,yes
+250,ARGUS COMMUNITY—ACCESS PROGRAM,Physical & Mental Health,HIV & AIDS,exact,1,248,ARGUS COMMUNITY—ACCESS PROGRAM,Physical & Mental Health,HIV & AIDS,,156,yes,yes
+251,BOOM!HEALTH - 1 (Harm Reduction Center),Physical & Mental Health,HIV & AIDS,suffix_removed,1,249,BOOM!HEALTH,Physical & Mental Health,HIV & AIDS,,157,yes,yes
+252,BOOM!HEALTH - 2 (Wellness Center),Physical & Mental Health,HIV & AIDS,suffix_removed,1,249,BOOM!HEALTH,Physical & Mental Health,HIV & AIDS,,157,yes,yes
+253,BRIDGING ACCESS TO CARE - 1,Physical & Mental Health,HIV & AIDS,suffix_removed,1,250,BRIDGING ACCESS TO CARE,Physical & Mental Health,HIV & AIDS,,157,yes,yes
+254,BRIDGING ACCESS TO CARE - 2,Physical & Mental Health,HIV & AIDS,suffix_removed,1,250,BRIDGING ACCESS TO CARE,Physical & Mental Health,HIV & AIDS,,157,yes,yes
+255,COMMUNITY HEALTH ACTION OF STATEN ISLAND,Physical & Mental Health,HIV & AIDS,exact,1,251,COMMUNITY HEALTH ACTION OF STATEN ISLAND,Physical & Mental Health,HIV & AIDS,,158,yes,yes
+256,FORGING AHEAD FOR COMMUNITY EMPOWERMENT AND SUPPORT (FACES),Physical & Mental Health,HIV & AIDS,exact,1,252,FORGING AHEAD FOR COMMUNITY EMPOWERMENT AND SUPPORT (FACES),Physical & Mental Health,HIV & AIDS,,158,yes,yes
+257,THE FORTUNE SOCIETY,Physical & Mental Health,HIV & AIDS,exact,3,253,THE FORTUNE SOCIETY,Physical & Mental Health,HIV & AIDS,,159,yes,yes
+258,GMHC,Physical & Mental Health,HIV & AIDS,exact,1,254,GMHC,Physical & Mental Health,HIV & AIDS,,159,yes,yes
+259,HAITIAN-AMERICAN COMMUNITY COALITION (HCC),Physical & Mental Health,HIV & AIDS,exact,1,255,HAITIAN-AMERICAN COMMUNITY COALITION (HCC),Physical & Mental Health,HIV & AIDS,,160,yes,yes
+260,"THE HISPANIC AIDS FORUM, INC.",Physical & Mental Health,HIV & AIDS,exact,1,256,"THE HISPANIC AIDS FORUM, INC.",Physical & Mental Health,HIV & AIDS,,160,yes,yes
+261,PLANNED PARENTHOOD OF NYC—PROJECT STREET BEAT,Physical & Mental Health,HIV & AIDS,exact,1,257,PLANNED PARENTHOOD OF NYC—PROJECT STREET BEAT,Physical & Mental Health,HIV & AIDS,,160,yes,yes
+262,PRISONERS’ LEGAL SERVICES OF NEW YORK (PLSNY),Physical & Mental Health,AIDS Discrimination,exact,2,258,PRISONERS’ LEGAL SERVICES OF NEW YORK (PLSNY),Physical & Mental Health,AIDS Discrimination,,161,yes,yes
+263,NYC COMMISSION ON HUMAN RIGHTS,Physical & Mental Health,AIDS Discrimination,exact,4,259,NYC COMMISSION ON HUMAN RIGHTS,Physical & Mental Health,AIDS Discrimination,,161,yes,yes
+264,NYC HEALTH—HEPATITIS C,Physical & Mental Health,Hepatitis C,exact,1,260,NYC HEALTH—HEPATITIS C,Physical & Mental Health,Hepatitis C,,162,yes,yes
+265,AMERICAN LIVER FOUNDATION,Physical & Mental Health,Hepatitis C,exact,1,261,AMERICAN LIVER FOUNDATION,Physical & Mental Health,Hepatitis C,,162,yes,yes
+266,US AIR QUALITY INDEX,Physical & Mental Health,Environmental Health & Safety Resources,exact,1,262,US AIR QUALITY INDEX,Physical & Mental Health,Environmental Health & Safety Resources,,163,yes,yes
+267,NYC HEALTH CLIMATE AND HEALTH,Physical & Mental Health,Environmental Health & Safety Resources,exact,1,263,NYC HEALTH CLIMATE AND HEALTH,Physical & Mental Health,Environmental Health & Safety Resources,,163,yes,yes
+268,NOTIFY NYC,Physical & Mental Health,Environmental Health & Safety Resources,exact,1,264,NOTIFY NYC,Physical & Mental Health,Environmental Health & Safety Resources,,164,yes,yes
+269,NYC COOL OPTIONS,Physical & Mental Health,Environmental Health & Safety Resources,exact,1,265,NYC COOL OPTIONS,Physical & Mental Health,Environmental Health & Safety Resources,,164,yes,yes
+270,BODY POLITIC—COVID-19,Physical & Mental Health,COVID-19,exact,1,266,BODY POLITIC—COVID-19,Physical & Mental Health,COVID-19,Post COVID-19 Care & Long COVID,168,yes,yes
+271,NYS OFFICE OF MENTAL HEALTH—COVID-19 RESOURCES,Physical & Mental Health,COVID-19,exact,1,267,NYS OFFICE OF MENTAL HEALTH—COVID-19 RESOURCES,Physical & Mental Health,COVID-19,Post COVID-19 Care & Long COVID,168,yes,yes
+272,NYC HUMAN RESOURCES ADMINISTRATION—OFFICE OF BURIAL SERVICES,Physical & Mental Health,COVID-19,exact,1,268,NYC HUMAN RESOURCES ADMINISTRATION—OFFICE OF BURIAL SERVICES,Physical & Mental Health,COVID-19,Post COVID-19 Care & Long COVID,168,yes,yes
+273,NYS OFFICE OF MENTAL HEALTH—BRONX PSYCHIATRIC CENTER,Physical & Mental Health,Mental Health,exact,1,269,NYS OFFICE OF MENTAL HEALTH—BRONX PSYCHIATRIC CENTER,Physical & Mental Health,Mental Health,NYC Residential Crisis Support and Respite Centers,170,yes,yes
+274,BALTIC STREET WELLNESS SOLUTIONS,Physical & Mental Health,Mental Health,exact,1,270,BALTIC STREET WELLNESS SOLUTIONS,Physical & Mental Health,Mental Health,NYC Residential Crisis Support and Respite Centers,170,yes,yes
+275,BLACK VETERANS FOR SOCIAL JUSTICE (BVSJ)—SSGT FOX PROGRAM,Physical & Mental Health,Mental Health,exact,1,271,BLACK VETERANS FOR SOCIAL JUSTICE (BVSJ)—SSGT FOX PROGRAM,Physical & Mental Health,Mental Health,NYC Residential Crisis Support and Respite Centers,170,yes,yes
+276,CENTER FOR ALTERNATIVE SENTENCING AND EMPLOYMENT SERVICES (CASES)—NATHANIEL CLINICS - 1 (Bronx),Physical & Mental Health,Mental Health,suffix_removed,1,272,CENTER FOR ALTERNATIVE SENTENCING AND EMPLOYMENT SERVICES (CASES)—NATHANIEL CLINICS,Physical & Mental Health,Mental Health,NYC Residential Crisis Support and Respite Centers,171,yes,yes
+277,CENTER FOR ALTERNATIVE SENTENCING AND EMPLOYMENT SERVICES (CASES)—NATHANIEL CLINICS - 2 (Harlem),Physical & Mental Health,Mental Health,suffix_removed,1,272,CENTER FOR ALTERNATIVE SENTENCING AND EMPLOYMENT SERVICES (CASES)—NATHANIEL CLINICS,Physical & Mental Health,Mental Health,NYC Residential Crisis Support and Respite Centers,171,yes,yes
+278,COMMUNITY ACCESS - 1 (Main),Physical & Mental Health,Mental Health,suffix_removed,1,273,COMMUNITY ACCESS,Physical & Mental Health,Mental Health,NYC Residential Crisis Support and Respite Centers,171,yes,yes
+279,COMMUNITY ACCESS - 2 (Blueprint Supported Education),Physical & Mental Health,Mental Health,suffix_removed,1,273,COMMUNITY ACCESS,Physical & Mental Health,Mental Health,NYC Residential Crisis Support and Respite Centers,171,yes,yes
+280,COMMUNITY ACCESS - 3 (Howie the Harp Advocacy Center),Physical & Mental Health,Mental Health,suffix_removed,1,273,COMMUNITY ACCESS,Physical & Mental Health,Mental Health,NYC Residential Crisis Support and Respite Centers,171,yes,yes
+281,FOUNTAIN HOUSE - 1 (Central Location),Physical & Mental Health,Mental Health,suffix_removed,1,274,FOUNTAIN HOUSE,Physical & Mental Health,Mental Health,NYC Residential Crisis Support and Respite Centers,172,yes,yes
+282,FOUNTAIN HOUSE - 2 (Bronx Clubhouse),Physical & Mental Health,Mental Health,suffix_removed,1,274,FOUNTAIN HOUSE,Physical & Mental Health,Mental Health,NYC Residential Crisis Support and Respite Centers,172,yes,yes
+283,FOUNTAIN HOUSE - 3 (Harlem Clubhouse),Physical & Mental Health,Mental Health,suffix_removed,1,274,FOUNTAIN HOUSE,Physical & Mental Health,Mental Health,NYC Residential Crisis Support and Respite Centers,172,yes,yes
+284,GOODWILL INDUSTRIES—BRONX ACE PROGRAM & PAL PROGRAM,Physical & Mental Health,Mental Health,exact,1,275,GOODWILL INDUSTRIES—BRONX ACE PROGRAM & PAL PROGRAM,Physical & Mental Health,Mental Health,NYC Residential Crisis Support and Respite Centers,173,yes,yes
+285,HARLEM EAST LIFE PLAN (HELP),Physical & Mental Health,Mental Health,exact,2,276,HARLEM EAST LIFE PLAN (HELP),Physical & Mental Health,Mental Health,NYC Residential Crisis Support and Respite Centers,173,yes,yes
+286,THE JEWISH BOARD—MENTAL HEALTH CLINICS,Physical & Mental Health,Mental Health,exact,1,277,THE JEWISH BOARD—MENTAL HEALTH CLINICS,Physical & Mental Health,Mental Health,NYC Residential Crisis Support and Respite Centers,174,yes,yes
+287,NATIONAL ALLIANCE ON MENTAL ILLNESS (NAMI),Physical & Mental Health,Mental Health,exact,1,278,NATIONAL ALLIANCE ON MENTAL ILLNESS (NAMI),Physical & Mental Health,Mental Health,NYC Residential Crisis Support and Respite Centers,174,yes,yes
+288,NATIONAL ALLIANCE ON MENTAL ILLNESS (NAMI)—NYC METRO,Physical & Mental Health,Mental Health,exact,1,279,NATIONAL ALLIANCE ON MENTAL ILLNESS (NAMI)—NYC METRO,Physical & Mental Health,Mental Health,NYC Residential Crisis Support and Respite Centers,174,yes,yes
+289,REVCORE RECOVERY CENTER - 1 (Brooklyn),Physical & Mental Health,Mental Health,suffix_removed,2,280,REVCORE RECOVERY CENTER,Physical & Mental Health,Mental Health,NYC Residential Crisis Support and Respite Centers,175,yes,yes
+290,REVCORE RECOVERY CENTER - 2 (Manhattan),Physical & Mental Health,Mental Health,suffix_removed,2,280,REVCORE RECOVERY CENTER,Physical & Mental Health,Mental Health,NYC Residential Crisis Support and Respite Centers,175,yes,yes
+291,REVCORE RECOVERY CENTER - 3 (Jackson Heights),Physical & Mental Health,Mental Health,suffix_removed,2,280,REVCORE RECOVERY CENTER,Physical & Mental Health,Mental Health,NYC Residential Crisis Support and Respite Centers,175,yes,yes
+292,SERVICES FOR THE UNDERSERVED (S:US),Physical & Mental Health,Mental Health,exact,1,281,SERVICES FOR THE UNDERSERVED (S:US),Physical & Mental Health,Mental Health,NYC Residential Crisis Support and Respite Centers,175,yes,yes
+293,VENTURE HOUSE - 1 (Bronx),Physical & Mental Health,Mental Health,suffix_removed,1,282,VENTURE HOUSE,Physical & Mental Health,Mental Health,NYC Residential Crisis Support and Respite Centers,176,yes,yes
+294,VENTURE HOUSE - 2 (Brooklyn),Physical & Mental Health,Mental Health,suffix_removed,1,282,VENTURE HOUSE,Physical & Mental Health,Mental Health,NYC Residential Crisis Support and Respite Centers,176,yes,yes
+295,VENTURE HOUSE - 3 (Queens),Physical & Mental Health,Mental Health,suffix_removed,1,282,VENTURE HOUSE,Physical & Mental Health,Mental Health,NYC Residential Crisis Support and Respite Centers,176,yes,yes
+296,VENTURE HOUSE - 4 (Staten Island),Physical & Mental Health,Mental Health,suffix_removed,1,282,VENTURE HOUSE,Physical & Mental Health,Mental Health,NYC Residential Crisis Support and Respite Centers,176,yes,yes
+297,JUST DETENTION INTERNATIONAL (JDI),Physical & Mental Health,Resources & Counseling Related to Sexual Violence,exact,1,283,JUST DETENTION INTERNATIONAL (JDI),Physical & Mental Health,Resources & Counseling Related to Sexual Violence,,177,yes,yes
+298,MUSTARD SEED COUNSELING SERVICES,Physical & Mental Health,Resources & Counseling Related to Sexual Violence,exact,1,284,MUSTARD SEED COUNSELING SERVICES,Physical & Mental Health,Resources & Counseling Related to Sexual Violence,,178,yes,yes
+299,NEW YORK COUNSELING FOR CHANGE,Physical & Mental Health,Resources & Counseling Related to Sexual Violence,exact,1,285,NEW YORK COUNSELING FOR CHANGE,Physical & Mental Health,Resources & Counseling Related to Sexual Violence,,178,yes,yes
+300,SHILOH CONSULTING,Physical & Mental Health,Resources & Counseling Related to Sexual Violence,exact,1,286,SHILOH CONSULTING,Physical & Mental Health,Resources & Counseling Related to Sexual Violence,,178,yes,yes
+301,STOP IT NOW!,Physical & Mental Health,Resources & Counseling Related to Sexual Violence,exact,1,287,STOP IT NOW!,Physical & Mental Health,Resources & Counseling Related to Sexual Violence,,179,yes,yes
+302,1IN6,Physical & Mental Health,Resources & Counseling Related to Sexual Violence,exact,1,288,1IN6,Physical & Mental Health,Resources & Counseling Related to Sexual Violence,,179,yes,yes
+303,A CALL FOR CHANGE,Physical & Mental Health,Resources & Counseling Related to Sexual Violence,exact,1,289,A CALL FOR CHANGE,Physical & Mental Health,Resources & Counseling Related to Sexual Violence,,180,yes,yes
+304,ANTI-VIOLENCE PROJECT (AVP),Physical & Mental Health,Resources & Counseling Related to Sexual Violence,exact,2,290,ANTI-VIOLENCE PROJECT (AVP),Physical & Mental Health,Resources & Counseling Related to Sexual Violence,,180,yes,yes
+305,CRIME VICTIMS TREATMENT CENTER (CVTC),Physical & Mental Health,Resources & Counseling Related to Sexual Violence,exact,2,291,CRIME VICTIMS TREATMENT CENTER (CVTC),Physical & Mental Health,Resources & Counseling Related to Sexual Violence,,180,yes,yes
+306,MALESURVIVOR,Physical & Mental Health,Resources & Counseling Related to Sexual Violence,exact,1,292,MALESURVIVOR,Physical & Mental Health,Resources & Counseling Related to Sexual Violence,,181,yes,yes
+307,988 SUICIDE & CRISIS LIFELINE,Physical & Mental Health,Helplines & Other Mental Health Resources,exact,1,293,988 SUICIDE & CRISIS LIFELINE,Physical & Mental Health,Helplines & Other Mental Health Resources,,181,yes,yes
+308,CALL BLACKLINE,Physical & Mental Health,Helplines & Other Mental Health Resources,exact,1,294,CALL BLACKLINE,Physical & Mental Health,Helplines & Other Mental Health Resources,,181,yes,yes
+309,PEER SUPPORT SPACE,Physical & Mental Health,Helplines & Other Mental Health Resources,exact,1,295,PEER SUPPORT SPACE,Physical & Mental Health,Helplines & Other Mental Health Resources,,181,yes,yes
+310,PROJECT LETS,Physical & Mental Health,Helplines & Other Mental Health Resources,exact,1,296,PROJECT LETS,Physical & Mental Health,Helplines & Other Mental Health Resources,,182,yes,yes
+311,ANXIETY AND DEPRESSION ASSOCIATION OF AMERICA (ADAA),Physical & Mental Health,Helplines & Other Mental Health Resources,exact,1,297,ANXIETY AND DEPRESSION ASSOCIATION OF AMERICA (ADAA),Physical & Mental Health,Helplines & Other Mental Health Resources,,182,yes,yes
+312,CHILDREN AND ADULTS WITH ATTENTION-DEFICIT/HYPERACTIVITY DISORDER (CHADD),Physical & Mental Health,Helplines & Other Mental Health Resources,exact,1,298,CHILDREN AND ADULTS WITH ATTENTION-DEFICIT/HYPERACTIVITY DISORDER (CHADD),Physical & Mental Health,Helplines & Other Mental Health Resources,,182,yes,yes
+313,DEPRESSION AND BIPOLAR SUPPORT ALLIANCE (DBSA),Physical & Mental Health,Helplines & Other Mental Health Resources,exact,1,299,DEPRESSION AND BIPOLAR SUPPORT ALLIANCE (DBSA),Physical & Mental Health,Helplines & Other Mental Health Resources,,182,yes,yes
+314,DISASTER DISTRESS HELPLINE,Physical & Mental Health,Helplines & Other Mental Health Resources,exact,1,300,DISASTER DISTRESS HELPLINE,Physical & Mental Health,Helplines & Other Mental Health Resources,,182,yes,yes
+315,INTERNATIONAL OCD FOUNDATION,Physical & Mental Health,Helplines & Other Mental Health Resources,exact,1,301,INTERNATIONAL OCD FOUNDATION,Physical & Mental Health,Helplines & Other Mental Health Resources,,183,yes,yes
+316,NATIONAL ASSOCIATION OF ANOREXIA NERVOSA & ASSOCIATED DISORDERS (ANAD),Physical & Mental Health,Helplines & Other Mental Health Resources,exact,1,302,NATIONAL ASSOCIATION OF ANOREXIA NERVOSA & ASSOCIATED DISORDERS (ANAD),Physical & Mental Health,Helplines & Other Mental Health Resources,,183,yes,yes
+317,NATIONAL EATING DISORDERS ASSOCIATION (NEDA),Physical & Mental Health,Helplines & Other Mental Health Resources,exact,1,303,NATIONAL EATING DISORDERS ASSOCIATION (NEDA),Physical & Mental Health,Helplines & Other Mental Health Resources,,183,yes,yes
+318,SCHIZOPHRENIA & PSYCHOSIS ACTION ALLIANCE,Physical & Mental Health,Helplines & Other Mental Health Resources,exact,1,304,SCHIZOPHRENIA & PSYCHOSIS ACTION ALLIANCE,Physical & Mental Health,Helplines & Other Mental Health Resources,,183,yes,yes
+319,TARA,Physical & Mental Health,Helplines & Other Mental Health Resources,exact,1,305,TARA,Physical & Mental Health,Helplines & Other Mental Health Resources,,183,yes,yes
+320,NYC MOBILE CRISIS TEAMS (MCT),Physical & Mental Health,Helplines & Other Mental Health Resources,exact,1,306,NYC MOBILE CRISIS TEAMS (MCT),Physical & Mental Health,Helplines & Other Mental Health Resources,,184,yes,yes
+321,LATINX THERAPY,Physical & Mental Health,Therapy Resources,exact,1,307,LATINX THERAPY,Physical & Mental Health,Therapy Resources,,185,yes,yes
+322,NATIONAL QUEER AND TRANS THERAPISTS OF COLOR NETWORK (NQTTCN),Physical & Mental Health,Therapy Resources,exact,1,308,NATIONAL QUEER AND TRANS THERAPISTS OF COLOR NETWORK (NQTTCN),Physical & Mental Health,Therapy Resources,,186,yes,yes
+323,THERAPY FOR BLACK GIRLS,Physical & Mental Health,Therapy Resources,exact,1,309,THERAPY FOR BLACK GIRLS,Physical & Mental Health,Therapy Resources,,186,yes,yes
+324,SUBSTANCE ABUSE AND MENTAL HEALTH SERVICES ADMINISTRATION (SAMHSA)—FIND TREATMENT SERVICES LOCATOR,Addiction,Treatment Programs & Organizations,exact,1,310,SUBSTANCE ABUSE AND MENTAL HEALTH SERVICES ADMINISTRATION (SAMHSA)—FIND TREATMENT SERVICES LOCATOR,Addiction,Treatment Programs & Organizations,,188,yes,yes
+325,NYS OFFICE OF ADDICTION SERVICES AND SUPPORTS (OASAS),Addiction,Treatment Programs & Organizations,exact,1,311,NYS OFFICE OF ADDICTION SERVICES AND SUPPORTS (OASAS),Addiction,Treatment Programs & Organizations,,188,yes,yes
+326,ADDICTION CARE INTERVENTIONS (ACI) - 1 (Inpatient Services),Addiction,Treatment Programs & Organizations,suffix_removed,1,312,ADDICTION CARE INTERVENTIONS (ACI),Addiction,Treatment Programs & Organizations,,188,yes,yes
+327,ADDICTION CARE INTERVENTIONS (ACI) - 2 (Outpatient Services),Addiction,Treatment Programs & Organizations,suffix_removed,1,312,ADDICTION CARE INTERVENTIONS (ACI),Addiction,Treatment Programs & Organizations,,188,yes,yes
+328,BROOKLYN CENTER FOR PSYCHOTHERAPY—NEW DIRECTIONS SUBSTANCE USE CLINIC,Addiction,Treatment Programs & Organizations,exact,1,313,BROOKLYN CENTER FOR PSYCHOTHERAPY—NEW DIRECTIONS SUBSTANCE USE CLINIC,Addiction,Treatment Programs & Organizations,,189,yes,yes
+329,CENTER FOR COMMUNITY ALTERNATIVES (CCA)—CROSSROADS,Addiction,Treatment Programs & Organizations,exact,1,314,CENTER FOR COMMUNITY ALTERNATIVES (CCA)—CROSSROADS,Addiction,Treatment Programs & Organizations,,189,yes,yes
+330,EXODUS TRANSITIONAL COMMUNITY—WELLNESS CENTER,Addiction,Treatment Programs & Organizations,exact,1,315,EXODUS TRANSITIONAL COMMUNITY—WELLNESS CENTER,Addiction,Treatment Programs & Organizations,,190,yes,yes
+331,EXPONENTS,Addiction,Treatment Programs & Organizations,exact,4,316,EXPONENTS,Addiction,Treatment Programs & Organizations,,190,yes,yes
+332,REALIZATION CENTER - 1 (Brooklyn),Addiction,Treatment Programs & Organizations,suffix_removed,1,317,REALIZATION CENTER,Addiction,Treatment Programs & Organizations,,190,yes,yes
+333,REALIZATION CENTER - 2 (Manhattan),Addiction,Treatment Programs & Organizations,suffix_removed,1,317,REALIZATION CENTER,Addiction,Treatment Programs & Organizations,,190,yes,yes
+334,ALBERT EINSTEIN COLLEGE OF MEDICINE—MONTEFIORE-EINSTEIN DIVISION OF SUBSTANCE ABUSE - 1 (Melrose),Addiction,Treatment Programs & Organizations,suffix_removed,1,319,ALBERT EINSTEIN COLLEGE OF MEDICINE—MONTEFIORE- EINSTEIN DIVISION OF SUBSTANCE ABUSE,Addiction,Treatment Programs & Organizations,,191,yes,yes
+335,ALBERT EINSTEIN COLLEGE OF MEDICINE—MONTEFIORE-EINSTEIN DIVISION OF SUBSTANCE ABUSE - 2 (Port Morris),Addiction,Treatment Programs & Organizations,suffix_removed,1,319,ALBERT EINSTEIN COLLEGE OF MEDICINE—MONTEFIORE- EINSTEIN DIVISION OF SUBSTANCE ABUSE,Addiction,Treatment Programs & Organizations,,191,yes,yes
+336,ALBERT EINSTEIN COLLEGE OF MEDICINE—MONTEFIORE-EINSTEIN DIVISION OF SUBSTANCE ABUSE - 3 (Waters Place),Addiction,Treatment Programs & Organizations,suffix_removed,1,319,ALBERT EINSTEIN COLLEGE OF MEDICINE—MONTEFIORE- EINSTEIN DIVISION OF SUBSTANCE ABUSE,Addiction,Treatment Programs & Organizations,,191,yes,yes
+337,ARGUS COMMUNITY,Addiction,Treatment Programs & Organizations,exact,1,320,ARGUS COMMUNITY,Addiction,Treatment Programs & Organizations,,192,yes,yes
+338,ARMS ACRES—OUTPATIENT SERVICES - 1 (Bronx),Addiction,Treatment Programs & Organizations,suffix_removed,1,321,ARMS ACRES—OUTPATIENT SERVICES,Addiction,Treatment Programs & Organizations,,192,yes,yes
+339,ARMS ACRES—OUTPATIENT SERVICES - 2 (Jamaica),Addiction,Treatment Programs & Organizations,suffix_removed,1,321,ARMS ACRES—OUTPATIENT SERVICES,Addiction,Treatment Programs & Organizations,,192,yes,yes
+340,THE BOWERY MISSION,Addiction,Treatment Programs & Organizations,exact,2,322,THE BOWERY MISSION,Addiction,Treatment Programs & Organizations,,192,yes,yes
+341,"CREATE, INC.",Addiction,Treatment Programs & Organizations,exact,1,323,"CREATE, INC.",Addiction,Treatment Programs & Organizations,,193,yes,yes
+342,"ELMCOR YOUTH AND ADULT ACTIVITIES, INC.",Addiction,Treatment Programs & Organizations,exact,1,324,"ELMCOR YOUTH AND ADULT ACTIVITIES, INC.",Addiction,Treatment Programs & Organizations,,193,yes,yes
+343,GREENWICH HOUSE—CENTER FOR HEALING,Addiction,Treatment Programs & Organizations,exact,1,325,GREENWICH HOUSE—CENTER FOR HEALING,Addiction,Treatment Programs & Organizations,,194,yes,yes
+344,LOWER EASTSIDE SERVICE CENTER (LESC),Addiction,Treatment Programs & Organizations,exact,1,327,LOWER EASTSIDE SERVICE CENTER (LESC),Addiction,Treatment Programs & Organizations,,194,yes,yes
+345,ODYSSEY HOUSE,Addiction,Treatment Programs & Organizations,exact,1,328,ODYSSEY HOUSE,Addiction,Treatment Programs & Organizations,,195,yes,yes
+346,PHOENIX HOUSE,Addiction,Treatment Programs & Organizations,exact,1,329,PHOENIX HOUSE,Addiction,Treatment Programs & Organizations,,195,yes,yes
+347,"QUEENS VILLAGE COMMITTEE FOR MENTAL HEALTH FOR J-CAP, INC.",Addiction,Treatment Programs & Organizations,exact,1,330,"QUEENS VILLAGE COMMITTEE FOR MENTAL HEALTH FOR J-CAP, INC.",Addiction,Treatment Programs & Organizations,,196,yes,yes
+348,SAMARITAN DAYTOP VILLAGE - 1 (Administrative Headquarters),Addiction,Treatment Programs & Organizations,suffix_removed,1,331,SAMARITAN DAYTOP VILLAGE,Addiction,Treatment Programs & Organizations,,196,yes,yes
+349,SAMARITAN DAYTOP VILLAGE - 2 (Central Admissions - The Richard Pruss Wellness Center),Addiction,Treatment Programs & Organizations,suffix_removed,1,331,SAMARITAN DAYTOP VILLAGE,Addiction,Treatment Programs & Organizations,,196,yes,yes
+350,START CARE INC.,Addiction,Treatment Programs & Organizations,exact,1,332,START CARE INC.,Addiction,Treatment Programs & Organizations,,196,yes,yes
+351,VIP COMMUNITY SERVICES,Addiction,Treatment Programs & Organizations,exact,1,333,VIP COMMUNITY SERVICES,Addiction,Treatment Programs & Organizations,,197,yes,yes
+352,AL-ANON—NYC,Addiction,Support Groups,exact,1,334,AL-ANON—NYC,Addiction,Support Groups,,197,yes,yes
+353,ALCOHOLICS ANONYMOUS (AA)—NEW YORK,Addiction,Support Groups,exact,1,335,ALCOHOLICS ANONYMOUS (AA)—NEW YORK,Addiction,Support Groups,,197,yes,yes
+354,GAM-ANON FOR NEW YORK,Addiction,Support Groups,exact,1,336,GAM-ANON FOR NEW YORK,Addiction,Support Groups,,198,yes,yes
+355,NARCOTICS ANONYMOUS (NA)—GREATER NEW YORK REGION,Addiction,Support Groups,exact,1,337,NARCOTICS ANONYMOUS (NA)—GREATER NEW YORK REGION,Addiction,Support Groups,,198,yes,yes
+356,NEW YORK CRYSTAL METH ANONYMOUS INTERGROUP,Addiction,Support Groups,exact,1,338,NEW YORK CRYSTAL METH ANONYMOUS INTERGROUP,Addiction,Support Groups,,198,yes,yes
+357,PILLS ANONYMOUS,Addiction,Support Groups,exact,1,339,PILLS ANONYMOUS,Addiction,Support Groups,,199,yes,yes
+358,SEXUAL COMPULSIVES ANONYMOUS OF NEW YORK,Addiction,Support Groups,exact,1,340,SEXUAL COMPULSIVES ANONYMOUS OF NEW YORK,Addiction,Support Groups,,199,yes,yes
+359,NYS SMOKERS’ QUITLINE,Addiction,Resources & Other Services,exact,1,341,NYS SMOKERS’ QUITLINE,Addiction,Resources & Other Services,,199,yes,yes
+360,NYC DEPARTMENT OF HEALTH AND MENTAL HYGIENE (DOH)—NYC QUITS,Addiction,Resources & Other Services,exact,1,342,NYC DEPARTMENT OF HEALTH AND MENTAL HYGIENE (DOH)—NYC QUITS,Addiction,Resources & Other Services,,200,yes,yes
+361,AMERICAN HEART ASSOCIATION,Addiction,Resources & Other Services,exact,1,343,AMERICAN HEART ASSOCIATION,Addiction,Resources & Other Services,,200,yes,yes
+362,NATIONAL ASSOCIATION FOR SHOPLIFTING PREVENTION,Addiction,Resources & Other Services,exact,1,344,NATIONAL ASSOCIATION FOR SHOPLIFTING PREVENTION,Addiction,Resources & Other Services,,200,yes,yes
+363,NYS HOPELINE,Addiction,Helplines,exact,1,345,NYS HOPELINE,Addiction,Helplines,,200,yes,yes
+364,NYC 988,Addiction,Helplines,exact,1,346,NYC 988,Addiction,Helplines,,201,yes,yes
+365,ONPOINT NYC - 1 (East Harlem),Addiction,Harm Reduction,suffix_removed,1,347,ONPOINT NYC,Addiction,Harm Reduction,Overdose Prevention Centers in NYC,205,yes,yes
+366,ONPOINT NYC - 2 (Washington Heights),Addiction,Harm Reduction,suffix_removed,1,347,ONPOINT NYC,Addiction,Harm Reduction,Overdose Prevention Centers in NYC,205,yes,yes
+367,VOCAL-NY,Addiction,Harm Reduction,exact,2,348,VOCAL-NY,Addiction,Harm Reduction,Overdose Prevention Centers in NYC,206,yes,yes
+368,AFTER HOURS PROJECT - 1 (Main Office),Addiction,Harm Reduction,suffix_removed,1,349,AFTER HOURS PROJECT,Addiction,Harm Reduction,Overdose Prevention Centers in NYC,206,yes,yes
+369,AFTER HOURS PROJECT - 2 (Wellness Center),Addiction,Harm Reduction,suffix_removed,1,349,AFTER HOURS PROJECT,Addiction,Harm Reduction,Overdose Prevention Centers in NYC,206,yes,yes
+370,AFTER HOURS PROJECT - 3 (Housing),Addiction,Harm Reduction,suffix_removed,1,349,AFTER HOURS PROJECT,Addiction,Harm Reduction,Overdose Prevention Centers in NYC,206,yes,yes
+371,ST. ANN’S CORNER OF HARM REDUCTION,Addiction,Harm Reduction,exact,1,350,ST. ANN’S CORNER OF HARM REDUCTION,Addiction,Harm Reduction,Overdose Prevention Centers in NYC,207,yes,yes
+372,THE BRONX DEFENDERS,Legal,Representation & Assistance,exact,1,351,THE BRONX DEFENDERS,Legal,Representation & Assistance,Discovery Law,224,yes,yes
+373,BROOKLYN DEFENDER SERVICES (BDS) - 1 (Main Office),Legal,Representation & Assistance,suffix_removed,1,352,BROOKLYN DEFENDER SERVICES (BDS),Legal,Representation & Assistance,Discovery Law,225,yes,yes
+374,BROOKLYN DEFENDER SERVICES (BDS) - 2 (Brooklyn Visitor Center),Legal,Representation & Assistance,suffix_removed,1,352,BROOKLYN DEFENDER SERVICES (BDS),Legal,Representation & Assistance,Discovery Law,225,yes,yes
+375,BROOKLYN DEFENDER SERVICES (BDS) - 3 (Queens Office),Legal,Representation & Assistance,suffix_removed,1,352,BROOKLYN DEFENDER SERVICES (BDS),Legal,Representation & Assistance,Discovery Law,225,yes,yes
+376,BROOKLYN DEFENDER SERVICES (BDS) - 4 (Jamaica Office),Legal,Representation & Assistance,suffix_removed,1,352,BROOKLYN DEFENDER SERVICES (BDS),Legal,Representation & Assistance,Discovery Law,225,yes,yes
+377,COMMUNITY JUSTICE CONNECT - 1 (Bronx),Legal,Representation & Assistance,suffix_removed,1,353,COMMUNITY JUSTICE CONNECT,Legal,Representation & Assistance,Discovery Law,226,yes,yes
+378,COMMUNITY JUSTICE CONNECT - 2 (Brooklyn),Legal,Representation & Assistance,suffix_removed,1,353,COMMUNITY JUSTICE CONNECT,Legal,Representation & Assistance,Discovery Law,226,yes,yes
+379,COMMUNITY JUSTICE CONNECT - 3 (Jamaica),Legal,Representation & Assistance,suffix_removed,1,353,COMMUNITY JUSTICE CONNECT,Legal,Representation & Assistance,Discovery Law,226,yes,yes
+380,THE EXONERATION INITIATIVE (EXI),Legal,Representation & Assistance,exact,1,355,THE EXONERATION INITIATIVE (EXI),Legal,Representation & Assistance,Discovery Law,226,yes,yes
+381,FEDERAL DEFENDERS OF NEW YORK - 1 (Eastern District),Legal,Representation & Assistance,suffix_removed,1,356,FEDERAL DEFENDERS OF NEW YORK,Legal,Representation & Assistance,Discovery Law,227,yes,yes
+382,FEDERAL DEFENDERS OF NEW YORK - 2 (Southern District),Legal,Representation & Assistance,suffix_removed,1,356,FEDERAL DEFENDERS OF NEW YORK,Legal,Representation & Assistance,Discovery Law,227,yes,yes
+383,GOOD CALL,Legal,Representation & Assistance,exact,1,357,GOOD CALL,Legal,Representation & Assistance,Discovery Law,227,yes,yes
+384,INNOCENCE PROJECT,Legal,Representation & Assistance,exact,1,358,INNOCENCE PROJECT,Legal,Representation & Assistance,Discovery Law,228,yes,yes
+385,LAMBDA LEGAL,Legal,Representation & Assistance,exact,2,359,LAMBDA LEGAL,Legal,Representation & Assistance,Discovery Law,228,yes,yes
+386,LEGAL ACTION CENTER (LAC),Legal,Representation & Assistance,exact,1,360,LEGAL ACTION CENTER (LAC),Legal,Representation & Assistance,Discovery Law,229,yes,yes
+387,LEGAL AID SOCIETY,Legal,Representation & Assistance,exact,1,361,LEGAL AID SOCIETY,Legal,Representation & Assistance,Discovery Law,229,yes,yes
+388,LEGAL SERVICES NYC,Legal,Representation & Assistance,exact,1,362,LEGAL SERVICES NYC,Legal,Representation & Assistance,Discovery Law,230,yes,yes
+389,LGBT BAR ASSOCIATION OF GREATER NEW YORK,Legal,Representation & Assistance,exact,2,363,LGBT BAR ASSOCIATION OF GREATER NEW YORK,Legal,Representation & Assistance,Discovery Law,230,yes,yes
+390,MOBILIZATION FOR JUSTICE - 1 (Bronx),Legal,Representation & Assistance,suffix_removed,1,364,MOBILIZATION FOR JUSTICE,Legal,Representation & Assistance,Discovery Law,230,yes,yes
+391,MOBILIZATION FOR JUSTICE - 2 (Manhattan),Legal,Representation & Assistance,suffix_removed,1,364,MOBILIZATION FOR JUSTICE,Legal,Representation & Assistance,Discovery Law,230,yes,yes
+392,NEW YORK CITY BAR LEGAL REFERRAL SERVICE,Legal,Representation & Assistance,exact,1,365,NEW YORK CITY BAR LEGAL REFERRAL SERVICE,Legal,Representation & Assistance,Discovery Law,231,yes,yes
+393,NEW YORK COUNTY LAWYERS ASSOCIATION (NYCLA)—LEGAL COUNSELING PROJECT & CIVIL APPEALS PROJECT,Legal,Representation & Assistance,exact,1,366,NEW YORK COUNTY LAWYERS ASSOCIATION (NYCLA)—LEGAL COUNSELING PROJECT & CIVIL APPEALS PROJECT,Legal,Representation & Assistance,Discovery Law,231,yes,yes
+394,NEW YORK LEGAL ASSISTANCE GROUP,Legal,Representation & Assistance,exact,1,367,NEW YORK LEGAL ASSISTANCE GROUP,Legal,Representation & Assistance,Discovery Law,232,yes,yes
+395,NEW YORK PEACE INSTITUTE,Legal,Representation & Assistance,exact,5,368,NEW YORK PEACE INSTITUTE,Legal,Representation & Assistance,Discovery Law,232,yes,yes
+396,PAROLE PREPARATION PROJECT,Legal,Representation & Assistance,exact,1,369,PAROLE PREPARATION PROJECT,Legal,Representation & Assistance,Discovery Law,233,yes,yes
+397,PRISONERS’ LEGAL SERVICES OF NEW YORK (PLSNY) - 1 (Central Office - Albany),Legal,Representation & Assistance,suffix_removed,2,370,PRISONERS’ LEGAL SERVICES OF NEW YORK (PLSNY),Legal,Representation & Assistance,Discovery Law,233,yes,yes
+398,PRISONERS’ LEGAL SERVICES OF NEW YORK (PLSNY) - 2 (Buffalo Office),Legal,Representation & Assistance,suffix_removed,2,370,PRISONERS’ LEGAL SERVICES OF NEW YORK (PLSNY),Legal,Representation & Assistance,Discovery Law,233,yes,yes
+399,PRISONERS’ LEGAL SERVICES OF NEW YORK (PLSNY) - 3 (Ithaca Office),Legal,Representation & Assistance,suffix_removed,2,370,PRISONERS’ LEGAL SERVICES OF NEW YORK (PLSNY),Legal,Representation & Assistance,Discovery Law,233,yes,yes
+400,PRISONERS’ LEGAL SERVICES OF NEW YORK (PLSNY) - 4 (Newburgh Office),Legal,Representation & Assistance,suffix_removed,2,370,PRISONERS’ LEGAL SERVICES OF NEW YORK (PLSNY),Legal,Representation & Assistance,Discovery Law,233,yes,yes
+401,URBAN JUSTICE CENTER,Legal,Representation & Assistance,exact,1,371,URBAN JUSTICE CENTER,Legal,Representation & Assistance,Discovery Law,234,yes,yes
+402,COLUMBIA HUMAN RIGHTS LAW REVIEW—A JAILHOUSE LAWYER’S MANUAL (JLM),Legal,Research Resources,exact,1,372,COLUMBIA HUMAN RIGHTS LAW REVIEW—A JAILHOUSE LAWYER’S MANUAL (JLM),Legal,Research Resources,,235,yes,yes
+403,THE JAILHOUSE LAWYER’S HANDBOOK - 1 (Center for Constitutional Rights),Legal,Research Resources,suffix_removed,1,373,THE JAILHOUSE LAWYER’S HANDBOOK,Legal,Research Resources,,236,yes,yes
+404,"THE JAILHOUSE LAWYER’S HANDBOOK - 2 (National Lawyers Guild, National Office)",Legal,Research Resources,suffix_removed,1,373,THE JAILHOUSE LAWYER’S HANDBOOK,Legal,Research Resources,,236,yes,yes
+405,PRISON BOOK PROGRAM—THE INSIDER’S GUIDE TO JAILHOUSE LAW,Legal,Research Resources,exact,1,374,PRISON BOOK PROGRAM—THE INSIDER’S GUIDE TO JAILHOUSE LAW,Legal,Research Resources,,236,yes,yes
+406,LAWHELPNY,Legal,Research Resources,exact,1,375,LAWHELPNY,Legal,Research Resources,,236,yes,yes
+407,PUBLIC ACCESS LAW LIBRARIES - 1 (Bronx Supreme Court Law Library),Legal,Research Resources,suffix_removed,1,376,PUBLIC ACCESS LAW LIBRARIES,Legal,Research Resources,,237,yes,yes
+408,PUBLIC ACCESS LAW LIBRARIES - 2 (Kings County Supreme Court Law Library),Legal,Research Resources,suffix_removed,1,376,PUBLIC ACCESS LAW LIBRARIES,Legal,Research Resources,,237,yes,yes
+409,PUBLIC ACCESS LAW LIBRARIES - 3 (New York County Law Library),Legal,Research Resources,suffix_removed,1,376,PUBLIC ACCESS LAW LIBRARIES,Legal,Research Resources,,237,yes,yes
+410,PUBLIC ACCESS LAW LIBRARIES - 4 (Queens Supreme Court Law Library),Legal,Research Resources,suffix_removed,1,376,PUBLIC ACCESS LAW LIBRARIES,Legal,Research Resources,,237,yes,yes
+411,PUBLIC ACCESS LAW LIBRARIES - 5 (Richmond County Law Library),Legal,Research Resources,suffix_removed,1,376,PUBLIC ACCESS LAW LIBRARIES,Legal,Research Resources,,237,yes,yes
+412,NYC DEPARTMENT OF CORRECTION (DOC)—BAIL PAYMENT LOCATIONS - 1 (Rikers Island),Legal,Bail,no_match,0,,,,,,,,
+413,NYC DEPARTMENT OF CORRECTION (DOC)—BAIL PAYMENT LOCATIONS - 2 (Manhattan Detention Complex / The Tombs),Legal,Bail,no_match,0,,,,,,,,
+414,NYC DEPARTMENT OF CORRECTION (DOC)—BAIL PAYMENT LOCATIONS - 3 (Bronx Criminal Court),Legal,Bail,no_match,0,,,,,,,,
+415,NYC DEPARTMENT OF CORRECTION (DOC)—BAIL PAYMENT LOCATIONS - 4 (Brooklyn Criminal Court),Legal,Bail,no_match,0,,,,,,,,
+416,NYC DEPARTMENT OF CORRECTION (DOC)—BAIL PAYMENT LOCATIONS - 5 (Queens Courts),Legal,Bail,no_match,0,,,,,,,,
+417,NYS Department of Corrections and Community Supervision—Office of Special Investigations (OSI),Legal,"Grievances, Complaints & Government Agencies",no_match,0,,,,,,,,
+418,NYC Board of Correction (BOC),Legal,"Grievances, Complaints & Government Agencies",exact,1,393,NYC BOARD OF CORRECTION (BOC),Legal,"Discrimination, Grievances, & Rights",How to write an effective grievance,256,yes,no
+419,Federal Trade Commission (FTC)—Identity Theft Recovery,Legal,"Grievances, Complaints & Government Agencies",exact,1,394,FEDERAL TRADE COMMISSION (FTC)—IDENTITY THEFT RECOVERY,Legal,"Discrimination, Grievances, & Rights",How to write an effective grievance,256,yes,no
+420,USA.gov—Complaints,Legal,"Grievances, Complaints & Government Agencies",exact,1,395,USA.GOV—COMPLAINTS,Legal,"Discrimination, Grievances, & Rights",How to write an effective grievance,257,yes,no
+421,NYS Division of Human Rights—Hate and Bias Prevention Unit,Legal,"Grievances, Complaints & Government Agencies",exact,1,396,NYS DIVISION OF HUMAN RIGHTS—HATE AND BIAS PREVENTION UNIT,Legal,"Discrimination, Grievances, & Rights",How to write an effective grievance,257,yes,no
+422,NYC—311,Legal,"Grievances, Complaints & Government Agencies",exact,1,397,NYC—311,Legal,"Discrimination, Grievances, & Rights",How to write an effective grievance,257,yes,no
+423,NYC Civilian Complaint Review Board,Legal,"Grievances, Complaints & Government Agencies",exact,1,398,NYC CIVILIAN COMPLAINT REVIEW BOARD,Legal,"Discrimination, Grievances, & Rights",How to write an effective grievance,258,yes,no
+424,NYC Commission on Human Rights - 1 (Main/General),Legal,"Grievances, Complaints & Government Agencies",suffix_removed,4,399,NYC COMMISSION ON HUMAN RIGHTS,Legal,"Discrimination, Grievances, & Rights",How to write an effective grievance,258,yes,no
+425,NYC Commission on Human Rights - 2 (Bronx Office),Legal,"Grievances, Complaints & Government Agencies",suffix_removed,4,399,NYC COMMISSION ON HUMAN RIGHTS,Legal,"Discrimination, Grievances, & Rights",How to write an effective grievance,258,yes,no
+426,NYC Commission on Human Rights - 3 (Brooklyn Office),Legal,"Grievances, Complaints & Government Agencies",suffix_removed,4,399,NYC COMMISSION ON HUMAN RIGHTS,Legal,"Discrimination, Grievances, & Rights",How to write an effective grievance,258,yes,no
+427,NYC Commission on Human Rights - 4 (Manhattan Office),Legal,"Grievances, Complaints & Government Agencies",suffix_removed,4,399,NYC COMMISSION ON HUMAN RIGHTS,Legal,"Discrimination, Grievances, & Rights",How to write an effective grievance,258,yes,no
+428,NYC Commission on Human Rights - 5 (Queens/Jamaica Office),Legal,"Grievances, Complaints & Government Agencies",suffix_removed,4,399,NYC COMMISSION ON HUMAN RIGHTS,Legal,"Discrimination, Grievances, & Rights",How to write an effective grievance,258,yes,no
+429,NYC Commission on Human Rights - 6 (Staten Island Office),Legal,"Grievances, Complaints & Government Agencies",suffix_removed,4,399,NYC COMMISSION ON HUMAN RIGHTS,Legal,"Discrimination, Grievances, & Rights",How to write an effective grievance,258,yes,no
+430,NYC Department of Consumer and Worker Protection (DCWP),Legal,"Grievances, Complaints & Government Agencies",exact,2,400,NYC DEPARTMENT OF CONSUMER AND WORKER PROTECTION (DCWP),Legal,"Discrimination, Grievances, & Rights",How to write an effective grievance,260,yes,no
+431,NYC Public Advocate,Legal,"Grievances, Complaints & Government Agencies",exact,1,401,NYC PUBLIC ADVOCATE,Legal,"Discrimination, Grievances, & Rights",How to write an effective grievance,260,yes,no
+432,NYS DOCCS—Office of Special Investigations (OSI) Intake Unit (PREA Reporting),Legal,Reporting Sexual Abuse & Assault (PREA),no_match,0,,,,,,,,
+433,NYS Commission of Correction,Legal,Reporting Sexual Abuse & Assault (PREA),in_listing_text,1,402,NYS DEPARTMENT OF CORRECTIONS AND COMMUNITY SUPERVISION (DOCCS),Legal,Prison Rape Elimination Act (PREA),Information on reporting sexual assault and harassment,268,yes,no
+434,Office of the State Inspector General,Legal,Reporting Sexual Abuse & Assault (PREA),in_listing_text,1,402,NYS DEPARTMENT OF CORRECTIONS AND COMMUNITY SUPERVISION (DOCCS),Legal,Prison Rape Elimination Act (PREA),Information on reporting sexual assault and harassment,268,yes,no
+435,NYC Department of Correction (DOC),Legal,Reporting Sexual Abuse & Assault (PREA),exact,2,381,NYC DEPARTMENT OF CORRECTION (DOC),Legal,Locating Someone in Custody,,242,yes,no
+436,City of New York Department of Investigation—Complaint Bureau,Legal,Reporting Sexual Abuse & Assault (PREA),in_listing_text,1,403,NYC DEPARTMENT OF CORRECTION (DOC),Legal,Prison Rape Elimination Act (PREA),Information on reporting sexual assault and harassment,269,yes,no
+437,New York State Justice Center,Legal,Reporting Sexual Abuse & Assault (PREA),in_listing_text,1,404,NYS OFFICE OF CHILDREN AND FAMILY SERVICES (OCFS)—JUVENILE FACILITIES,Legal,Prison Rape Elimination Act (PREA),Information on reporting sexual assault and harassment,269,yes,no
+438,"Federal Bureau of Prisons (BOP)—National PREA Coordinator, Reentry Services Division",Legal,Reporting Sexual Abuse & Assault (PREA),no_match,0,,,,,,,,
+439,Federal Bureau of Prisons (BOP)—Office of Internal Affairs,Legal,Reporting Sexual Abuse & Assault (PREA),no_match,0,,,,,,,,
+440,National Sexual Assault Hotline,Legal,Reporting Sexual Abuse & Assault (PREA),in_listing_text,2,405,FEDERAL BUREAU OF PRISONS (BOP),Legal,Prison Rape Elimination Act (PREA),Information on reporting sexual assault and harassment,270,yes,no
+441,US Immigration and Customs Enforcement (ICE)—Office of Professional Responsibility,Legal,Reporting Sexual Abuse & Assault (PREA),no_match,0,,,,,,,,
+442,"ICE Detention, Removals, and Information Line (DRIL)",Legal,Reporting Sexual Abuse & Assault (PREA),in_listing_text,1,406,US IMMIGRATION AND CUSTOMS ENFORCEMENT (ICE),Legal,Prison Rape Elimination Act (PREA),Information on reporting sexual assault and harassment,270,yes,no
+443,DHS Office of Inspector General,Legal,Reporting Sexual Abuse & Assault (PREA),in_listing_text,1,406,US IMMIGRATION AND CUSTOMS ENFORCEMENT (ICE),Legal,Prison Rape Elimination Act (PREA),Information on reporting sexual assault and harassment,270,yes,no
+444,National Immigration Detention Hotline,Legal,Reporting Sexual Abuse & Assault (PREA),in_listing_text,1,406,US IMMIGRATION AND CUSTOMS ENFORCEMENT (ICE),Legal,Prison Rape Elimination Act (PREA),Information on reporting sexual assault and harassment,270,yes,no
+445,The New York Public Library (NYPL)—Services for Immigrants,Immigrants,Organizations & Resources,exact,1,407,THE NEW YORK PUBLIC LIBRARY (NYPL)—SERVICES FOR IMMIGRANTS,Immigrants,Organizations & Resources,,285,yes,yes
+446,Brooklyn Public Library (BPL)—Immigrant Services,Immigrants,Organizations & Resources,exact,1,408,BROOKLYN PUBLIC LIBRARY (BPL)—IMMIGRANT SERVICES,Immigrants,Organizations & Resources,,285,yes,yes
+447,Queens Public Library—New Americans Program,Immigrants,Organizations & Resources,exact,1,409,QUEENS PUBLIC LIBRARY—NEW AMERICANS PROGRAM,Immigrants,Organizations & Resources,,286,yes,yes
+448,US Citizenship and Immigration Services (USCIS)—Green Cards,Immigrants,Organizations & Resources,no_match,0,,,,,,,,
+449,NYS Office for New Americans (ONA),Immigrants,Organizations & Resources,exact,1,411,NYS OFFICE FOR NEW AMERICANS (ONA),Immigrants,Organizations & Resources,,287,yes,yes
+450,NYC Mayor’s Office of Immigrant Affairs—Immigration Legal Services,Immigrants,Organizations & Resources,exact,1,412,NYC MAYOR’S OFFICE OF IMMIGRANT AFFAIRS—IMMIGRATION LEGAL SERVICES,Immigrants,Organizations & Resources,,287,yes,yes
+451,BronxWorks—Immigration Services,Immigrants,Organizations & Resources,exact,1,413,BRONXWORKS—IMMIGRATION SERVICES,Immigrants,Organizations & Resources,,287,yes,yes
+452,Brooklyn Defender Services (BDS)—Immigration Practice,Immigrants,Organizations & Resources,exact,1,414,BROOKLYN DEFENDER SERVICES (BDS)—IMMIGRATION PRACTICE,Immigrants,Organizations & Resources,,288,yes,yes
+453,Cabrini Immigrant Services of NYC,Immigrants,Organizations & Resources,exact,1,415,CABRINI IMMIGRANT SERVICES OF NYC,Immigrants,Organizations & Resources,,288,yes,yes
+454,CAMBA—Immigration Legal Services,Immigrants,Organizations & Resources,exact,1,416,CAMBA—IMMIGRATION LEGAL SERVICES,Immigrants,Organizations & Resources,,289,yes,yes
+455,Catholic Charities—Immigration Legal Services,Immigrants,Organizations & Resources,exact,1,417,CATHOLIC CHARITIES— IMMIGRATION LEGAL SERVICES,Immigrants,Organizations & Resources,,289,yes,yes
+456,Chinese-American Planning Council,Immigrants,Organizations & Resources,exact,1,418,CHINESE-AMERICAN PLANNING COUNCIL,Immigrants,Organizations & Resources,,289,yes,yes
+457,City University of New York (CUNY)—Citizenship NOW!,Immigrants,Organizations & Resources,exact,1,419,CITY UNIVERSITY OF NEW YORK (CUNY)—CITIZENSHIP NOW!,Immigrants,Organizations & Resources,,289,yes,yes
+458,Education Justice Project—A New Path: A Guide to the Challenges & Opportunities After Deportation,Immigrants,Organizations & Resources,exact,1,420,EDUCATION JUSTICE PROJECT—A NEW PATH: A GUIDE TO THE CHALLENGES & OPPORTUNITIES AFTER DEPORTATION,Immigrants,Organizations & Resources,,290,yes,yes
+459,Emerald Isle Immigration Center (EIIC) - 1,Immigrants,Organizations & Resources,suffix_removed,1,421,EMERALD ISLE IMMIGRATION CENTER (EIIC),Immigrants,Organizations & Resources,,290,yes,yes
+460,Emerald Isle Immigration Center (EIIC) - 2,Immigrants,Organizations & Resources,suffix_removed,1,421,EMERALD ISLE IMMIGRATION CENTER (EIIC),Immigrants,Organizations & Resources,,290,yes,yes
+461,Emma’s Torch,Immigrants,Organizations & Resources,exact,1,422,EMMA’S TORCH,Immigrants,Organizations & Resources,,291,yes,yes
+462,Envision Freedom Fund,Immigrants,Organizations & Resources,exact,1,423,ENVISION FREEDOM FUND,Immigrants,Organizations & Resources,,291,yes,yes
+463,Families for Freedom (FFF),Immigrants,Organizations & Resources,exact,1,424,FAMILIES FOR FREEDOM (FFF),Immigrants,Organizations & Resources,,292,yes,yes
+464,Freedom for Immigrants,Immigrants,Organizations & Resources,exact,1,425,FREEDOM FOR IMMIGRANTS,Immigrants,Organizations & Resources,,292,yes,yes
+465,Immigrant Defense Project,Immigrants,Organizations & Resources,exact,1,426,IMMIGRANT DEFENSE PROJECT,Immigrants,Organizations & Resources,,292,yes,yes
+466,Immigration Advocates Network (IAN)—National Immigration Legal Services Directory,Immigrants,Organizations & Resources,exact,1,427,IMMIGRATION ADVOCATES NETWORK (IAN)—NATIONAL IMMIGRATION LEGAL SERVICES DIRECTORY,Immigrants,Organizations & Resources,,293,yes,yes
+467,Immigration Equality,Immigrants,Organizations & Resources,exact,1,428,IMMIGRATION EQUALITY,Immigrants,Organizations & Resources,,293,yes,yes
+468,Informed Immigrant,Immigrants,Organizations & Resources,exact,1,429,INFORMED IMMIGRANT,Immigrants,Organizations & Resources,,293,yes,yes
+469,Make the Road New York - 1,Immigrants,Organizations & Resources,suffix_removed,1,430,MAKE THE ROAD NEW YORK,Immigrants,Organizations & Resources,,294,yes,yes
+470,Make the Road New York - 2,Immigrants,Organizations & Resources,suffix_removed,1,430,MAKE THE ROAD NEW YORK,Immigrants,Organizations & Resources,,294,yes,yes
+471,Make the Road New York - 3,Immigrants,Organizations & Resources,suffix_removed,1,430,MAKE THE ROAD NEW YORK,Immigrants,Organizations & Resources,,294,yes,yes
+472,Mercy Center—Immigration Services - 1,Immigrants,Organizations & Resources,suffix_removed,1,431,MERCY CENTER—IMMIGRATION SERVICES,Immigrants,Organizations & Resources,,295,yes,yes
+473,Mercy Center—Immigration Services - 2,Immigrants,Organizations & Resources,suffix_removed,1,431,MERCY CENTER—IMMIGRATION SERVICES,Immigrants,Organizations & Resources,,295,yes,yes
+474,Mixteca Organization Inc.,Immigrants,Organizations & Resources,exact,1,432,MIXTECA ORGANIZATION INC.,Immigrants,Organizations & Resources,,295,yes,yes
+475,The New York Historical—The Citizenship Project,Immigrants,Organizations & Resources,exact,1,433,THE NEW YORK HISTORICAL—THE CITIZENSHIP PROJECT,Immigrants,Organizations & Resources,,295,yes,yes
+476,New Women New Yorkers (NWNY),Immigrants,Organizations & Resources,exact,1,434,NEW WOMEN NEW YORKERS (NWNY),Immigrants,Organizations & Resources,,296,yes,yes
+477,Northern Manhattan Coalition for Immigrant Rights (NMCIR),Immigrants,Organizations & Resources,exact,1,435,NORTHERN MANHATTAN COALITION FOR IMMIGRANT RIGHTS (NMCIR),Immigrants,Organizations & Resources,,296,yes,yes
+478,Opportunities for a Better Tomorrow (OBT),Immigrants,Organizations & Resources,exact,3,436,OPPORTUNITIES FOR A BETTER TOMORROW (OBT),Immigrants,Organizations & Resources,,297,yes,yes
+479,Safe Passage Project,Immigrants,Organizations & Resources,exact,1,437,SAFE PASSAGE PROJECT,Immigrants,Organizations & Resources,,297,yes,yes
+480,Team TLC NYC,Immigrants,Organizations & Resources,exact,1,438,TEAM TLC NYC,Immigrants,Organizations & Resources,,297,yes,yes
+481,UnLocal,Immigrants,Organizations & Resources,exact,1,439,UNLOCAL,Immigrants,Organizations & Resources,,298,yes,yes
+482,Military and Trans Rights (website resource),Veterans,"Benefits, Legal & Support Services",no_match,0,,,,,,,,
+483,US Department of Veterans Affairs (VA) - 1 (VA Regional Benefits Office),Veterans,"Benefits, Legal & Support Services",suffix_removed,1,440,US DEPARTMENT OF VETERANS AFFAIRS (VA),Veterans,Organizations & Resources,Resources for Trans Veterans,302,yes,no
+484,"US Department of Veterans Affairs (VA) - 2 (Local Veterans Center, Bronx)",Veterans,"Benefits, Legal & Support Services",suffix_removed,1,440,US DEPARTMENT OF VETERANS AFFAIRS (VA),Veterans,Organizations & Resources,Resources for Trans Veterans,302,yes,no
+485,"US Department of Veterans Affairs (VA) - 3 (Local Veterans Center, Brooklyn)",Veterans,"Benefits, Legal & Support Services",suffix_removed,1,440,US DEPARTMENT OF VETERANS AFFAIRS (VA),Veterans,Organizations & Resources,Resources for Trans Veterans,302,yes,no
+486,"US Department of Veterans Affairs (VA) - 4 (Local Veterans Center, Manhattan)",Veterans,"Benefits, Legal & Support Services",suffix_removed,1,440,US DEPARTMENT OF VETERANS AFFAIRS (VA),Veterans,Organizations & Resources,Resources for Trans Veterans,302,yes,no
+487,"US Department of Veterans Affairs (VA) - 5 (Local Veterans Center, Ridgewood/Queens)",Veterans,"Benefits, Legal & Support Services",suffix_removed,1,440,US DEPARTMENT OF VETERANS AFFAIRS (VA),Veterans,Organizations & Resources,Resources for Trans Veterans,302,yes,no
+488,"US Department of Veterans Affairs (VA) - 6 (Local Veterans Center, Staten Island)",Veterans,"Benefits, Legal & Support Services",suffix_removed,1,440,US DEPARTMENT OF VETERANS AFFAIRS (VA),Veterans,Organizations & Resources,Resources for Trans Veterans,302,yes,no
+489,James J. Peters VA Medical Center,Veterans,"Benefits, Legal & Support Services",exact,1,441,JAMES J. PETERS VA MEDICAL CENTER,Veterans,Organizations & Resources,Resources for Trans Veterans,303,yes,no
+490,NYS Department of Veterans’ Services,Veterans,"Benefits, Legal & Support Services",exact,1,442,NYS DEPARTMENT OF VETERANS’ SERVICES,Veterans,Organizations & Resources,Resources for Trans Veterans,304,yes,no
+491,NYC Department of Veterans’ Services,Veterans,"Benefits, Legal & Support Services",exact,1,443,NYC DEPARTMENT OF VETERANS’ SERVICES,Veterans,Organizations & Resources,Resources for Trans Veterans,304,yes,no
+492,NYC Department of Small Business Services—Priority1,Veterans,"Benefits, Legal & Support Services",exact,1,444,NYC DEPARTMENT OF SMALL BUSINESS SERVICES—PRIORITY1,Veterans,Organizations & Resources,Resources for Trans Veterans,304,yes,no
+493,About Face,Veterans,"Benefits, Legal & Support Services",exact,1,445,ABOUT FACE,Veterans,Organizations & Resources,Resources for Trans Veterans,305,yes,no
+494,American Immigration Lawyers Association (AILA)—Military Assistance Program (MAP),Veterans,"Benefits, Legal & Support Services",exact,1,446,AMERICAN IMMIGRATION LAWYERS ASSOCIATION (AILA)—MILITARY ASSISTANCE PROGRAM (MAP),Veterans,Organizations & Resources,Resources for Trans Veterans,305,yes,no
+495,Black Veterans for Social Justice (BVSJ),Veterans,"Benefits, Legal & Support Services",exact,1,447,BLACK VETERANS FOR SOCIAL JUSTICE (BVSJ),Veterans,Organizations & Resources,Resources for Trans Veterans,305,yes,no
+496,City Bar Justice Center—Veterans Assistance Project,Veterans,"Benefits, Legal & Support Services",exact,1,448,CITY BAR JUSTICE CENTER—VETERANS ASSISTANCE PROJECT,Veterans,Organizations & Resources,Resources for Trans Veterans,306,yes,no
+497,City University of New York (CUNY)—Office of Veterans Affairs (COVA),Veterans,"Benefits, Legal & Support Services",exact,1,449,CITY UNIVERSITY OF NEW YORK (CUNY)—OFFICE OF VETERANS AFFAIRS (COVA),Veterans,Organizations & Resources,Resources for Trans Veterans,306,yes,no
+498,The GI Rights Hotline,Veterans,"Benefits, Legal & Support Services",exact,1,450,THE GI RIGHTS HOTLINE,Veterans,Organizations & Resources,Resources for Trans Veterans,306,yes,no
+499,Northeast ADA Center (inferred name — see note),People with Disabilities,Organizations & Resources,no_match,0,,,,,,,,
+500,Disability Rights New York,People with Disabilities,Organizations & Resources,exact,1,461,DISABILITY RIGHTS NEW YORK,People with Disabilities,Organizations & Resources,,314,yes,yes
+501,Disability Rights New York,People with Disabilities,Organizations & Resources,exact,1,461,DISABILITY RIGHTS NEW YORK,People with Disabilities,Organizations & Resources,,314,yes,yes
+502,JBI Library,People with Disabilities,Organizations & Resources,exact,1,462,JBI LIBRARY,People with Disabilities,Organizations & Resources,,314,yes,yes
+503,The New York Public Library (NYPL)—Andrew Heiskell Braille and Talking Book Library,People with Disabilities,Organizations & Resources,exact,1,463,THE NEW YORK PUBLIC LIBRARY (NYPL)—ANDREW HEISKELL BRAILLE AND TALKING BOOK LIBRARY,People with Disabilities,Organizations & Resources,,314,yes,yes
+504,The New York Public Library (NYPL)—Services for People with Disabilities,People with Disabilities,Organizations & Resources,exact,1,464,THE NEW YORK PUBLIC LIBRARY (NYPL)—SERVICES FOR PEOPLE WITH DISABILITIES,People with Disabilities,Organizations & Resources,,315,yes,yes
+505,NYS Commission for the Blind (NYSCB),People with Disabilities,Organizations & Resources,exact,1,465,NYS COMMISSION FOR THE BLIND (NYSCB),People with Disabilities,Organizations & Resources,,315,yes,yes
+506,NYS Department of Education—ACCES-VR (Vocational Rehabilitation) - 1 (Main/Albany),People with Disabilities,Organizations & Resources,suffix_removed,1,466,NYS DEPARTMENT OF EDUCATION—ACCES-VR (VOCATIONAL REHABILITATION),People with Disabilities,Organizations & Resources,,316,yes,yes
+507,NYS Department of Education—ACCES-VR (Vocational Rehabilitation) - 2 (Bronx residents),People with Disabilities,Organizations & Resources,suffix_removed,1,466,NYS DEPARTMENT OF EDUCATION—ACCES-VR (VOCATIONAL REHABILITATION),People with Disabilities,Organizations & Resources,,316,yes,yes
+508,NYS Department of Education—ACCES-VR (Vocational Rehabilitation) - 3 (Brooklyn residents),People with Disabilities,Organizations & Resources,suffix_removed,1,466,NYS DEPARTMENT OF EDUCATION—ACCES-VR (VOCATIONAL REHABILITATION),People with Disabilities,Organizations & Resources,,316,yes,yes
+509,NYS Department of Education—ACCES-VR (Vocational Rehabilitation) - 4 (Manhattan residents),People with Disabilities,Organizations & Resources,suffix_removed,1,466,NYS DEPARTMENT OF EDUCATION—ACCES-VR (VOCATIONAL REHABILITATION),People with Disabilities,Organizations & Resources,,316,yes,yes
+510,NYS Department of Education—ACCES-VR (Vocational Rehabilitation) - 5 (Harlem Office),People with Disabilities,Organizations & Resources,suffix_removed,1,466,NYS DEPARTMENT OF EDUCATION—ACCES-VR (VOCATIONAL REHABILITATION),People with Disabilities,Organizations & Resources,,316,yes,yes
+511,NYS Department of Education—ACCES-VR (Vocational Rehabilitation) - 6 (Queens residents),People with Disabilities,Organizations & Resources,suffix_removed,1,466,NYS DEPARTMENT OF EDUCATION—ACCES-VR (VOCATIONAL REHABILITATION),People with Disabilities,Organizations & Resources,,316,yes,yes
+512,NYS Department of Education—ACCES-VR (Vocational Rehabilitation) - 7 (Staten Island Office),People with Disabilities,Organizations & Resources,suffix_removed,1,466,NYS DEPARTMENT OF EDUCATION—ACCES-VR (VOCATIONAL REHABILITATION),People with Disabilities,Organizations & Resources,,316,yes,yes
+513,NYS Office for People with Developmental Disabilities,People with Disabilities,Organizations & Resources,exact,1,467,NYS OFFICE FOR PEOPLE WITH DEVELOPMENTAL DISABILITIES,People with Disabilities,Organizations & Resources,,316,yes,yes
+514,NYC Department of Transportation—Parking Permits for People with Disabilities,People with Disabilities,Organizations & Resources,exact,1,468,NYC DEPARTMENT OF TRANSPORTATION—PARKING PERMITS FOR PEOPLE WITH DISABILITIES,People with Disabilities,Organizations & Resources,,317,yes,yes
+515,NYC Mayor’s Office for People with Disabilities,People with Disabilities,Organizations & Resources,exact,1,469,NYC MAYOR’S OFFICE FOR PEOPLE WITH DISABILITIES,People with Disabilities,Organizations & Resources,,317,yes,yes
+516,NYC Taxi and Limousine Commission—Accessibility Dispatch Program,People with Disabilities,Organizations & Resources,exact,1,470,NYC TAXI AND LIMOUSINE COMMISSION—ACCESSIBILITY DISPATCH PROGRAM,People with Disabilities,Organizations & Resources,,317,yes,yes
+517,Barrier Free Living,People with Disabilities,Organizations & Resources,exact,1,471,BARRIER FREE LIVING,People with Disabilities,Organizations & Resources,,317,yes,yes
+518,Center for Hearing and Communication,People with Disabilities,Organizations & Resources,exact,1,472,CENTER FOR HEARING AND COMMUNICATION,People with Disabilities,Organizations & Resources,,318,yes,yes
+519,The Deaf Hotline,People with Disabilities,Organizations & Resources,exact,1,473,THE DEAF HOTLINE,People with Disabilities,Organizations & Resources,,318,yes,yes
+520,Fedcap Rehabilitation Services,People with Disabilities,Organizations & Resources,exact,1,474,FEDCAP REHABILITATION SERVICES,People with Disabilities,Organizations & Resources,,319,yes,yes
+521,Hearing Loss Association of America (HLAA)—NYC Chapter,People with Disabilities,Organizations & Resources,exact,1,475,HEARING LOSS ASSOCIATION OF AMERICA (HLAA)—NYC CHAPTER,People with Disabilities,Organizations & Resources,,319,yes,yes
+522,Center for Independence of the Disabled in New York (CIDNY),People with Disabilities,Organizations & Resources,in_listing_text,1,476,INDEPENDENT LIVING CENTERS (ILCS),People with Disabilities,Organizations & Resources,,319,yes,yes
+523,Bronx Independent Living Services,People with Disabilities,Organizations & Resources,in_listing_text,1,476,INDEPENDENT LIVING CENTERS (ILCS),People with Disabilities,Organizations & Resources,,319,yes,yes
+524,Brooklyn Center for Independence of the Disabled,People with Disabilities,Organizations & Resources,in_listing_text,1,476,INDEPENDENT LIVING CENTERS (ILCS),People with Disabilities,Organizations & Resources,,319,yes,yes
+525,Harlem Independent Living Center,People with Disabilities,Organizations & Resources,in_listing_text,1,476,INDEPENDENT LIVING CENTERS (ILCS),People with Disabilities,Organizations & Resources,,319,yes,yes
+526,Queens Center for Independence of the Disabled NY,People with Disabilities,Organizations & Resources,in_listing_text,1,476,INDEPENDENT LIVING CENTERS (ILCS),People with Disabilities,Organizations & Resources,,319,yes,yes
+527,Staten Island Center for Independent Living,People with Disabilities,Organizations & Resources,in_listing_text,1,476,INDEPENDENT LIVING CENTERS (ILCS),People with Disabilities,Organizations & Resources,,319,yes,yes
+528,Job Path,People with Disabilities,Organizations & Resources,exact,1,477,JOB PATH,People with Disabilities,Organizations & Resources,,320,yes,yes
+529,Lighthouse Guild Vision Plus Health,People with Disabilities,Organizations & Resources,exact,1,478,LIGHTHOUSE GUILD VISION PLUS HEALTH,People with Disabilities,Organizations & Resources,,321,yes,yes
+530,Metropolitan Transportation Authority (MTA),People with Disabilities,Organizations & Resources,exact,1,479,METROPOLITAN TRANSPORTATION AUTHORITY (MTA),People with Disabilities,Organizations & Resources,,321,yes,yes
+531,New York Center for Law and Justice—Legal Services Program,People with Disabilities,Organizations & Resources,exact,1,480,NEW YORK CENTER FOR LAW AND JUSTICE—LEGAL SERVICES PROGRAM,People with Disabilities,Organizations & Resources,,322,yes,yes
+532,New York County Lawyers Association (NYCLA)—Social Security SDNY Project,People with Disabilities,Organizations & Resources,exact,1,481,NEW YORK COUNTY LAWYERS ASSOCIATION (NYCLA)—SOCIAL SECURITY SDNY PROJECT,People with Disabilities,Organizations & Resources,,322,yes,yes
+533,The Partnership for Inclusive Disaster Strategies—Disability & Disaster Hotline,People with Disabilities,Organizations & Resources,exact,1,482,THE PARTNERSHIP FOR INCLUSIVE DISASTER STRATEGIES—DISABILITY & DISASTER HOTLINE,People with Disabilities,Organizations & Resources,,322,yes,yes
+534,VISIONS - 1 (Headquarters),People with Disabilities,Organizations & Resources,suffix_removed,1,483,VISIONS,People with Disabilities,Organizations & Resources,,323,yes,yes
+535,VISIONS - 2 (at Selis Manor),People with Disabilities,Organizations & Resources,suffix_removed,1,483,VISIONS,People with Disabilities,Organizations & Resources,,323,yes,yes
+536,A Beautiful Heart Ministries,Women,Organizations,exact,1,484,A BEAUTIFUL HEART MINISTRIES,Women,Organizations,,325,yes,yes
+537,"Acacia Network—GreenHope Services for Women, Inc.",Women,Organizations,exact,2,485,"ACACIA NETWORK—GREENHOPE SERVICES FOR WOMEN, INC.",Women,Organizations,,325,yes,yes
+538,Hour Children,Women,Organizations,exact,3,486,HOUR CHILDREN,Women,Organizations,,326,yes,yes
+539,The Ladies of Hope Ministries (The LOHM),Women,Organizations,exact,1,487,THE LADIES OF HOPE MINISTRIES (THE LOHM),Women,Organizations,,326,yes,yes
+540,Providence House,Women,Organizations,exact,2,488,PROVIDENCE HOUSE,Women,Organizations,,326,yes,yes
+541,Rising Ground—Steps to End Family Violence,Women,Organizations,exact,1,489,RISING GROUND—STEPS TO END FAMILY VIOLENCE,Women,Organizations,,327,yes,yes
+542,Volunteers of Legal Service (VOLS)—Incarcerated Mothers Law Project,Women,Organizations,exact,1,490,VOLUNTEERS OF LEGAL SERVICE (VOLS)—INCARCERATED MOTHERS LAW PROJECT,Women,Organizations,,327,yes,yes
+543,Wildcat—The Women’s Project (TWP),Women,Organizations,exact,1,491,WILDCAT—THE WOMEN’S PROJECT (TWP),Women,Organizations,,327,yes,yes
+544,Women’s Prison Association (WPA),Women,Organizations,exact,3,492,WOMEN’S PRISON ASSOCIATION (WPA),Women,Organizations,,328,yes,yes
+545,"NYS Department of Health—Women, Infants, and Children (WIC) Program",Women,Organizations,exact,1,493,"NYS DEPARTMENT OF HEALTH—WOMEN, INFANTS, AND CHILDREN (WIC) PROGRAM",Women,Organizations,,328,yes,yes
+546,NYC Mayor’s Office to Combat Domestic Violence—Family Justice Centers (FJC),Women,Organizations,exact,3,494,NYC MAYOR’S OFFICE TO COMBAT DOMESTIC VIOLENCE—FAMILY JUSTICE CENTERS (FJC),Women,Organizations,,328,yes,yes
+547,The Bowery Mission—Women’s Centers,Women,Organizations,exact,1,495,THE BOWERY MISSION—WOMEN’S CENTERS,Women,Organizations,,329,yes,yes
+548,NYS Cancer Services Program,Women,Organizations,in_listing_text,1,496,BREAST AND CERVICAL CANCER DETECTION,Women,Organizations,,329,yes,yes
+549,MSK Ralph Lauren Center,Women,Organizations,in_listing_text,1,496,BREAST AND CERVICAL CANCER DETECTION,Women,Organizations,,329,yes,yes
+550,Evelyn H. Lauder Breast Center,Women,Organizations,in_listing_text,1,496,BREAST AND CERVICAL CANCER DETECTION,Women,Organizations,,329,yes,yes
+551,American-Italian Cancer Foundation’s Mammogram Bus,Women,Organizations,in_listing_text,1,496,BREAST AND CERVICAL CANCER DETECTION,Women,Organizations,,329,yes,yes
+552,Crime Victims Treatment Center (CVTC),Women,Organizations,exact,2,497,CRIME VICTIMS TREATMENT CENTER (CVTC),Women,Organizations,,330,yes,yes
+553,Grace Institute,Women,Organizations,exact,1,498,GRACE INSTITUTE,Women,Organizations,,330,yes,yes
+554,Hot Bread Kitchen,Women,Organizations,exact,2,499,HOT BREAD KITCHEN,Women,Organizations,,330,yes,yes
+555,Nontraditional Employment for Women (NEW),Women,Organizations,exact,2,500,NONTRADITIONAL EMPLOYMENT FOR WOMEN (NEW),Women,Organizations,,331,yes,yes
+556,Planned Parenthood of Greater New York,Women,Organizations,exact,1,501,PLANNED PARENTHOOD OF GREATER NEW YORK,Women,Organizations,,331,yes,yes
+557,Safe Horizon,Women,Organizations,exact,2,502,SAFE HORIZON,Women,Organizations,,331,yes,yes
+558,Sakhi for South Asian Survivors,Women,Organizations,exact,1,503,SAKHI FOR SOUTH ASIAN SURVIVORS,Women,Organizations,,332,yes,yes
+559,WIN NYC,Women,Organizations,exact,2,504,WIN NYC,Women,Organizations,,332,yes,yes
+560,American Cancer Society—New York,Women,Helplines,exact,1,505,AMERICAN CANCER SOCIETY—NEW YORK,Women,Helplines,,332,yes,yes
+561,The Growing Up Healthy Hotline,Women,Helplines,exact,1,506,THE GROWING UP HEALTHY HOTLINE,Women,Helplines,,332,yes,yes
+562,Intimate Partner and Sexual Violence Helpline,Women,Helplines,exact,1,507,INTIMATE PARTNER AND SEXUAL VIOLENCE HELPLINE,Women,Helplines,,333,yes,yes
+563,National Domestic Violence Hotline,Women,Helplines,exact,1,508,NATIONAL DOMESTIC VIOLENCE HOTLINE,Women,Helplines,,333,yes,yes
+564,Repro Legal Helpline,Women,Helplines,exact,2,509,REPRO LEGAL HELPLINE,Women,Helplines,,333,yes,yes
+565,StrongHearts Native Helpline,Women,Helplines,exact,1,510,STRONGHEARTS NATIVE HELPLINE,Women,Helplines,,334,yes,yes
+566,Osborne Association—Elder Reentry Initiative Project (ERI),Older People,Organizations,exact,1,511,OSBORNE ASSOCIATION—ELDER REENTRY INITIATIVE PROJECT (ERI),Older People,Organizations,,336,yes,yes
+567,Brooklyn Public Library (BPL)—Services for Older Adults,Older People,Organizations,exact,1,512,BROOKLYN PUBLIC LIBRARY (BPL)—SERVICES FOR OLDER ADULTS,Older People,Organizations,,336,yes,yes
+568,NYS Office of Children and Family Services—Adult Protective Services (APS),Older People,Organizations,exact,1,513,NYS OFFICE OF CHILDREN AND FAMILY SERVICES—ADULT PROTECTIVE SERVICES (APS),Older People,Organizations,,337,yes,yes
+569,NYC Department for the Aging (DFTA),Older People,Organizations,exact,1,515,NYC DEPARTMENT FOR THE AGING (DFTA),Older People,Organizations,,337,yes,yes
+570,Chinese-American Planning Council—Senior Services,Older People,Organizations,exact,1,517,CHINESE-AMERICAN PLANNING COUNCIL—SENIOR SERVICES,Older People,Organizations,,338,yes,yes
+571,DOROT,Older People,Organizations,exact,1,518,DOROT,Older People,Organizations,,338,yes,yes
+572,Metropolitan Transportation Authority (MTA)—Reduced-Fare Program,Older People,Organizations,exact,2,519,METROPOLITAN TRANSPORTATION AUTHORITY (MTA)—REDUCED-FARE PROGRAM,Older People,Organizations,,339,yes,yes
+573,Reserve—Silver Stars Program,Older People,Organizations,exact,1,521,RESERVE—SILVER STARS PROGRAM,Older People,Organizations,,339,yes,yes
+574,Senior Planet from AARP,Older People,Organizations,exact,1,522,SENIOR PLANET FROM AARP,Older People,Organizations,,339,yes,yes
+575,Service Program for Older People (SPOP),Older People,Organizations,exact,1,523,SERVICE PROGRAM FOR OLDER PEOPLE (SPOP),Older People,Organizations,,340,yes,yes
+576,Services and Advocacy for LGBTQ+ Elders (SAGE),Older People,Organizations,exact,2,524,SERVICES AND ADVOCACY FOR LGBTQ+ ELDERS (SAGE),Older People,Organizations,,340,yes,yes
+577,Volunteers of Legal Service (VOLS)—Senior Law Project,Older People,Organizations,exact,1,525,VOLUNTEERS OF LEGAL SERVICE (VOLS)—SENIOR LAW PROJECT,Older People,Organizations,,340,yes,yes
+578,"Health Insurance Information, Counseling, and Assistance Program (HIICAP)",Older People,Medical Care,no_match,0,,,,,,,,
+579,Medicare,Older People,Medical Care,exact,2,526,MEDICARE,Older People,Medical Care,,342,yes,yes
+580,Elderly Pharmaceutical Insurance Coverage (EPIC),Older People,Medical Care,exact,2,527,ELDERLY PHARMACEUTICAL INSURANCE COVERAGE (EPIC),Older People,Medical Care,,342,yes,yes
+581,Medicare Rights Center,Older People,Medical Care,exact,1,528,MEDICARE RIGHTS CENTER,Older People,Medical Care,,342,yes,yes
+582,NYC Housing Authority (NYCHA)—Family Reentry Program,Older People,Housing,exact,1,529,NYC HOUSING AUTHORITY (NYCHA)—FAMILY REENTRY PROGRAM,Older People,Housing,,343,yes,yes
+583,Centers Healthcare,Older People,Housing,exact,1,530,CENTERS HEALTHCARE,Older People,Housing,,343,yes,yes
+584,NYC Comptroller’s Office—LGBTQ+ Guide,LGBTQI+,Organizations,exact,1,532,NYC COMPTROLLER’S OFFICE—LGBTQ+ GUIDE,LGBTQI+,Organizations & Resources,,351,yes,no
+585,Advocates for Trans Equality (A4TE),LGBTQI+,Organizations,exact,1,533,ADVOCATES FOR TRANS EQUALITY (A4TE),LGBTQI+,Organizations & Resources,,351,yes,no
+586,Ali Forney Center (AFC),LGBTQI+,Organizations,exact,2,534,ALI FORNEY CENTER (AFC),LGBTQI+,Organizations & Resources,,351,yes,no
+587,Anti-Violence Project (AVP),LGBTQI+,Organizations,exact,2,535,ANTI-VIOLENCE PROJECT (AVP),LGBTQI+,Organizations & Resources,,351,yes,no
+588,Black & Pink NYC,LGBTQI+,Organizations,exact,1,536,BLACK & PINK NYC,LGBTQI+,Organizations & Resources,,352,yes,no
+589,Callen-Lorde Community Health Center - 1 (Brooklyn),LGBTQI+,Organizations,suffix_removed,1,537,CALLEN-LORDE COMMUNITY HEALTH CENTER,LGBTQI+,Organizations & Resources,,352,yes,no
+590,Callen-Lorde Community Health Center - 2 (Manhattan),LGBTQI+,Organizations,suffix_removed,1,537,CALLEN-LORDE COMMUNITY HEALTH CENTER,LGBTQI+,Organizations & Resources,,352,yes,no
+591,Center for Anti-Violence Education,LGBTQI+,Organizations,exact,1,538,CENTER FOR ANTI-VIOLENCE EDUCATION,LGBTQI+,Organizations & Resources,,353,yes,no
+592,Chosen Family Law Center,LGBTQI+,Organizations,exact,1,539,CHOSEN FAMILY LAW CENTER,LGBTQI+,Organizations & Resources,,353,yes,no
+593,Destination Tomorrow,LGBTQI+,Organizations,exact,1,540,DESTINATION TOMORROW,LGBTQI+,Organizations & Resources,,354,yes,no
+594,Hetrick-Martin Institute (HMI),LGBTQI+,Organizations,exact,2,541,HETRICK-MARTIN INSTITUTE (HMI),LGBTQI+,Organizations & Resources,,354,yes,no
+595,Identity House,LGBTQI+,Organizations,exact,1,542,IDENTITY HOUSE,LGBTQI+,Organizations & Resources,,354,yes,no
+596,Lambda Legal,LGBTQI+,Organizations,exact,2,543,LAMBDA LEGAL,LGBTQI+,Organizations & Resources,,355,yes,no
+597,"Lesbian, Gay, Bisexual, and Transgender Community Center (The Center)",LGBTQI+,Organizations,exact,1,544,"LESBIAN, GAY, BISEXUAL, AND TRANSGENDER COMMUNITY CENTER (THE CENTER)",LGBTQI+,Organizations & Resources,,355,yes,no
+598,National Center for LGBTQ Rights (NCLR),LGBTQI+,Organizations,exact,1,546,NATIONAL CENTER FOR LGBTQ RIGHTS (NCLR),LGBTQI+,Organizations & Resources,,355,yes,no
+599,National Center for LGBTQ Rights (NCLR),LGBTQI+,Organizations,exact,1,546,NATIONAL CENTER FOR LGBTQ RIGHTS (NCLR),LGBTQI+,Organizations & Resources,,355,yes,no
+600,New Pride Agenda (NPA),LGBTQI+,Organizations,exact,1,547,NEW PRIDE AGENDA (NPA),LGBTQI+,Organizations & Resources,,356,yes,no
+601,NYC Health + Hospitals—LGBTQ+ Healthcare,LGBTQI+,Organizations,exact,1,548,NYC HEALTH + HOSPITALS—LGBTQ+ HEALTHCARE,LGBTQI+,Organizations & Resources,,356,yes,no
+602,Osborne Association (LGBTQIA+ Services),LGBTQI+,Organizations,annotation_removed,5,549,OSBORNE ASSOCIATION,LGBTQI+,Organizations & Resources,,357,yes,no
+603,Point of Pride,LGBTQI+,Organizations,exact,1,550,POINT OF PRIDE,LGBTQI+,Organizations & Resources,,357,yes,no
+604,Services and Advocacy for LGBTQ+ Elders (SAGE) - 1 (Main/General),LGBTQI+,Organizations,suffix_removed,2,551,SERVICES AND ADVOCACY FOR LGBTQ+ ELDERS (SAGE),LGBTQI+,Organizations & Resources,,357,yes,no
+605,Services and Advocacy for LGBTQ+ Elders (SAGE) - 2 (SAGE Center Bronx at Crotona Pride House),LGBTQI+,Organizations,suffix_removed,2,551,SERVICES AND ADVOCACY FOR LGBTQ+ ELDERS (SAGE),LGBTQI+,Organizations & Resources,,357,yes,no
+606,Services and Advocacy for LGBTQ+ Elders (SAGE) - 3 (SAGE Center Brooklyn at Stonewall House),LGBTQI+,Organizations,suffix_removed,2,551,SERVICES AND ADVOCACY FOR LGBTQ+ ELDERS (SAGE),LGBTQI+,Organizations & Resources,,357,yes,no
+607,Services and Advocacy for LGBTQ+ Elders (SAGE) - 4 (SAGE Center Harlem),LGBTQI+,Organizations,suffix_removed,2,551,SERVICES AND ADVOCACY FOR LGBTQ+ ELDERS (SAGE),LGBTQI+,Organizations & Resources,,357,yes,no
+608,Services and Advocacy for LGBTQ+ Elders (SAGE) - 5 (Edie Windsor SAGE Center),LGBTQI+,Organizations,suffix_removed,2,551,SERVICES AND ADVOCACY FOR LGBTQ+ ELDERS (SAGE),LGBTQI+,Organizations & Resources,,357,yes,no
+609,Services and Advocacy for LGBTQ+ Elders (SAGE) - 6 (SAGE-Pride Center of Staten Island),LGBTQI+,Organizations,suffix_removed,2,551,SERVICES AND ADVOCACY FOR LGBTQ+ ELDERS (SAGE),LGBTQI+,Organizations & Resources,,357,yes,no
+610,Sylvia Rivera Law Project,LGBTQI+,Organizations,exact,1,552,SYLVIA RIVERA LAW PROJECT,LGBTQI+,Organizations & Resources,,358,yes,no
+611,Trans Lifeline,LGBTQI+,Organizations,exact,1,553,TRANS LIFELINE,LGBTQI+,Organizations & Resources,,359,yes,no
+612,Transgender Law Center (TLC),LGBTQI+,Organizations,exact,1,554,TRANSGENDER LAW CENTER (TLC),LGBTQI+,Organizations & Resources,,359,yes,no
+613,Scarleteen—Kicked Out: A Survival Guide (resource series),Youth,Organizations & Resources,no_match,0,,,,,,,,
+614,Advocates for Children (AFC),Youth,Organizations & Resources,exact,1,555,ADVOCATES FOR CHILDREN (AFC),Youth,Organizations & Resources,,366,yes,yes
+615,The Animation Project (TAP),Youth,Organizations & Resources,exact,1,556,THE ANIMATION PROJECT (TAP),Youth,Organizations & Resources,,366,yes,yes
+616,Artistic Noise,Youth,Organizations & Resources,exact,1,557,ARTISTIC NOISE,Youth,Organizations & Resources,,367,yes,yes
+617,Avenues for Justice (AFJ),Youth,Organizations & Resources,exact,1,558,AVENUES FOR JUSTICE (AFJ),Youth,Organizations & Resources,,367,yes,yes
+618,BronxConnect,Youth,Organizations & Resources,exact,1,559,BRONXCONNECT,Youth,Organizations & Resources,,368,yes,yes
+619,"Center for Alternative Sentencing and Employment Services (CASES)—Education, Career & Enrichment (ECE)",Youth,Organizations & Resources,exact,1,560,"CENTER FOR ALTERNATIVE SENTENCING AND EMPLOYMENT SERVICES (CASES)—EDUCATION, CAREER & ENRICHMENT (ECE)",Youth,Organizations & Resources,,368,yes,yes
+620,Center for Community Alternatives (CCA)—Youth Services NYC,Youth,Organizations & Resources,exact,1,561,CENTER FOR COMMUNITY ALTERNATIVES (CCA)—YOUTH SERVICES NYC,Youth,Organizations & Resources,,369,yes,yes
+621,The Children’s Village - 1 (Bronx),Youth,Organizations & Resources,suffix_removed,1,562,THE CHILDREN’S VILLAGE,Youth,Organizations & Resources,,369,yes,yes
+622,The Children’s Village - 2 (Manhattan),Youth,Organizations & Resources,suffix_removed,1,562,THE CHILDREN’S VILLAGE,Youth,Organizations & Resources,,369,yes,yes
+623,Elite Learners—Reentry Services - 1 (Headquarters),Youth,Organizations & Resources,suffix_removed,1,563,ELITE LEARNERS—REENTRY SERVICES,Youth,Organizations & Resources,,369,yes,yes
+624,Elite Learners—Reentry Services - 2 (Anti-Violence Hub),Youth,Organizations & Resources,suffix_removed,1,563,ELITE LEARNERS—REENTRY SERVICES,Youth,Organizations & Resources,,369,yes,yes
+625,Elite Learners—Reentry Services - 3 (Brownsville Office),Youth,Organizations & Resources,suffix_removed,1,563,ELITE LEARNERS—REENTRY SERVICES,Youth,Organizations & Resources,,369,yes,yes
+626,Exalt Youth,Youth,Organizations & Resources,exact,1,564,EXALT YOUTH,Youth,Organizations & Resources,,370,yes,yes
+627,Exodus Transitional Community—Women & Girls Project,Youth,Organizations & Resources,exact,1,565,EXODUS TRANSITIONAL COMMUNITY—WOMEN & GIRLS PROJECT,Youth,Organizations & Resources,,370,yes,yes
+628,Getting Out and Staying Out (GOSO),Youth,Organizations & Resources,exact,2,566,GETTING OUT AND STAYING OUT (GOSO),Youth,Organizations & Resources,,371,yes,yes
+629,Getting Out and Staying Out (GOSO),,,exact,2,45,GETTING OUT AND STAYING OUT (GOSO),Formerly Incarcerated People,Organizations,,36,csv_blank,csv_blank
+630,Girl Vow,Youth,Organizations & Resources,exact,1,567,GIRL VOW,Youth,Organizations & Resources,,371,yes,yes
+631,How Our Lives Link Altogether (H.O.L.L.A!),Youth,Organizations & Resources,exact,1,568,HOW OUR LIVES LINK ALTOGETHER (H.O.L.L.A!),Youth,Organizations & Resources,,372,yes,yes
+632,Osborne Association (Children of Incarcerated Parents),Youth,Organizations & Resources,annotation_removed,5,570,OSBORNE ASSOCIATION,Youth,Organizations & Resources,,372,yes,yes
+633,Police Athletic League (PAL)—Juvenile Justice - 1 (Brooklyn — MAAP),Youth,Organizations & Resources,suffix_removed,1,571,POLICE ATHLETIC LEAGUE (PAL)—JUVENILE JUSTICE,Youth,Organizations & Resources,,373,yes,yes
+634,Police Athletic League (PAL)—Juvenile Justice - 2 (Harlem — Teen Programming),Youth,Organizations & Resources,suffix_removed,1,571,POLICE ATHLETIC LEAGUE (PAL)—JUVENILE JUSTICE,Youth,Organizations & Resources,,373,yes,yes
+635,Possibility Project—Youth Justice Program,Youth,Organizations & Resources,exact,1,572,POSSIBILITY PROJECT—YOUTH JUSTICE PROGRAM,Youth,Organizations & Resources,,373,yes,yes
+636,Youth Justice Network - 1 (Main Office—Harlem),Youth,Organizations & Resources,suffix_removed,1,573,YOUTH JUSTICE NETWORK,Youth,Organizations & Resources,,373,yes,yes
+637,Youth Justice Network - 2 (Bronx Office),Youth,Organizations & Resources,suffix_removed,1,573,YOUTH JUSTICE NETWORK,Youth,Organizations & Resources,,373,yes,yes
+638,Youth Justice Network - 3 (Brooklyn Office),Youth,Organizations & Resources,suffix_removed,1,573,YOUTH JUSTICE NETWORK,Youth,Organizations & Resources,,373,yes,yes
+639,Youth Justice Network - 4 (Family Matters Office),Youth,Organizations & Resources,suffix_removed,1,573,YOUTH JUSTICE NETWORK,Youth,Organizations & Resources,,373,yes,yes
+640,Youth Represent,Youth,Organizations & Resources,exact,1,574,YOUTH REPRESENT,Youth,Organizations & Resources,,374,yes,yes
+641,Brooklyn Public Library (BPL)—Youth & Family Services,Youth,Organizations & Resources,exact,1,575,BROOKLYN PUBLIC LIBRARY (BPL)—YOUTH & FAMILY SERVICES,Youth,Organizations & Resources,,375,yes,yes
+642,NYC Administration for Children’s Services (ACS)—Juvenile Justice,Youth,Organizations & Resources,exact,1,576,NYC ADMINISTRATION FOR CHILDREN’S SERVICES (ACS)—JUVENILE JUSTICE,Youth,Organizations & Resources,,375,yes,yes
+643,NYC Department of Youth and Community Development (DYCD),Youth,Organizations & Resources,exact,1,577,NYC DEPARTMENT OF YOUTH AND COMMUNITY DEVELOPMENT (DYCD),Youth,Organizations & Resources,,375,yes,yes
+644,NYC Health—NYC Teenspace,Youth,Organizations & Resources,exact,1,578,NYC HEALTH—NYC TEENSPACE,Youth,Organizations & Resources,,376,yes,yes
+645,Ali Forney Center (AFC) - 1 (Headquarters),Youth,Organizations & Resources,suffix_removed,2,579,ALI FORNEY CENTER (AFC),Youth,Organizations & Resources,,376,yes,yes
+646,Ali Forney Center (AFC) - 2 (Drop-In Center),Youth,Organizations & Resources,suffix_removed,2,579,ALI FORNEY CENTER (AFC),Youth,Organizations & Resources,,376,yes,yes
+647,Covenant House New York,Youth,Organizations & Resources,exact,2,580,COVENANT HOUSE NEW YORK,Youth,Organizations & Resources,,377,yes,yes
+648,The Door,Youth,Organizations & Resources,exact,1,581,THE DOOR,Youth,Organizations & Resources,,377,yes,yes
+649,Generation NYC,Youth,Organizations & Resources,exact,1,582,GENERATION NYC,Youth,Organizations & Resources,,378,yes,yes
+650,Girls Educational and Mentoring Services (GEMS),Youth,Organizations & Resources,exact,1,583,GIRLS EDUCATIONAL AND MENTORING SERVICES (GEMS),Youth,Organizations & Resources,,378,yes,yes
+651,Hetrick-Martin Institute (HMI),Youth,Organizations & Resources,exact,2,584,HETRICK-MARTIN INSTITUTE (HMI),Youth,Organizations & Resources,,378,yes,yes
+652,Love Is Respect,Youth,Organizations & Resources,exact,1,585,LOVE IS RESPECT,Youth,Organizations & Resources,,379,yes,yes
+653,Safe Horizon—Streetwork Project Drop-In Centers - 1 (Harlem),Youth,Organizations & Resources,suffix_removed,1,586,SAFE HORIZON—STREETWORK PROJECT DROP-IN CENTERS,Youth,Organizations & Resources,,379,yes,yes
+654,Safe Horizon—Streetwork Project Drop-In Centers - 2 (Lower East Side),Youth,Organizations & Resources,suffix_removed,1,586,SAFE HORIZON—STREETWORK PROJECT DROP-IN CENTERS,Youth,Organizations & Resources,,379,yes,yes
+655,Sam & Devorah Foundation for Trans Youth—Trans Mentor Project,Youth,Organizations & Resources,exact,1,587,SAM & DEVORAH FOUNDATION FOR TRANS YOUTH—TRANS MENTOR PROJECT,Youth,Organizations & Resources,,379,yes,yes
+656,The Trevor Project,Youth,Organizations & Resources,exact,1,588,THE TREVOR PROJECT,Youth,Organizations & Resources,,380,yes,yes
+657,Unfriend the NYPD,Youth,Organizations & Resources,exact,1,589,UNFRIEND THE NYPD,Youth,Organizations & Resources,,380,yes,yes
+658,WhatsOK,Youth,Organizations & Resources,exact,1,590,WHATSOK,Youth,Organizations & Resources,,380,yes,yes
+659,The Child Center of NY,Parents & Caregivers,Organizations & Resources,exact,1,591,THE CHILD CENTER OF NY,Parents & Caregivers,Organizations & Resources,,383,yes,yes
+660,"Children of Promise, NYC (CPNYC) - 1 (Bronx)",Parents & Caregivers,Organizations & Resources,suffix_removed,1,592,"CHILDREN OF PROMISE, NYC (CPNYC)",Parents & Caregivers,Organizations & Resources,,383,yes,yes
+661,"Children of Promise, NYC (CPNYC) - 2 (Brooklyn)",Parents & Caregivers,Organizations & Resources,suffix_removed,1,592,"CHILDREN OF PROMISE, NYC (CPNYC)",Parents & Caregivers,Organizations & Resources,,383,yes,yes
+662,Children’s Aid,Parents & Caregivers,Organizations & Resources,exact,1,593,CHILDREN’S AID,Parents & Caregivers,Organizations & Resources,,384,yes,yes
+663,Community Connections for Youth (CCFY)—Parent Peer Support Program,Parents & Caregivers,Organizations & Resources,exact,1,594,COMMUNITY CONNECTIONS FOR YOUTH (CCFY)—PARENT PEER SUPPORT PROGRAM,Parents & Caregivers,Organizations & Resources,,384,yes,yes
+664,Hour Children,Parents & Caregivers,Organizations & Resources,exact,3,595,HOUR CHILDREN,Parents & Caregivers,Organizations & Resources,,385,yes,yes
+665,National Resource Center on Children and Families of the Incarcerated,Parents & Caregivers,Organizations & Resources,exact,1,596,NATIONAL RESOURCE CENTER ON CHILDREN AND FAMILIES OF THE INCARCERATED,Parents & Caregivers,Organizations & Resources,,385,yes,yes
+666,Osborne Association (Caregiver Support Groups & Reentry Case Management),Parents & Caregivers,Organizations & Resources,annotation_removed,5,597,OSBORNE ASSOCIATION,Parents & Caregivers,Organizations & Resources,,385,yes,yes
+667,Single Parent Resource Center,Parents & Caregivers,Organizations & Resources,exact,1,598,SINGLE PARENT RESOURCE CENTER,Parents & Caregivers,Organizations & Resources,,386,yes,yes
+668,NYC Public Libraries—Culture Pass,Parents & Caregivers,Organizations & Resources,exact,1,599,NYC PUBLIC LIBRARIES—CULTURE PASS,Parents & Caregivers,Organizations & Resources,,386,yes,yes
+669,The New York Public Library (NYPL)—Family & Cultural Programming,Parents & Caregivers,Organizations & Resources,exact,1,600,THE NEW YORK PUBLIC LIBRARY (NYPL)—FAMILY & CULTURAL PROGRAMMING,Parents & Caregivers,Organizations & Resources,,387,yes,yes
+670,Brooklyn Public Library (BPL)—Justice Initiatives—TeleStory,Parents & Caregivers,Organizations & Resources,exact,1,601,BROOKLYN PUBLIC LIBRARY (BPL)—JUSTICE INITIATIVES—TELESTORY,Parents & Caregivers,Organizations & Resources,,387,yes,yes
+671,NYS Council on Children and Families (CCF)—Help Hub for Families,Parents & Caregivers,Organizations & Resources,exact,1,602,NYS COUNCIL ON CHILDREN AND FAMILIES (CCF)—HELP HUB FOR FAMILIES,Parents & Caregivers,Organizations & Resources,,387,yes,yes
+672,NYC Department of Education (DOE)—Infant and Toddler Programs,Parents & Caregivers,Organizations & Resources,exact,1,603,NYC DEPARTMENT OF EDUCATION (DOE)—INFANT AND TODDLER PROGRAMS,Parents & Caregivers,Organizations & Resources,,388,yes,yes
+673,NYC Mayor’s Office to Combat Domestic Violence—Family Justice Centers (FJC) - 1 (Bronx),Parents & Caregivers,Organizations & Resources,suffix_removed,3,604,NYC MAYOR’S OFFICE TO COMBAT DOMESTIC VIOLENCE—FAMILY JUSTICE CENTERS (FJC),Parents & Caregivers,Organizations & Resources,,388,yes,yes
+674,NYC Mayor’s Office to Combat Domestic Violence—Family Justice Centers (FJC) - 2 (Brooklyn),Parents & Caregivers,Organizations & Resources,suffix_removed,3,604,NYC MAYOR’S OFFICE TO COMBAT DOMESTIC VIOLENCE—FAMILY JUSTICE CENTERS (FJC),Parents & Caregivers,Organizations & Resources,,388,yes,yes
+675,NYC Mayor’s Office to Combat Domestic Violence—Family Justice Centers (FJC) - 3 (Manhattan),Parents & Caregivers,Organizations & Resources,suffix_removed,3,604,NYC MAYOR’S OFFICE TO COMBAT DOMESTIC VIOLENCE—FAMILY JUSTICE CENTERS (FJC),Parents & Caregivers,Organizations & Resources,,388,yes,yes
+676,NYC Mayor’s Office to Combat Domestic Violence—Family Justice Centers (FJC) - 4 (Queens/Kew Gardens),Parents & Caregivers,Organizations & Resources,suffix_removed,3,604,NYC MAYOR’S OFFICE TO COMBAT DOMESTIC VIOLENCE—FAMILY JUSTICE CENTERS (FJC),Parents & Caregivers,Organizations & Resources,,388,yes,yes
+677,NYC Mayor’s Office to Combat Domestic Violence—Family Justice Centers (FJC) - 5 (Staten Island),Parents & Caregivers,Organizations & Resources,suffix_removed,3,604,NYC MAYOR’S OFFICE TO COMBAT DOMESTIC VIOLENCE—FAMILY JUSTICE CENTERS (FJC),Parents & Caregivers,Organizations & Resources,,388,yes,yes
+678,New York Foundling,Parents & Caregivers,Organizations & Resources,exact,1,606,NEW YORK FOUNDLING,Parents & Caregivers,Organizations & Resources,,389,yes,yes
+679,Safe Horizon,Parents & Caregivers,Organizations & Resources,exact,2,607,SAFE HORIZON,Parents & Caregivers,Organizations & Resources,,389,yes,yes
+680,Sanctuary for Families,Parents & Caregivers,Organizations & Resources,exact,1,608,SANCTUARY FOR FAMILIES,Parents & Caregivers,Organizations & Resources,,390,yes,yes
+681,SCO Family of Services,Parents & Caregivers,Organizations & Resources,exact,1,609,SCO FAMILY OF SERVICES,Parents & Caregivers,Organizations & Resources,,390,yes,yes
+682,United Activities Unlimited (UAU)—Fatherhood Matters,Parents & Caregivers,Organizations & Resources,exact,1,610,UNITED ACTIVITIES UNLIMITED (UAU)—FATHERHOOD MATTERS,Parents & Caregivers,Organizations & Resources,,391,yes,yes
+683,WIN NYC,Parents & Caregivers,Organizations & Resources,exact,2,611,WIN NYC,Parents & Caregivers,Organizations & Resources,,391,yes,yes
+684,Center for Family Representation (CFR) - 1 (Administrative and Manhattan Office),Parents & Caregivers,Organizations & Resources,suffix_removed,1,612,CENTER FOR FAMILY REPRESENTATION (CFR),Parents & Caregivers,Custody Rights for Incarcerated Parents,You have the right to be present at any court date involving your children,394,yes,no
+685,Center for Family Representation (CFR) - 2 (Bronx Office),Parents & Caregivers,Organizations & Resources,suffix_removed,1,612,CENTER FOR FAMILY REPRESENTATION (CFR),Parents & Caregivers,Custody Rights for Incarcerated Parents,You have the right to be present at any court date involving your children,394,yes,no
+686,Center for Family Representation (CFR) - 3 (Queens Community Office),Parents & Caregivers,Organizations & Resources,suffix_removed,1,612,CENTER FOR FAMILY REPRESENTATION (CFR),Parents & Caregivers,Custody Rights for Incarcerated Parents,You have the right to be present at any court date involving your children,394,yes,no
+687,Center for Family Representation (CFR) - 4 (Staten Island Office),Parents & Caregivers,Organizations & Resources,suffix_removed,1,612,CENTER FOR FAMILY REPRESENTATION (CFR),Parents & Caregivers,Custody Rights for Incarcerated Parents,You have the right to be present at any court date involving your children,394,yes,no
+688,Family Legal Care,Parents & Caregivers,Organizations & Resources,exact,1,613,FAMILY LEGAL CARE,Parents & Caregivers,Custody Rights for Incarcerated Parents,You have the right to be present at any court date involving your children,395,yes,no
+689,NYC Administration for Children’s Services (ACS)—Office of Advocacy,Parents & Caregivers,Organizations & Resources,exact,1,614,NYC ADMINISTRATION FOR CHILDREN’S SERVICES (ACS)—OFFICE OF ADVOCACY,Parents & Caregivers,Custody Rights for Incarcerated Parents,You have the right to be present at any court date involving your children,395,yes,no
+690,NYS Office of Temporary and Disability Assistance—Child Support Services,Parents & Caregivers,Child Support,exact,1,615,NYS OFFICE OF TEMPORARY AND DISABILITY ASSISTANCE—CHILD SUPPORT SERVICES,Parents & Caregivers,Child Support,,396,yes,yes
+691,NYC Human Resources Administration (HRA)—Office of Child Support Services (OCSS) - 1 (Manhattan — Customer Services Walk-In Center),Parents & Caregivers,Child Support,suffix_removed,1,616,NYC HUMAN RESOURCES ADMINISTRATION (HRA)—OFFICE OF CHILD SUPPORT SERVICES (OCSS),Parents & Caregivers,Child Support,,397,yes,yes
+692,,,,no_match,0,,,,,,,,
+693,NYC Human Resources Administration (HRA)—Office of Child Support Services (OCSS) - 2 (Bronx Borough Office),Parents & Caregivers,Child Support,suffix_removed,1,616,NYC HUMAN RESOURCES ADMINISTRATION (HRA)—OFFICE OF CHILD SUPPORT SERVICES (OCSS),Parents & Caregivers,Child Support,,397,yes,yes
+694,NYC Human Resources Administration (HRA)—Office of Child Support Services (OCSS) - 3 (Brooklyn Borough Office),Parents & Caregivers,Child Support,suffix_removed,1,616,NYC HUMAN RESOURCES ADMINISTRATION (HRA)—OFFICE OF CHILD SUPPORT SERVICES (OCSS),Parents & Caregivers,Child Support,,397,yes,yes
+695,NYC Human Resources Administration (HRA)—Office of Child Support Services (OCSS) - 4 (Manhattan/Staten Island Borough Office),Parents & Caregivers,Child Support,suffix_removed,1,616,NYC HUMAN RESOURCES ADMINISTRATION (HRA)—OFFICE OF CHILD SUPPORT SERVICES (OCSS),Parents & Caregivers,Child Support,,397,yes,yes
+696,NYC Human Resources Administration (HRA)—Office of Child Support Services (OCSS) - 5 (Queens Borough Office),Parents & Caregivers,Child Support,suffix_removed,1,616,NYC HUMAN RESOURCES ADMINISTRATION (HRA)—OFFICE OF CHILD SUPPORT SERVICES (OCSS),Parents & Caregivers,Child Support,,397,yes,yes
+697,Child Find of America—Parent Help,Parents & Caregivers,Organizations & Resources,exact,1,617,CHILD FIND OF AMERICA—PARENT HELP,Parents & Caregivers,Child Support,,399,yes,no
+698,Community Mediation Services (CMS),Parents & Caregivers,Organizations & Resources,exact,1,618,COMMUNITY MEDIATION SERVICES (CMS),Parents & Caregivers,Child Support,,399,yes,no
+699,NYS Child Protective Services Abuse Hotline,Parents & Caregivers,Additional Hotlines & Directories,exact,1,620,NYS CHILD PROTECTIVE SERVICES ABUSE HOTLINE,Parents & Caregivers,Additional Hotlines & Directories,,399,yes,yes
+700,NYS Domestic and Sexual Violence Hotline,Parents & Caregivers,Additional Hotlines & Directories,exact,1,621,NYS DOMESTIC AND SEXUAL VIOLENCE HOTLINE,Parents & Caregivers,Additional Hotlines & Directories,,400,yes,yes
+701,NYC Health—Child Care,Parents & Caregivers,Additional Hotlines & Directories,exact,1,622,NYC HEALTH—CHILD CARE,Parents & Caregivers,Additional Hotlines & Directories,,400,yes,yes
+702,Growing Up NYC,Parents & Caregivers,Additional Hotlines & Directories,exact,1,623,GROWING UP NYC,Parents & Caregivers,Additional Hotlines & Directories,,400,yes,yes
+703,National Parent & Youth Helpline,Parents & Caregivers,Additional Hotlines & Directories,exact,1,624,NATIONAL PARENT & YOUTH HELPLINE,Parents & Caregivers,Additional Hotlines & Directories,,400,yes,yes
+704,BronxWorks [CORRECTED/COMPLETE -- replaces BronxWorks--Immigration Services pointer row from Segment 8 file],Organizations for Job Seekers,Organizations & Programs,annotation_removed,1,625,BRONXWORKS,Organizations for Job Seekers,Job Search Assistance & Placement,,405,yes,no
+705,Center for Employment Opportunities (CEO) [PARTIAL/POINTER ONLY -- full listing on page 31 not yet captured],Organizations for Job Seekers,Organizations & Programs,annotation_removed,2,626,CENTER FOR EMPLOYMENT OPPORTUNITIES (CEO),Organizations for Job Seekers,Job Search Assistance & Placement,,405,yes,no
+706,Defy Ventures,Organizations for Job Seekers,Organizations & Programs,exact,2,627,DEFY VENTURES,Organizations for Job Seekers,Job Search Assistance & Placement,,405,yes,no
+707,"The Doe Fund--Ready, Willing & Able",Organizations for Job Seekers,Organizations & Programs,exact,1,628,"THE DOE FUND—READY, WILLING & ABLE",Organizations for Job Seekers,Job Search Assistance & Placement,,406,yes,no
+708,Drive Change,Organizations for Job Seekers,Organizations & Programs,exact,2,629,DRIVE CHANGE,Organizations for Job Seekers,Job Search Assistance & Placement,,406,yes,no
+709,Exponents [PARTIAL/POINTER ONLY -- full listing on page 34 not yet captured],Organizations for Job Seekers,Organizations & Programs,annotation_removed,4,630,EXPONENTS,Organizations for Job Seekers,Job Search Assistance & Placement,,406,yes,no
+710,The Horticultural Society of New York (The Hort)--HortNYC (Horticulture and Open Streets Resident Training in NYC),Organizations for Job Seekers,Organizations & Programs,exact,1,631,THE HORTICULTURAL SOCIETY OF NEW YORK (THE HORT)—HORTNYC (HORTICULTURE AND OPEN STREETS RESIDENT TRAINING IN NYC),Organizations for Job Seekers,Job Search Assistance & Placement,,407,yes,no
+711,NADAP,Organizations for Job Seekers,Organizations & Programs,exact,1,632,NADAP,Organizations for Job Seekers,Job Search Assistance & Placement,,407,yes,no
+712,The New York Public Library (NYPL)--Career Services - 1 (Stavros Niarchos Foundation Library / SNFL),Organizations for Job Seekers,Organizations & Programs,suffix_removed,1,634,THE NEW YORK PUBLIC LIBRARY (NYPL)—CAREER SERVICES,Organizations for Job Seekers,Job Search Assistance & Placement,,409,yes,no
+713,The New York Public Library (NYPL)--Career Services - 2 (Bronx Library Center),Organizations for Job Seekers,Organizations & Programs,suffix_removed,1,634,THE NEW YORK PUBLIC LIBRARY (NYPL)—CAREER SERVICES,Organizations for Job Seekers,Job Search Assistance & Placement,,409,yes,no
+714,Brooklyn Public Library (BPL)--Business & Career Services,Organizations for Job Seekers,Organizations & Programs,exact,1,635,BROOKLYN PUBLIC LIBRARY (BPL)—BUSINESS & CAREER SERVICES,Organizations for Job Seekers,Job Search Assistance & Placement,,410,yes,no
+715,Queens Public Library--Job & Business Academy (JBA),Organizations for Job Seekers,Organizations & Programs,exact,1,636,QUEENS PUBLIC LIBRARY—JOB & BUSINESS ACADEMY (JBA),Organizations for Job Seekers,Job Search Assistance & Placement,,410,yes,no
+716,NYS Department of Labor--Federal Bonding Program,Organizations for Job Seekers,Organizations & Programs,exact,1,637,NYS DEPARTMENT OF LABOR—FEDERAL BONDING PROGRAM,Organizations for Job Seekers,Job Search Assistance & Placement,,411,yes,no
+717,NYC Department of Small Business Services--Workforce 1 (WF1) Career Centers,Organizations for Job Seekers,Organizations & Programs,exact,1,638,NYC DEPARTMENT OF SMALL BUSINESS SERVICES—WORKFORCE 1 (WF1) CAREER CENTERS,Organizations for Job Seekers,Job Search Assistance & Placement,,411,yes,no
+718,NYC Housing Authority (NYCHA)--Jobs-Plus -- East Side House,Organizations for Job Seekers,Organizations & Programs,annotation_removed,1,639,NYC HOUSING AUTHORITY (NYCHA)—JOBS-PLUS,Organizations for Job Seekers,Job Search Assistance & Placement,,412,yes,no
+719,NYC Housing Authority (NYCHA)--Jobs-Plus -- BronxWorks,Organizations for Job Seekers,Organizations & Programs,annotation_removed,1,639,NYC HOUSING AUTHORITY (NYCHA)—JOBS-PLUS,Organizations for Job Seekers,Job Search Assistance & Placement,,412,yes,no
+720,NYC Housing Authority (NYCHA)--Jobs-Plus -- Bedford Stuyvesant Restoration Corporation,Organizations for Job Seekers,Organizations & Programs,annotation_removed,1,639,NYC HOUSING AUTHORITY (NYCHA)—JOBS-PLUS,Organizations for Job Seekers,Job Search Assistance & Placement,,412,yes,no
+721,NYC Housing Authority (NYCHA)--Jobs-Plus -- America Works of New York (Brooklyn),Organizations for Job Seekers,Organizations & Programs,annotation_removed,1,639,NYC HOUSING AUTHORITY (NYCHA)—JOBS-PLUS,Organizations for Job Seekers,Job Search Assistance & Placement,,412,yes,no
+722,NYC Housing Authority (NYCHA)--Jobs-Plus -- FEDCAP,Organizations for Job Seekers,Organizations & Programs,annotation_removed,1,639,NYC HOUSING AUTHORITY (NYCHA)—JOBS-PLUS,Organizations for Job Seekers,Job Search Assistance & Placement,,412,yes,no
+723,NYC Housing Authority (NYCHA)--Jobs-Plus -- NYCHA REES,Organizations for Job Seekers,Organizations & Programs,annotation_removed,1,639,NYC HOUSING AUTHORITY (NYCHA)—JOBS-PLUS,Organizations for Job Seekers,Job Search Assistance & Placement,,412,yes,no
+724,NYC Housing Authority (NYCHA)--Jobs-Plus -- Henry Street Settlement,Organizations for Job Seekers,Organizations & Programs,annotation_removed,1,639,NYC HOUSING AUTHORITY (NYCHA)—JOBS-PLUS,Organizations for Job Seekers,Job Search Assistance & Placement,,412,yes,no
+725,NYC Housing Authority (NYCHA)--Jobs-Plus -- America Works of New York (Queens),Organizations for Job Seekers,Organizations & Programs,annotation_removed,1,639,NYC HOUSING AUTHORITY (NYCHA)—JOBS-PLUS,Organizations for Job Seekers,Job Search Assistance & Placement,,412,yes,no
+726,NYC Housing Authority (NYCHA)--Jobs-Plus -- Urban Upbound (Astoria),Organizations for Job Seekers,Organizations & Programs,annotation_removed,1,639,NYC HOUSING AUTHORITY (NYCHA)—JOBS-PLUS,Organizations for Job Seekers,Job Search Assistance & Placement,,412,yes,no
+727,NYC Housing Authority (NYCHA)--Jobs-Plus -- Urban Upbound (Long Island City),Organizations for Job Seekers,Organizations & Programs,annotation_removed,1,639,NYC HOUSING AUTHORITY (NYCHA)—JOBS-PLUS,Organizations for Job Seekers,Job Search Assistance & Placement,,412,yes,no
+728,NYC Housing Authority (NYCHA)--Jobs-Plus -- Equus Workforce Solutions,Organizations for Job Seekers,Organizations & Programs,annotation_removed,1,639,NYC HOUSING AUTHORITY (NYCHA)—JOBS-PLUS,Organizations for Job Seekers,Job Search Assistance & Placement,,412,yes,no
+729,America Works,Organizations for Job Seekers,Organizations & Programs,exact,1,640,AMERICA WORKS,Organizations for Job Seekers,Job Search Assistance & Placement,,413,yes,no
+730,Black Veterans for Social Justice (BVSJ)--Homeless Veterans' Reintegration Program (HVRP),Organizations for Job Seekers,Organizations & Programs,exact,2,641,BLACK VETERANS FOR SOCIAL JUSTICE (BVSJ)—HOMELESS VETERANS’ REINTEGRATION PROGRAM (HVRP),Organizations for Job Seekers,Job Search Assistance & Placement,,414,yes,no
+731,Brooklyn Workforce Innovations (BWI),Organizations for Job Seekers,Organizations & Programs,exact,1,642,BROOKLYN WORKFORCE INNOVATIONS (BWI),Organizations for Job Seekers,Job Search Assistance & Placement,,414,yes,no
+732,Dress for Success--New York Program,Organizations for Job Seekers,Organizations & Programs,exact,1,645,DRESS FOR SUCCESS—NEW YORK PROGRAM,Organizations for Job Seekers,Job Search Assistance & Placement,,415,yes,no
+733,EPRA--Job Placement Services,Organizations for Job Seekers,Organizations & Programs,exact,1,646,EPRA—JOB PLACEMENT SERVICES,Organizations for Job Seekers,Job Search Assistance & Placement,,416,yes,no
+734,Goodwill NYNJ--Workforce Development,Organizations for Job Seekers,Organizations & Programs,exact,1,647,GOODWILL NYNJ—WORKFORCE DEVELOPMENT,Organizations for Job Seekers,Job Search Assistance & Placement,,416,yes,no
+735,The Hope Program,Organizations for Job Seekers,Organizations & Programs,exact,1,648,THE HOPE PROGRAM,Organizations for Job Seekers,Job Search Assistance & Placement,,416,yes,no
+736,,,,row_above,1,648,THE HOPE PROGRAM,Organizations for Job Seekers,Job Search Assistance & Placement,,416,csv_blank,csv_blank
+737,Hot Bread Kitchen [CORRECTED/COMPLETE -- replaces Hot Bread Kitchen pointer row from Segment 11 file],Organizations for Job Seekers,Organizations & Programs,annotation_removed,2,649,HOT BREAD KITCHEN,Organizations for Job Seekers,Job Search Assistance & Placement,,417,yes,no
+738,Nontraditional Employment for Women (NEW) [CORRECTED/COMPLETE -- replaces Nontraditional Employment for Women (NEW) pointer row from Segment 11 file],Organizations for Job Seekers,Organizations & Programs,annotation_removed,2,650,NONTRADITIONAL EMPLOYMENT FOR WOMEN (NEW),Organizations for Job Seekers,Job Search Assistance & Placement,,417,yes,no
+739,Opportunities for a Better Tomorrow (OBT) [CORRECTED/COMPLETE -- replaces OBT pointer rows from Segment 8 and Segment 11 files] - 1 (Bushwick Office),Organizations for Job Seekers,Organizations & Programs,annotation_removed,3,651,OPPORTUNITIES FOR A BETTER TOMORROW (OBT),Organizations for Job Seekers,Job Search Assistance & Placement,,418,yes,no
+740,Opportunities for a Better Tomorrow (OBT) [CORRECTED/COMPLETE -- replaces OBT pointer rows from Segment 8 and Segment 11 files] - 2 (Sunset Park Office),Organizations for Job Seekers,Organizations & Programs,annotation_removed,3,651,OPPORTUNITIES FOR A BETTER TOMORROW (OBT),Organizations for Job Seekers,Job Search Assistance & Placement,,418,yes,no
+741,Opportunities for a Better Tomorrow (OBT) [CORRECTED/COMPLETE -- replaces OBT pointer rows from Segment 8 and Segment 11 files] - 3 (Innovation Lab),Organizations for Job Seekers,Organizations & Programs,annotation_removed,3,651,OPPORTUNITIES FOR A BETTER TOMORROW (OBT),Organizations for Job Seekers,Job Search Assistance & Placement,,418,yes,no
+742,Opportunities for a Better Tomorrow (OBT) [CORRECTED/COMPLETE -- replaces OBT pointer rows from Segment 8 and Segment 11 files] - 4 (Jamaica Office),Organizations for Job Seekers,Organizations & Programs,annotation_removed,3,651,OPPORTUNITIES FOR A BETTER TOMORROW (OBT),Organizations for Job Seekers,Job Search Assistance & Placement,,418,yes,no
+743,Streetwise Partners,Organizations for Job Seekers,Organizations & Programs,exact,1,652,STREETWISE PARTNERS,Organizations for Job Seekers,Job Search Assistance & Placement,,419,yes,no
+744,Strive International,Organizations for Job Seekers,Organizations & Programs,exact,1,653,STRIVE INTERNATIONAL,Organizations for Job Seekers,Job Search Assistance & Placement,,419,yes,no
+745,Workers Defense League (WDL),Organizations for Job Seekers,Organizations & Programs,exact,1,654,WORKERS DEFENSE LEAGUE (WDL),Organizations for Job Seekers,Job Search Assistance & Placement,,419,yes,no
+746,Legal Action Center--National H.I.R.E. Network,Organizations for Job Seekers,Online Resources,exact,1,655,LEGAL ACTION CENTER—NATIONAL H.I.R.E. NETWORK,Organizations for Job Seekers,Online Resources,,420,yes,yes
+747,Bureau of Labor Statistics--The Occupational Outlook Handbook,Organizations for Job Seekers,Online Resources,exact,1,656,BUREAU OF LABOR STATISTICS—THE OCCUPATIONAL OUTLOOK HANDBOOK,Organizations for Job Seekers,Online Resources,,420,yes,yes
+748,NYS Department of Labor,Organizations for Job Seekers,Online Resources,exact,1,657,NYS DEPARTMENT OF LABOR,Organizations for Job Seekers,Online Resources,,420,yes,yes
+749,NYS Department of Labor--CareerZone,Organizations for Job Seekers,Online Resources,exact,1,658,NYS DEPARTMENT OF LABOR—CAREERZONE,Organizations for Job Seekers,Online Resources,,420,yes,yes
+750,"Jobs NYC [NOTE: no description text follows this entry in the source -- may be a bare listing, or may be cut off at the end of this chapter/segment]",Organizations for Job Seekers,Online Resources,annotation_removed,1,659,JOBS NYC,Organizations for Job Seekers,Online Resources,,420,yes,yes
+751,NYC Department of Consumer and Worker Protection (DCWP),Organizations for Job Seekers,Small Business Services & Resources,exact,2,665,NYC DEPARTMENT OF CONSUMER AND WORKER PROTECTION (DCWP),Organizations for Job Seekers,Starting Your Own Business,,422,yes,no
+752,NYC Small Business Services,Organizations for Job Seekers,Small Business Services & Resources,exact,1,666,NYC SMALL BUSINESS SERVICES,Organizations for Job Seekers,Starting Your Own Business,,422,yes,no
+753,Business Outreach Center Network (BOC),Organizations for Job Seekers,Small Business Services & Resources,exact,1,667,BUSINESS OUTREACH CENTER NETWORK (BOC),Organizations for Job Seekers,Starting Your Own Business,,422,yes,no
+754,SCORE New York City,Organizations for Job Seekers,Small Business Services & Resources,exact,1,668,SCORE NEW YORK CITY,Organizations for Job Seekers,Starting Your Own Business,,423,yes,no
+755,Start Small Think Big,Organizations for Job Seekers,Small Business Services & Resources,exact,1,669,START SMALL THINK BIG,Organizations for Job Seekers,Starting Your Own Business,,423,yes,no
+756,NYS Department of Corrections and Community Supervision (DOCCS)--Certificate Review Unit,Preparing for the Job Search,"Certificates of Relief/Good Conduct, Rap Sheets & Employment Discrimination Resources",no_match,0,,,,,,,,
+757,Legal Action Center,Preparing for the Job Search,"Certificates of Relief/Good Conduct, Rap Sheets & Employment Discrimination Resources",in_listing_text,1,677,"NYS CRIMINAL JUSTICE SERVICES, LEGAL SERVICES OFFICE",Preparing for the Job Search,What You Can Do Upon Release,Your rap sheet (Record of Arrest and Prosecution),435,yes,no
+758,Community Service Society--Next Door Project,Preparing for the Job Search,"Certificates of Relief/Good Conduct, Rap Sheets & Employment Discrimination Resources",no_match,0,,,,,,,,
+759,NYS Criminal Justice Services--Legal Services Office (Record Review Unit),Preparing for the Job Search,"Certificates of Relief/Good Conduct, Rap Sheets & Employment Discrimination Resources",annotation_removed,1,677,"NYS CRIMINAL JUSTICE SERVICES, LEGAL SERVICES OFFICE",Preparing for the Job Search,What You Can Do Upon Release,Your rap sheet (Record of Arrest and Prosecution),435,yes,no
+760,FBI CJIS Division--Summary Request (Identity History Summary / Federal Rap Sheet),Preparing for the Job Search,"Certificates of Relief/Good Conduct, Rap Sheets & Employment Discrimination Resources",in_listing_text,1,677,"NYS CRIMINAL JUSTICE SERVICES, LEGAL SERVICES OFFICE",Preparing for the Job Search,What You Can Do Upon Release,Your rap sheet (Record of Arrest and Prosecution),435,yes,no
+761,NYS Division of Human Rights,Preparing for the Job Search,"Certificates of Relief/Good Conduct, Rap Sheets & Employment Discrimination Resources",no_match,0,,,,,,,,
+,,,,pdf_only,1,1,211 NYS—REENTRY SERVICES,Formerly Incarcerated People,Resources Similar to Connections,,24,,
+,,,,pdf_only,1,2,MUTUAL AID NYC,Formerly Incarcerated People,Resources Similar to Connections,,24,,
+,,,,pdf_only,1,3,YOURPEER,Formerly Incarcerated People,Resources Similar to Connections,,24,,
+,,,,pdf_only,1,4,ALBANY CRTF REENTRY TASK FORCE,Formerly Incarcerated People,Reentry Task Force by NYS County,,25,,
+,,,,pdf_only,1,5,BRONX CRTF REENTRY TASK FORCE,Formerly Incarcerated People,Reentry Task Force by NYS County,,25,,
+,,,,pdf_only,1,6,BROOME CRTF REENTRY TASK FORCE,Formerly Incarcerated People,Reentry Task Force by NYS County,,25,,
+,,,,pdf_only,1,7,DUTCHESS CRTF REENTRY TASK FORCE,Formerly Incarcerated People,Reentry Task Force by NYS County,,25,,
+,,,,pdf_only,1,8,ERIE COUNTY REENTRY TASK FORCE,Formerly Incarcerated People,Reentry Task Force by NYS County,,25,,
+,,,,pdf_only,1,9,KINGS COUNTY REENTRY TASK FORCE,Formerly Incarcerated People,Reentry Task Force by NYS County,,25,,
+,,,,pdf_only,1,10,MONROE COUNTY REENTRY TASK FORCE,Formerly Incarcerated People,Reentry Task Force by NYS County,,25,,
+,,,,pdf_only,1,11,NASSAU COUNTY REENTRY TASK FORCE,Formerly Incarcerated People,Reentry Task Force by NYS County,,25,,
+,,,,pdf_only,1,12,NEW YORK COUNTY REENTRY TASK FORCE,Formerly Incarcerated People,Reentry Task Force by NYS County,,25,,
+,,,,pdf_only,1,13,NIAGARA COUNTY REENTRY TASK FORCE,Formerly Incarcerated People,Reentry Task Force by NYS County,,26,,
+,,,,pdf_only,1,14,ONEIDA COUNTY REENTRY TASK FORCE,Formerly Incarcerated People,Reentry Task Force by NYS County,,26,,
+,,,,pdf_only,1,15,ONONDAGA COUNTY REENTRY TASK FORCE,Formerly Incarcerated People,Reentry Task Force by NYS County,,26,,
+,,,,pdf_only,1,16,ORANGE COUNTY REENTRY TASK FORCE,Formerly Incarcerated People,Reentry Task Force by NYS County,,26,,
+,,,,pdf_only,1,17,QUEENS COUNTY REENTRY TASK FORCE,Formerly Incarcerated People,Reentry Task Force by NYS County,,26,,
+,,,,pdf_only,1,18,RENSSELAER COUNTY REENTRY TASK FORCE,Formerly Incarcerated People,Reentry Task Force by NYS County,,26,,
+,,,,pdf_only,1,19,ROCKLAND COUNTY REENTRY TASK FORCE,Formerly Incarcerated People,Reentry Task Force by NYS County,,26,,
+,,,,pdf_only,1,20,SCHENECTADY COUNTY REENTRY TASK FORCE,Formerly Incarcerated People,Reentry Task Force by NYS County,,26,,
+,,,,pdf_only,1,96,HELP PAYING FOR INTERNET AND PHONE SERVICES,Education,Computer Literacy & Digital Life Skills,,62,,
+,,,,pdf_only,1,210,NEW YORK COUNTY LAWYERS ASSOCIATION (NYLCA)—VOLUNTEER LAWYER FOR THE DAY CONSUMER DEBT PROGRAM,Financial Assistance,Financial Counseling & Rights,,135,,
+,,,,pdf_only,3,243,COMMUNITY SERVICE SOCIETY (CSS),Physical & Mental Health,Health Insurance,,155,,
+,,,,pdf_only,2,318,REVCORE RECOVERY CENTER,Addiction,Treatment Programs & Organizations,,191,,
+,,,,pdf_only,2,326,HARLEM EAST LIFE PLAN (HELP),Addiction,Treatment Programs & Organizations,,194,,
+,,,,pdf_only,3,354,COMMUNITY SERVICE SOCIETY (CSS),Legal,Representation & Assistance,Discovery Law,226,,
+,,,,pdf_only,2,377,FEDERAL BUREAU OF PRISONS (BOP),Legal,Locating Someone in Custody,,241,,
+,,,,pdf_only,2,378,US IMMIGRATION AND CUSTOMS ENFORCEMENT (ICE),Legal,Locating Someone in Custody,,241,,
+,,,,pdf_only,3,379,NYS DEPARTMENT OF CORRECTIONS AND COMMUNITY SUPERVISION (DOCCS),Legal,Locating Someone in Custody,,241,,
+,,,,pdf_only,1,380,NYC CENTRAL BOOKING,Legal,Locating Someone in Custody,,241,,
+,,,,pdf_only,1,382,NYS UNIFIED COURT SYSTEM—WEBCRIMS,Legal,Locating Someone in Custody,,242,,
+,,,,pdf_only,1,383,BOARD OF ELECTIONS IN NEW YORK CITY,Legal,Voting Registration & Rights,Voter Suppression,248,,
+,,,,pdf_only,1,384,SOCIAL SECURITY ADMINISTRATION (SSA),Legal,Obtaining Personal Documents,,248,,
+,,,,pdf_only,1,385,NYS DEPARTMENT OF MOTOR VEHICLES (DMV),Legal,Obtaining Personal Documents,,249,,
+,,,,pdf_only,1,386,NYS UNIFIED COURT SYSTEM—NAME AND/OR SEX DESIGNATION CHANGE,Legal,Obtaining Personal Documents,,250,,
+,,,,pdf_only,1,387,NYC DEPARTMENT OF HEALTH AND MENTAL HYGIENE (DOH)—OFFICE OF VITAL RECORDS,Legal,Obtaining Personal Documents,,251,,
+,,,,pdf_only,1,388,IDNYC,Legal,Obtaining Personal Documents,,251,,
+,,,,pdf_only,1,389,OFFICE OF THE CITY CLERK—MARRIAGE BUREAU,Legal,Obtaining Personal Documents,,251,,
+,,,,pdf_only,1,390,CENTERS FOR DISEASE CONTROL AND PREVENTION (CDC)—PUERTO RICO VITAL RECORDS,Legal,Obtaining Personal Documents,,252,,
+,,,,pdf_only,1,391,NYS OFFICE OF THE INSPECTOR GENERAL,Legal,"Discrimination, Grievances, & Rights",How to write an effective grievance,255,,
+,,,,pdf_only,1,392,NYS DEPARTMENT OF CORRECTIONS AND COMMUNITY SUPERVISION (DOCCS)—OFFICE OF SPECIAL INVESTIGATIONS (OSI),Legal,"Discrimination, Grievances, & Rights",How to write an effective grievance,255,,
+,,,,pdf_only,3,402,NYS DEPARTMENT OF CORRECTIONS AND COMMUNITY SUPERVISION (DOCCS),Legal,Prison Rape Elimination Act (PREA),Information on reporting sexual assault and harassment,268,,
+,,,,pdf_only,2,403,NYC DEPARTMENT OF CORRECTION (DOC),Legal,Prison Rape Elimination Act (PREA),Information on reporting sexual assault and harassment,269,,
+,,,,pdf_only,1,404,NYS OFFICE OF CHILDREN AND FAMILY SERVICES (OCFS)—JUVENILE FACILITIES,Legal,Prison Rape Elimination Act (PREA),Information on reporting sexual assault and harassment,269,,
+,,,,pdf_only,2,405,FEDERAL BUREAU OF PRISONS (BOP),Legal,Prison Rape Elimination Act (PREA),Information on reporting sexual assault and harassment,270,,
+,,,,pdf_only,2,406,US IMMIGRATION AND CUSTOMS ENFORCEMENT (ICE),Legal,Prison Rape Elimination Act (PREA),Information on reporting sexual assault and harassment,270,,
+,,,,pdf_only,1,410,US CITIZENSHIP AND IMMIGRATION SERVICES—GREEN CARDS,Immigrants,Organizations & Resources,,286,,
+,,,,pdf_only,1,451,MODERN MILITARY,Veterans,Organizations & Resources,Resources for Trans Veterans,307,,
+,,,,pdf_only,1,452,NYU LANGONE MEDICAL CENTER—MILITARY FAMILY CENTER,Veterans,Organizations & Resources,Resources for Trans Veterans,307,,
+,,,,pdf_only,1,453,PARALYZED VETERANS OF AMERICA (PVA),Veterans,Organizations & Resources,Resources for Trans Veterans,308,,
+,,,,pdf_only,1,454,PROTECT OUR DEFENDERS,Veterans,Organizations & Resources,Resources for Trans Veterans,308,,
+,,,,pdf_only,1,455,SERVICES FOR THE UNDERSERVED (S:US)—VETERAN SERVICES,Veterans,Organizations & Resources,Resources for Trans Veterans,308,,
+,,,,pdf_only,1,456,STATESIDE LEGAL,Veterans,Organizations & Resources,Resources for Trans Veterans,309,,
+,,,,pdf_only,1,457,THE VETERANS CONSORTIUM—PRO BONO PROGRAM,Veterans,Organizations & Resources,Resources for Trans Veterans,309,,
+,,,,pdf_only,1,458,VETERANS CRISIS LINE,Veterans,Organizations & Resources,Resources for Trans Veterans,309,,
+,,,,pdf_only,1,459,NEW YORK RELAY CENTER,People with Disabilities,Organizations & Resources,,313,,
+,,,,pdf_only,1,460,ADA NATIONAL NETWORK—NORTHEAST ADA CENTER,People with Disabilities,Organizations & Resources,,313,,
+,,,,pdf_only,1,476,INDEPENDENT LIVING CENTERS (ILCS),People with Disabilities,Organizations & Resources,,319,,
+,,,,pdf_only,1,496,BREAST AND CERVICAL CANCER DETECTION,Women,Organizations,,329,,
+,,,,pdf_only,4,514,NYC COMMISSION ON HUMAN RIGHTS,Older People,Organizations,,337,,
+,,,,pdf_only,3,516,NYC MAYOR’S OFFICE TO COMBAT DOMESTIC VIOLENCE—FAMILY JUSTICE CENTERS (FJC),Older People,Organizations,,338,,
+,,,,pdf_only,5,520,NEW YORK PEACE INSTITUTE,Older People,Organizations,,339,,
+,,,,pdf_only,4,531,NYC COMMISSION ON HUMAN RIGHTS,LGBTQI+,Organizations & Resources,,350,,
+,,,,pdf_only,2,545,LGBT BAR ASSOCIATION OF GREATER NEW YORK,LGBTQI+,Organizations & Resources,,355,,
+,,,,pdf_only,5,569,NEW YORK PEACE INSTITUTE,Youth,Organizations & Resources,,372,,
+,,,,pdf_only,1,605,NEW YORK COUNTY LAWYERS ASSOCIATION (NYCLA)—STATE CENTRAL REGISTRY PROJECT,Parents & Caregivers,Organizations & Resources,,389,,
+,,,,pdf_only,5,619,NEW YORK PEACE INSTITUTE,Parents & Caregivers,Child Support,,399,,
+,,,,pdf_only,1,633,NEW YORK COUNTY LAWYERS ASSOCIATION (NYCLA)—PROJECT RESTORE & STATE CENTRAL REGISTRY PROJECT,Organizations for Job Seekers,Job Search Assistance & Placement,,408,,
+,,,,pdf_only,1,643,CAMBA—WORKFORCE DEVELOPMENT & SMALL BUSINESS SERVICES,Organizations for Job Seekers,Job Search Assistance & Placement,,415,,
+,,,,pdf_only,1,644,CHINESE-AMERICAN PLANNING COUNCIL—WORKFORCE DEVELOPMENT DIVISION,Organizations for Job Seekers,Job Search Assistance & Placement,,415,,
+,,,,pdf_only,1,660,CAREER DISCOVERY NYC,Organizations for Job Seekers,Online Resources,,421,,
+,,,,pdf_only,1,661,IDEALIST,Organizations for Job Seekers,Online Resources,,421,,
+,,,,pdf_only,1,662,INDEED,Organizations for Job Seekers,Online Resources,,421,,
+,,,,pdf_only,1,663,LINKEDIN,Organizations for Job Seekers,Online Resources,,421,,
+,,,,pdf_only,1,664,EMPIRE STATE DEVELOPMENT—DIVISION OF MINORITY AND WOMEN’S BUSINESS DEVELOPMENT,Organizations for Job Seekers,Starting Your Own Business,,421,,
+,,,,pdf_only,1,670,US DEPARTMENT OF LABOR—MIGRANT WORKER RIGHTS,Organizations for Job Seekers,"Workers’ Rights, Wage Theft, & Organizing Resources",,424,,
+,,,,pdf_only,1,671,US DEPARTMENT OF LABOR—WAGE AND HOUR DIVISION,Organizations for Job Seekers,"Workers’ Rights, Wage Theft, & Organizing Resources",,425,,
+,,,,pdf_only,1,672,NYS DEPARTMENT OF LABOR—DIVISION OF LABOR STANDARDS,Organizations for Job Seekers,"Workers’ Rights, Wage Theft, & Organizing Resources",,425,,
+,,,,pdf_only,1,673,NYC DEPARTMENT OF CONSUMER AND WORKER PROTECTION (DCWP)—WORKERS’ BILL OF RIGHTS,Organizations for Job Seekers,"Workers’ Rights, Wage Theft, & Organizing Resources",,425,,
+,,,,pdf_only,1,674,WORKER ORGANIZING RESOURCE AND KNOWLEDGE (WORK) CENTER,Organizations for Job Seekers,"Workers’ Rights, Wage Theft, & Organizing Resources",,426,,
+,,,,pdf_only,1,675,THE EMERGENCY WORKPLACE ORGANIZING COMMITTEE,Organizations for Job Seekers,"Workers’ Rights, Wage Theft, & Organizing Resources",,426,,
+,,,,pdf_only,3,676,NYS DEPARTMENT OF CORRECTIONS AND COMMUNITY SUPERVISION (DOCCS),Preparing for the Job Search,What You Can Do Upon Release,Applying for a certificate,433,,

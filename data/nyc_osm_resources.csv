@@ -518,6 +518,7 @@ community_centre,community_centre,Manhattan,Fountain House,40.7621567,-73.991275
 social_services,social_facility,Manhattan,The Bridge,40.8025305,-73.9669119,248 West 108th Street,,,,,https://www.openstreetmap.org/node/14216361050
 community_centre,community_centre:cultural_centre,Manhattan,The Kavanah Space,40.7318569,-73.995658,"10 East 8th Street, New York, 10003",+1-917-613-1678,https://www.chabadloft.com/,,Chabad Loft,https://www.openstreetmap.org/node/14229043049
 childcare,childcare,Manhattan,Cocoon,40.7178481,-74.0108497,,,,,,https://www.openstreetmap.org/node/14264883054
+community_centre,community_centre,Manhattan,Felicity House,40.7405156,-73.9924256,23 West 20th Street,+1 646-362-0003,http://felicity-house.org,,,https://www.openstreetmap.org/node/14316260201
 housing,social_facility:shelter (for migrant),Manhattan,The Roosevelt Hotel,40.7548417,-73.9771877,"45 East 45th Street, New York, 10017",,https://www.theroosevelthotel.com/,,,https://www.openstreetmap.org/way/164645790
 childcare,kindergarten,Manhattan,Preschool of the Arts,40.7289277,-73.9995504,"207 Thompson Street, New York, 10012",+1-212-201-9212,https://nycpreschool.org/preschool-locations/greenwich-village/,,,https://www.openstreetmap.org/way/248234557
 community_centre,social_centre,Manhattan,University Settlement Society of New York,40.7205414,-73.99052,"184 Eldridge Street, New York, 10002",,https://www.universitysettlement.org/,Mo-Fr 09:00-17:00,,https://www.openstreetmap.org/way/248757343
@@ -860,7 +861,6 @@ social_services,social_facility:outreach (for underprivileged),Brooklyn,Vocal Ne
 employment,employment_agency,Brooklyn,ChambApp,40.6475761,-74.0074406,,,,Mo-Fr 10:00-18:00; Sa 11:00-16:00,,https://www.openstreetmap.org/node/10245411706
 social_services,social_facility:outreach,Brooklyn,CAMBA,40.6491453,-73.9635012,"1720 Church Avenue, 11226",+1-718-287-2600,https://camba.org,,,https://www.openstreetmap.org/node/10294003838
 childcare,childcare,Brooklyn,Step Ahead Day Care,40.6345765,-74.0296512,,,,,,https://www.openstreetmap.org/node/10299267590
-childcare,childcare,Brooklyn,Lightbridge Academy,40.7322569,-73.9598246,,,,,,https://www.openstreetmap.org/node/10355265203
 childcare,childcare,Brooklyn,The David Foster Preschool Academy Daycare,40.6547456,-73.9573596,,+1-718-462-0776,https://davidfosteracademy.com,,,https://www.openstreetmap.org/node/10563636924
 mental_health,counselling:dietitian,Brooklyn,Sadkhin Therapy,40.6910579,-73.9550424,"543 DeKalb Avenue, 11205",+1-929-283-3800,https://sadkhintherapy.com,,,https://www.openstreetmap.org/node/10566227929
 social_services,social_facility:day_care (for senior),Brooklyn,Circle of Friends,40.5819066,-73.9565125,"18 Brighton 11th Street, Brooklyn, 11235",+1-718-373-1520,https://cofbrooklyn.business.site/,Mo-Fr 09:00-18:00; Sa 09:00-14:00; Su off,,https://www.openstreetmap.org/node/10590328163
