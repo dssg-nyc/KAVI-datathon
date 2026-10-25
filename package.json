@@ -1,0 +1,13 @@
+{
+  "name": "kavi-resource-map",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "dev": "node scripts/web/dev.mjs",
+    "import": "node scripts/database/import-csv.mjs",
+    "osm": "node scripts/osm/osm_resources_nyc.ts"
+  }
+}

@@ -1,56 +1,14 @@
-# OpenStreetMap resources layer
+# Scripts
 
-A supplementary layer for the resource map: service locations in NYC that volunteers have mapped in
-[OpenStreetMap](https://www.openstreetmap.org) (OSM). It complements the published ArcGIS layers
-(NYPL Connections, public libraries, health facilities, cooling centers), so libraries and general
-clinics and hospitals are left out on purpose.
+Scripts are grouped by what they work on. Run them from the repo root. All of them need Node 22.18 or later and have no npm dependencies.
 
-```sh
-node scripts/osm_resources_nyc.ts                # writes scripts/data/nyc_osm_resources.{csv,geojson}
-python3 -m http.server -d scripts 8000           # then open http://localhost:8000/map.html
-```
-
-The script needs Node 22.18 or later and has no dependencies. It runs one query against the free public
-[Overpass API](https://overpass-api.de) and retries with backoff when the server is busy. The map is a
-single HTML file (MapLibre GL + OpenFreeMap tiles). It has to be served over HTTP, not opened as
-a file, because it fetches the GeoJSON.
-
-## What OSM offers
-
-The query covers every named feature with one of these tags inside each of the five boroughs. Each row gets
-one of the PRD's service categories (first match wins) and its borough. Counts are from a run on 2026-10-24.
-
-| Category | OSM tags | Count | Notes |
+| Folder | Script | What it does | Run with |
 |---|---|---|---|
-| Childcare | `amenity=childcare`, `amenity=kindergarten` | 442 | Daycares and pre-K. Best-covered category. |
-| Community centres | `amenity=community_centre` (incl. youth/cultural centres), `amenity=social_centre` | 175 | Local places to hand off to. |
-| Mental health | `healthcare=counselling`, `healthcare=psychotherapist` | 76 | `healthcare:counselling=*` sometimes says addiction, family, etc. |
-| Housing | `social_facility=shelter`, `group_home`, `transitional_housing` | 48 | `social_facility:for=homeless` / `migrant` marks shelters. Group homes are mostly for seniors. |
-| Food | `social_facility=food_bank`, `soup_kitchen`, `amenity=food_bank` | 29 | Far below the real number of NYC pantries. |
-| Employment | `office=employment_agency` | 26 | Staffing agencies and job-support programmes are mixed together. |
-| Other social services | the rest of `amenity=social_facility` | 308 | Outreach (54) is the useful part. Nursing homes, assisted living and senior day care are mostly noise for CVI referrals. |
+| `database/` | `import-csv.mjs` | Loads `data/NYPL Connections Resources.csv` into the Supabase `resources` table of the project in `config.js`. Needs `SUPABASE_SECRET_KEY` in `.env`. `--dry-run` checks the file without inserting; `--replace` deletes the existing rows first. | `npm run import -- --dry-run` |
+| `web/` | `dev.mjs` | Serves the repo as static files on http://localhost:5173 (`index.html`, `scripts/osm/map.html`), reachable from this computer only. Never serves dotfiles such as `.env`. | `npm run dev` |
+| `osm/` | `osm_resources_nyc.ts` | Downloads NYC service locations from OpenStreetMap into `data/nyc_osm_resources.csv` and `.geojson`. | `npm run osm` |
+| `osm/` | `map.html` | Map preview of the OSM layer. | see [`osm/README.md`](osm/README.md) |
 
-Total: 1,104 places.
+Every script reads from and writes to the top-level [`data/`](../data) folder. Database schema changes go in [`supabase/migrations/`](../supabase/migrations), not here.
 
-### Fields
-
-`category, subtype, borough, name, lat, lon, address, phone, website, opening_hours, operator, osm_url`
-
-`subtype` is the raw OSM tag, e.g. `social_facility:shelter (for homeless)`. About half the rows have
-a phone number or website, and about 10% have opening hours.
-
-## Limits
-
-- **No eligibility or referral information.** OSM records what a place is and where it is. It doesn't
-  record who a place serves or how to get referred. Use this as a "what's nearby" layer next to the Connections
-  Guide, not as resource cards.
-- **Uneven coverage.** Results depend on where volunteers have mapped. The Bronx has very few
-  rows in every category, which shows a gap in the mapping, not a lack of services. Don't use this
-  layer for service-gap analysis.
-- **No reentry category.** OSM has no tag that is used for reentry support.
-- **Better sources exist for some categories.** NYC Open Data has fuller lists for childcare (DOHMH
-  licensed child care centers) and food (city food pantry and community food program locations).
-  They are worth using in place of OSM for those two categories.
-- **Licence.** OSM data is under [ODbL](https://opendatacommons.org/licenses/odbl/): credit
-  "© OpenStreetMap contributors" wherever the data is shown. Fixes made on openstreetmap.org
-  (every row links to its OSM page) show up the next time the script runs.
+When you add a script, put it in the folder for what it works on (or a new folder if none fits) and add a row to this table.
