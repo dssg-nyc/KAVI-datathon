@@ -1,8 +1,9 @@
 // PROTOTYPE, throwaway. Page script for reach-prototype.html: pick a place, a time limit and the
-// client's transport, then list which in-person resources from Supabase public.resources they can reach.
+// client's transport, then list which in-person resources from the same CSV/Supabase source as the finder they can reach.
 // The trip search is in reach-prototype-engine.js. The on-foot area comes from the public Valhalla
 // server (valhalla1.openstreetmap.de), which follows real streets and, for wheelchairs, avoids steps.
 import { fetchRows, isListed, toResource } from './resources.js';
+import { loadLocalCsv } from './preview.js';
 import { escapeHtml } from './cards.js';
 import { createPlaceInput } from './place-input.js';
 import { DEFAULTS, buildNetwork, bestTrip, describeLegs, insideGeometry, metres, searchFrom, stopsNear, tripMode } from './reach-prototype-engine.js';
@@ -214,10 +215,20 @@ function setPlace(place) {
 }
 
 // ---------- Start ----------
-async function main() {
+async function loadRows() {
+  try {
+    const local = await loadLocalCsv();
+    if (local) return local.rows;
+  } catch (error) {
+    console.warn(error.message);
+  }
   const db = window.supabase.createClient(window.APP_CONFIG.SUPABASE_URL, window.APP_CONFIG.SUPABASE_PUBLISHABLE_KEY);
+  return fetchRows(db);
+}
+
+async function main() {
   const [rows, transit] = await Promise.all([
-    fetchRows(db),
+    loadRows(),
     fetch('data/prototype/reach_transit_PROTOTYPE.json').then((r) => r.json()),
   ]);
   resources = rows.filter(isListed).map((row, i) => toResource(row, i));
