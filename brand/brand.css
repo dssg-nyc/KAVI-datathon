@@ -107,7 +107,8 @@ button { cursor: pointer; }
   object-fit: cover;
   object-position: center;
   border-radius: var(--radius-sm);
-  background: #000;
+  background: var(--white);
+  border: 1px solid var(--gray-200);
   flex: none;
 }
 .site-nav {
@@ -141,6 +142,10 @@ button { cursor: pointer; }
   width: 44px;
   height: 44px;
   flex: none;
+}
+.site-header .cobrands .logo-chip {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
 }
 .logo-chip img {
   display: block;
