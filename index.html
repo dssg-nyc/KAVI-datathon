@@ -3,39 +3,197 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>NYC CVI Resource Connections</title>
-  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.6.0/dist/maplibre-gl.css">
-  <link rel="stylesheet" href="finder/finder.css">
+  <title>EMPOWER — Community resources for safer NYC neighborhoods</title>
+  <meta name="description" content="EMPOWER helps KAVI Brooklyn, NYC community violence intervention teams, and residents find nearby housing, health, legal, food, employment, and reentry support.">
+  <link rel="icon" href="brand/logo-triangle.png">
+  <link rel="stylesheet" href="brand/brand.css">
 </head>
 <body>
-  <header class="site-head">NYC CVI Resource Connections</header>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="wordmark" href="/">
+        <img class="mark" src="brand/logo-triangle.png" alt="">
+        EMPOWER
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#kavi">KAVI</a>
+        <a href="#city">City initiatives</a>
+        <a class="btn btn-pill" href="finder.html">Find resources</a>
+      </nav>
+      <div class="cobrands" aria-label="Partner organizations">
+        <span class="logo-chip" title="KAVI Brooklyn">
+          <img src="brand/logo-triangle.png" alt="KAVI Brooklyn">
+        </span>
+        <span class="logo-chip" title="DSSG NYC">
+          <img src="brand/logo-liberty.png" alt="DSSG NYC">
+        </span>
+      </div>
+    </div>
+  </header>
 
-  <!-- Shown by showSetupHelp() in finder/app.js when the page cannot reach the Supabase database. -->
-  <section id="setup-help" hidden>
-    <h2>Can't load resources</h2>
-    <p id="setup-reason"></p>
-    <p>The Supabase connection is in <code>config.js</code>, next to <code>index.html</code>. To fix it:</p>
-    <ol>
-      <li>Make sure you have the latest code (<code>git pull</code>), which includes <code>config.js</code>.</li>
-      <li>Serve the repo folder over HTTP, for example with <code>npm run dev</code>, and open
-        <code>http://localhost:5173</code>.</li>
-      <li>If the Supabase project has changed, update <code>SUPABASE_URL</code> and
-        <code>SUPABASE_PUBLISHABLE_KEY</code> in <code>config.js</code>. A teammate in the <strong>KAVI</strong>
-        Supabase organization can find both in the Supabase dashboard under Project Settings &rarr; API Keys.</li>
-    </ol>
-    <p>Never put the secret key (<code>sb_secret_&hellip;</code>) in <code>config.js</code>: this page sends it to every visitor.
-      Full steps are in README.md under "Running the resource finder".</p>
-    <p class="detail" id="setup-detail"></p>
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">KAVI Brooklyn · NYC community safety</p>
+      <h1>EMPOWER</h1>
+      <p class="lede">Find community resources. Connect people to care.</p>
+      <p class="desc">A searchable map for KAVI case managers, other NYC community violence intervention teams, and residents — so nearby housing, health, legal, food, employment, and reentry support is visible in the moment it is needed.</p>
+      <div class="hero-actions">
+        <a class="btn btn-pill" href="finder.html">Find resources</a>
+        <a class="btn btn-secondary" href="#about">How it works</a>
+      </div>
+      <div class="hero-cobrands">
+        <p>A cobranded project of</p>
+        <div class="row">
+          <span class="logo-chip" title="KAVI Brooklyn"><img src="brand/logo-triangle.png" alt="KAVI Brooklyn"></span>
+          <span class="logo-chip" title="DSSG NYC"><img src="brand/logo-liberty.png" alt="DSSG NYC"></span>
+        </div>
+        <p>Kings Against Violence Initiative and DSSG NYC, in support of New York City community safety.</p>
+      </div>
+    </div>
   </section>
 
-  <p id="status">Loading resources…</p>
-  <main id="app"></main>
+  <section class="section section-white" id="about">
+    <div class="container">
+      <h2>Built for the people doing the work</h2>
+      <p class="lead">KAVI staff and neighboring CVI organizations still rely on a printed Connections Guide and personal knowledge to make referrals. EMPOWER turns that guide into a live directory: search by need, audience, and place, then see matching programs on a map.</p>
+      <div class="grid grid-3">
+        <article class="feature-card accent">
+          <h3>Ask what kind of help</h3>
+          <p>Housing, health and mental health, legal rights, employment, education, food, reentry support, and more — tagged from the NYPL Connections Guide.</p>
+        </article>
+        <article class="feature-card accent">
+          <h3>See what is nearby</h3>
+          <p>Drop a pin, enter a ZIP, or pick a borough. In-person sites show distance; hotlines and online programs stay in the list for all of NYC.</p>
+        </article>
+        <article class="feature-card accent orange">
+          <h3>Share a pathway forward</h3>
+          <p>Open a card for phone, website, and a plain-language description so a case manager can make a referral during intake — not after.</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
-  <!-- config.js (committed) sets window.APP_CONFIG: the Supabase URL and publishable key. -->
-  <script src="config.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.3/dist/umd/supabase.js"></script>
-  <!-- MapLibre draws the OpenFreeMap background tiles; pins come from data/kavi_resources.csv (or Supabase). -->
-  <script src="https://unpkg.com/maplibre-gl@5.6.0/dist/maplibre-gl.js"></script>
-  <script type="module" src="finder/app.js"></script>
+  <section class="section section-light">
+    <div class="container">
+      <div class="stat-row">
+        <div class="stat"><strong>700+</strong><span>resources in the directory</span></div>
+        <div class="stat"><strong>440</strong><span>sites with map coordinates</span></div>
+        <div class="stat"><strong>5</strong><span>boroughs, plus citywide lines</span></div>
+        <div class="stat"><strong>11</strong><span>kinds of help to filter by</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white" id="kavi">
+    <div class="container">
+      <h2>Kings Against Violence Initiative</h2>
+      <p class="lead">KAVI is a nonprofit, 501(c)(3) youth-serving organization whose mission is to prevent and eliminate interpersonal violence from the lives of young people through advocacy, peer leadership, community mobilization, and social justice.</p>
+      <div class="grid grid-2">
+        <article class="feature-card">
+          <h3>A public health approach</h3>
+          <p>Violence is an endemic public health issue, particularly in low-income communities and communities of color. Gun violence is the leading cause of death among 15–24 year-olds. KAVI’s work in Central Brooklyn treats violence as both a symptom and a cause of inequity — and treats healing as community work. Hurt people hurt people.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Hospital intervention</h3>
+          <p>At Kings County Hospital Center, a Level 1 trauma center, KAVI stands at bedsides and in family waiting rooms. Violence intervention specialists help young people cope with trauma, de-escalate conflict, and leave with a plan for health and safety — in partnership with the Emergency and Trauma Departments and Cure Violence, Inc.</p>
+        </article>
+        <article class="feature-card">
+          <h3>School-based prevention</h3>
+          <p>KAVI goes into schools so young people can prevent violence, heal from trauma, and navigate growing up. Peer facilitators from the neighborhood lead group learning, restorative justice, and advocacy with school staff. Parallel programs — KAVI Kings and KAVI Queens — support young men and young women.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Community healing</h3>
+          <p>Programs also live outside the hospital and the classroom. KAVI works with a broad range of partners on community strengthening and healing, because safer pathways depend on education, mental health, and neighborhoods with resources — not on any one organization alone.</p>
+        </article>
+      </div>
+      <blockquote class="feature-card" style="margin-top: 2rem;">
+        <p class="quote">“We cannot do this work alone — it will take all of us working together to build a safer and stronger future for our young people.”</p>
+        <footer>— KAVI · Kings Against Violence Initiative</footer>
+      </blockquote>
+      <p class="source" style="margin-top: 1rem;">Source: <a href="https://www.kavibrooklyn.org/">kavibrooklyn.org</a> · 147 Prince Street, Ste. 416, Brooklyn, NY 11201 · <a href="mailto:info@kavibrooklyn.org">info@kavibrooklyn.org</a> · 917.728.1147</p>
+    </div>
+  </section>
+
+  <section class="section section-light" id="city">
+    <div class="container">
+      <h2>Mayor’s Office of Community Safety</h2>
+      <p class="lead">Building safer, stronger communities through prevention, partnership, and care. EMPOWER sits alongside the City’s key community-safety initiatives — the same network of outreach, crisis response, and survivor support that CVI teams already work in.</p>
+      <div class="grid grid-2">
+        <article class="feature-card accent">
+          <h3>NYC’s Crisis Management System</h3>
+          <p>A network of community-based organizations that works to prevent and reduce gun violence in the neighborhoods most affected by it. CMS partners deploy trained outreach workers and violence interrupters — credible messengers with deep roots who can de-escalate conflict, support people after incidents, and connect them to employment, education, mental health care, legal services, and other supports. CMS currently operates across 46 catchment areas and 29 NYPD precincts, with expansion into Bushwick, Harlem, and Washington Heights/Inwood.</p>
+        </article>
+        <article class="feature-card accent">
+          <h3>B-HEARD</h3>
+          <p>The Behavioral Health Emergency Assistance Response Division treats mental health crises as public health concerns. Teams of health professionals — EMTs and paramedics from FDNY and mental health professionals from NYC Health + Hospitals — respond to 911 mental health calls, a model launched in spring 2021.</p>
+        </article>
+        <article class="feature-card accent orange">
+          <h3>Family Justice Centers</h3>
+          <p>New Yorkers can walk into any of the City’s five Family Justice Centers for free, confidential help with domestic or gender-based violence, including intimate partner and family violence, elder abuse, sexual violence, stalking, or human trafficking. Civil legal, social, and criminal justice assistance sit under one roof. Anyone can walk in, regardless of age, income, gender identity, language, or immigration status.</p>
+        </article>
+        <article class="feature-card accent orange">
+          <h3>PATH FORWARD</h3>
+          <p>Partners Against the Hate (PATH) FORWARD launched in May 2021 under Local Law 49 to prevent and address hate crimes and bias-motivated incidents. The initiative supports more than 50 organizations that deliver prevention, community-based response, education, and safety across diverse communities, with additional grants for partners serving vulnerable populations.</p>
+        </article>
+      </div>
+      <p class="source" style="margin-top: 1.5rem;">Source: <a href="https://www.nyc.gov/main/office-of-community-safety/key-initiatives">NYC Mayor’s Office of Community Safety — Key Initiatives</a></p>
+    </div>
+  </section>
+
+  <section class="section section-dark">
+    <div class="container" style="text-align: center;">
+      <h2>Ready to find a resource?</h2>
+      <p class="lead" style="margin-left: auto; margin-right: auto;">Three questions — what kind of help, who it is for, and where — then a list and a map of matching programs.</p>
+      <a class="btn btn-pill" href="finder.html">Open EMPOWER</a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-wordmark">EMPOWER</p>
+          <p>A resource map for community violence intervention in New York City.</p>
+          <div class="hero-cobrands" style="align-items: flex-start; margin-top: 1.5rem;">
+            <p>Cobranded by</p>
+            <div class="row">
+              <span class="logo-chip"><img src="brand/logo-triangle.png" alt="KAVI Brooklyn"></span>
+              <span class="logo-chip"><img src="brand/logo-liberty.png" alt="DSSG NYC"></span>
+            </div>
+          </div>
+        </div>
+        <div class="footer-links">
+          <div>
+            <h3>EMPOWER</h3>
+            <ul>
+              <li><a href="finder.html">Find resources</a></li>
+              <li><a href="#about">How it works</a></li>
+              <li><a href="reach-prototype.html">Reach prototype</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Partners</h3>
+            <ul>
+              <li><a href="https://www.kavibrooklyn.org/">KAVI Brooklyn</a></li>
+              <li><a href="https://www.nyc-dssg.org/">DSSG NYC</a></li>
+              <li><a href="https://www.nyc.gov/main/office-of-community-safety">Mayor’s Office of Community Safety</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Data</h3>
+            <ul>
+              <li>NYPL Connections Guide</li>
+              <li>Map tiles © OpenFreeMap / OpenStreetMap</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>EMPOWER is a civic technology project for KAVI Brooklyn and NYC CVI partners.</span>
+        <span>Not an official NYC government website.</span>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>

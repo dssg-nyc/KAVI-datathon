@@ -15,9 +15,11 @@ scripts/        scripts grouped by function; see scripts/README.md
   database/       load data into Supabase
   web/            local server for index.html
   osm/            OpenStreetMap layer and its map preview
-index.html      resource finder page (three questions, then a list and map of matching resources)
-finder/         the finder's scripts and stylesheet, loaded by index.html (no build step)
-config.js       Supabase URL + publishable key for index.html (committed; browser-safe)
+index.html      EMPOWER landing page (KAVI, NYC community safety, cobranded partners)
+finder.html     resource finder (three questions, then a list and map of matching resources)
+brand/          DSSG design-system CSS and cobrand logos
+finder/         the finder's scripts and stylesheet, loaded by finder.html (no build step)
+config.js       Supabase URL + publishable key (committed; browser-safe)
 .env.example    template for .env, which holds only the secret key for data imports
 ```
 
@@ -29,7 +31,7 @@ Raw Connections Guide export → cleaned, enriched CSV → Supabase → finder. 
 2. **Extend with the PDF** — [`scripts/pdf/extract_listings.py`](scripts/pdf/README.md) → `compare_to_csv.py` → `extend_clean_resources.py`: matches each row to its listing in the printed guide PDF, fills still-blank `service_type`s from the PDF section it's printed under, and runs a multi-label keyword search (`SERVICE_PATTERNS`) over every row's description — including rows that already have a type — to catch the secondary services a resource's description mentions beyond its primary one (e.g. a reentry org whose description also offers housing and legal help). Everything is combined into `service_types_all`, the column the finder actually filters on. Writes `data/cleaned/resources_extended.csv`.
 3. **Human review** — [`data/review/`](data/review/README.md): a person's proposed fixes (new service types, corrections to keyword- or PDF-based guesses) live here as CSVs. Step 2 (`extend_clean_resources.py`) reads both CSVs back in, so rerun it after editing them. The secondary tags step 2 adds to rows that already have a primary type are not reviewed yet (`description_service_types_source == "description_keywords"`).
 4. **Load into Supabase** — [`scripts/database/import-resources.mjs`](scripts/README.md): joins the geocoded GeoJSON, the NoMatch extras, and `resources_extended.csv` into `public.resources`. `"; "`-joined CSV columns such as `service_types_all` and `pdf_audiences` become Postgres `text[]`.
-5. **Finder** — `finder/resources.js`, `index.html`: reads `data/kavi_resources.csv` when `RESOURCES_CSV` is set in `config.js` (map pins use that file's `latitude`/`longitude`); otherwise reads `public.resources` from Supabase. `service_types_all` drives the "What kind of help?" filter and the map pin color.
+5. **Finder** — `finder/resources.js`, `finder.html`: reads `data/kavi_resources.csv` when `RESOURCES_CSV` is set in `config.js` (map pins use that file's `latitude`/`longitude`); otherwise reads `public.resources` from Supabase. `service_types_all` drives the "What kind of help?" filter and the map pin color.
 
 ## Accessing the resources
 
@@ -85,11 +87,11 @@ The page needs no setup: `config.js` already points it at `data/kavi_resources.c
 npm run dev
 ```
 
-Then open http://localhost:5173. Any static server works too, e.g. `python3 -m http.server 5173 --bind 127.0.0.1` from the repo root. The same server also serves the OSM map at http://localhost:5173/scripts/osm/map.html. The page can be hosted as-is on any static host (GitHub Pages, Netlify, Cloudflare Pages) with no build step.
+Then open http://localhost:5173 for the EMPOWER landing page, and http://localhost:5173/finder.html for the resource map. Any static server works too, e.g. `python3 -m http.server 5173 --bind 127.0.0.1` from the repo root. The same server also serves the OSM map at http://localhost:5173/scripts/osm/map.html. The page can be hosted as-is on any static host (GitHub Pages, Netlify, Cloudflare Pages) with no build step.
 
 If the page says **"Can't load resources"**, it names the problem: `config.js` missing, a wrong URL, a wrong key, or a missing table.
 
-**What the finder does.** `index.html` asks three questions, each of which can be skipped, and shows how many resources match after every answer:
+**What the finder does.** `finder.html` asks three questions, each of which can be skipped, and shows how many resources match after every answer:
 
 1. *What kind of help?* One tile per value of `service_types_all`.
 2. *Who is it for?* One tile per value of `pdf_audiences`, plus a Spanish-speaking choice (`spanish_speaking = true`).
