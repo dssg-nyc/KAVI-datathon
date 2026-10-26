@@ -1,11 +1,12 @@
 // Guided resource finder: three questions (what help, who for, where), then results as a list or a map.
-// Data: Supabase public.resources only, read with the publishable key in config.js.
+// Data: data/kavi_resources.csv when RESOURCES_CSV is set in config.js (map pins use its coordinates);
+// otherwise Supabase public.resources, read with the publishable key in config.js.
 import { BOROUGHS, distinctValues, fetchRows, isListed, serviceColor, toResource } from './resources.js';
 import { RADII, countBy, matchingResources, newFilters } from './filter.js';
 import { cardHtml, escapeHtml, popupHtml } from './cards.js';
 import { createPlaceInput } from './place-input.js';
 import { createMap } from './map.js';
-import { applyLocalPreview, isLocalPreview } from './preview.js';
+import { isLocalPreview, loadLocalCsv } from './preview.js';
 
 const app = document.getElementById('app');
 const statusEl = document.getElementById('status');
@@ -343,12 +344,11 @@ app.addEventListener('input', (e) => {
 });
 
 // ---------- Start ----------
-async function main() {
+async function loadRowsFromSupabase() {
   const db = connect();
-  if (!db) return;
-  let rows;
+  if (!db) return null;
   try {
-    rows = await fetchRows(db);
+    return await fetchRows(db);
   } catch (error) {
     const reason = explainError(error);
     if (reason) showSetupHelp(reason, error.message);
@@ -356,17 +356,29 @@ async function main() {
       statusEl.textContent = `Supabase error: ${error.message ?? error}`;
       statusEl.classList.add('error');
     }
-    return;
+    return null;
   }
-  if (isLocalPreview()) {
-    try {
-      const preview = await applyLocalPreview(rows);
-      app.insertAdjacentHTML('beforebegin', `<p class="preview-note">${escapeHtml(preview.summary)}</p>`);
-    } catch (error) {
+}
+
+async function main() {
+  let rows;
+  try {
+    const local = await loadLocalCsv();
+    if (local) {
+      rows = local.rows;
+      app.insertAdjacentHTML('beforebegin', `<p class="preview-note">${escapeHtml(local.summary)}</p>`);
+    }
+  } catch (error) {
+    if (isLocalPreview() || !window.APP_CONFIG?.SUPABASE_URL) {
       statusEl.textContent = error.message;
       statusEl.classList.add('error');
       return;
     }
+    console.warn(error.message);
+  }
+  if (!rows) {
+    rows = await loadRowsFromSupabase();
+    if (!rows) return;
   }
   resources = rows.filter(isListed).map((row, i) => toResource(row, i));
   serviceValues = distinctValues(resources, 'services');
