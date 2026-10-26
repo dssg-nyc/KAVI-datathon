@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Find resources — EMPOWER</title>
+  <meta name="description" content="Search EMPOWER for nearby community resources across New York City.">
+  <link rel="icon" href="brand/logo-triangle.png">
+  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.6.0/dist/maplibre-gl.css">
+  <link rel="stylesheet" href="brand/brand.css">
+  <link rel="stylesheet" href="finder/finder.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="wordmark" href="/">
+        <img class="mark" src="brand/logo-triangle.png" alt="">
+        EMPOWER
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="/#kavi">KAVI</a>
+        <a href="/#city">City initiatives</a>
+        <a class="btn btn-pill" href="finder.html" aria-current="page">Find resources</a>
+      </nav>
+      <div class="cobrands" aria-label="Partner organizations">
+        <span class="logo-chip" title="KAVI Brooklyn">
+          <img src="brand/logo-triangle.png" alt="KAVI Brooklyn">
+        </span>
+        <span class="logo-chip" title="DSSG NYC">
+          <img src="brand/logo-liberty.png" alt="DSSG NYC">
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Shown by showSetupHelp() in finder/app.js when resources cannot load. -->
+  <section id="setup-help" hidden>
+    <h2>Can't load resources</h2>
+    <p id="setup-reason"></p>
+    <p>The connection is in <code>config.js</code>, next to this page. To fix it:</p>
+    <ol>
+      <li>Make sure you have the latest code (<code>git pull</code>), which includes <code>config.js</code>.</li>
+      <li>Serve the repo folder over HTTP, for example with <code>npm run dev</code>, and open
+        <code>http://localhost:5173/finder.html</code>.</li>
+      <li>If the Supabase project has changed, update <code>SUPABASE_URL</code> and
+        <code>SUPABASE_PUBLISHABLE_KEY</code> in <code>config.js</code>. A teammate in the <strong>KAVI</strong>
+        Supabase organization can find both in the Supabase dashboard under Project Settings &rarr; API Keys.</li>
+    </ol>
+    <p>Never put the secret key (<code>sb_secret_&hellip;</code>) in <code>config.js</code>: this page sends it to every visitor.
+      Full steps are in README.md under "Running the resource finder".</p>
+    <p class="detail" id="setup-detail"></p>
+  </section>
+
+  <p id="status">Loading resources…</p>
+  <main id="app"></main>
+
+  <script src="config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.3/dist/umd/supabase.js"></script>
+  <script src="https://unpkg.com/maplibre-gl@5.6.0/dist/maplibre-gl.js"></script>
+  <script type="module" src="finder/app.js"></script>
+</body>
+</html>
