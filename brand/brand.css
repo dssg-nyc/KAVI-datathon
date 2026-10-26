@@ -107,7 +107,8 @@ button { cursor: pointer; }
   object-fit: cover;
   object-position: center;
   border-radius: var(--radius-sm);
-  background: #000;
+  background: var(--white);
+  border: 1px solid var(--gray-200);
   flex: none;
 }
 .site-nav {
@@ -132,7 +133,8 @@ button { cursor: pointer; }
   margin-left: var(--space-sm);
 }
 .logo-chip {
-  background: #000;
+  background: var(--white);
+  border: 1px solid var(--gray-200);
   border-radius: var(--radius-md);
   display: inline-flex;
   align-items: center;
@@ -140,13 +142,14 @@ button { cursor: pointer; }
   overflow: hidden;
   width: 44px;
   height: 44px;
+  padding: 2px;
   flex: none;
 }
 .logo-chip img {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
 }
 
