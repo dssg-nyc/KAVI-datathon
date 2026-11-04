@@ -13,5 +13,5 @@
     "verbatimModuleSyntax": true,
     "skipLibCheck": true
   },
-  "include": ["notebooks/osm/**/*.ts", "pipeline/build/**/*.ts"]
+  "include": ["notebooks/osm/**/*.ts", "pipeline/build/**/*.ts", "pipeline/5_load/**/*.ts"]
 }

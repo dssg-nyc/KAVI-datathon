@@ -60,7 +60,7 @@ One PR, reviewed commit by commit. Each commit should leave the checks passing a
 | 4 | `chore: fix paths after the reorganization` | Paths only, plus new `vercel.json` and `.vercelignore` |
 | 4a | `refactor(pipeline): rewrite the cleaning stage in Python and add a single pipeline command` | `package.json` and READMEs; `clean_guide.py` is new and reproduces the notebook's output |
 | 5 | `feat(data): add schemas for resource data` | `package.json` and `pipeline/run.py` (a `check` stage); schemas in `pipeline/schemas/`, validator `pipeline/check_data.py` |
-| 6 | `refactor(data): export the import mapping` | `load_supabase.mjs`, in place, same output |
+| 6 | `refactor(data): export the import mapping` | `load_supabase.mjs`: the file-to-row mapping moved to `map_resources.mjs`, same output; `package.json`, `tsconfig.json` |
 | 7 | `feat(data): add stable resource IDs` | No |
 | 8 | `feat(data): generate public and provenance data files` | No |
 | 9 | `feat(finder): load the generated public data file` | `preview.js`, `csv.js`, `app/config.js`, small edits |
