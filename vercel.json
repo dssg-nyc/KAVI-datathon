@@ -13,6 +13,10 @@
       "destination": "/app/pages/finder.html"
     },
     {
+      "source": "/resource.html",
+      "destination": "/app/pages/resource.html"
+    },
+    {
       "source": "/reach-prototype.html",
       "destination": "/app/prototypes/reach/reach-prototype.html"
     }

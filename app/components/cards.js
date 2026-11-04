@@ -1,5 +1,6 @@
 // HTML for resource cards (list and map popups). Every data value passes through escapeHtml().
 import { serviceColor } from '../lib/resources.js';
+import { resourcePath } from '../lib/share.js';
 
 export function escapeHtml(value) {
   return String(value ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
@@ -37,7 +38,8 @@ function badgeHtml(r) {
   return '';
 }
 
-export function cardHtml(r, { compact = false } = {}) {
+// link: a "Link to this resource" line pointing at its page (off on that page itself).
+export function cardHtml(r, { compact = false, link = true } = {}) {
   const web = safeUrl(r.website);
   const contact = [
     r.phone ? phoneHtml(r.phone) : '',
@@ -49,7 +51,8 @@ export function cardHtml(r, { compact = false } = {}) {
     ${contact ? `<div class="meta">${contact}</div>` : ''}
     ${desc ? `<p class="desc">${escapeHtml(desc)}</p>` : ''}
     <div class="tags">${tagsHtml(r)}</div>
-    ${!compact && r.inPerson ? '<div class="on-map">Show on map →</div>' : ''}`;
+    ${!compact && r.inPerson ? '<div class="on-map">Show on map →</div>' : ''}
+    ${link && r.id != null ? `<div class="card-link"><a href="${escapeHtml(resourcePath(r.id))}">Link to this resource</a></div>` : ''}`;
 }
 
 export function popupHtml(group) {

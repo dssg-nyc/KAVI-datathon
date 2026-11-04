@@ -1,0 +1,10 @@
+/* The resource page (app/pages/resource.html): one card, its map, and a way back to the finder. */
+.resource-page { max-width: 760px; margin: 0 auto; padding: 20px 16px 48px; }
+.resource-page .crumbs { font-size: 14px; margin: 0 0 12px; }
+.resource-page .card { margin: 0; }
+.resource-page .desc { white-space: pre-line; }
+.resource-page .detail-map { height: 320px; margin-top: 12px; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+.resource-page .share { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-top: 12px; font-size: 14px; }
+.resource-page .share input { flex: 1 1 240px; padding: 6px 10px; border: 1px solid var(--line); border-radius: var(--radius-md); font-size: 14px; }
+.resource-page .share .note { color: var(--muted); min-width: 60px; }
+.resource-page .empty { padding: 20px 0; }

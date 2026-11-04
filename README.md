@@ -9,7 +9,7 @@ Code and data for the KAVI datathon (October 23–25): a searchable map and dire
 
 ```
 PRD.md          product requirements (what to build and why)
-vercel.json     maps the public URLs (/, /finder.html) to the pages in app/
+vercel.json     maps the public URLs (/, /finder.html, /resource.html) to the pages in app/
 .vercelignore   keeps everything the site does not load off the public site
 app/            the website; see app/README.md
   pages/          landing page and finder pages
@@ -109,7 +109,7 @@ If the page says **"Can't load resources"**, it names the problem: `app/config.j
 2. *Who is it for?* One tile per value of `pdf_audiences`, plus a Spanish-speaking choice (`spanish_speaking = true`).
 3. *Where?* An address or ZIP (NYC GeoSearch autocomplete), "use my location", or a click on the map; a distance (0.5, 1, 2, 5 mi or any); boroughs (`borough`); and whether to include hotlines and online resources.
 
-The results page shows the matches as a list or a map. Resources at the same coordinates share one pin with a count. You can change the location, distance, Spanish-speaking filter and In person / Phone / online filter there, and search within the results by name or description.
+The results page shows the matches as a list or a map. Resources at the same coordinates share one pin with a count. You can change the location, distance, Spanish-speaking filter and In person / Phone / online filter there, and search within the results by name or description. Every card has a "Link to this resource" line: `resource.html?id=<id>` shows that one resource with its map and a link to copy, keyed by the stable id in `data/resource_ids.csv`, so it can be shared or opened during intake.
 
 How `public.resources` columns are used:
 

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resource — EMPOWER</title>
+  <meta name="description" content="One community resource from EMPOWER, with its address, contact details and map location.">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="/app/brand/logo-triangle.png">
+  <link rel="stylesheet" href="/app/vendor/maplibre-gl@5.6.0/maplibre-gl.css">
+  <link rel="stylesheet" href="/app/brand/brand.css">
+  <link rel="stylesheet" href="/app/components/finder.css">
+  <link rel="stylesheet" href="/app/components/resource.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="wordmark" href="/">
+        <img class="mark" src="/app/brand/logo-triangle.png" alt="">
+        EMPOWER
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="/#kavi">KAVI</a>
+        <a href="/#city">City initiatives</a>
+        <a href="/#contributors">Contributors</a>
+        <a class="btn btn-pill" href="/finder.html">Find resources</a>
+      </nav>
+      <div class="cobrands" aria-label="Partner organizations">
+        <span class="logo-chip" title="KAVI Brooklyn">
+          <img src="/app/brand/logo-kavi.png" alt="KAVI Brooklyn">
+        </span>
+        <span class="logo-chip" title="DSSG NYC">
+          <img src="/app/brand/logo-liberty.png" alt="DSSG NYC">
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <p id="status">Loading resource…</p>
+  <main id="app" class="resource-page"></main>
+
+  <script src="/app/config.js"></script>
+  <script src="/app/vendor/maplibre-gl@5.6.0/maplibre-gl.js"></script>
+  <script type="module" src="/app/pages/resource.js"></script>
+</body>
+</html>

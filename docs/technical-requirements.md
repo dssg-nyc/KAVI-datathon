@@ -44,7 +44,7 @@ The site is static HTML, CSS and browser JS with no build step. The website is i
 | Which geography model: catchment, precinct or neighborhood? (PRD 13) | Blocks the geography filter in PRD 7.5 | Not built |
 | Is an organization type filter useful? (PRD 7.5) | The data has no organization type field | Not built |
 | Future of Supabase | Two data paths remain until this is decided | Fallback stays |
-| Is the reach prototype in scope? | It is not in the PRD and is marked throwaway | Stays in the repo, unlinked |
+| Unlink or integrate the reach prototype? | It is not in the PRD and its author marked it throwaway, but it works (about 540 lines plus a transit data builder). Unlinking is one footer link in `index.html`; the page and its URL stay. Integrating is a few commits with these acceptance criteria: it reads `data/public/resources.public.json`, not Supabase; its scripts come from `app/vendor/`, not a CDN; someone owns rebuilding `data/prototype/reach_transit_PROTOTYPE.json` (910 KB, from MTA GTFS) when routes change; the team accepts a volunteer-run Valhalla routing server with no uptime guarantee, or the isochrone is dropped; the "times are estimates from distance, not schedules" caveat is part of the UI, not a banner; it gets tests and the same accessibility pass as the finder | Stays linked and unchanged until decided |
 | When can audience tags be used with clients? | [audience_matching.md](audience_matching.md) calls them demo only | Labelled in the UI |
 | Repo license | The repo has none, which limits reuse by partners | Team to choose |
 
@@ -65,8 +65,7 @@ One PR, reviewed commit by commit. Each commit should leave the checks passing a
 | 8 | `feat(data): generate public and provenance data files` | `package.json` (a `build:data` script), `pipeline/run.py` (a `build` stage), `pipeline/check_data.py` (reads JSON files too); the files are `data/public/resources.public.json` and `resources.provenance.json`, made by `pipeline/6_build/build_data.ts` |
 | 9 | `feat(finder): load the generated public data file` | `csv.js` reads the JSON file as well as a CSV, `preview.js` and `app/config.js` point at it (`RESOURCES_FILE`; `RESOURCES_CSV` still works), one comment line in `finder.js`; `app/lib/types.js` is new |
 | 10 | `chore(finder): vendor MapLibre instead of loading it from a CDN` | Three tags in `finder.html` point at `app/vendor/` (MapLibre and supabase-js, same versions, with licences); one message in `finder.js` and one comment in `map.js` |
-| 11 | `chore(landing): unlink the reach prototype` | One link in `index.html` |
-| 12 | `feat(finder): add shareable resource pages` | New `app/pages/resource.html`, small edits to `cards.js` |
+| 12 | `feat(finder): add shareable resource pages` | New `app/pages/resource.html`, `resource.js`, `app/components/resource.css` and `app/lib/share.js`; `cards.js` gained a "Link to this resource" line, `finder.css` one rule, `vercel.json` one rewrite |
 | 13 | `feat(finder): show data confidence labels` | Small edits to `cards.js`, `resources.js` |
 | 14 | `feat(map): add ArcGIS reference layers` | Small edits to `map.js`, `finder.js` |
 | 15 | `test: add performance and accessibility checks` | No |
@@ -119,7 +118,7 @@ One PR, reviewed commit by commit. Each commit should leave the checks passing a
 |---|---|---|---|---|---|
 | R1 | If map tiles fail, the list still works | PRD 10 | Not tested | Manual test with tiles blocked | 15 |
 | R2 | If address search fails, ZIP search and a clear message remain | PRD 10 | Implemented in `geo.js` and `place-input.js` | Existing behaviour, manual test | 15 |
-| R3 | Core pages load no third-party script from a CDN | PRD 10 | `finder.html` loads MapLibre and supabase-js from `app/vendor/`; the reach prototype still uses CDNs and is unlinked in commit 11 | Done | 10 |
+| R3 | Core pages load no third-party script from a CDN | PRD 10 | `finder.html` loads MapLibre and supabase-js from `app/vendor/`; the reach prototype still uses CDNs, see the open decision on it | Done for the finder | 10 |
 | R4 | A merge keeps Vercel's current static behaviour | Decision 5 | Static today | Team's preview deployment | 16 |
 
 R3 is only partly met while the Supabase fallback stays, because that library still loads from a CDN (decision 7).
@@ -138,7 +137,7 @@ R3 is only partly met while the Supabase fallback stays, because that library st
 | ID | Requirement | Source | Today | Commit |
 |---|---|---|---|---|
 | F1 | Toggleable library, health facility and cooling center layers | PRD 7.1 | Not in the finder | 14 |
-| F2 | Shareable link for each resource | PRD 7.4, 7.6 | Not available | 12 |
+| F2 | Shareable link for each resource | PRD 7.4, 7.6 | `/resource.html?id=<stable id>` shows one resource with its map and a copyable link; every card links to it | Done | 12 |
 | F3 | Neighborhood search | PRD 7.2 | Not tested | 15 (test), then decide |
 | F4 | Hours, eligibility and referral details | PRD 7.4 | **Blocked:** not in the source data | Later |
 | F5 | Catchment or precinct filter | PRD 7.2, 7.5 | **Blocked:** model undecided | Later |
