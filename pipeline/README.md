@@ -23,10 +23,11 @@ npm run pipeline -- --list       # the steps with their inputs and outputs
 | 5 | **load**: join the GeoJSON, `resources_extended.csv` and `resource_audiences.csv` into the rows of the Supabase `public.resources` table | `5_load/map_resources.mjs` | the three files above, `data/NYPLConnections_NoMatch.csv` | nothing; the rows, for the next script |
 | | send those rows to Supabase | `5_load/load_supabase.mjs` | the rows | the database |
 | 6 | **ids**: give every row an id that does not change between builds | `6_build/resource_ids.ts` | the rows from step 5 | `data/resource_ids.csv` |
+| | **build** the files the site reads | `6_build/build_data.ts` | the rows from step 5, `data/resource_ids.csv` | `data/public/resources.public.json`, `data/public/resources.provenance.json`, `data/review/needs_address.csv` |
 
 Step 3 reads the raw guide, not step 1's output, and step 5 joins everything by row order and `resource_id`. Every step is deterministic: running it again on the same inputs gives the same files, so the outputs are committed and can be diffed.
 
-`run.py` runs steps 1 to 4, the check, then step 6 (`ids`). A step whose input is missing is skipped with a note (the PDF is not in git), unless it was asked for by name. Step 5 is deliberately not part of the runner because it writes to the shared database:
+`run.py` runs steps 1 to 4, step 6 (`ids`, then `build`) and the check. A step whose input is missing is skipped with a note (the PDF is not in git), unless it was asked for by name. Step 5 is deliberately not part of the runner because it writes to the shared database:
 
 ```sh
 npm run import -- --dry-run      # read and check the files, insert nothing
@@ -42,7 +43,16 @@ npm run ids              # check: fails if data/resource_ids.csv would change
 npm run ids -- --write   # update the file after the data changed, then commit it
 ```
 
-The site does not read the pipeline's output directly. It reads `data/kavi_resources.csv`, an export of `public.resources` made by hand from the Supabase dashboard. Closing that gap, so the pipeline writes the site's data file itself, is on the [roadmap](../docs/technical-requirements.md#roadmap).
+## The files the site reads
+
+`build_data.ts` takes the same rows the loader sends to Supabase, keyed by the stable id, and writes them to `data/public/`, split in two: `resources.public.json` has the columns the finder shows and filters on, `resources.provenance.json` has everything else (the raw guide fields the finder does not show, the geocoder's match, the PDF listing, the service type and audience tagging and their review flags), joined to the public file by `id`. Every row goes into both files, cross-references and the one blank row included; the finder decides what to list, as it does today. The files are committed and served as they are, so the site needs no build step and a data change shows up as a diff, one row per line. `data/review/needs_address.csv` lists the rows that name a street but have no point on the map, for someone to check.
+
+```sh
+npm run build:data              # check: fails if a file in data/public/ would change
+npm run build:data -- --write   # rewrite them after the data changed, then commit them
+```
+
+Until the finder switches to `resources.public.json` ([roadmap](../docs/technical-requirements.md#roadmap) commit 9) it reads `data/kavi_resources.csv`, an export of `public.resources` made by hand from the Supabase dashboard.
 
 ## Schemas: what each data file must contain
 
@@ -86,4 +96,4 @@ The steps are in Python, TypeScript and JavaScript because different people wrot
 - **Python** (`.py`): [uv](https://docs.astral.sh/uv/). Each script's header declares what it needs (`pandas` or `pymupdf`), and `uv run` installs that into a cache on first run. There is no project environment to set up. `run.py`, `check_data.py` and `check_audiences.py` need only the standard library, so `python3` runs them.
 - **TypeScript** (`.ts`) and **JavaScript** (`.mjs`): Node 22.18 or later, no npm dependencies. The geocoder is TypeScript, which Node runs directly. The loader is `.mjs` so Node treats it as an ES module; `map_resources.mjs` turns the files into rows and `load_supabase.mjs` sends them to Supabase over plain HTTP, so the mapping can be reused without a database. `link_env.mjs` is a small helper for git worktrees that makes `.env` a symlink to the main checkout's, so the secret key is not copied.
 
-Each step's tests sit in its own `__tests__/` folder, and `check_data.py`'s in `pipeline/__tests__/`: `npm run test:py` runs the Python ones, `npm test` the geocoder's, the mapping's and the id assigner's. `npm run lint:py` runs [ruff](https://docs.astral.sh/ruff/) over the Python (settings in `ruff.toml`); `npm run lint` runs eslint over the TypeScript tooling. `npm run check` runs all of it, and CI runs `npm run check`. Database schema changes go in [`supabase/migrations/`](../supabase/migrations).
+Each step's tests sit in its own `__tests__/` folder, and `check_data.py`'s in `pipeline/__tests__/`: `npm run test:py` runs the Python ones, `npm test` the geocoder's, the mapping's and the build's. `npm run lint:py` runs [ruff](https://docs.astral.sh/ruff/) over the Python (settings in `ruff.toml`); `npm run lint` runs eslint over the TypeScript tooling. `npm run check` runs all of it, and CI runs `npm run check`. Database schema changes go in [`supabase/migrations/`](../supabase/migrations).

@@ -8,8 +8,8 @@ Standard library only. Prints PASS or FAIL per file, with one line per problem (
 wrong), and exits 1 if any file fails. A file that is missing is skipped with a note, unless its schema was
 named on the command line, when that is a failure.
 
-A schema is a JSON file: the data file it describes, its format (csv or geojson), how booleans and lists are
-written in it, and one entry per column. Column keys:
+A schema is a JSON file: the data file it describes, its format (csv, geojson or json: a list of objects, one
+per row, with typed values), how booleans and lists are written in it, and one entry per column. Column keys:
 
     type       text | integer | number | boolean | yes_no | list
     required   true when the cell may not be blank (a blank cell is otherwise always allowed)
@@ -92,6 +92,33 @@ def read_geojson(path):
         for k in header:
             row.setdefault(k, "")
     return header, rows, data["features"]
+
+
+def read_json(path):
+    """A JSON list of objects, as rows of strings: the cell forms are the schema's (booleans "python", lists
+    "semicolon"), so values are checked exactly as in a CSV."""
+    data = json.loads(Path(path).read_text(encoding="utf-8"))
+    if not isinstance(data, list) or not all(isinstance(r, dict) for r in data):
+        raise ValueError("not a JSON list of objects")
+    header = []
+    rows = []
+    for obj in data:
+        header.extend(k for k in obj if k not in header)
+        rows.append({k: json_cell(v) for k, v in obj.items()})
+    for row in rows:
+        for k in header:
+            row.setdefault(k, "")
+    return header, rows
+
+
+def json_cell(value):
+    if value is None:
+        return ""
+    if isinstance(value, bool):
+        return str(value)
+    if isinstance(value, list):
+        return "; ".join("" if v is None else str(v) for v in value) if value else ""
+    return str(value)
 
 
 # --- Checking cells ---
@@ -248,6 +275,9 @@ def check_file(schema):
     if schema["format"] == "geojson":
         header, rows, features = read_geojson(path)
         return validate(schema, header, rows, features), len(rows)
+    if schema["format"] == "json":
+        header, rows = read_json(path)
+        return validate(schema, header, rows), len(rows)
     raise ValueError(f"unknown format {schema['format']}")
 
 
@@ -286,7 +316,7 @@ def main(argv):
         failed += 1
         print(f"FAIL {schema['file']}: {len(problems)} problems ({name}.json)")
         for line, column, message in problems[:max_problems]:
-            where = f"line {line}" if schema["format"] == "csv" else f"feature {line}"
+            where = {"csv": "line", "geojson": "feature", "json": "row"}[schema["format"]] + f" {line}"
             print(f"  {where}, {column}: {message}" if column else f"  {where}: {message}")
         if len(problems) > max_problems:
             print(f"  ... and {len(problems) - max_problems} more (--max-problems to see them)")

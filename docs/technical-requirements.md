@@ -62,7 +62,7 @@ One PR, reviewed commit by commit. Each commit should leave the checks passing a
 | 5 | `feat(data): add schemas for resource data` | `package.json` and `pipeline/run.py` (a `check` stage); schemas in `pipeline/schemas/`, validator `pipeline/check_data.py` |
 | 6 | `refactor(data): export the import mapping` | `load_supabase.mjs`: the file-to-row mapping moved to `map_resources.mjs`, same output; `package.json`, `tsconfig.json` |
 | 7 | `feat(data): add stable resource IDs` | `package.json` (an `ids` script), `tsconfig.json`, `eslint.config.js` and `pipeline/run.py` (an `ids` stage); the mapping is `data/resource_ids.csv`, made by `pipeline/6_build/resource_ids.ts` |
-| 8 | `feat(data): generate public and provenance data files` | No |
+| 8 | `feat(data): generate public and provenance data files` | `package.json` (a `build:data` script), `pipeline/run.py` (a `build` stage), `pipeline/check_data.py` (reads JSON files too); the files are `data/public/resources.public.json` and `resources.provenance.json`, made by `pipeline/6_build/build_data.ts` |
 | 9 | `feat(finder): load the generated public data file` | `preview.js`, `csv.js`, `app/config.js`, small edits |
 | 10 | `chore(finder): vendor MapLibre instead of loading it from a CDN` | HTML script tags |
 | 11 | `chore(landing): unlink the reach prototype` | One link in `index.html` |
@@ -106,8 +106,8 @@ One PR, reviewed commit by commit. Each commit should leave the checks passing a
 
 | ID | Requirement | Source | Today | How it is checked | Commit |
 |---|---|---|---|---|---|
-| D1 | Every row passes a schema before reaching the site | PRD 8 | `pipeline/check_data.py` checks each pipeline output and `kavi_resources.csv` against `pipeline/schemas/`; runs in `npm run check` and as the pipeline's last stage | `build:data` fails on invalid rows | 5, 8 |
-| D2 | No resources are dropped between source and site | PRD 8 | Manual | Row-count test, with intentional exclusions listed | 8 |
+| D1 | Every row passes a schema before reaching the site | PRD 8 | `pipeline/check_data.py` checks each pipeline output, `kavi_resources.csv` and the two files in `data/public/` against `pipeline/schemas/`; runs in `npm run check` and as the pipeline's last stage | Done | 5, 8 |
+| D2 | No resources are dropped between source and site | PRD 8 | `data/public/resources.public.json` holds every row the loader produces, and a test checks the count; the finder leaves out cross-references and blank rows at load time, as before | Done | 8 |
 | D3 | Resource IDs are unique and do not change between builds | PRD 8 | `data/resource_ids.csv` is committed; `npm run ids` fails if it would change, and a test checks it is unique and reproduced from the data | Done | 7 |
 | D4 | Unreviewed values are labelled for the user | PRD 10 | Review flags are not shown | Tests on each flag combination | 13 |
 | D5 | "Open to everyone" only appears when the source says so; otherwise it reads "eligibility not stated" | PRD 7.4 | Assumed values look like stated ones | Tests on `everyone_basis` | 13 |
@@ -143,7 +143,7 @@ R3 is only partly met while the Supabase fallback stays, because that library st
 | F4 | Hours, eligibility and referral details | PRD 7.4 | **Blocked:** not in the source data | Later |
 | F5 | Catchment or precinct filter | PRD 7.2, 7.5 | **Blocked:** model undecided | Later |
 | F6 | Organization type filter | PRD 7.5 | **Blocked:** no such field. `category` has 18 values but mixes services and audiences, such as "Formerly Incarcerated People" | Later |
-| F7 | Report of rows that may need an address | PRD 8, 13 | All `mapped` rows have coordinates. Of the 325 rows without them, 34 are `mailing_address` or `outside_nyc` and may need checking; the rest are web-only, hotline, cross-reference or the one blank row | 8 |
+| F7 | Report of rows that may need an address | PRD 8, 13 | All `mapped` rows have coordinates. Of the 325 rows without them, 34 are `mailing_address` or `outside_nyc` and may need checking; the rest are web-only, hotline, cross-reference or the one blank row. `build:data` writes those 34 to `data/review/needs_address.csv` | Done, 8 |
 | F8 | Schema leaves room for hours, eligibility and referral fields | PRD 7.4, 8 | `hours`, `eligibility` and `referral_process` are planned columns in `pipeline/schemas/kavi_resources.json`: checked when present, not required | 5 |
 
 ## Third-party services

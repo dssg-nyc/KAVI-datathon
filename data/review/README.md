@@ -1,5 +1,7 @@
 # Human review: resources with no service type
 
+(`needs_address.csv` is a different list: rows that name a street but have no point on the map, written by `npm run build:data`. See `pipeline/README.md`.)
+
 `new_service_types_review.csv` lists the 25 resources whose `service_types_all` is blank in
 `data/cleaned/resources_extended.csv` (PR #16, listed there under "Remaining work"). They offer services
 outside the 10 existing service types, so the finder's "What kind of help?" question can't find them.

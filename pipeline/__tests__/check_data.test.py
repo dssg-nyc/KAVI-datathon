@@ -95,6 +95,13 @@ class Files(unittest.TestCase):
         self.assertIn("out of range", check_data.check_geometry({"type": "Point", "coordinates": [-73.9, 140.7]}))
         self.assertIn("not [longitude", check_data.check_geometry({"type": "Point", "coordinates": [1]}))
 
+    def test_json_cells(self):
+        self.assertEqual(check_data.json_cell(None), "")
+        self.assertEqual(check_data.json_cell(True), "True")
+        self.assertEqual(check_data.json_cell(40.7), "40.7")
+        self.assertEqual(check_data.json_cell(["Food", "Housing"]), "Food; Housing")
+        self.assertEqual(check_data.json_cell([]), "")
+
 
 class RealSchemas(unittest.TestCase):
     def test_every_schema_loads_and_vocabularies_resolve(self):
@@ -102,7 +109,7 @@ class RealSchemas(unittest.TestCase):
         self.assertIn("resources_clean", names)
         for name in names:
             schema = check_data.load_schema(name)
-            self.assertIn(schema["format"], ("csv", "geojson"), name)
+            self.assertIn(schema["format"], ("csv", "geojson", "json"), name)
             for column, spec in schema["columns"].items():
                 self.assertIn(spec["type"], ("text", "integer", "number", "boolean", "yes_no", "list"), f"{name}.{column}")
                 for key in ("values", "items"):
