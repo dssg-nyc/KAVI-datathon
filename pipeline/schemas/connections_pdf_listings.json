@@ -1,0 +1,20 @@
+{
+  "file": "data/extracted/connections_pdf_listings.csv",
+  "format": "csv",
+  "description": "Output of step 2 (2_pdf/extract_pdf.py): every listing in the printed Connections Guide, in page order.",
+  "booleans": "python",
+  "lists": "semicolon",
+  "columns": {
+    "listing_id": {"type": "integer", "required": true, "unique": true},
+    "name": {"type": "text", "required": true},
+    "chapter": {"type": "text", "required": true, "values": "$guide_chapters"},
+    "section": {"type": "text", "required": true},
+    "preceding_subheading": {"type": "text"},
+    "guide_page": {"type": "integer", "required": true, "min": 1, "description": "page number printed in the guide"},
+    "pdf_page": {"type": "integer", "required": true, "min": 1, "description": "page index in the PDF file"},
+    "is_cross_reference": {"type": "boolean", "required": true},
+    "see_page": {"type": "text", "description": "for a cross reference, the page it points to"},
+    "website": {"type": "text"},
+    "listing_text": {"type": "text", "required": true}
+  }
+}

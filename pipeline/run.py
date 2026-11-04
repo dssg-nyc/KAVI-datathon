@@ -5,7 +5,8 @@
 #   python3 pipeline/run.py --list       the stages, their inputs and outputs
 #
 # A stage whose input file is missing is skipped with a note (the guide PDF is not in git), unless
-# it was named on the command line, when that is an error. A stage that fails stops the run.
+# it was named on the command line, when that is an error. A stage that fails stops the run. The last
+# stage, check, validates every data file against the schemas in pipeline/schemas/.
 # Loading into Supabase is not a stage here: it writes to a shared database, so it stays a
 # separate, deliberate command (npm run import).
 
@@ -50,14 +51,18 @@ STAGES = (
            f"{DATA}/review/audience_no_match.csv"),
           (("uv", "run", "pipeline/4_audiences/tag_audiences.py"),
            ("python3", "pipeline/4_audiences/check_audiences.py"))),
+    Stage("check", "check every data file against its schema in pipeline/schemas/",
+          (),
+          (),
+          (("python3", "pipeline/check_data.py"),)),
 )
 
 
 def list_stages():
     for s in STAGES:
         print(f"{s.name:10} {s.what}")
-        print(f"{'':10}   reads  {', '.join(s.needs)}")
-        print(f"{'':10}   writes {', '.join(s.writes)}")
+        print(f"{'':10}   reads  {', '.join(s.needs) or '-'}")
+        print(f"{'':10}   writes {', '.join(s.writes) or '-'}")
 
 
 def run(stage):

@@ -14,8 +14,9 @@
     "lint": "eslint --no-error-on-unmatched-pattern notebooks/osm pipeline/build",
     "lint:py": "uvx ruff check pipeline notebooks/analysis",
     "test": "node --test \"app/**/__tests__/*.test.mjs\" \"pipeline/**/__tests__/*.test.ts\"",
-    "test:py": "uv run pipeline/1_clean/__tests__/clean_guide.test.py && uv run pipeline/2_pdf/__tests__/extend_with_pdf.test.py",
-    "check": "npm run -s typecheck && npm run -s lint && npm run -s lint:py && npm run -s test && npm run -s test:py"
+    "test:py": "uv run pipeline/1_clean/__tests__/clean_guide.test.py && uv run pipeline/2_pdf/__tests__/extend_with_pdf.test.py && python3 pipeline/__tests__/check_data.test.py",
+    "check:data": "python3 pipeline/check_data.py",
+    "check": "npm run -s typecheck && npm run -s lint && npm run -s lint:py && npm run -s test && npm run -s test:py && npm run -s check:data"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

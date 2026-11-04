@@ -59,7 +59,7 @@ One PR, reviewed commit by commit. Each commit should leave the checks passing a
 | 3 | `chore: reorganize into app/, core/ and docs/` | Renames only |
 | 4 | `chore: fix paths after the reorganization` | Paths only, plus new `vercel.json` and `.vercelignore` |
 | 4a | `refactor(pipeline): rewrite the cleaning stage in Python and add a single pipeline command` | `package.json` and READMEs; `clean_guide.py` is new and reproduces the notebook's output |
-| 5 | `feat(data): add schemas for resource data` | No |
+| 5 | `feat(data): add schemas for resource data` | `package.json` and `pipeline/run.py` (a `check` stage); schemas in `pipeline/schemas/`, validator `pipeline/check_data.py` |
 | 6 | `refactor(data): export the import mapping` | `load_supabase.mjs`, in place, same output |
 | 7 | `feat(data): add stable resource IDs` | No |
 | 8 | `feat(data): generate public and provenance data files` | No |
@@ -106,7 +106,7 @@ One PR, reviewed commit by commit. Each commit should leave the checks passing a
 
 | ID | Requirement | Source | Today | How it is checked | Commit |
 |---|---|---|---|---|---|
-| D1 | Every row passes a schema before reaching the site | PRD 8 | Partial report in `csv.js` | `build:data` fails on invalid rows | 5, 8 |
+| D1 | Every row passes a schema before reaching the site | PRD 8 | `pipeline/check_data.py` checks each pipeline output and `kavi_resources.csv` against `pipeline/schemas/`; runs in `npm run check` and as the pipeline's last stage | `build:data` fails on invalid rows | 5, 8 |
 | D2 | No resources are dropped between source and site | PRD 8 | Manual | Row-count test, with intentional exclusions listed | 8 |
 | D3 | Resource IDs are unique and do not change between builds | PRD 8 | Database `id` changes on each replace | Test on the committed mapping | 7 |
 | D4 | Unreviewed values are labelled for the user | PRD 10 | Review flags are not shown | Tests on each flag combination | 13 |
@@ -144,7 +144,7 @@ R3 is only partly met while the Supabase fallback stays, because that library st
 | F5 | Catchment or precinct filter | PRD 7.2, 7.5 | **Blocked:** model undecided | Later |
 | F6 | Organization type filter | PRD 7.5 | **Blocked:** no such field. `category` has 18 values but mixes services and audiences, such as "Formerly Incarcerated People" | Later |
 | F7 | Report of rows that may need an address | PRD 8, 13 | All `mapped` rows have coordinates. Of the 325 rows without them, 34 are `mailing_address` or `outside_nyc` and may need checking; the rest are web-only, hotline, cross-reference or the one blank row | 8 |
-| F8 | Schema leaves room for hours, eligibility and referral fields | PRD 7.4, 8 | Not in the current data | 5 |
+| F8 | Schema leaves room for hours, eligibility and referral fields | PRD 7.4, 8 | `hours`, `eligibility` and `referral_process` are planned columns in `pipeline/schemas/kavi_resources.json`: checked when present, not required | 5 |
 
 ## Third-party services
 

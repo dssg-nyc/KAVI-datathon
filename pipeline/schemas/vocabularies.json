@@ -1,0 +1,39 @@
+{
+  "_comment": "Allowed values shared by the schemas in this folder. A column refers to a list here as \"$name\". Adding a value here is a data decision: say why in the commit.",
+
+  "service_types": [
+    "Addiction & Recovery", "Education", "Employment", "Family & Childcare", "Financial Assistance",
+    "Food", "Health & Mental Health", "Housing", "Legal & Rights", "Reentry Support"
+  ],
+  "service_types_extended": [
+    "Addiction & Recovery", "Disability Services", "Education", "Employment", "Family & Childcare",
+    "Financial Assistance", "Food", "Health & Mental Health", "Housing", "Legal & Rights", "Reentry Support"
+  ],
+  "audiences": [
+    "Everyone", "Formerly Incarcerated People", "Immigrants", "LGBTQI+", "Older People",
+    "Parents & Caregivers", "People with Disabilities", "People without homes", "Survivors of violence",
+    "Veterans", "Women", "Youth"
+  ],
+  "guide_chapters": [
+    "Addiction", "Education", "Financial Assistance", "Formerly Incarcerated People", "Housing", "Immigrants",
+    "LGBTQI+", "Legal", "Older People", "Organizations for Job Seekers", "Parents & Caregivers",
+    "People with Disabilities", "Physical & Mental Health", "Preparing for the Job Search", "Veterans",
+    "Women", "Youth"
+  ],
+  "boroughs": ["Manhattan", "Brooklyn", "Queens", "Bronx", "Staten Island"],
+  "row_types": ["mapped", "outside_nyc", "mailing_address", "hotline", "web_only", "cross_reference"],
+  "service_type_sources": [
+    "guide_mapping", "organization_consensus", "organization_conflict", "description_match", "unassigned"
+  ],
+  "service_type_confidences": ["high", "medium", "unassigned"],
+  "service_type_extended_sources": [
+    "pdf_section", "pdf_candidates", "pdf_other_listings", "pr:guide_mapping", "pr:organization_consensus",
+    "pr:description_match", "unassigned"
+  ],
+  "pdf_match_methods": ["exact", "suffix_removed", "annotation_removed", "in_listing_text", "no_match"],
+  "audience_restrictions": ["restricted", "open", "mixed", "not_stated"],
+  "everyone_bases": ["stated", "assumed"],
+  "pdf_audience_checks": ["confirmed", "partly confirmed", "not confirmed"],
+  "geocode_matches": ["matched", "unmatched", "not_attempted"],
+  "geocode_sources": ["geosearch", "census", "nomatch_csv"]
+}
