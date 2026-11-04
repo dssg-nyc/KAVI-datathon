@@ -61,7 +61,7 @@ One PR, reviewed commit by commit. Each commit should leave the checks passing a
 | 4a | `refactor(pipeline): rewrite the cleaning stage in Python and add a single pipeline command` | `package.json` and READMEs; `clean_guide.py` is new and reproduces the notebook's output |
 | 5 | `feat(data): add schemas for resource data` | `package.json` and `pipeline/run.py` (a `check` stage); schemas in `pipeline/schemas/`, validator `pipeline/check_data.py` |
 | 6 | `refactor(data): export the import mapping` | `load_supabase.mjs`: the file-to-row mapping moved to `map_resources.mjs`, same output; `package.json`, `tsconfig.json` |
-| 7 | `feat(data): add stable resource IDs` | No |
+| 7 | `feat(data): add stable resource IDs` | `package.json` (an `ids` script), `tsconfig.json`, `eslint.config.js` and `pipeline/run.py` (an `ids` stage); the mapping is `data/resource_ids.csv`, made by `pipeline/6_build/resource_ids.ts` |
 | 8 | `feat(data): generate public and provenance data files` | No |
 | 9 | `feat(finder): load the generated public data file` | `preview.js`, `csv.js`, `app/config.js`, small edits |
 | 10 | `chore(finder): vendor MapLibre instead of loading it from a CDN` | HTML script tags |
@@ -108,7 +108,7 @@ One PR, reviewed commit by commit. Each commit should leave the checks passing a
 |---|---|---|---|---|---|
 | D1 | Every row passes a schema before reaching the site | PRD 8 | `pipeline/check_data.py` checks each pipeline output and `kavi_resources.csv` against `pipeline/schemas/`; runs in `npm run check` and as the pipeline's last stage | `build:data` fails on invalid rows | 5, 8 |
 | D2 | No resources are dropped between source and site | PRD 8 | Manual | Row-count test, with intentional exclusions listed | 8 |
-| D3 | Resource IDs are unique and do not change between builds | PRD 8 | Database `id` changes on each replace | Test on the committed mapping | 7 |
+| D3 | Resource IDs are unique and do not change between builds | PRD 8 | `data/resource_ids.csv` is committed; `npm run ids` fails if it would change, and a test checks it is unique and reproduced from the data | Done | 7 |
 | D4 | Unreviewed values are labelled for the user | PRD 10 | Review flags are not shown | Tests on each flag combination | 13 |
 | D5 | "Open to everyone" only appears when the source says so; otherwise it reads "eligibility not stated" | PRD 7.4 | Assumed values look like stated ones | Tests on `everyone_basis` | 13 |
 | D6 | Each resource shows its source and data date | PRD 7.4, 10 | Not shown | Test on the resource page | 12 |

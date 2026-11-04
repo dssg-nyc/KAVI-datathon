@@ -3,12 +3,9 @@
 import { describe, test } from 'node:test';
 import assert from 'node:assert/strict';
 import { resolve } from 'node:path';
-// @ts-expect-error the mapping is plain JavaScript, see docs/technical-requirements.md design decision 4
 import { AUDIENCE_COLUMNS, EXTENDED_COLUMNS, mapResources, toBoolean, toExtendedValue } from '../map_resources.mjs';
 
 const root = resolve(import.meta.dirname, '..', '..', '..');
-
-type Row = Record<string, string | number | boolean | string[] | null>;
 
 describe('toExtendedValue', () => {
   test('blank is null for every type', () => {
@@ -31,7 +28,7 @@ describe('toExtendedValue', () => {
 });
 
 describe('mapResources on the committed data', async () => {
-  const { records, counts }: { records: Row[]; counts: Record<string, number> } = await mapResources(root);
+  const { records, counts } = await mapResources(root);
 
   test('one row per GeoJSON feature plus the located NoMatch rows', () => {
     assert.equal(records.length, counts.geojson + counts.extras);
