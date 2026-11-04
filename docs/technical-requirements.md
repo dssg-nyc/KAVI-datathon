@@ -6,7 +6,7 @@
 
 The site is static HTML, CSS and browser JS with no build step. The website is in `app/`, the data pipeline is in `pipeline/`, one folder per stage, and the notebooks, one-off analysis and the OSM layer are in `notebooks/`, and `vercel.json` maps the public URLs to the pages.
 
-- **Finder:** `app/pages/finder.html`, `app/components/` and `app/lib/`. `app/config.js` sets `RESOURCES_CSV`, so the browser downloads `data/kavi_resources.csv`, with Supabase as the fallback data source.
+- **Finder:** `app/pages/finder.html`, `app/components/` and `app/lib/`. `app/config.js` sets `RESOURCES_FILE`, so the browser downloads `data/public/resources.public.json`, with Supabase as the fallback data source.
 - **Data pipeline:** Python and notebooks clean and enrich the Connections Guide, TS scripts geocode it, and `pipeline/5_load/load_supabase.mjs` loads it into Supabase.
 - **Tests:** they exist in JS, TS and Python, but there is no CI and no `npm test`.
 - **PRD coverage:** map, service, keyword, address, ZIP and borough search, and hotlines are built. The gaps are listed under [PRD features](#prd-features).
@@ -63,7 +63,7 @@ One PR, reviewed commit by commit. Each commit should leave the checks passing a
 | 6 | `refactor(data): export the import mapping` | `load_supabase.mjs`: the file-to-row mapping moved to `map_resources.mjs`, same output; `package.json`, `tsconfig.json` |
 | 7 | `feat(data): add stable resource IDs` | `package.json` (an `ids` script), `tsconfig.json`, `eslint.config.js` and `pipeline/run.py` (an `ids` stage); the mapping is `data/resource_ids.csv`, made by `pipeline/6_build/resource_ids.ts` |
 | 8 | `feat(data): generate public and provenance data files` | `package.json` (a `build:data` script), `pipeline/run.py` (a `build` stage), `pipeline/check_data.py` (reads JSON files too); the files are `data/public/resources.public.json` and `resources.provenance.json`, made by `pipeline/6_build/build_data.ts` |
-| 9 | `feat(finder): load the generated public data file` | `preview.js`, `csv.js`, `app/config.js`, small edits |
+| 9 | `feat(finder): load the generated public data file` | `csv.js` reads the JSON file as well as a CSV, `preview.js` and `app/config.js` point at it (`RESOURCES_FILE`; `RESOURCES_CSV` still works), one comment line in `finder.js`; `app/lib/types.js` is new |
 | 10 | `chore(finder): vendor MapLibre instead of loading it from a CDN` | HTML script tags |
 | 11 | `chore(landing): unlink the reach prototype` | One link in `index.html` |
 | 12 | `feat(finder): add shareable resource pages` | New `app/pages/resource.html`, small edits to `cards.js` |

@@ -6,11 +6,11 @@ The website: static HTML, CSS and browser JS with no build step. Run the command
 |---|---|
 | `pages/` | `index.html` (landing page), `finder.html` and `finder.js` (the finder's entry script) |
 | `components/` | Parts of the finder UI: `map.js`, `cards.js`, `place-input.js`, `finder.css` |
-| `lib/` | Logic with no UI: `filter.js`, `resources.js`, `csv.js`, `geo.js`, `preview.js`. Tests are in `lib/__tests__/` |
+| `lib/` | Logic with no UI: `filter.js`, `resources.js`, `csv.js`, `geo.js`, `preview.js`; `types.js` has the JSDoc types of a data row and a finder resource. Tests are in `lib/__tests__/` |
 | `brand/` | DSSG design-system CSS and cobrand logos |
 | `prototypes/reach/` | PROTOTYPE, throwaway. The reach prototype's page, scripts and transit data builder |
 
-`config.js` sets the CSV path and the Supabase connection, and `dev-server.mjs` is the local server.
+`config.js` sets the data file (`data/public/resources.public.json`) and the Supabase connection, and `dev-server.mjs` is the local server.
 
 ## URLs
 

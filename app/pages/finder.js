@@ -1,5 +1,5 @@
 // Guided resource finder: three questions (what help, who for, where), then results as a list or a map.
-// Data: data/kavi_resources.csv when RESOURCES_CSV is set in app/config.js (map pins use its coordinates);
+// Data: data/public/resources.public.json when RESOURCES_FILE is set in app/config.js (map pins use its coordinates);
 // otherwise Supabase public.resources, read with the publishable key in app/config.js.
 import { BOROUGHS, distinctValues, fetchRows, isListed, serviceColor, toResource } from '../lib/resources.js';
 import { RADII, countBy, matchingResources, newFilters } from '../lib/filter.js';

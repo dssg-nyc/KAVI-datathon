@@ -1,7 +1,10 @@
-// Parse a public.resources export (data/kavi_resources.csv) into the row shape
-// toResource() already filters on. Postgres dumps arrays as {a,"b c"} and
-// booleans as t/f; the map needs JS arrays, real booleans, and numeric lat/lon.
+// Read the finder's data file into the row shape toResource() filters on.
+// The file is data/public/resources.public.json (written by the pipeline, typed
+// values, see app/lib/types.js) or a public.resources CSV export such as
+// data/kavi_resources.csv, where Postgres dumps arrays as {a,"b c"} and booleans
+// as t/f; the map needs JS arrays, real booleans, and numeric lat/lon.
 
+export const PUBLIC_JSON_PATH = 'data/public/resources.public.json';
 export const KAVI_CSV_PATH = 'data/kavi_resources.csv';
 
 // Columns the finder reads. Extra CSV columns are ignored.
@@ -122,6 +125,34 @@ export function rowsFromCsv(text) {
   return recordsFromCsv(text).map(toFinderRow);
 }
 
+// One object of resources.public.json → the same shape. Values are already typed; a column the
+// object lacks is null, and a wrongly typed value is undefined so checkMapSchema reports it.
+/** @param {Partial<import('./types.js').PublicRow>} raw */
+export function toFinderRowFromJson(raw) {
+  const row = {};
+  for (const column of FINDER_COLUMNS) {
+    const value = raw[column] ?? null;
+    if (value === null) row[column] = null;
+    else if (LIST_COLUMNS.includes(column)) row[column] = Array.isArray(value) ? value.map(String) : undefined;
+    else if (BOOL_COLUMNS.includes(column)) row[column] = typeof value === 'boolean' ? value : undefined;
+    else if (INT_COLUMNS.includes(column) && column !== 'id') row[column] = Number.isInteger(value) ? value : undefined;
+    else if (NUM_COLUMNS.includes(column)) row[column] = Number.isFinite(value) ? value : undefined;
+    else row[column] = String(value);
+  }
+  return row;
+}
+
+export function rowsFromJson(text) {
+  const data = JSON.parse(text);
+  if (!Array.isArray(data)) throw new Error('expected a JSON array of rows');
+  return data.map(toFinderRowFromJson);
+}
+
+// The data file at `path`, by its extension: .json or .csv.
+export function rowsFromText(path, text) {
+  return path.endsWith('.json') ? rowsFromJson(text) : rowsFromCsv(text);
+}
+
 // Whether a row can become a map pin: both coordinates finite, not swapped, in range.
 export function pointCoordinates(row) {
   const lat = row.latitude;
@@ -155,10 +186,11 @@ export function mapLayerCollection(resources) {
   };
 }
 
-export function checkMapSchema(textOrRows) {
+// Checks CSV text, or the rows of either file; `header` is the file's columns when known.
+export function checkMapSchema(textOrRows, header = undefined) {
   const raw = typeof textOrRows === 'string' ? recordsFromCsv(textOrRows) : null;
   const rows = raw ? raw.map(toFinderRow) : textOrRows;
-  const header = raw ? Object.keys(raw[0] ?? {}) : FINDER_COLUMNS;
+  header ??= raw ? Object.keys(raw[0] ?? {}) : FINDER_COLUMNS;
   const issues = [];
   const stats = {
     rows: rows.length,
@@ -189,10 +221,12 @@ export function checkMapSchema(textOrRows) {
   return { ok: stats.missingColumns.length === 0 && issues.length === 0, stats, issues };
 }
 
-export async function fetchKaviRows(path = KAVI_CSV_PATH) {
+export async function fetchKaviRows(path = PUBLIC_JSON_PATH) {
   const response = await fetch(path, { cache: 'no-store' });
   if (!response.ok) throw new Error(`Could not load ${path} (${response.status})`);
   const text = await response.text();
-  const rows = rowsFromCsv(text);
-  return { rows, report: checkMapSchema(text), path };
+  if (!path.endsWith('.json')) return { rows: rowsFromCsv(text), report: checkMapSchema(text), path };
+  const data = JSON.parse(text);
+  const rows = rowsFromJson(text);
+  return { rows, report: checkMapSchema(rows, Object.keys(data[0] ?? {})), path };
 }

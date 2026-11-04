@@ -1,13 +1,15 @@
-// Local data: the finder reads data/kavi_resources.csv (a public.resources export)
-// for map pins and filters. Set RESOURCES_CSV in app/config.js, or open ?preview=local.
-// The file is not written anywhere. Needs the repo served with npm run dev.
+// Local data: the finder reads data/public/resources.public.json (written by the
+// pipeline) for map pins and filters. Set RESOURCES_FILE in app/config.js, or open
+// ?preview=local. A .csv path (a public.resources export) still works. Nothing is
+// written anywhere. Needs the repo served with npm run dev.
 
-import { fetchKaviRows, KAVI_CSV_PATH } from './csv.js';
+import { fetchKaviRows, PUBLIC_JSON_PATH } from './csv.js';
 
 export const isLocalPreview = () => new URLSearchParams(location.search).get('preview') === 'local';
 
 export function localCsvPath() {
-  return window.APP_CONFIG?.RESOURCES_CSV || (isLocalPreview() ? KAVI_CSV_PATH : '');
+  const config = window.APP_CONFIG ?? {};
+  return config.RESOURCES_FILE || config.RESOURCES_CSV || (isLocalPreview() ? PUBLIC_JSON_PATH : '');
 }
 
 export async function loadLocalCsv() {
@@ -15,7 +17,7 @@ export async function loadLocalCsv() {
   if (!path) return null;
   const { rows, report } = await fetchKaviRows(path);
   if (report.stats.missingColumns.length) {
-    throw new Error(`Local CSV is missing columns the map needs: ${report.stats.missingColumns.join(', ')}`);
+    throw new Error(`${path} is missing columns the map needs: ${report.stats.missingColumns.join(', ')}`);
   }
   const pins = report.stats.listedWithCoords;
   const listed = report.stats.listed;

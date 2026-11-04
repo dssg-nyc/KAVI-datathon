@@ -1,4 +1,4 @@
-// Tests for app/lib/csv.js against data/kavi_resources.csv.
+// Tests for app/lib/csv.js against data/public/resources.public.json and data/kavi_resources.csv.
 // Run with: node --test app/lib/__tests__/csv.test.mjs
 import { readFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
@@ -12,12 +12,17 @@ import {
   parseList,
   pointCoordinates,
   rowsFromCsv,
+  rowsFromJson,
+  rowsFromText,
+  toFinderRowFromJson,
 } from '../csv.js';
 import { isListed, toResource } from '../resources.js';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..', '..', '..');
 const csvPath = join(root, 'data', 'kavi_resources.csv');
 const text = await readFile(csvPath, 'utf8');
+const jsonPath = join(root, 'data', 'public', 'resources.public.json');
+const jsonText = await readFile(jsonPath, 'utf8');
 
 test('parseList reads Postgres arrays and semicolon lists', () => {
   assert.deepEqual(parseList('{Housing,"Reentry Support"}'), ['Housing', 'Reentry Support']);
@@ -95,4 +100,40 @@ test('empty and cross-reference rows are not listed; t/f spanish_speaking is typ
   assert.ok(listed.some((row) => row.spanish_speaking === true));
   assert.ok(listed.some((row) => row.spanish_speaking === false));
   assert.ok(listed.every((row) => Array.isArray(row.service_types_all) || row.service_types_all == null));
+});
+
+test('toFinderRowFromJson keeps typed values, nulls what is missing and flags wrong types', () => {
+  const row = toFinderRowFromJson({ id: '176-2', resource_id: 176, spanish_speaking: true, latitude: 40.7, service_types_all: ['Food'] });
+  assert.equal(row.id, '176-2');
+  assert.equal(row.resource_id, 176);
+  assert.equal(row.spanish_speaking, true);
+  assert.deepEqual(row.service_types_all, ['Food']);
+  assert.equal(row.organization_name, null);
+  assert.equal(row.longitude, null);
+  const bad = toFinderRowFromJson({ id: '1', spanish_speaking: 't', latitude: '40.7', service_types_all: 'Food' });
+  assert.equal(bad.spanish_speaking, undefined);
+  assert.equal(bad.latitude, undefined);
+  assert.equal(bad.service_types_all, undefined);
+});
+
+test('data/public/resources.public.json fits the finder map schema and lists the same resources as the CSV', () => {
+  const rows = rowsFromJson(jsonText);
+  const report = checkMapSchema(rows, Object.keys(JSON.parse(jsonText)[0]));
+  assert.deepEqual(report.stats.missingColumns, []);
+  assert.equal(report.issues.length, 0, report.issues.slice(0, 8).join('\n'));
+  assert.equal(report.stats.rows, 765);
+  assert.equal(report.stats.withCoords, 440);
+  assert.equal(report.stats.listed, 714);
+  assert.equal(report.stats.listedWithCoords, 440);
+
+  const ids = rows.map((row) => row.id);
+  assert.ok(ids.every((id) => typeof id === 'string' && id));
+  assert.equal(new Set(ids).size, ids.length);
+  assert.equal(isListed(rows.find((row) => row.id === 'feature-695')), false);
+
+  const fromJson = rows.filter(isListed).map((row, i) => toResource(row, i));
+  const fromCsv = rowsFromCsv(text).filter(isListed).map((row, i) => toResource(row, i));
+  const key = (r) => [r.name, r.address, r.lat, r.lon, r.services.join(';'), r.audiences.join(';'), r.spanish].join('|');
+  assert.deepEqual(fromJson.map(key).sort(), fromCsv.map(key).sort());
+  assert.equal(rowsFromText(jsonPath, jsonText).length, rowsFromText(csvPath, text).length);
 });

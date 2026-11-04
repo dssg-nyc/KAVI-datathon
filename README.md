@@ -42,7 +42,7 @@ Raw Connections Guide export → cleaned, enriched CSV → Supabase → finder. 
 2. **Extend with the PDF** — [`pipeline/2_pdf/extract_pdf.py`](docs/pdf_extension.md) → `match_pdf.py` → `extend_with_pdf.py`: matches each row to its listing in the printed guide PDF, fills still-blank `service_type`s from the PDF section it's printed under, and runs a multi-label keyword search (`SERVICE_PATTERNS`) over every row's description — including rows that already have a type — to catch the secondary services a resource's description mentions beyond its primary one (e.g. a reentry org whose description also offers housing and legal help). Everything is combined into `service_types_all`, the column the finder actually filters on. Writes `data/cleaned/resources_extended.csv`.
 3. **Human review** — [`data/review/`](data/review/README.md): a person's proposed fixes (new service types, corrections to keyword- or PDF-based guesses) live here as CSVs. Step 2 (`extend_with_pdf.py`) reads both CSVs back in, so rerun it after editing them. The secondary tags step 2 adds to rows that already have a primary type are not reviewed yet (`description_service_types_source == "description_keywords"`).
 4. **Load into Supabase** — [`pipeline/5_load/load_supabase.mjs`](pipeline/README.md): joins the geocoded GeoJSON, the NoMatch extras, and `resources_extended.csv` into `public.resources`. `"; "`-joined CSV columns such as `service_types_all` and `pdf_audiences` become Postgres `text[]`.
-5. **Finder** — `app/lib/resources.js`, `finder.html`: reads `data/kavi_resources.csv` when `RESOURCES_CSV` is set in `app/config.js` (map pins use that file's `latitude`/`longitude`); otherwise reads `public.resources` from Supabase. `service_types_all` drives the "What kind of help?" filter and the map pin color.
+5. **Finder** — `app/lib/resources.js`, `finder.html`: reads `data/public/resources.public.json` (written by `npm run build:data`, see [pipeline/README.md](pipeline/README.md)) when `RESOURCES_FILE` is set in `app/config.js` (map pins use that file's `latitude`/`longitude`); otherwise reads `public.resources` from Supabase. `service_types_all` drives the "What kind of help?" filter and the map pin color.
 
 ## Accessing the resources
 
@@ -54,7 +54,8 @@ Raw Connections Guide export → cleaned, enriched CSV → Supabase → finder. 
 | `nypl_connections_resources.geojson` | The same 760 rows in the same order, with coordinates and `geocode_*` fields added. This is what the Supabase `resources` table is loaded from. | 760 | `node pipeline/3_geocode/geocode.ts`; see [docs/geocoding.md](docs/geocoding.md) |
 | `NYPLConnections_NoMatch.csv` | Copies of Connections Guide rows that could not be geocoded (no usable address, or hotlines), with `lat`/`lon` added for 5 NYC NEON clothing closet sites. The import adds those 5 as extra rows; the other 40 are already in the GeoJSON. Encoded as Windows-1252, not UTF-8. | 45 | Project Google Drive |
 | `nyc_osm_resources.csv` / `.geojson` | NYC service locations from OpenStreetMap, with category, borough and coordinates. Credit "© OpenStreetMap contributors" wherever it is shown. | 1,104 | `npm run osm`; see [notebooks/osm/README.md](notebooks/osm/README.md) |
-| `kavi_resources.csv` | Full `public.resources` export (guide columns, geocode, service types, audiences). The finder map layer reads coordinates from this file. | 765 | Supabase export, 2026-10-25 |
+| `public/resources.public.json` | The file the finder reads: the columns it shows and filters on, keyed by a stable id. `public/resources.provenance.json` holds the other columns, joined by id. | 765 | `npm run build:data` |
+| `kavi_resources.csv` | Full `public.resources` export (guide columns, geocode, service types, audiences). The finder read it before the public file existed; kept for comparison. | 765 | Supabase export, 2026-10-25 |
 
 The originals, including the Connections Guide PDF, are in the [project Google Drive folder](https://drive.google.com/drive/folders/1f5QhMlY8pYgyomWSzPgYTBdnUUcBbUJS).
 
@@ -92,7 +93,7 @@ curl "https://xwpuphhocwstfgbjreeg.supabase.co/rest/v1/resources?category=eq.Hou
 
 ## Running the resource finder
 
-The page needs no setup: `app/config.js` already points it at `data/kavi_resources.csv` (and at the Supabase project as a fallback). Serve the repo folder and open it:
+The page needs no setup: `app/config.js` already points it at `data/public/resources.public.json` (and at the Supabase project as a fallback). Serve the repo folder and open it:
 
 ```bash
 npm run dev
@@ -119,7 +120,7 @@ How `public.resources` columns are used:
 | Not shown | `row_type = 'cross_reference'` (these rows only say "see the full listing on page N" and have no address, phone or website), and rows with no name, contact or description |
 | A bare 5-digit ZIP | the average position of the in-person rows with that `zip_code`, because GeoSearch has no ZIP layer |
 
-The map tiles come from OpenFreeMap. Every pin and every count comes from `latitude`/`longitude` on the loaded rows (`data/kavi_resources.csv` by default), and nothing is inferred from descriptions. The CSV parser and filtering logic are tested by `node --test app/lib/__tests__/filter.test.mjs app/lib/__tests__/csv.test.mjs`.
+The map tiles come from OpenFreeMap. Every pin and every count comes from `latitude`/`longitude` on the loaded rows (`data/public/resources.public.json` by default), and nothing is inferred from descriptions. The data file parser and filtering logic are tested by `node --test app/lib/__tests__/filter.test.mjs app/lib/__tests__/csv.test.mjs`.
 
 ## Reachability prototype (throwaway)
 
