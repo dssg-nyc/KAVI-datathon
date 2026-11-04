@@ -4,10 +4,10 @@
 
 ## Where things stand
 
-The site is static HTML, CSS and browser JS with no build step.
+The site is static HTML, CSS and browser JS with no build step. The website is in `app/`, the data pipeline is in `pipeline/`, one folder per stage, and the notebooks, one-off analysis and the OSM layer are in `notebooks/`, and `vercel.json` maps the public URLs to the pages.
 
-- **Finder:** `finder.html` and `finder/*.js`. `config.js` sets `RESOURCES_CSV`, so the browser downloads `data/kavi_resources.csv`, with Supabase as the fallback data source.
-- **Data pipeline:** Python and notebooks clean and enrich the Connections Guide, TS scripts geocode it, and `scripts/database/import-resources.mjs` loads it into Supabase.
+- **Finder:** `app/pages/finder.html`, `app/components/` and `app/lib/`. `app/config.js` sets `RESOURCES_CSV`, so the browser downloads `data/kavi_resources.csv`, with Supabase as the fallback data source.
+- **Data pipeline:** Python and notebooks clean and enrich the Connections Guide, TS scripts geocode it, and `pipeline/load/import-resources.mjs` loads it into Supabase.
 - **Tests:** they exist in JS, TS and Python, but there is no CI and no `npm test`.
 - **PRD coverage:** map, service, keyword, address, ZIP and borough search, and hotlines are built. The gaps are listed under [PRD features](#prd-features).
 
@@ -15,15 +15,15 @@ The site is static HTML, CSS and browser JS with no build step.
 
 | Area | Files | Base authors |
 |---|---|---|
-| Finder app and map | `finder/app.js`, `cards.js`, `filter.js`, `geo.js`, `map.js`, `place-input.js`, `resources.js` | Akai, Franziska |
-| CSV loader | `finder/csv.js`, `preview.js` | Cursor Agent (jyr-ai's PRs), Franziska |
-| Landing page and brand | `index.html`, `brand/` | Cursor Agent (jyr-ai's PRs), Akai |
-| Reach prototype | `reach-prototype.html`, `finder/reach-prototype*.js`, `scripts/prototype/` | Akai |
-| Cleaning and audiences | `scripts/cleaning/`, `scripts/audiences/` | Franziska |
-| PDF extension | `scripts/pdf/` | Akai, Rita |
-| Geocoding | `scripts/nypl_connections_to_geojson.ts` | Rita, Akai |
-| OSM layer | `scripts/osm/` | Ramsey |
-| Database import | `scripts/database/`, `supabase/` | Akai, Franziska |
+| Finder app and map | `app/pages/finder.js`, `app/components/cards.js`, `map.js`, `place-input.js`, `app/lib/filter.js`, `geo.js`, `resources.js` | Akai, Franziska |
+| CSV loader | `app/lib/csv.js`, `preview.js` | Cursor Agent (jyr-ai's PRs), Franziska |
+| Landing page and brand | `app/pages/index.html`, `app/brand/` | Cursor Agent (jyr-ai's PRs), Akai |
+| Reach prototype | `app/prototypes/reach/` | Akai |
+| Cleaning and audiences | `pipeline/cleaning/`, `pipeline/audiences/`, `notebooks/` | Franziska |
+| PDF extension | `pipeline/pdf/` | Akai, Rita |
+| Geocoding | `pipeline/geocode/nypl_connections_to_geojson.ts` | Rita, Akai |
+| OSM layer | `notebooks/osm/` | Ramsey |
+| Database import | `pipeline/load/`, `supabase/` | Akai, Franziska |
 
 ## Design decisions
 
@@ -31,7 +31,7 @@ The site is static HTML, CSS and browser JS with no build step.
 2. **Keep the site static for now.** A Next.js port with Postgres would replace most of the finder and need a database and hosting changes. The cost is that updating a resource still means a data file change and a PR, until the team adds a database and admin area.
 3. **Commit generated data.** `npm run build:data` joins and validates the source files, then writes `data/public/resources.public.json` for the finder and `resources.provenance.json` for review and source fields. Filtering stays in the browser, because 765 rows do not need a search API.
 4. **Python, JS and TS all stay.** Python handles cleaning and analysis, JS handles the browser, and new Node tooling is TS. Scripts in different languages connect only through data files checked against a schema.
-5. **Keep Vercel's behaviour unchanged.** To our understanding of Vercel's default for projects with no framework, that means no `build` script in `package.json` and no top-level `public/` or `api/` directory. The team should confirm this on a preview deployment before merging.
+5. **Keep Vercel's behaviour unchanged.** To our understanding of Vercel's default for projects with no framework, that means no `build` script in `package.json` and no top-level `public/` or `api/` directory. The HTML pages moved to `app/`, so `vercel.json` rewrites keep the public URLs and `.vercelignore` keeps internal files off the site. The team should confirm this on a preview deployment before merging.
 6. **Take stable IDs from the source data.** The database `id` changes on each `import --replace`, so IDs come from `resource_id`, with a suffix where it repeats, such as the NEON sites. The mapping is committed.
 7. **Leave Supabase in place.** The refactor does not change `supabase/` or run the import against the database, and the finder's fallback stays. Retiring it is the team's decision.
 
@@ -45,29 +45,30 @@ The site is static HTML, CSS and browser JS with no build step.
 | Is an organization type filter useful? (PRD 7.5) | The data has no organization type field | Not built |
 | Future of Supabase | Two data paths remain until this is decided | Fallback stays |
 | Is the reach prototype in scope? | It is not in the PRD and is marked throwaway | Stays in the repo, unlinked |
-| When can audience tags be used with clients? | [audience_matching.md](../md/audience_matching.md) calls them demo only | Labelled in the UI |
+| When can audience tags be used with clients? | [audience_matching.md](audience_matching.md) calls them demo only | Labelled in the UI |
 | Repo license | The repo has none, which limits reuse by partners | Team to choose |
 
 ## Roadmap
 
-One PR, reviewed commit by commit. Each commit should leave the checks passing and the site working.
+One PR, reviewed commit by commit. Each commit should leave the checks passing and the site working. The exception is commit 3, a pure rename so history follows the files: the site and tests work again at commit 4.
 
 | # | Commit | Touches existing code? |
 |---|---|---|
 | 1 | `docs: add technical requirements and roadmap` | No |
 | 2 | `chore: add type checks, lint and CI for new code` | `package.json` only |
-| 3 | `chore: move data scripts into pipeline/` | Renames only |
-| 4 | `chore: fix paths after moving data scripts` | Paths only |
+| 3 | `chore: reorganize into app/, core/ and docs/` | Renames only |
+| 4 | `chore: fix paths after the reorganization` | Paths only, plus new `vercel.json` and `.vercelignore` |
+| 4a | `refactor(pipeline): rewrite the cleaning stage in Python and add a single pipeline command` | To be scoped after commit 4 |
 | 5 | `feat(data): add schemas for resource data` | No |
 | 6 | `refactor(data): export the import mapping` | `import-resources.mjs`, in place, same output |
 | 7 | `feat(data): add stable resource IDs` | No |
 | 8 | `feat(data): generate public and provenance data files` | No |
-| 9 | `feat(finder): load the generated public data file` | `preview.js`, `csv.js`, `config.js`, small edits |
+| 9 | `feat(finder): load the generated public data file` | `preview.js`, `csv.js`, `app/config.js`, small edits |
 | 10 | `chore(finder): vendor MapLibre instead of loading it from a CDN` | HTML script tags |
 | 11 | `chore(landing): unlink the reach prototype` | One link in `index.html` |
-| 12 | `feat(finder): add shareable resource pages` | New `resource.html`, small edits to `cards.js` |
+| 12 | `feat(finder): add shareable resource pages` | New `app/pages/resource.html`, small edits to `cards.js` |
 | 13 | `feat(finder): show data confidence labels` | Small edits to `cards.js`, `resources.js` |
-| 14 | `feat(map): add ArcGIS reference layers` | Small edits to `map.js`, `app.js` |
+| 14 | `feat(map): add ArcGIS reference layers` | Small edits to `map.js`, `finder.js` |
 | 15 | `test: add performance and accessibility checks` | No |
 | 16 | `docs: update README and add team handoff` | `README.md` |
 

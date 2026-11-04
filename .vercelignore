@@ -1,0 +1,16 @@
+# Files the site does not load. Everything else in the repo would be published.
+pipeline/
+notebooks/
+docs/
+supabase/
+PRD.md
+app/dev-server.mjs
+app/prototypes/reach/build_reach_transit.py
+**/__tests__/
+data/cleaned/
+data/extracted/
+data/reference/
+data/review/
+data/NYPL*
+data/nypl*
+data/nyc_osm*
