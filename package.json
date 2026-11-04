@@ -8,6 +8,18 @@
   "scripts": {
     "dev": "node scripts/web/dev.mjs",
     "import": "node scripts/database/import-resources.mjs",
-    "osm": "node scripts/osm/osm_resources_nyc.ts"
+    "osm": "node scripts/osm/osm_resources_nyc.ts",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint --no-error-on-unmatched-pattern scripts/osm pipeline/build",
+    "test": "node --test \"scripts/tests/*.test.mjs\" \"scripts/tests/*.test.ts\"",
+    "test:py": "uv run scripts/tests/extend_clean_resources.test.py",
+    "check": "npm run -s typecheck && npm run -s lint && npm run -s test && npm run -s test:py"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^26.6.6",
+    "eslint": "^10.14.0",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.72.1"
   }
 }
