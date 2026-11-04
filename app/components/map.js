@@ -9,7 +9,7 @@ const EMPTY = { type: 'FeatureCollection', features: [] };
 // Resources at identical coordinates (several organizations in one building) share one pin.
 export const pointKey = (r) => `${r.lat.toFixed(6)},${r.lon.toFixed(6)}`;
 
-// Returns null when MapLibre did not load (e.g. the CDN is blocked); callers then work without a map.
+// Returns null when MapLibre did not load (app/vendor/ missing or blocked); callers then work without a map.
 // onPick(place) fires on a click on empty map. popupHtml(group) builds the popup for one pin.
 export function createMap(container, { onPick, popupHtml } = {}) {
   if (!window.maplibregl) {

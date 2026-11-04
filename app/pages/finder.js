@@ -47,7 +47,7 @@ function connect() {
     return null;
   }
   if (!window.supabase?.createClient) {
-    showSetupHelp('The Supabase library did not load from cdn.jsdelivr.net. Check your connection or any content blocker, then reload.');
+    showSetupHelp('The Supabase library did not load from app/vendor/. Check that the folder is deployed, then reload.');
     return null;
   }
   return window.supabase.createClient(config.SUPABASE_URL, config.SUPABASE_PUBLISHABLE_KEY);
