@@ -12,8 +12,8 @@
 // with no usable address, or that neither geocoder can match, are kept with geometry: null rather
 // than dropped, since the PRD wants hotlines and address-less resources surfaced too.
 //
-//   node pipeline/geocode/nypl_connections_to_geojson.ts [out.geojson]      (Node >= 22.18, no dependencies)
-//   node --test pipeline/geocode/__tests__/nypl_connections_to_geojson.test.ts  (runs the tests)
+//   node pipeline/3_geocode/geocode.ts [out.geojson]      (Node >= 22.18, no dependencies)
+//   node --test pipeline/3_geocode/__tests__/geocode.test.ts  (runs the tests)
 
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'

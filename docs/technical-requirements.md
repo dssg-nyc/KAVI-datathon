@@ -7,7 +7,7 @@
 The site is static HTML, CSS and browser JS with no build step. The website is in `app/`, the data pipeline is in `pipeline/`, one folder per stage, and the notebooks, one-off analysis and the OSM layer are in `notebooks/`, and `vercel.json` maps the public URLs to the pages.
 
 - **Finder:** `app/pages/finder.html`, `app/components/` and `app/lib/`. `app/config.js` sets `RESOURCES_CSV`, so the browser downloads `data/kavi_resources.csv`, with Supabase as the fallback data source.
-- **Data pipeline:** Python and notebooks clean and enrich the Connections Guide, TS scripts geocode it, and `pipeline/load/import-resources.mjs` loads it into Supabase.
+- **Data pipeline:** Python and notebooks clean and enrich the Connections Guide, TS scripts geocode it, and `pipeline/5_load/load_supabase.mjs` loads it into Supabase.
 - **Tests:** they exist in JS, TS and Python, but there is no CI and no `npm test`.
 - **PRD coverage:** map, service, keyword, address, ZIP and borough search, and hotlines are built. The gaps are listed under [PRD features](#prd-features).
 
@@ -19,11 +19,11 @@ The site is static HTML, CSS and browser JS with no build step. The website is i
 | CSV loader | `app/lib/csv.js`, `preview.js` | Cursor Agent (jyr-ai's PRs), Franziska |
 | Landing page and brand | `app/pages/index.html`, `app/brand/` | Cursor Agent (jyr-ai's PRs), Akai |
 | Reach prototype | `app/prototypes/reach/` | Akai |
-| Cleaning and audiences | `pipeline/cleaning/`, `pipeline/audiences/`, `notebooks/` | Franziska |
-| PDF extension | `pipeline/pdf/` | Akai, Rita |
-| Geocoding | `pipeline/geocode/nypl_connections_to_geojson.ts` | Rita, Akai |
+| Cleaning and audiences | `pipeline/1_clean/clean_guide.py`, `pipeline/4_audiences/tag_audiences.py`, `notebooks/` | Franziska |
+| PDF extension | `pipeline/2_pdf/extract_pdf.py`, `match_pdf.py`, `extend_with_pdf.py` | Akai, Rita |
+| Geocoding | `pipeline/3_geocode/geocode.ts` | Rita, Akai |
 | OSM layer | `notebooks/osm/` | Ramsey |
-| Database import | `pipeline/load/`, `supabase/` | Akai, Franziska |
+| Database import | `pipeline/5_load/load_supabase.mjs`, `supabase/` | Akai, Franziska |
 
 ## Design decisions
 
@@ -58,9 +58,9 @@ One PR, reviewed commit by commit. Each commit should leave the checks passing a
 | 2 | `chore: add type checks, lint and CI for new code` | `package.json` only |
 | 3 | `chore: reorganize into app/, core/ and docs/` | Renames only |
 | 4 | `chore: fix paths after the reorganization` | Paths only, plus new `vercel.json` and `.vercelignore` |
-| 4a | `refactor(pipeline): rewrite the cleaning stage in Python and add a single pipeline command` | To be scoped after commit 4 |
+| 4a | `refactor(pipeline): rewrite the cleaning stage in Python and add a single pipeline command` | `package.json` and READMEs; `clean_guide.py` is new and reproduces the notebook's output |
 | 5 | `feat(data): add schemas for resource data` | No |
-| 6 | `refactor(data): export the import mapping` | `import-resources.mjs`, in place, same output |
+| 6 | `refactor(data): export the import mapping` | `load_supabase.mjs`, in place, same output |
 | 7 | `feat(data): add stable resource IDs` | No |
 | 8 | `feat(data): generate public and provenance data files` | No |
 | 9 | `feat(finder): load the generated public data file` | `preview.js`, `csv.js`, `app/config.js`, small edits |

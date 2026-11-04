@@ -4,12 +4,12 @@ These scripts read the printed guide, `data/NYPL_JPS_Connections_2026.pdf`, and 
 data without replacing any of it. The PDF is not in git; put a copy at that path first.
 
 ```sh
-uv run pipeline/pdf/extract_listings.py         # PDF -> data/extracted/connections_pdf_listings.csv
-uv run pipeline/pdf/compare_to_csv.py           # team CSV vs PDF -> data/extracted/connections_pdf_vs_csv.csv
-uv run pipeline/pdf/extend_clean_resources.py   # resources_clean.csv + PDF -> data/cleaned/resources_extended.csv
+uv run pipeline/2_pdf/extract_pdf.py         # PDF -> data/extracted/connections_pdf_listings.csv
+uv run pipeline/2_pdf/match_pdf.py           # team CSV vs PDF -> data/extracted/connections_pdf_vs_csv.csv
+uv run pipeline/2_pdf/extend_with_pdf.py   # resources_clean.csv + PDF -> data/cleaned/resources_extended.csv
 ```
 
-`extend_clean_resources.py` reads `data/cleaned/resources_clean.csv`, which `pipeline/cleaning/` writes. Each script
+`extend_with_pdf.py` reads `data/cleaned/resources_clean.csv`, which `clean_guide.py` writes. Each script
 gives the same output on every run.
 
 ## What the PDF can and cannot tell us
@@ -39,13 +39,13 @@ section the table lacks. `basis` says where each row came from:
 The `new` rows map Formerly Incarcerated People to Reentry Support, most of Parents & Caregivers to Family &
 Childcare, and the few topical sections inside audience chapters (e.g. Older People > Housing).
 
-## Columns `extend_clean_resources.py` adds
+## Columns `extend_with_pdf.py` adds
 
 All columns of `resources_clean.csv` come first, unchanged.
 
 | Column | Meaning |
 |---|---|
-| `pdf_match_method` | How the row was matched to a PDF listing; see the header of `compare_to_csv.py`. `no_match` means the PDF does not print that name. |
+| `pdf_match_method` | How the row was matched to a PDF listing; see the header of `match_pdf.py`. `no_match` means the PDF does not print that name. |
 | `pdf_listing_id` | `listing_id` in `connections_pdf_listings.csv`. |
 | `pdf_chapter`, `pdf_section`, `pdf_guide_page` | Where the PDF prints this listing. |
 | `pdf_preceding_subheading` | The explanation heading above the listing, if any. Not a category. |
@@ -66,7 +66,7 @@ All columns of `resources_clean.csv` come first, unchanged.
 
 ## Description tagging
 
-`SERVICE_PATTERNS` in `extend_clean_resources.py` starts from the notebook's `hints`. Unlike the notebook, it keeps
+`SERVICE_PATTERNS` in `extend_with_pdf.py` starts from the notebook's `hints`. Unlike the notebook, it keeps
 every type that matches instead of only rows with exactly one match: 102 of the 146 rows left blank above matched two
 or more types, which is why the notebook left them blank. It also drops words that say who a resource serves or a
 topic it mentions rather than what it offers ("formerly incarcerated", "parole", "unhoused", "shelter system",

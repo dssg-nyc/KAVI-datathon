@@ -4,19 +4,19 @@
 // Rows come from two files in data/:
 //   nypl_connections_resources.geojson  one feature per row of "NYPL Connections Resources.csv",
 //                                       in the same order, with coordinates and geocode_* fields
-//                                       (built by pipeline/geocode/nypl_connections_to_geojson.ts).
+//                                       (built by pipeline/3_geocode/geocode.ts).
 //   NYPLConnections_NoMatch.csv         copies of CSV rows the geocoders could not place. Only its
 //                                       rows with lat/lon are used: each becomes an extra row,
 //                                       inserted after the GeoJSON row with the same organization
 //                                       name and copying that row's fields except the address.
 //                                       Today that is the 5 NYC NEON clothing closet sites.
 //   cleaned/resources_extended.csv      the cleaned rows with service types, row types and PDF
-//                                       fields (pipeline/cleaning/, pipeline/pdf/). Its columns in
+//                                       fields (clean_guide.py, extend_with_pdf.py). Its columns in
 //                                       EXTENDED_COLUMNS are added to the GeoJSON row it was
 //                                       cleaned from; NoMatch extra rows copy their parent's.
 //
 // Usage:
-//   node pipeline/load/import-resources.mjs [--dry-run] [--replace]
+//   node pipeline/5_load/load_supabase.mjs [--dry-run] [--replace]
 //     --dry-run    read and map both files, print a summary, insert nothing
 //     --replace    delete every existing row in public.resources before inserting
 // Without --replace the script refuses to run when the table already has rows, so a second
@@ -209,7 +209,7 @@ extendedRows.forEach((cells, i) => {
 const unmatchedFeatures = geojsonRecords.filter((r) => r.resource_id === null).length;
 
 // --- Audience CSV: "Who is it for?" columns, joined by resource_id like the extended CSV ---
-// (see pipeline/audiences/README.md and supabase/migrations/*_add_audience_columns_to_resources.sql).
+// (see docs/audiences.md and supabase/migrations/*_add_audience_columns_to_resources.sql).
 
 const AUDIENCES_PATH = join(root, 'data', 'cleaned', 'resource_audiences.csv');
 const AUDIENCE_COLUMNS = {

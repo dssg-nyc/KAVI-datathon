@@ -2,7 +2,7 @@
 # requires-python = ">=3.10"
 # ///
 # Compares the team's CSV (data/NYPL Connections Resources.csv, left unchanged) with the
-# listings extracted from the PDF by extract_listings.py.
+# listings extracted from the PDF by extract_pdf.py.
 #
 # Writes data/extracted/connections_pdf_vs_csv.csv with one row per CSV row, plus one row per
 # PDF listing that no CSV row matched (csv_row blank, match_method "pdf_only").
@@ -19,7 +19,7 @@
 #                      same chapter (names under 12 normalized characters are not searched)
 # When several PDF listings share the name, the one in the CSV row's chapter and section wins.
 #
-#   uv run pipeline/pdf/compare_to_csv.py
+#   uv run pipeline/2_pdf/match_pdf.py
 
 import csv
 import re

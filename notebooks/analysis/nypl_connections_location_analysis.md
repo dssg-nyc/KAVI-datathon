@@ -1,7 +1,7 @@
 # NYPL Connections → GeoJSON: data analysis
 
 Analysis of `data/nypl_connections_resources.geojson`, the output of
-[`nypl_connections_to_geojson.ts`](../../pipeline/geocode/nypl_connections_to_geojson.ts) run against
+[`geocode.ts`](../../pipeline/3_geocode/geocode.ts) run against
 `data/NYPL Connections Resources.csv` on 2026-10-25.
 
 Every number below is reproducible by running
@@ -15,7 +15,7 @@ python3 notebooks/analysis/analyze_nypl_connections_location.py
 
 **760** resources (rows) are present in `NYPL Connections Resources.csv`, and all 760 carry
 through to the output GeoJSON as features — the script never drops a row (see
-[`nypl_connections.md`](../../pipeline/geocode/nypl_connections.md)).
+[`nypl_connections.md`](../../docs/geocoding.md)).
 
 ## 2. Census Bureau geocoding match rate
 

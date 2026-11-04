@@ -18,7 +18,7 @@ app/            the website; see app/README.md
   brand/          DSSG design-system CSS and cobrand logos
   prototypes/     reach prototype (throwaway)
 pipeline/       the data pipeline, one folder per stage; see pipeline/README.md
-  cleaning/       clean the Connections Guide (notebook today, Python next)
+  cleaning/       clean the Connections Guide
   pdf/            extend it from the printed guide PDF
   geocode/        add coordinates
   audiences/      tag who each resource serves
@@ -36,12 +36,12 @@ docs/           technical requirements and notes
 
 ## Data pipeline
 
-Raw Connections Guide export → cleaned, enriched CSV → Supabase → finder. Each step only adds columns; none of them edit a column an earlier step set.
+Raw Connections Guide export → cleaned, enriched CSV → Supabase → finder. Each step only adds columns; none of them edit a column an earlier step set. `npm run pipeline` runs steps 1 and 2, the geocoder and the audience tagging in order (`-- --list` shows the stages); loading is a separate command.
 
-1. **Clean** — [`notebooks/data_cleaning_added_features.ipynb`](pipeline/cleaning/README.md): `data/NYPL Connections Resources.csv` → `data/cleaned/resources_clean.csv`. Normalizes names, addresses, ZIPs and websites; derives `borough` and `row_type`; and makes a first, conservative pass at `service_type` (the guide's `Category`/`Subcategory` mapped to a standard type, then an unambiguous description keyword as a fallback). Ambiguous or unsupported rows are left blank rather than guessed.
-2. **Extend with the PDF** — [`pipeline/pdf/extract_listings.py`](pipeline/pdf/README.md) → `compare_to_csv.py` → `extend_clean_resources.py`: matches each row to its listing in the printed guide PDF, fills still-blank `service_type`s from the PDF section it's printed under, and runs a multi-label keyword search (`SERVICE_PATTERNS`) over every row's description — including rows that already have a type — to catch the secondary services a resource's description mentions beyond its primary one (e.g. a reentry org whose description also offers housing and legal help). Everything is combined into `service_types_all`, the column the finder actually filters on. Writes `data/cleaned/resources_extended.csv`.
-3. **Human review** — [`data/review/`](data/review/README.md): a person's proposed fixes (new service types, corrections to keyword- or PDF-based guesses) live here as CSVs. Step 2 (`extend_clean_resources.py`) reads both CSVs back in, so rerun it after editing them. The secondary tags step 2 adds to rows that already have a primary type are not reviewed yet (`description_service_types_source == "description_keywords"`).
-4. **Load into Supabase** — [`pipeline/load/import-resources.mjs`](pipeline/README.md): joins the geocoded GeoJSON, the NoMatch extras, and `resources_extended.csv` into `public.resources`. `"; "`-joined CSV columns such as `service_types_all` and `pdf_audiences` become Postgres `text[]`.
+1. **Clean** — [`pipeline/1_clean/clean_guide.py`](docs/cleaning.md): `data/NYPL Connections Resources.csv` → `data/cleaned/resources_clean.csv`. Normalizes names, addresses, ZIPs and websites; derives `borough` and `row_type`; and makes a first, conservative pass at `service_type` (the guide's `Category`/`Subcategory` mapped to a standard type, then an unambiguous description keyword as a fallback). Ambiguous or unsupported rows are left blank rather than guessed.
+2. **Extend with the PDF** — [`pipeline/2_pdf/extract_pdf.py`](docs/pdf_extension.md) → `match_pdf.py` → `extend_with_pdf.py`: matches each row to its listing in the printed guide PDF, fills still-blank `service_type`s from the PDF section it's printed under, and runs a multi-label keyword search (`SERVICE_PATTERNS`) over every row's description — including rows that already have a type — to catch the secondary services a resource's description mentions beyond its primary one (e.g. a reentry org whose description also offers housing and legal help). Everything is combined into `service_types_all`, the column the finder actually filters on. Writes `data/cleaned/resources_extended.csv`.
+3. **Human review** — [`data/review/`](data/review/README.md): a person's proposed fixes (new service types, corrections to keyword- or PDF-based guesses) live here as CSVs. Step 2 (`extend_with_pdf.py`) reads both CSVs back in, so rerun it after editing them. The secondary tags step 2 adds to rows that already have a primary type are not reviewed yet (`description_service_types_source == "description_keywords"`).
+4. **Load into Supabase** — [`pipeline/5_load/load_supabase.mjs`](pipeline/README.md): joins the geocoded GeoJSON, the NoMatch extras, and `resources_extended.csv` into `public.resources`. `"; "`-joined CSV columns such as `service_types_all` and `pdf_audiences` become Postgres `text[]`.
 5. **Finder** — `app/lib/resources.js`, `finder.html`: reads `data/kavi_resources.csv` when `RESOURCES_CSV` is set in `app/config.js` (map pins use that file's `latitude`/`longitude`); otherwise reads `public.resources` from Supabase. `service_types_all` drives the "What kind of help?" filter and the map pin color.
 
 ## Accessing the resources
@@ -51,7 +51,7 @@ Raw Connections Guide export → cleaned, enriched CSV → Supabase → finder. 
 | File | What it is | Rows | Source |
 |---|---|---|---|
 | `NYPL Connections Resources.csv` | The Connections Guide extracted from the PDF, one row per resource. | 760 | Project Google Drive |
-| `nypl_connections_resources.geojson` | The same 760 rows in the same order, with coordinates and `geocode_*` fields added. This is what the Supabase `resources` table is loaded from. | 760 | `node pipeline/geocode/nypl_connections_to_geojson.ts`; see [pipeline/geocode/nypl_connections.md](pipeline/geocode/nypl_connections.md) |
+| `nypl_connections_resources.geojson` | The same 760 rows in the same order, with coordinates and `geocode_*` fields added. This is what the Supabase `resources` table is loaded from. | 760 | `node pipeline/3_geocode/geocode.ts`; see [docs/geocoding.md](docs/geocoding.md) |
 | `NYPLConnections_NoMatch.csv` | Copies of Connections Guide rows that could not be geocoded (no usable address, or hotlines), with `lat`/`lon` added for 5 NYC NEON clothing closet sites. The import adds those 5 as extra rows; the other 40 are already in the GeoJSON. Encoded as Windows-1252, not UTF-8. | 45 | Project Google Drive |
 | `nyc_osm_resources.csv` / `.geojson` | NYC service locations from OpenStreetMap, with category, borough and coordinates. Credit "© OpenStreetMap contributors" wherever it is shown. | 1,104 | `npm run osm`; see [notebooks/osm/README.md](notebooks/osm/README.md) |
 | `kavi_resources.csv` | Full `public.resources` export (guide columns, geocode, service types, audiences). The finder map layer reads coordinates from this file. | 765 | Supabase export, 2026-10-25 |
@@ -88,7 +88,7 @@ The Connections Guide is loaded into the `resources` table of a Supabase project
 curl "https://xwpuphhocwstfgbjreeg.supabase.co/rest/v1/resources?category=eq.Housing&select=organization_name,phone_number" -H "apikey: <SUPABASE_PUBLISHABLE_KEY from app/config.js>"
 ```
 
-**Loading data:** `npm run import` loads `data/nypl_connections_resources.geojson`, the 5 located rows of `data/NYPLConnections_NoMatch.csv` and the columns of `data/cleaned/resources_extended.csv` into the project in `app/config.js`, using `SUPABASE_SECRET_KEY` from `.env`. Add `-- --dry-run` to check the file first, or `-- --replace` to re-import. In a git worktree, run `node pipeline/load/link-main-env.mjs` first to use the main checkout's `.env`. For a new project: `supabase link --project-ref <ref>`, `supabase db push`, update `app/config.js`, then import.
+**Loading data:** `npm run import` loads `data/nypl_connections_resources.geojson`, the 5 located rows of `data/NYPLConnections_NoMatch.csv` and the columns of `data/cleaned/resources_extended.csv` into the project in `app/config.js`, using `SUPABASE_SECRET_KEY` from `.env`. Add `-- --dry-run` to check the file first, or `-- --replace` to re-import. In a git worktree, run `node pipeline/5_load/link_env.mjs` first to use the main checkout's `.env`. For a new project: `supabase link --project-ref <ref>`, `supabase db push`, update `app/config.js`, then import.
 
 ## Running the resource finder
 
@@ -146,4 +146,4 @@ Then open http://localhost:5173/reach-prototype.html. Enter the client's address
 
 ## Scripts
 
-See [pipeline/README.md](pipeline/README.md) for what each script does and how to run it.
+`npm run pipeline` runs the data pipeline; see [pipeline/README.md](pipeline/README.md) for what each stage does and how to run one on its own.

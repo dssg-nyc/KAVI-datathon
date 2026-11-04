@@ -1,9 +1,9 @@
 // Makes .env in this git worktree a symlink to the .env of the main checkout, so scripts such as
-// import-resources.mjs can read SUPABASE_SECRET_KEY without a second copy of the secret on disk.
+// load_supabase.mjs can read SUPABASE_SECRET_KEY without a second copy of the secret on disk.
 // A symlink (not a copy) also means a key rotated in the main checkout takes effect here too.
 //
 // Usage (from a worktree):
-//   node pipeline/load/link-main-env.mjs
+//   node pipeline/5_load/link_env.mjs
 // Refuses to replace an existing .env, and does nothing when run in the main checkout itself.
 import { execFileSync } from 'node:child_process';
 import { existsSync, lstatSync, symlinkSync } from 'node:fs';

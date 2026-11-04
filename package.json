@@ -7,13 +7,15 @@
   },
   "scripts": {
     "dev": "node app/dev-server.mjs",
-    "import": "node pipeline/load/import-resources.mjs",
+    "import": "node pipeline/5_load/load_supabase.mjs",
+    "pipeline": "python3 pipeline/run.py",
     "osm": "node notebooks/osm/osm_resources_nyc.ts",
     "typecheck": "tsc --noEmit",
     "lint": "eslint --no-error-on-unmatched-pattern notebooks/osm pipeline/build",
+    "lint:py": "uvx ruff check pipeline notebooks/analysis",
     "test": "node --test \"app/**/__tests__/*.test.mjs\" \"pipeline/**/__tests__/*.test.ts\"",
-    "test:py": "uv run pipeline/pdf/__tests__/extend_clean_resources.test.py",
-    "check": "npm run -s typecheck && npm run -s lint && npm run -s test && npm run -s test:py"
+    "test:py": "uv run pipeline/1_clean/__tests__/clean_guide.test.py && uv run pipeline/2_pdf/__tests__/extend_with_pdf.test.py",
+    "check": "npm run -s typecheck && npm run -s lint && npm run -s lint:py && npm run -s test && npm run -s test:py"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

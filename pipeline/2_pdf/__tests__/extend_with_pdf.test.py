@@ -1,17 +1,17 @@
 # /// script
 # requires-python = ">=3.10"
 # ///
-# Tests for the description-keyword tagging in pipeline/pdf/extend_clean_resources.py: that it finds
+# Tests for the description-keyword tagging in pipeline/2_pdf/extend_with_pdf.py: that it finds
 # every secondary service a description names, and that those secondary services are added even to
 # a row that already has a primary service type (issue #19). Run:
 #
-#   uv run pipeline/pdf/__tests__/extend_clean_resources.test.py
+#   uv run pipeline/2_pdf/__tests__/extend_with_pdf.test.py
 
 import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from extend_clean_resources import joined, service_types_in  # noqa: E402
+from extend_with_pdf import joined, service_types_in  # noqa: E402
 
 # Hetrick-Martin Institute's description, quoted in issue #19: an LGBTQIA+ youth organization
 # whose description names several other services it offers beyond that primary focus.
@@ -30,7 +30,7 @@ def test_keyword_match_finds_every_secondary_service_named_in_the_description():
 
 
 def test_secondary_types_are_added_even_when_a_primary_type_is_already_assigned():
-    # Before issue #19's fix, extend_clean_resources.py only looked for description-keyword types
+    # Before issue #19's fix, extend_with_pdf.py only looked for description-keyword types
     # on rows with no service_type_extended yet, so a row's primary type (e.g. from the guide's
     # LGBTQIA+ Youth chapter) would have blocked its other services from ever reaching
     # service_types_all. This reproduces that merge directly and checks the primary type survives

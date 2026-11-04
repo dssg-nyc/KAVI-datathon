@@ -1,8 +1,9 @@
 # Connections Guide data cleaning
 
-`data_cleaning_added_features.ipynb` cleans and normalizes the NYPL Connections Guide export and adds
-two features for the resource map: `service_type` (what a resource helps with) and `row_type` (what
-kind of contact point it is). The notebook's markdown cells document every rule in detail. This file
+`clean_guide.py` cleans and normalizes the NYPL Connections Guide export and adds two features for the
+resource map: `service_type` (what a resource helps with) and `row_type` (what kind of contact point
+it is). It is the script version of `notebooks/data_cleaning_added_features.ipynb`, with the same
+steps and the same output; the notebook's markdown cells document every rule in detail. This file
 is a short overview.
 
 ## Inputs and outputs
@@ -19,8 +20,14 @@ above, so it was merged into that row's `review_notes`.
 
 ## Run it
 
-Open the notebook from `notebooks/` and run all cells from top to bottom. It needs Python 3
-and pandas, and it overwrites both files in `data/cleaned/`.
+```sh
+uv run pipeline/1_clean/clean_guide.py                 # or: npm run pipeline -- clean
+uv run pipeline/1_clean/__tests__/clean_guide.test.py  # the tests
+```
+
+[uv](https://docs.astral.sh/uv/) installs pandas from the script's header. The script overwrites both
+files in `data/cleaned/`. The notebook in `notebooks/` still runs and gives the same files; when a rule
+changes, change it in both or retire the notebook.
 
 ## What it does
 
@@ -52,5 +59,5 @@ and pandas, and it overwrites both files in `data/cleaned/`.
 - **Coordinates:** `latitude` and `longitude` are intentionally left blank for later geocoding and
   mapping.
 - **Manual review:** `review_list.csv` is a work list for a later manual check. To fix a row, change
-  the rules in the notebook and run it again. Edits made only in `review_list.csv` are overwritten
+  the rules in `clean_guide.py` and run it again. Edits made only in `review_list.csv` are overwritten
   on the next run.

@@ -1,5 +1,5 @@
-// Tests for pipeline/geocode/nypl_connections_to_geojson.ts.
-// Run with: node --test pipeline/geocode/__tests__/nypl_connections_to_geojson.test.ts
+// Tests for pipeline/3_geocode/geocode.ts.
+// Run with: node --test pipeline/3_geocode/__tests__/geocode.test.ts
 import { describe, test, afterEach } from 'node:test'
 import assert from 'node:assert/strict'
 import {
@@ -17,7 +17,7 @@ import {
   toFeature,
   BENCHMARK,
   type Record_,
-} from '../nypl_connections_to_geojson.ts'
+} from '../geocode.ts'
 
 describe('parseCsv', () => {
   // A plain grid with no quoting should split cleanly on commas/newlines.

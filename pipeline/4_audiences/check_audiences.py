@@ -2,7 +2,7 @@
 
 Run from the repo root before `npm run import`:
 
-    python3 pipeline/audiences/check_audiences.py
+    python3 pipeline/4_audiences/check_audiences.py
 
 Needs only the standard library. Prints one line per check: PASS, WARN (worth a look, does not block the
 import) or FAIL (the import would break or load wrong data). Exits with status 1 if any check fails.
@@ -17,7 +17,7 @@ import csv
 import json
 import re
 import sys
-from collections import Counter, defaultdict
+from collections import Counter
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -35,7 +35,7 @@ ALLOWED_AUDIENCES = {
 LIST_COLUMNS = ["pdf_audiences", "confirmed_pdf_audiences", "unconfirmed_pdf_audiences", "name_audiences",
                 "description_audiences", "pdf_text_audiences", "restricted_audiences", "focus_audiences",
                 "audiences_all"]
-# Columns and types the import reads (AUDIENCE_COLUMNS in pipeline/load/import-resources.mjs).
+# Columns and types the import reads (AUDIENCE_COLUMNS in pipeline/5_load/load_supabase.mjs).
 IMPORT_COLUMNS = {
     "audiences_all": "list", "restricted_audiences": "list", "focus_audiences": "list",
     "confirmed_pdf_audiences": "list", "unconfirmed_pdf_audiences": "list", "pdf_audience_check": "text",

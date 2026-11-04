@@ -5,7 +5,7 @@
 > [Limitations](#limitations) and [Next steps](#next-steps)).
 
 This explains how `notebooks/audience_enrichment.ipynb` tags each resource with the people it serves, and
-how the finder uses those tags. Column details are in [pipeline/audiences/README.md](../pipeline/audiences/README.md).
+how the finder uses those tags. Column details are in [docs/audiences.md](../docs/audiences.md).
 
 ## How a resource gets its audiences
 
@@ -55,7 +55,7 @@ them in the browser. Nothing is written.
 
 - **Keywords, not language understanding.** Negations ("does not serve youth") and wording without the expected
   words are missed.
-- **Not reviewed by a person.** `pipeline/audiences/check_audiences.py` (36 checks) makes sure the data is
+- **Not reviewed by a person.** `pipeline/4_audiences/check_audiences.py` (36 checks) makes sure the data is
   consistent and loads correctly, not that each tag is right.
 - **`Everyone` is mostly assumed.** For 666 resources there is simply no sign of a restriction; only 68 say they
   are open to all.

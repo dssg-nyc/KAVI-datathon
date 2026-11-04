@@ -1,32 +1,53 @@
 # Pipeline
 
-Turns the Connections Guide into the data the site shows. One folder per stage, in the order they run. Run the commands from the repo root; every stage reads from and writes to the top-level [`data/`](../data) folder.
+Turns the Connections Guide, a spreadsheet the NYPL team exported, into the resource table the finder shows. One numbered folder per step, in the order they run; `run.py` runs them all. Each step reads files from [`data/`](../data), adds columns, and writes new files back to `data/`. Nothing in the app imports this code; the app only reads the data it produces.
 
-```
-data/NYPL Connections Resources.csv              the raw guide, 760 rows
-  ├─ cleaning/   → data/cleaned/resources_clean.csv
-  ├─ pdf/        → data/extracted/*.csv, data/cleaned/resources_extended.csv
-  ├─ geocode/    → data/nypl_connections_resources.geojson   (reads the raw CSV, not cleaning/)
-  ├─ audiences/  → data/cleaned/resource_audiences.csv
-  └─ load/       joins pdf + geocode + audiences → Supabase public.resources
+```sh
+npm run pipeline                 # every step whose inputs are present, in order
+npm run pipeline -- clean pdf    # only these steps
+npm run pipeline -- --list       # the steps with their inputs and outputs
 ```
 
-The site does not read the pipeline's output directly. It reads `data/kavi_resources.csv`, an export of `public.resources` made by hand from the Supabase dashboard. Closing that gap, so the pipeline writes the site's data file itself, is the next step on the [roadmap](../docs/technical-requirements.md#roadmap).
+## The steps, in order
 
-## Stages
+| # | Step | Script | Reads | Writes |
+|---|---|---|---|---|
+| 1 | **clean** the guide: trim text, fix ZIPs and websites, merge address-only rows, derive `borough`, `row_type` and a first `service_type` | `1_clean/clean_guide.py` | `data/NYPL Connections Resources.csv` (the raw guide, 760 rows), `data/NYPLConnections_NoMatch.csv` | `data/cleaned/resources_clean.csv` (759 rows), `data/cleaned/review_list.csv` |
+| 2 | **pdf**: pull every listing out of the printed guide | `2_pdf/extract_pdf.py` | `data/NYPL_JPS_Connections_2026.pdf` (not in git) | `data/extracted/connections_pdf_listings.csv` |
+| | match each guide row to its PDF listing | `2_pdf/match_pdf.py` | the two files above | `data/extracted/connections_pdf_vs_csv.csv` |
+| | extend the cleaned rows with what the PDF says (chapter, section, audiences), tag the services each description mentions, apply the human reviews in `data/review/` | `2_pdf/extend_with_pdf.py` | `resources_clean.csv`, the PDF listings, `data/reference/`, `data/review/` | `data/cleaned/resources_extended.csv` |
+| 3 | **geocode** every address (NYC GeoSearch, then the Census geocoder; needs the network) | `3_geocode/geocode.ts` | `data/NYPL Connections Resources.csv` | `data/nypl_connections_resources.geojson` |
+| 4 | **audiences**: tag who each resource serves ("Who is it for?") | `4_audiences/tag_audiences.py` | `resources_extended.csv`, the PDF listings, `data/review/reviewed_audiences.csv` | `data/cleaned/resource_audiences.csv`, two review lists in `data/review/` |
+| | check that output before it is loaded | `4_audiences/check_audiences.py` | the files above and the GeoJSON | nothing; exits 1 on a failed check |
+| 5 | **load**: join the GeoJSON, `resources_extended.csv` and `resource_audiences.csv` into the Supabase `public.resources` table | `5_load/load_supabase.mjs` | the three files above, `data/NYPLConnections_NoMatch.csv` | the database |
 
-| Stage | Files | What it does | Run with |
-|---|---|---|---|
-| [`cleaning/`](cleaning/README.md) | [`notebooks/data_cleaning_added_features.ipynb`](../notebooks/data_cleaning_added_features.ipynb) | Normalizes names, addresses, ZIPs and websites; derives `borough`, `row_type` and a first `service_type`. Notebook only today; a Python version is planned. | Run all cells |
-| [`pdf/`](pdf/README.md) | `extract_listings.py` | Reads `data/NYPL_JPS_Connections_2026.pdf` (not in git) into `data/extracted/connections_pdf_listings.csv`. | `uv run pipeline/pdf/extract_listings.py` |
-| | `compare_to_csv.py` | Matches each guide row to a PDF listing, in `data/extracted/connections_pdf_vs_csv.csv`. | `uv run pipeline/pdf/compare_to_csv.py` |
-| | `extend_clean_resources.py` | Adds PDF and description columns, applies the reviews in `data/review/` and the mapping in `data/reference/`, fills blank service types, in `data/cleaned/resources_extended.csv`. | `uv run pipeline/pdf/extend_clean_resources.py` |
-| [`geocode/`](geocode/nypl_connections.md) | `nypl_connections_to_geojson.ts` | Geocodes the raw guide (NYC GeoSearch, then Census) into `data/nypl_connections_resources.geojson`. | `node pipeline/geocode/nypl_connections_to_geojson.ts` |
-| [`audiences/`](audiences/README.md) | [`notebooks/audience_enrichment.ipynb`](../notebooks/audience_enrichment.ipynb) | Tags who each resource serves, in `data/cleaned/resource_audiences.csv`. Notebook only today. | Run all cells |
-| | `check_audiences.py` | Checks that output before a load. Writes nothing. | `python3 pipeline/audiences/check_audiences.py` |
-| `load/` | `import-resources.mjs` | Joins the GeoJSON, the located `NYPLConnections_NoMatch.csv` rows, `resources_extended.csv` and `resource_audiences.csv` into Supabase. Needs `SUPABASE_SECRET_KEY` in `.env`; `--dry-run` needs nothing. | `npm run import -- --dry-run` |
-| | `link-main-env.mjs` | In a git worktree, makes `.env` a symlink to the main checkout's. Refuses to replace an existing `.env`. | `node pipeline/load/link-main-env.mjs` |
+Step 3 reads the raw guide, not step 1's output, and step 5 joins everything by row order and `resource_id`. Every step is deterministic: running it again on the same inputs gives the same files, so the outputs are committed and can be diffed.
 
-The Node scripts need Node 22.18 or later and have no npm dependencies. The Python scripts in `pdf/` need [uv](https://docs.astral.sh/uv/), which installs `pymupdf` from the header of each script. Database schema changes go in [`supabase/migrations/`](../supabase/migrations).
+`run.py` runs steps 1 to 4. A step whose input is missing is skipped with a note (the PDF is not in git), unless it was asked for by name. Step 5 is deliberately not part of the runner because it writes to the shared database:
 
-Tests sit in each stage's `__tests__/` folder: `npm test` runs the geocoder's, `npm run test:py` the PDF stage's.
+```sh
+npm run import -- --dry-run      # read and check the files, insert nothing
+npm run import                   # needs SUPABASE_SECRET_KEY in .env
+```
+
+The site does not read the pipeline's output directly. It reads `data/kavi_resources.csv`, an export of `public.resources` made by hand from the Supabase dashboard. Closing that gap, so the pipeline writes the site's data file itself, is on the [roadmap](../docs/technical-requirements.md#roadmap).
+
+## What each step decides, and why
+
+The rules behind each step and the columns it adds are written up in `docs/`:
+
+- [docs/cleaning.md](../docs/cleaning.md) for step 1
+- [docs/pdf_extension.md](../docs/pdf_extension.md) for step 2
+- [docs/geocoding.md](../docs/geocoding.md) for step 3
+- [docs/audiences.md](../docs/audiences.md) and [docs/audience_matching.md](../docs/audience_matching.md) for step 4
+
+Steps 1 and 4 were first written as notebooks, which are still in [`notebooks/`](../notebooks); the scripts here are the same rules with the same output. The notebooks stay as the place to look at intermediate results. Change a rule in both, or retire the notebook.
+
+## Languages and tooling
+
+The steps are in Python, TypeScript and JavaScript because different people wrote them, and the rule in this repo is to move code rather than rewrite it. Each language needs only one tool:
+
+- **Python** (`.py`): [uv](https://docs.astral.sh/uv/). Each script's header declares what it needs (`pandas` or `pymupdf`), and `uv run` installs that into a cache on first run. There is no project environment to set up. `run.py` and `check_audiences.py` need only the standard library, so `python3` runs them.
+- **TypeScript** (`.ts`) and **JavaScript** (`.mjs`): Node 22.18 or later, no npm dependencies. The geocoder is TypeScript, which Node runs directly. The loader is `.mjs` so Node treats it as an ES module; it talks to Supabase over plain HTTP. `link_env.mjs` is a small helper for git worktrees that makes `.env` a symlink to the main checkout's, so the secret key is not copied.
+
+Each step's tests sit in its own `__tests__/` folder: `npm run test:py` runs the Python ones, `npm test` the geocoder's. `npm run lint:py` runs [ruff](https://docs.astral.sh/ruff/) over the Python (settings in `ruff.toml`); `npm run lint` runs eslint over the TypeScript tooling. `npm run check` runs all of it, and CI runs `npm run check`. Database schema changes go in [`supabase/migrations/`](../supabase/migrations).

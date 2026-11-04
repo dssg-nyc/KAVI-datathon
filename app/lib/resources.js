@@ -7,7 +7,7 @@ export const COLUMNS = [
   'service_types_all', 'pdf_audiences', 'resource_id',
 ].join(',');
 
-// "Who is it for?" columns from pipeline/audiences/ (supabase/migrations/*_add_audience_columns_to_resources.sql).
+// "Who is it for?" columns from pipeline/4_audiences/tag_audiences.py (supabase/migrations/*_add_audience_columns_to_resources.sql).
 // Until that migration is applied they don't exist, and the finder falls back to pdf_audiences.
 export const AUDIENCE_COLUMNS = ['audiences_all', 'restricted_audiences', 'focus_audiences'].join(',');
 

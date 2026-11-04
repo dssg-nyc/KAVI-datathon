@@ -4,8 +4,8 @@ How `data/nypl_connections_resources.geojson` is built from
 `data/NYPL Connections Resources.csv`.
 
 ```sh
-node pipeline/geocode/nypl_connections_to_geojson.ts              # writes data/nypl_connections_resources.geojson
-node --test pipeline/geocode/__tests__/nypl_connections_to_geojson.test.ts   # runs the tests (no network calls)
+node pipeline/3_geocode/geocode.ts              # writes data/nypl_connections_resources.geojson
+node --test pipeline/3_geocode/__tests__/geocode.test.ts   # runs the tests (no network calls)
 ```
 
 `data/NYPL Connections Resources.csv` is the raw Connections Guide export: one row per

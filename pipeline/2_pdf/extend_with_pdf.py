@@ -1,10 +1,10 @@
 # /// script
 # requires-python = ">=3.10"
 # ///
-# Extends data/cleaned/resources_clean.csv (from pipeline/cleaning/) with what the PDF says about
+# Extends data/cleaned/resources_clean.csv (from clean_guide.py) with what the PDF says about
 # each resource. Every column of resources_clean.csv is kept unchanged; the new columns follow.
 #
-# The PDF's chapter and section are turned into a service type by pipeline/pdf/section_service_types.csv,
+# The PDF's chapter and section are turned into a service type by data/reference/section_service_types.csv,
 # one row per PDF section. That table is the only place where a person decides anything; this
 # script applies it the same way on every run, and stops if a PDF section is missing from it.
 #
@@ -17,7 +17,7 @@
 # in pdf_org_service_types and service_types_all.
 #
 # pdf_contradiction is filled only where the PDF clearly disagrees with resources_clean.csv:
-#   - pipeline/cleaning/'s own rules (by_sub, by_cat), applied to the PDF section, give a different
+#   - clean_guide.py's own rules (by_sub, by_cat), applied to the PDF section, give a different
 #     service type than service_type. A section mapped only in section_service_types.csv (basis
 #     "new") is a second opinion, not a contradiction; compare pdf_section_service_type instead.
 #   - the PDF chapter differs from a non-blank guide_category.
@@ -38,16 +38,16 @@
 #   new_service_types_review.csv            a person's types for the rows with no type at all,
 #                                           including the new type "Disability Services"
 #
-# Writes data/cleaned/resources_extended.csv. Run extract_listings.py first.
+# Writes data/cleaned/resources_extended.csv. Run extract_pdf.py first.
 #
-#   uv run pipeline/pdf/extend_clean_resources.py
+#   uv run pipeline/2_pdf/extend_with_pdf.py
 
 import csv
 import re
 import sys
 from pathlib import Path
 
-from compare_to_csv import index_by_name, load, match, norm
+from match_pdf import index_by_name, load, match, norm
 
 ROOT = Path(__file__).resolve().parents[2]
 CLEAN_IN = ROOT / "data" / "cleaned" / "resources_clean.csv"
@@ -58,7 +58,7 @@ HUMAN_CHECK = ROOT / "data" / "review" / "reviewed_service_types_human_check.csv
 NEW_TYPES = ROOT / "data" / "review" / "new_service_types_review.csv"
 OUT = ROOT / "data" / "cleaned" / "resources_extended.csv"
 
-TO_ASSIGN = "service_type to assign"  # the review note pipeline/cleaning/ adds for a blank service_type
+TO_ASSIGN = "service_type to assign"  # the review note clean_guide.py adds for a blank service_type
 
 # The notebook's `hints`, tightened so a word that names who a resource serves, or a topic it
 # mentions, does not count as a service ("formerly incarcerated", "parole", "advocacy",
@@ -121,7 +121,7 @@ def main():
         # other listings of that organization are not this organization's.
         org_listings = [own] if method == "in_listing_text" else listings
         own_type = mapped(own)["service_type"] if own else ""
-        # True when pipeline/cleaning/'s own by_sub/by_cat rules give this section's type
+        # True when clean_guide.py's own by_sub/by_cat rules give this section's type
         # (basis pr_subcategory or pr_chapter), not a mapping added in section_service_types.csv.
         own_type_is_pr_rule = bool(own) and mapped(own)["basis"].startswith("pr_")
         org_types = joined(mapped(l)["service_type"] for l in org_listings)
