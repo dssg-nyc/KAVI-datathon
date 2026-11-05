@@ -7,6 +7,7 @@ import { cardHtml, escapeHtml, popupHtml } from '../components/cards.js';
 import { createPlaceInput } from '../components/place-input.js';
 import { createMap } from '../components/map.js';
 import { isLocalPreview, loadLocalCsv } from '../lib/preview.js';
+import { fetchLayerIndex, layerPopupHtml } from '../lib/layers.js';
 
 const app = document.getElementById('app');
 const statusEl = document.getElementById('status');
@@ -61,6 +62,8 @@ let audienceValues = [];
 let step = 0; // 0-2: questions, 3: results
 let tab = 'list';
 let view = {}; // DOM helpers of the current screen: placeInput, map, list
+let layers = []; // reference layers from data/public/layers/index.json (libraries, health facilities, cooling sites)
+const layersOn = new Set(); // keys of the reference layers switched on
 
 const radiusLabel = (r) => (r ? `${r} mi` : 'any distance');
 const plural = (n, one, many) => `${n} ${n === 1 ? one : many}`;
@@ -172,6 +175,7 @@ function renderResults() {
       <div class="res-tools">
         <div class="seg"><button type="button" data-tab="list">List</button><button type="button" data-tab="map">Map</button></div>
         <div class="seg" id="how"></div>
+        <div class="seg" id="layers" hidden>${layers.map((l) => `<button type="button" data-layer="${escapeHtml(l.key)}" title="${escapeHtml(l.note ?? '')}">${escapeHtml(l.label)}</button>`).join('')}</div>
       </div>
     </header>
     <div class="res-body"><div class="res-list" id="res-list"></div><div class="res-map" id="res-map" hidden></div></div>
@@ -250,19 +254,37 @@ function setTab(next) {
   const mapEl = document.getElementById('res-map');
   document.getElementById('res-list').hidden = tab === 'map';
   mapEl.hidden = tab !== 'map';
+  document.getElementById('layers').hidden = tab !== 'map' || !layers.length;
   if (tab !== 'map') return;
   if (!view.map) {
     // Created on first use, so the tiles load only when someone opens the map.
     view.map = createMap(mapEl, {
       onPick: (place) => { filters.place = place; view.placeInput.sync(); refreshResults(); },
       popupHtml,
+      layerPopupHtml,
     });
     view.map?.setResources(view.list, pinColor);
     view.map?.setPlace(filters.place, filters.radius);
+    for (const l of layers) view.map?.setLayer(l, layersOn.has(l.key));
   }
+  updateLayerButtons();
   view.map?.resize();
   // On a phone the page scrolls and the map sits under the header; bring all of it on screen.
   if (mapEl.getBoundingClientRect().bottom > window.innerHeight) mapEl.scrollIntoView({ block: 'end' });
+}
+
+function updateLayerButtons() {
+  for (const b of app.querySelectorAll('[data-layer]')) b.setAttribute('aria-pressed', String(layersOn.has(b.dataset.layer)));
+}
+
+// Switches a reference layer (libraries, health facilities, cooling sites) on or off on the map.
+function toggleLayer(key) {
+  const layer = layers.find((l) => l.key === key);
+  if (!layer) return;
+  if (layersOn.has(key)) layersOn.delete(key);
+  else layersOn.add(key);
+  view.map?.setLayer(layer, layersOn.has(key));
+  updateLayerButtons();
 }
 
 // ---------- Events (one listener per event type on #app) ----------
@@ -305,6 +327,8 @@ app.addEventListener('click', async (e) => {
   } else if (d.how) {
     filters.how = d.how;
     refreshResults();
+  } else if (d.layer) {
+    toggleLayer(d.layer);
   } else if (d.showAll) {
     target.previousElementSibling.insertAdjacentHTML('beforeend', view.list
       .filter((r) => (d.showAll === 'near') === r.inPerson).slice(LIST_PAGE)
@@ -381,6 +405,7 @@ async function main() {
     if (!rows) return;
   }
   resources = rows.filter(isListed).map((row, i) => toResource(row, i));
+  layers = await fetchLayerIndex(); // [] when the files are missing: the map then has no layer toggles
   serviceValues = distinctValues(resources, 'services');
   audienceValues = distinctValues(resources, 'audiences');
   statusEl.hidden = true;

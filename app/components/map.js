@@ -11,7 +11,8 @@ export const pointKey = (r) => `${r.lat.toFixed(6)},${r.lon.toFixed(6)}`;
 
 // Returns null when MapLibre did not load (app/vendor/ missing or blocked); callers then work without a map.
 // onPick(place) fires on a click on empty map. popupHtml(group) builds the popup for one pin.
-export function createMap(container, { onPick, popupHtml } = {}) {
+// layerPopupHtml(layer, props) builds the popup for one feature of a reference layer (see setLayer).
+export function createMap(container, { onPick, popupHtml, layerPopupHtml } = {}) {
   if (!window.maplibregl) {
     container.innerHTML = '<p class="map-missing">The map could not load. The list still works.</p>';
     return null;
@@ -28,6 +29,44 @@ export function createMap(container, { onPick, popupHtml } = {}) {
   let marker = null;
   let popup = null;
   let fitPending = false;
+  const refLayers = new Map(); // key → { layer, data: Promise<GeoJSON> | null, on }
+
+  // Reference layers (libraries, health facilities, cooling sites) sit under the resource pins, as
+  // smaller circles in the layer's colour. Their GeoJSON is fetched the first time they are switched on.
+  async function drawRefLayer(key) {
+    const ref = refLayers.get(key);
+    const id = `ref-${key}`;
+    if (!ref.on) {
+      if (map.getLayer(id)) map.setLayoutProperty(id, 'visibility', 'none');
+      return;
+    }
+    if (!map.getSource(id)) {
+      ref.data ??= fetch(ref.layer.file).then((r) => (r.ok ? r.json() : EMPTY)).catch(() => EMPTY);
+      const data = await ref.data;
+      if (map.getSource(id) || !ref.on) return;
+      map.addSource(id, { type: 'geojson', data });
+      map.addLayer({ id, type: 'circle', source: id, paint: {
+        'circle-color': ref.layer.color,
+        'circle-opacity': 0.85,
+        'circle-radius': ['interpolate', ['linear'], ['zoom'], 10, 3, 14, 5, 17, 7],
+        'circle-stroke-width': 1,
+        'circle-stroke-color': '#ffffff',
+      } }, 'res');
+      map.on('mouseenter', id, () => { map.getCanvas().style.cursor = 'pointer'; });
+      map.on('mouseleave', id, () => { map.getCanvas().style.cursor = ''; });
+    }
+    map.setLayoutProperty(id, 'visibility', 'visible');
+  }
+
+  function openRefFeature(key, feature) {
+    const ref = refLayers.get(key);
+    if (!ref || !layerPopupHtml) return;
+    popup?.remove();
+    popup = new maplibregl.Popup({ maxWidth: '320px', focusAfterOpen: false })
+      .setLngLat(feature.geometry.coordinates)
+      .setHTML(layerPopupHtml(ref.layer, feature.properties))
+      .addTo(map);
+  }
 
   function drawPlace() {
     map.getSource('radius').setData(place && radius ? circle(place, radius) : EMPTY);
@@ -84,7 +123,10 @@ export function createMap(container, { onPick, popupHtml } = {}) {
       paint: { 'text-color': '#ffffff' } });
     map.on('click', (e) => {
       const hit = map.queryRenderedFeatures(e.point, { layers: ['res'] })[0];
+      const refIds = [...refLayers.keys()].map((k) => `ref-${k}`).filter((id) => map.getLayer(id));
+      const refHit = hit ? null : map.queryRenderedFeatures(e.point, { layers: refIds })[0];
       if (hit) openGroup(hit.properties.key);
+      else if (refHit) openRefFeature(refHit.layer.id.slice(4), refHit);
       else onPick?.({ lat: e.lngLat.lat, lon: e.lngLat.lng, label: `pin at ${e.lngLat.lat.toFixed(4)}, ${e.lngLat.lng.toFixed(4)}` });
     });
     map.on('mouseenter', 'res', () => { map.getCanvas().style.cursor = 'pointer'; });
@@ -92,6 +134,7 @@ export function createMap(container, { onPick, popupHtml } = {}) {
     loaded = true;
     drawPlace();
     drawResources();
+    for (const key of refLayers.keys()) drawRefLayer(key);
   });
 
   return {
@@ -122,6 +165,14 @@ export function createMap(container, { onPick, popupHtml } = {}) {
       const go = () => openGroup(pointKey(r), Math.max(map.getZoom(), 14));
       if (loaded) go();
       else map.once('load', go);
+    },
+    // Shows or hides a reference layer. `layer` is its entry in data/public/layers/index.json
+    // ({ key, file, color, label, ... }); its features load on the first show.
+    setLayer(layer, on) {
+      const ref = refLayers.get(layer.key) ?? { layer, data: null, on: false };
+      ref.on = on;
+      refLayers.set(layer.key, ref);
+      if (loaded) drawRefLayer(layer.key);
     },
     resize() { map.resize(); },
   };

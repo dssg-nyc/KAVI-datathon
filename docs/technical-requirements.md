@@ -67,7 +67,7 @@ One PR, reviewed commit by commit. Each commit should leave the checks passing a
 | 10 | `chore(finder): vendor MapLibre instead of loading it from a CDN` | Three tags in `finder.html` point at `app/vendor/` (MapLibre and supabase-js, same versions, with licences); one message in `finder.js` and one comment in `map.js` |
 | 12 | `feat(finder): add shareable resource pages` | New `app/pages/resource.html`, `resource.js`, `app/components/resource.css` and `app/lib/share.js`; `cards.js` gained a "Link to this resource" line, `finder.css` one rule, `vercel.json` one rewrite |
 | 13 | `feat(finder): show data confidence labels` | `build_data.ts` derives `review_flags` into the public file (schema and data regenerated) and writes `resources.meta.json`; small edits to `cards.js`, `resources.js`, `csv.js`, `types.js`, `finder.css`; the resource page shows the source and data date |
-| 14 | `feat(map): add ArcGIS reference layers` | Small edits to `map.js`, `finder.js` |
+| 14 | `feat(map): add ArcGIS reference layers` | New `pipeline/6_build/reference_layers.ts` (`npm run layers`) downloads the library, health facility and cooling site layers into committed `data/public/layers/*.geojson` plus an `index.json`; new `app/lib/layers.js`; small edits to `map.js` (`setLayer`), `finder.js` (toggle buttons on the map tab) |
 | 15 | `test: add performance and accessibility checks` | No |
 | 16 | `docs: update README and add team handoff` | `README.md` |
 
@@ -136,7 +136,7 @@ R3 is only partly met while the Supabase fallback stays, because that library st
 
 | ID | Requirement | Source | Today | Commit |
 |---|---|---|---|---|
-| F1 | Toggleable library, health facility and cooling center layers | PRD 7.1 | Not in the finder | 14 |
+| F1 | Toggleable library, health facility and cooling center layers | PRD 7.1 | Libraries, Health facilities and Cooling sites buttons on the map tab; the files are committed copies of the ArcGIS layers, so the finder makes no run-time call to ArcGIS Online. The cooling layer is NYC Parks outdoor cooling sites, not indoor cooling centers, and is labelled so | Done | 14 |
 | F2 | Shareable link for each resource | PRD 7.4, 7.6 | `/resource.html?id=<stable id>` shows one resource with its map and a copyable link; every card links to it | Done | 12 |
 | F3 | Neighborhood search | PRD 7.2 | Not tested | 15 (test), then decide |
 | F4 | Hours, eligibility and referral details | PRD 7.4 | **Blocked:** not in the source data | Later |

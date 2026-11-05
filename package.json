@@ -11,6 +11,7 @@
     "pipeline": "python3 pipeline/run.py",
     "ids": "node pipeline/6_build/resource_ids.ts",
     "build:data": "node pipeline/6_build/build_data.ts",
+    "layers": "node pipeline/6_build/reference_layers.ts",
     "osm": "node notebooks/osm/osm_resources_nyc.ts",
     "typecheck": "tsc --noEmit",
     "lint": "eslint --no-error-on-unmatched-pattern notebooks/osm pipeline/6_build pipeline/5_load/__tests__",

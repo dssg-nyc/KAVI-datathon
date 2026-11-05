@@ -55,6 +55,7 @@ Raw Connections Guide export → cleaned, enriched CSV → Supabase → finder. 
 | `NYPLConnections_NoMatch.csv` | Copies of Connections Guide rows that could not be geocoded (no usable address, or hotlines), with `lat`/`lon` added for 5 NYC NEON clothing closet sites. The import adds those 5 as extra rows; the other 40 are already in the GeoJSON. Encoded as Windows-1252, not UTF-8. | 45 | Project Google Drive |
 | `nyc_osm_resources.csv` / `.geojson` | NYC service locations from OpenStreetMap, with category, borough and coordinates. Credit "© OpenStreetMap contributors" wherever it is shown. | 1,104 | `npm run osm`; see [notebooks/osm/README.md](notebooks/osm/README.md) |
 | `public/resources.public.json` | The file the finder reads: the columns it shows and filters on, keyed by a stable id. `public/resources.provenance.json` holds the other columns, joined by id. | 765 | `npm run build:data` |
+| `public/layers/*.geojson` | The reference layers the finder's map can show: libraries (221), health facilities (2,744) and NYC Parks cooling sites (269), copied from ArcGIS Online and trimmed to name, address and kind. `index.json` lists them. | 3,234 | `npm run layers` |
 | `kavi_resources.csv` | Full `public.resources` export (guide columns, geocode, service types, audiences). The finder read it before the public file existed; kept for comparison. | 765 | Supabase export, 2026-10-25 |
 
 The originals, including the Connections Guide PDF, are in the [project Google Drive folder](https://drive.google.com/drive/folders/1f5QhMlY8pYgyomWSzPgYTBdnUUcBbUJS).
@@ -66,7 +67,9 @@ The geocoded layers are published on ArcGIS Online as hosted feature layers. Sha
 - [NYPL Connections Geocoded](https://services6.arcgis.com/OO2s4OoyCZkYJ6oE/arcgis/rest/services/NYPL_Connections_merge/FeatureServer) (primary layer, with coordinates)
 - [Public Libraries](https://services6.arcgis.com/OO2s4OoyCZkYJ6oE/arcgis/rest/services/public_libraries_points/FeatureServer)
 - [Health Facilities](https://services6.arcgis.com/OO2s4OoyCZkYJ6oE/arcgis/rest/services/health_facilities_points/FeatureServer)
-- [Cooling Centers](https://services6.arcgis.com/OO2s4OoyCZkYJ6oE/arcgis/rest/services/Cooling_Sites_points/FeatureServer)
+- [Cooling Sites](https://services6.arcgis.com/OO2s4OoyCZkYJ6oE/arcgis/rest/services/Cooling_Sites_points/FeatureServer) (NYC Parks outdoor cooling sites, not indoor cooling centers)
+
+The last three are also copied into the repo as `data/public/layers/*.geojson` by `npm run layers`, trimmed to a name, address and kind per point, and the finder's map can switch each on as a reference layer. Rerun the script when a layer changes on ArcGIS Online.
 
 ### 3. Supabase database
 
@@ -120,7 +123,7 @@ How `public.resources` columns are used:
 | Not shown | `row_type = 'cross_reference'` (these rows only say "see the full listing on page N" and have no address, phone or website), and rows with no name, contact or description |
 | A bare 5-digit ZIP | the average position of the in-person rows with that `zip_code`, because GeoSearch has no ZIP layer |
 
-The map tiles come from OpenFreeMap. Every pin and every count comes from `latitude`/`longitude` on the loaded rows (`data/public/resources.public.json` by default), and nothing is inferred from descriptions. The data file parser and filtering logic are tested by `node --test app/lib/__tests__/filter.test.mjs app/lib/__tests__/csv.test.mjs`.
+The map tiles come from OpenFreeMap. Every pin and every count comes from `latitude`/`longitude` on the loaded rows (`data/public/resources.public.json` by default), and nothing is inferred from descriptions. The map tab also has Libraries, Health facilities and Cooling sites buttons that draw the reference layers in `data/public/layers/` as smaller dots under the pins; clicking a dot names the place and says which layer it came from, since those places are not in the Connections guide. The data file parser and filtering logic are tested by `node --test app/lib/__tests__/filter.test.mjs app/lib/__tests__/csv.test.mjs`.
 
 ## Reachability prototype (throwaway)
 

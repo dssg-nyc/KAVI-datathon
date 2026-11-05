@@ -1,0 +1,12 @@
+{
+  "file": "data/public/layers/libraries.geojson",
+  "format": "geojson",
+  "description": "Public library branches from the NYC Facilities Database, downloaded from the DSSG NYC ArcGIS Online layer public_libraries_points by 6_build/reference_layers.ts. Drawn as a reference layer on the finder's map (PRD 7.1). kind is the library system.",
+  "booleans": "python",
+  "lists": "semicolon",
+  "columns": {
+    "name": {"type": "text", "required": true},
+    "address": {"type": "text"},
+    "kind": {"type": "text"}
+  }
+}

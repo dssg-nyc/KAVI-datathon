@@ -1,0 +1,13 @@
+{
+  "file": "data/public/layers/cooling_sites.geojson",
+  "format": "geojson",
+  "description": "NYC Parks outdoor cooling sites (spray showers, misting stations, drinking fountains), downloaded from the DSSG NYC ArcGIS Online layer Cooling_Sites_points by 6_build/reference_layers.ts. Drawn as a reference layer on the finder's map (PRD 7.1). These are not indoor cooling centers. address holds the borough; kind the feature type.",
+  "booleans": "python",
+  "lists": "semicolon",
+  "columns": {
+    "name": {"type": "text", "required": true},
+    "address": {"type": "text"},
+    "kind": {"type": "text"},
+    "status": {"type": "text", "values": ["Activated", "Broken", "Not Yet Activated"]}
+  }
+}
