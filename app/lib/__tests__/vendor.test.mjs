@@ -64,6 +64,9 @@ test('vendorReady resolves false when a file fails to load', async () => {
     assert.deepEqual(doc.added.map((el) => el.tag), ['script']);
     for (const el of doc.added) el.fire();
     assert.equal(await ready, false);
+    const again = vendorReady('supabase');
+    assert.notEqual(again, ready, 'a failed load is tried again on the next call');
+    assert.equal(doc.added.length, 2, 'a new script element');
   } finally {
     delete globalThis.window;
     delete globalThis.document;

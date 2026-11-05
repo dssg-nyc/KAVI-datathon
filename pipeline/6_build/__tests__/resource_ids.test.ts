@@ -36,8 +36,15 @@ describe('assignIds', () => {
     assert.deepEqual(third.map((r) => [r.id, r.organization_name, r.status]), [['1', 'A', 'active'], ['2-2', 'C', 'active'], ['2', 'B', 'retired']]);
   });
   test('fingerprints ignore case and spacing', () => {
-    const a = { organization_name: 'The  Fortune Society', street_number: '29-76', street: 'Northern Blvd', city: 'Queens', zip_code: '11101' };
+    const a = { resource_id: '7', organization_name: 'The  Fortune Society', street_number: '29-76', street: 'Northern Blvd', city: 'Queens', zip_code: '11101' };
     assert.equal(fingerprint(a), fingerprint({ ...a, organization_name: 'the fortune society ', street: 'northern  blvd' }));
+  });
+  test('a row with no name or address is matched by its source id, not by position', () => {
+    const blank = { organization_name: '', street_number: '', street: '', city: '', zip_code: '' };
+    assert.notEqual(fingerprint({ ...blank, resource_id: '3' }), fingerprint({ ...blank, resource_id: '4' }));
+    const first = assignIds([{ resource_id: '3', ...blank }, { resource_id: '4', ...blank }] as never[], []).rows;
+    const reordered = assignIds([{ resource_id: '4', ...blank }, { resource_id: '3', ...blank }] as never[], first).rows;
+    assert.deepEqual(reordered.map((r) => [r.resource_id, r.id]), [['4', '4'], ['3', '3']]);
   });
   test('the CSV round-trips', () => {
     const rows: MappingRow[] = [{ id: '1', status: 'active', resource_id: '1', organization_name: 'A, "B"', street_number: '', street: '', city: '', zip_code: '' }];

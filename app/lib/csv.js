@@ -146,7 +146,10 @@ export function toFinderRowFromJson(raw) {
 }
 
 export function rowsFromJson(text) {
-  const data = JSON.parse(text);
+  return rowsFromParsedJson(JSON.parse(text));
+}
+
+function rowsFromParsedJson(data) {
   if (!Array.isArray(data)) throw new Error('expected a JSON array of rows');
   return data.map(toFinderRowFromJson);
 }
@@ -225,11 +228,13 @@ export function checkMapSchema(textOrRows, header = undefined) {
 }
 
 export async function fetchKaviRows(path = PUBLIC_JSON_PATH) {
-  const response = await fetch(path, { cache: 'no-store' });
+  // The browser's normal caching, so the page's <link rel="preload"> of the data file is used rather than
+  // fetched a second time. Vercel and the dev server send no long cache lifetime, so a new file shows up on reload.
+  const response = await fetch(path);
   if (!response.ok) throw new Error(`Could not load ${path} (${response.status})`);
   const text = await response.text();
   if (!path.endsWith('.json')) return { rows: rowsFromCsv(text), report: checkMapSchema(text), path };
   const data = JSON.parse(text);
-  const rows = rowsFromJson(text);
+  const rows = rowsFromParsedJson(data);
   return { rows, report: checkMapSchema(rows, Object.keys(data[0] ?? {})), path };
 }

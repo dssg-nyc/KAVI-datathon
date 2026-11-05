@@ -29,7 +29,11 @@ export function vendorReady(name) {
   if (!loading.has(name)) {
     const files = [add('script', { src: lib.script })];
     if (lib.style) files.push(add('link', { rel: 'stylesheet', href: lib.style }));
-    loading.set(name, Promise.all(files).then((ok) => ok.every(Boolean) && Boolean(window[name])));
+    loading.set(name, Promise.all(files).then((ok) => {
+      const ready = ok.every(Boolean) && Boolean(window[name]);
+      if (!ready) loading.delete(name); // so the next call tries again, e.g. after a dropped connection
+      return ready;
+    }));
   }
   return loading.get(name);
 }

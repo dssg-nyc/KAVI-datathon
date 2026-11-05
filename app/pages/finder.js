@@ -40,7 +40,6 @@ function explainError(error) {
 // Returns a Supabase client, or null after showing why the page cannot connect.
 async function connect() {
   const config = window.APP_CONFIG;
-  await vendorReady('supabase'); // loaded only now, since the data file is the usual source
   if (!config?.SUPABASE_URL || !config?.SUPABASE_PUBLISHABLE_KEY) {
     showSetupHelp('This page has no Supabase connection details: app/config.js is missing or does not set SUPABASE_URL and SUPABASE_PUBLISHABLE_KEY.');
     return null;
@@ -49,6 +48,7 @@ async function connect() {
     showSetupHelp('app/config.js holds a secret key. Replace it with the publishable key (sb_publishable_…) and rotate the secret key in the Supabase dashboard, because it has been exposed.');
     return null;
   }
+  await vendorReady('supabase'); // loaded only now, since the data file is the usual source
   if (!window.supabase?.createClient) {
     showSetupHelp('The Supabase library did not load from app/vendor/ (see app/lib/vendor.js). Check that the folder is deployed, then reload.');
     return null;

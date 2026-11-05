@@ -90,7 +90,7 @@ export async function fetchLayer(layer: LayerSpec): Promise<LayerFeature[]> {
     const url = `${ARCGIS}/${layer.service}/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=geojson&resultOffset=${offset}&resultRecordCount=${PAGE}`;
     const response = await fetch(url);
     if (!response.ok) throw new Error(`${layer.service}: HTTP ${response.status}`);
-    const data = (await response.json()) as { features?: EsriFeature[]; error?: { message: string } };
+    const data = (await response.json()) as { features?: EsriFeature[]; exceededTransferLimit?: boolean; error?: { message: string } };
     if (data.error) throw new Error(`${layer.service}: ${data.error.message}`);
     const page = data.features ?? [];
     for (const f of page) {
@@ -98,7 +98,9 @@ export async function fetchLayer(layer: LayerSpec): Promise<LayerFeature[]> {
       const feature = layer.toFeature(f.properties, f.geometry.coordinates);
       if (feature.properties.name) features.push(feature);
     }
-    if (page.length < PAGE) return features;
+    // A service may cap a page below PAGE (its maxRecordCount); it then says so, and the next page is fetched.
+    if (page.length === 0 || (page.length < PAGE && !data.exceededTransferLimit)) return features;
+    offset += page.length - PAGE; // step by what was actually returned
   }
 }
 

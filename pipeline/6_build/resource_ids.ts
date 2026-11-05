@@ -23,10 +23,13 @@ export type MappingRow = Record<(typeof MAPPING_COLUMNS)[number], string>;
 const text = (v: ResourceRow[string]) => (v == null ? '' : String(v));
 
 // How a row is recognised across builds: its name and address, case and spacing ignored.
-export function fingerprint(row: Pick<MappingRow, 'organization_name' | 'street_number' | 'street' | 'city' | 'zip_code'>): string {
-  return [row.organization_name, row.street_number, row.street, row.city, row.zip_code]
+export function fingerprint(row: Pick<MappingRow, 'resource_id' | 'organization_name' | 'street_number' | 'street' | 'city' | 'zip_code'>): string {
+  const key = [row.organization_name, row.street_number, row.street, row.city, row.zip_code]
     .map((v) => v.toLowerCase().replace(/\s+/g, ' ').trim())
     .join('|');
+  // A row with no name or address (one such row exists) is matched by its source id instead, so a reorder
+  // of the source cannot swap its id with another blank row's.
+  return key === '||||' ? `resource_id:${row.resource_id.trim()}` : key;
 }
 
 function describe(record: ResourceRow): Omit<MappingRow, 'id' | 'status'> {

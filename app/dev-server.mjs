@@ -35,7 +35,13 @@ const port = Number(process.env.PORT) || 5173;
 // Listen on the loopback address only, so other machines on the same network (e.g. shared wifi) cannot reach it.
 const host = '127.0.0.1';
 createServer(async (req, res) => {
-  const path = decodeURIComponent(new URL(req.url, 'http://localhost').pathname);
+  let path;
+  try {
+    path = decodeURIComponent(new URL(req.url, 'http://localhost').pathname);
+  } catch {
+    res.writeHead(400).end('Bad request'); // a malformed %-escape must not take the server down
+    return;
+  }
   const file = normalize(join(root, pageFor.get(path) ?? path));
   if (!file.startsWith(root + sep) || isDotPath(file)) {
     res.writeHead(404).end('Not found');

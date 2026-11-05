@@ -18,3 +18,6 @@ __pycache__/
 
 # uv project environment (ruff for npm run lint:py)
 .venv/
+
+# Vercel CLI project link (vercel link); holds project ids, not needed to deploy from GitHub
+.vercel/

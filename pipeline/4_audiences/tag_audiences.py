@@ -234,7 +234,8 @@ def issues_for_review(df):
 
 
 def review_sample(df):
-    sample = df[(df["row_type"] != "cross_reference") & ~df["audience_reviewed"]].sample(50, random_state=42)
+    unreviewed = df[(df["row_type"] != "cross_reference") & ~df["audience_reviewed"]]
+    sample = unreviewed.sample(min(50, len(unreviewed)), random_state=42)  # fewer than 50 left is fine
     review = sample[REVIEW_COLUMNS].copy()
     review["human_verdict"] = ""        # agree / change / unsure
     review["human_audiences"] = ""      # only for change: the correct list, separated by "; "

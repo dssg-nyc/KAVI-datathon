@@ -20,7 +20,14 @@ const save = process.argv.includes('--save');
 const root = resolve(import.meta.dirname, '..');
 
 const server = spawn(process.execPath, [resolve(import.meta.dirname, 'dev-server.mjs')], { env: { ...process.env, PORT: String(PORT) }, stdio: 'ignore' });
-await new Promise((r) => setTimeout(r, 500));
+// Wait until the server answers, rather than a fixed delay: CI runners can take longer than a laptop to start it.
+for (let tries = 0; ; tries++) {
+  try {
+    if ((await fetch(`http://127.0.0.1:${PORT}/`)).ok) break;
+  } catch { /* not listening yet */ }
+  if (tries === 100) { server.kill(); throw new Error(`dev-server.mjs did not start on port ${PORT} within 10 s`); }
+  await new Promise((r) => setTimeout(r, 100));
+}
 
 let failed = false;
 try {
