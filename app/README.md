@@ -5,7 +5,7 @@ The website: static HTML, CSS and browser JS with no build step. Run the command
 | Folder | What is in it |
 |---|---|
 | `pages/` | `index.html` (landing page), `finder.html` and `finder.js` (the finder's entry script), `resource.html` and `resource.js` (one resource's shareable page) |
-| `components/` | Parts of the finder UI: `map.js`, `cards.js`, `place-input.js`, `finder.css`, `resource.css` |
+| `components/` | Parts of the finder UI: `map.js`, `cards.js`, `place-input.js`, `finder.css`, `resource.css`. Tests are in `components/__tests__/` |
 | `lib/` | Logic with no UI: `filter.js`, `resources.js`, `csv.js`, `geo.js`, `preview.js`, `share.js` (resource page links); `types.js` has the JSDoc types of a data row and a finder resource. Tests are in `lib/__tests__/` |
 | `brand/` | DSSG design-system CSS and cobrand logos |
 | `vendor/` | MapLibre and supabase-js, committed at pinned versions so the finder loads no script from a CDN. See [`vendor/README.md`](vendor/README.md) |

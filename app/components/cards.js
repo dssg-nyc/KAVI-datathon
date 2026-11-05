@@ -1,5 +1,5 @@
 // HTML for resource cards (list and map popups). Every data value passes through escapeHtml().
-import { serviceColor } from '../lib/resources.js';
+import { REVIEW_LABELS, serviceColor } from '../lib/resources.js';
 import { resourcePath } from '../lib/share.js';
 
 export function escapeHtml(value) {
@@ -27,9 +27,15 @@ function tagsHtml(r) {
     ...madeFor.map((a) => `<span class="tag who made-for">Made for ${escapeHtml(a)}</span>`),
     ...r.services.map((s) => `<span class="tag"><span class="dot" style="background:${serviceColor(s)}"></span>${escapeHtml(s)}</span>`),
     ...r.audiences.filter((a) => !madeFor.includes(a)).map((a) => `<span class="tag who">${escapeHtml(a)}</span>`),
-    r.forEveryone ? '<span class="tag who open">Open to everyone</span>' : '',
+    r.forEveryone ? (r.everyoneStated ? '<span class="tag who open">Open to everyone</span>' : '<span class="tag who unstated">Eligibility not stated</span>') : '',
     r.spanish ? '<span class="tag lang">Spanish-speaking</span>' : '',
   ].join('');
+}
+
+// What nobody has checked yet on this card, from review_flags; nothing when the row is confirmed.
+function reviewHtml(r) {
+  const parts = (r.review ?? []).filter((f) => f !== 'eligibility').map((f) => REVIEW_LABELS[f]);
+  return parts.length ? `<div class="review">Not yet checked: ${escapeHtml(parts.join(', '))}</div>` : '';
 }
 
 function badgeHtml(r) {
@@ -51,6 +57,7 @@ export function cardHtml(r, { compact = false, link = true } = {}) {
     ${contact ? `<div class="meta">${contact}</div>` : ''}
     ${desc ? `<p class="desc">${escapeHtml(desc)}</p>` : ''}
     <div class="tags">${tagsHtml(r)}</div>
+    ${reviewHtml(r)}
     ${!compact && r.inPerson ? '<div class="on-map">Show on map →</div>' : ''}
     ${link && r.id != null ? `<div class="card-link"><a href="${escapeHtml(resourcePath(r.id))}">Link to this resource</a></div>` : ''}`;
 }

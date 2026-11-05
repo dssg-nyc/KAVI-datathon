@@ -7,4 +7,5 @@
 .resource-page .share { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-top: 12px; font-size: 14px; }
 .resource-page .share input { flex: 1 1 240px; padding: 6px 10px; border: 1px solid var(--line); border-radius: var(--radius-md); font-size: 14px; }
 .resource-page .share .note { color: var(--muted); min-width: 60px; }
+.resource-page .source { color: var(--muted); font-size: 13px; margin: 10px 0 0; }
 .resource-page .empty { padding: 20px 0; }

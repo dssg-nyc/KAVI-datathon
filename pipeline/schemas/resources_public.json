@@ -26,6 +26,7 @@
     "audiences_all": {"type": "list", "items": "$audiences"},
     "restricted_audiences": {"type": "list", "items": "$audiences"},
     "focus_audiences": {"type": "list", "items": "$audiences"},
-    "pdf_audiences": {"type": "list", "items": "$audiences"}
+    "pdf_audiences": {"type": "list", "items": "$audiences"},
+    "review_flags": {"type": "list", "items": ["services", "audiences", "eligibility", "location", "details"], "description": "derived by 6_build/build_data.ts reviewFlags(): the parts of the row nobody has confirmed yet, which the finder labels"}
   }
 }

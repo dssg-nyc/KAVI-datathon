@@ -90,10 +90,12 @@ input[type=search], select { padding: 8px 10px; border: 1px solid var(--line); b
 .tag.who { background: var(--who); }
 .tag.who.made-for { font-weight: 600; box-shadow: inset 0 0 0 1px currentColor; }
 .tag.who.open { background: #f0efed; }
+.tag.who.unstated { background: #f0efed; color: var(--muted); }
 .preview-note { margin: 8px auto; max-width: 900px; padding: 6px 12px; border-radius: var(--radius-md); background: #fff4d6; color: #5c4300; font-size: 13px; }
 .tag.lang { background: var(--lang); }
 .on-map { color: var(--primary-blue); font-size: 13px; margin-top: 6px; }
 .card-link { font-size: 13px; margin-top: 6px; }
+.review { color: var(--muted); font-size: 12px; margin-top: 6px; }
 .maplibregl-popup-content { padding: 10px 12px; max-height: min(320px, 50vh); overflow: auto; font: 14px/1.4 var(--font-primary); }
 .maplibregl-popup-content > .card-head { padding-right: 16px; }
 .popup-head { font-weight: 600; margin-bottom: 4px; padding-right: 14px; }

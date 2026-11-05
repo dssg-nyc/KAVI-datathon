@@ -25,3 +25,21 @@ export function findRow(rows, id) {
 export function pageTitle(resource) {
   return resource ? `${resource.name} — EMPOWER` : 'Resource not found — EMPOWER';
 }
+
+export const META_PATH = 'data/public/resources.meta.json';
+
+// data/public/resources.meta.json, or null when it cannot be read (the page still works without it).
+export async function fetchMeta(path = META_PATH) {
+  try {
+    const response = await fetch(path, { cache: 'no-store' });
+    return response.ok ? await response.json() : null;
+  } catch {
+    return null;
+  }
+}
+
+// The source and data date line on a resource page (requirement D6).
+export function sourceLine(meta) {
+  if (!meta?.source) return 'Source: the NYPL Connections guide.';
+  return `Source: ${meta.source}.${meta.data_updated ? ` Data updated ${meta.data_updated}.` : ''}`;
+}

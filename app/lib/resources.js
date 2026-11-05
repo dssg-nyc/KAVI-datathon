@@ -32,6 +32,15 @@ export const serviceColor = (label) => SERVICE_COLORS[label] ?? '#6b7280';
 // How someone reaches a resource that has no point on the map, by row_type.
 const REMOTE_LABEL = { hotline: 'Hotline', web_only: 'Online', mailing_address: 'By mail or phone', outside_nyc: 'Outside NYC' };
 
+// What each review_flags value (set by pipeline/6_build/build_data.ts reviewFlags()) means on a card.
+export const REVIEW_LABELS = {
+  services: 'service types',
+  audiences: 'who it is for',
+  eligibility: 'eligibility',
+  location: 'map location',
+  details: 'listing details',
+};
+
 const PAGE = 1000; // Supabase returns at most 1000 rows per request.
 
 // Returns every row of public.resources. Throws the Supabase error object on failure.
@@ -78,6 +87,8 @@ export function toResource(row, index) {
   const name = row.organization_name?.trim() || '';
   const address = formatAddress(row);
   const description = row.description ?? '';
+  const review = (row.review_flags ?? []).filter((f) => f in REVIEW_LABELS);
+  const forEveryone = (row.audiences_all ?? []).includes('Everyone');
   return {
     index,
     id: row.id,
@@ -100,7 +111,10 @@ export function toResource(row, index) {
     // kept as a flag, not a tile: such a resource matches whichever audience is picked, after the ones
     // made for or tagged with it (see audienceRank in filter.js).
     audiences: (row.audiences_all ?? row.pdf_audiences ?? []).filter((a) => a !== 'Everyone'),
-    forEveryone: (row.audiences_all ?? []).includes('Everyone'),
+    forEveryone,
+    // "Open to everyone" is only said when the listing says so; otherwise the card reads "eligibility not stated".
+    everyoneStated: forEveryone && !review.includes('eligibility'),
+    review,
     madeFor: [...new Set([...(row.restricted_audiences ?? []), ...(row.focus_audiences ?? [])])],
     color: serviceColor(row.service_types_all?.[0]),
     searchText: `${name} ${description}`.toLowerCase(),

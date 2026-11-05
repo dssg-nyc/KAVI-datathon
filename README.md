@@ -109,7 +109,7 @@ If the page says **"Can't load resources"**, it names the problem: `app/config.j
 2. *Who is it for?* One tile per value of `pdf_audiences`, plus a Spanish-speaking choice (`spanish_speaking = true`).
 3. *Where?* An address or ZIP (NYC GeoSearch autocomplete), "use my location", or a click on the map; a distance (0.5, 1, 2, 5 mi or any); boroughs (`borough`); and whether to include hotlines and online resources.
 
-The results page shows the matches as a list or a map. Resources at the same coordinates share one pin with a count. You can change the location, distance, Spanish-speaking filter and In person / Phone / online filter there, and search within the results by name or description. Every card has a "Link to this resource" line: `resource.html?id=<id>` shows that one resource with its map and a link to copy, keyed by the stable id in `data/resource_ids.csv`, so it can be shared or opened during intake.
+The results page shows the matches as a list or a map. Resources at the same coordinates share one pin with a count. You can change the location, distance, Spanish-speaking filter and In person / Phone / online filter there, and search within the results by name or description. Every card has a "Link to this resource" line: `resource.html?id=<id>` shows that one resource with its map and a link to copy, keyed by the stable id in `data/resource_ids.csv`, so it can be shared or opened during intake. Cards label what nobody has checked yet ("Not yet checked: service types, map location") from `review_flags`, and say "Eligibility not stated" rather than "Open to everyone" when the listing names no restriction; the resource page shows the data's source and date.
 
 How `public.resources` columns are used:
 

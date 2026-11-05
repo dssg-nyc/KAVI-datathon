@@ -28,6 +28,7 @@
  * @property {string[] | null} restricted_audiences audiences it is only for
  * @property {string[] | null} focus_audiences audiences it was made for
  * @property {string[] | null} pdf_audiences audiences from the printed guide; the fallback for audiences_all
+ * @property {('services' | 'audiences' | 'eligibility' | 'location' | 'details')[] | null} review_flags what nobody has confirmed yet; absent in a CSV or Supabase export
  */
 
 /**
@@ -51,7 +52,9 @@
  * @property {string} remoteLabel how to reach it when it is not in person
  * @property {string[]} services
  * @property {string[]} audiences without "Everyone"
- * @property {boolean} forEveryone
+ * @property {boolean} forEveryone matches any audience filter
+ * @property {boolean} everyoneStated the listing itself says it is open to everyone; otherwise the card says "eligibility not stated"
+ * @property {string[]} review review_flags the finder knows, labelled on the card
  * @property {string[]} madeFor restricted and focus audiences together
  * @property {string} color map pin and tag colour, from the first service
  * @property {string} searchText name and description, lower-cased

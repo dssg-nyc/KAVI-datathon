@@ -12,12 +12,15 @@ export const FINDER_COLUMNS = [
   'id', 'organization_name', 'street_number', 'street', 'address_line_2', 'city', 'state', 'zip_code',
   'phone_number', 'website', 'description', 'spanish_speaking', 'latitude', 'longitude', 'borough', 'row_type',
   'service_types_all', 'pdf_audiences', 'resource_id', 'audiences_all', 'restricted_audiences', 'focus_audiences',
+  'review_flags',
 ];
+// Columns a CSV export (or Supabase) may lack: the finder then shows no review labels.
+export const OPTIONAL_COLUMNS = ['review_flags'];
 
 export const ROW_TYPES = ['mapped', 'outside_nyc', 'mailing_address', 'hotline', 'web_only', 'cross_reference'];
 export const BOROUGHS = ['Manhattan', 'Brooklyn', 'Queens', 'Bronx', 'Staten Island'];
 
-const LIST_COLUMNS = ['service_types_all', 'pdf_audiences', 'audiences_all', 'restricted_audiences', 'focus_audiences'];
+const LIST_COLUMNS = ['service_types_all', 'pdf_audiences', 'audiences_all', 'restricted_audiences', 'focus_audiences', 'review_flags'];
 const BOOL_COLUMNS = ['spanish_speaking'];
 const INT_COLUMNS = ['id', 'resource_id'];
 const NUM_COLUMNS = ['latitude', 'longitude'];
@@ -198,7 +201,7 @@ export function checkMapSchema(textOrRows, header = undefined) {
     withCoords: 0,
     listedWithCoords: 0,
     pins: 0,
-    missingColumns: FINDER_COLUMNS.filter((c) => !header.includes(c)),
+    missingColumns: FINDER_COLUMNS.filter((c) => !header.includes(c) && !OPTIONAL_COLUMNS.includes(c)),
   };
 
   rows.forEach((row, i) => {

@@ -66,7 +66,7 @@ One PR, reviewed commit by commit. Each commit should leave the checks passing a
 | 9 | `feat(finder): load the generated public data file` | `csv.js` reads the JSON file as well as a CSV, `preview.js` and `app/config.js` point at it (`RESOURCES_FILE`; `RESOURCES_CSV` still works), one comment line in `finder.js`; `app/lib/types.js` is new |
 | 10 | `chore(finder): vendor MapLibre instead of loading it from a CDN` | Three tags in `finder.html` point at `app/vendor/` (MapLibre and supabase-js, same versions, with licences); one message in `finder.js` and one comment in `map.js` |
 | 12 | `feat(finder): add shareable resource pages` | New `app/pages/resource.html`, `resource.js`, `app/components/resource.css` and `app/lib/share.js`; `cards.js` gained a "Link to this resource" line, `finder.css` one rule, `vercel.json` one rewrite |
-| 13 | `feat(finder): show data confidence labels` | Small edits to `cards.js`, `resources.js` |
+| 13 | `feat(finder): show data confidence labels` | `build_data.ts` derives `review_flags` into the public file (schema and data regenerated) and writes `resources.meta.json`; small edits to `cards.js`, `resources.js`, `csv.js`, `types.js`, `finder.css`; the resource page shows the source and data date |
 | 14 | `feat(map): add ArcGIS reference layers` | Small edits to `map.js`, `finder.js` |
 | 15 | `test: add performance and accessibility checks` | No |
 | 16 | `docs: update README and add team handoff` | `README.md` |
@@ -108,9 +108,9 @@ One PR, reviewed commit by commit. Each commit should leave the checks passing a
 | D1 | Every row passes a schema before reaching the site | PRD 8 | `pipeline/check_data.py` checks each pipeline output, `kavi_resources.csv` and the two files in `data/public/` against `pipeline/schemas/`; runs in `npm run check` and as the pipeline's last stage | Done | 5, 8 |
 | D2 | No resources are dropped between source and site | PRD 8 | `data/public/resources.public.json` holds every row the loader produces, and a test checks the count; the finder leaves out cross-references and blank rows at load time, as before | Done | 8 |
 | D3 | Resource IDs are unique and do not change between builds | PRD 8 | `data/resource_ids.csv` is committed; `npm run ids` fails if it would change, and a test checks it is unique and reproduced from the data | Done | 7 |
-| D4 | Unreviewed values are labelled for the user | PRD 10 | Review flags are not shown | Tests on each flag combination | 13 |
-| D5 | "Open to everyone" only appears when the source says so; otherwise it reads "eligibility not stated" | PRD 7.4 | Assumed values look like stated ones | Tests on `everyone_basis` | 13 |
-| D6 | Each resource shows its source and data date | PRD 7.4, 10 | Not shown | Test on the resource page | 12 |
+| D4 | Unreviewed values are labelled for the user | PRD 10 | `review_flags` in the public file (services, audiences, eligibility, location, details, derived from the pipeline's own flags); cards say "Not yet checked: …" | Tests on each flag combination, in the build and on the card | Done, 13 |
+| D5 | "Open to everyone" only appears when the source says so; otherwise it reads "eligibility not stated" | PRD 7.4 | The tag reads "Eligibility not stated" when `everyone_basis` is assumed (666 of 765 rows); filtering is unchanged | Tests on `everyone_basis` | Done, 13 |
+| D6 | Each resource shows its source and data date | PRD 7.4, 10 | The resource page shows a source line from `data/public/resources.meta.json`, whose date moves only when the row files change | Tests on the source line and the meta file | Done, 13 |
 
 ### Reliability
 

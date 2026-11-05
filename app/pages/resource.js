@@ -3,6 +3,7 @@
 // and shows the finder's card for it with a map when it has a point. The id comes from
 // data/resource_ids.csv, so a link keeps working when the data is rebuilt.
 import { fetchKaviRows, PUBLIC_JSON_PATH } from '../lib/csv.js';
+import { fetchMeta, sourceLine } from '../lib/share.js';
 import { localCsvPath } from '../lib/preview.js';
 import { isListed, toResource } from '../lib/resources.js';
 import { findRow, idFromSearch, pageTitle } from '../lib/share.js';
@@ -25,12 +26,13 @@ function notFound(id) {
     It may have been removed from the guide, or the link may be incomplete. <a href="/finder.html">Search the finder</a> instead.</p>`;
 }
 
-function render(resource) {
+function render(resource, meta) {
   document.title = pageTitle(resource);
   statusEl.hidden = true;
   const url = location.href;
   app.innerHTML = `<p class="crumbs"><a href="/finder.html">← Find resources</a></p>
     <article class="card">${cardHtml(resource, { link: false })}</article>
+    <p class="source">${escapeHtml(sourceLine(meta))}</p>
     ${resource.inPerson ? '<div class="detail-map" id="detail-map" role="region" aria-label="Map"></div>' : ''}
     <div class="share">
       <label for="share-url">Link to this resource</label>
@@ -67,7 +69,7 @@ async function main() {
   }
   const row = findRow(rows, id);
   if (!row || !isListed(row)) return notFound(id);
-  render(toResource(row, rows.indexOf(row)));
+  render(toResource(row, rows.indexOf(row)), await fetchMeta());
 }
 
 main();
