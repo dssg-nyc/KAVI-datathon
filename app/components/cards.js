@@ -45,7 +45,8 @@ function badgeHtml(r) {
 }
 
 // link: a "Link to this resource" line pointing at its page (off on that page itself).
-export function cardHtml(r, { compact = false, link = true } = {}) {
+// map: a "Show on map" button for in-person resources (off where the map is already in view).
+export function cardHtml(r, { compact = false, link = true, map = !compact } = {}) {
   const web = safeUrl(r.website);
   const contact = [
     r.phone ? phoneHtml(r.phone) : '',
@@ -58,7 +59,7 @@ export function cardHtml(r, { compact = false, link = true } = {}) {
     ${desc ? `<p class="desc">${escapeHtml(desc)}</p>` : ''}
     <div class="tags">${tagsHtml(r)}</div>
     ${reviewHtml(r)}
-    ${!compact && r.inPerson ? '<div class="on-map">Show on map →</div>' : ''}
+    ${map && r.inPerson ? '<div><button type="button" class="on-map" data-show-map>Show on map →</button></div>' : ''}
     ${link && r.id != null ? `<div class="card-link"><a href="${escapeHtml(resourcePath(r.id))}">Link to this resource</a></div>` : ''}`;
 }
 

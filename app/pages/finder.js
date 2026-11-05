@@ -342,8 +342,8 @@ app.addEventListener('click', async (e) => {
     step = 0;
     tab = 'list';
     render();
-  } else if (target.classList.contains('card')) {
-    const r = view.list.find((x) => x.index === Number(d.index));
+  } else if (d.showMap != null || target.classList.contains('card')) {
+    const r = view.list.find((x) => x.index === Number(target.closest('.card').dataset.index));
     if (!r) return;
     setTab('map');
     view.map?.show(r);

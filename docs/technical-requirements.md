@@ -68,7 +68,7 @@ One PR, reviewed commit by commit. Each commit should leave the checks passing a
 | 12 | `feat(finder): add shareable resource pages` | New `app/pages/resource.html`, `resource.js`, `app/components/resource.css` and `app/lib/share.js`; `cards.js` gained a "Link to this resource" line, `finder.css` one rule, `vercel.json` one rewrite |
 | 13 | `feat(finder): show data confidence labels` | `build_data.ts` derives `review_flags` into the public file (schema and data regenerated) and writes `resources.meta.json`; small edits to `cards.js`, `resources.js`, `csv.js`, `types.js`, `finder.css`; the resource page shows the source and data date |
 | 14 | `feat(map): add ArcGIS reference layers` | New `pipeline/6_build/reference_layers.ts` (`npm run layers`) downloads the library, health facility and cooling site layers into committed `data/public/layers/*.geojson` plus an `index.json`; new `app/lib/layers.js`; small edits to `map.js` (`setLayer`), `finder.js` (toggle buttons on the map tab) |
-| 15 | `test: add performance and accessibility checks` | No |
+| 15 | `test: add performance and accessibility checks` | New `app/audit.mjs` (`npm run audit`, Lighthouse on the three pages, also a CI job) and tests under `app/pages/__tests__/`, `app/lib/__tests__/fallbacks.test.mjs`, `app/components/__tests__/contrast.test.mjs`; small edits for the findings: `cards.js` ("Show on map" is a button), `finder.js`, `resource.js`, three colour rules in `finder.css`, and `dev-server.mjs` gzips text like Vercel |
 | 16 | `docs: update README and add team handoff` | `README.md` |
 
 **Not on this roadmap:** PRD Stage 2 and Section 9 (overlays, referral tracking, gap analysis, impact reporting, Apricot 360 integration). These need team decisions, new data or a backend.
@@ -81,16 +81,16 @@ One PR, reviewed commit by commit. Each commit should leave the checks passing a
 
 | ID | Requirement | Source | Today | How it is checked | Commit |
 |---|---|---|---|---|---|
-| P1 | First results within 2 s on a mid-range phone over 4G | PRD 10 | Not measured | Lighthouse in CI | 15 |
+| P1 | First results within 2 s on a mid-range phone over 4G | PRD 10 | **Over target.** Lighthouse (mobile, simulated 4G, gzip) measures the largest contentful paint at 3.8 s on the landing page, 6.3 s on the finder and 6.9 s on a resource page. Three causes, in order: the Google Fonts `@import` on the first line of `brand.css` blocks rendering for about 1 s; MapLibre (249 KB gzipped) and supabase-js (56 KB) load before the finder's own module; the data file is 162 KB gzipped. Proposed follow-up commit: load the two libraries after the first paint and preconnect to or self-host the fonts. A size budget on the app's own code, the data and the vendored libraries is tested | `npm run audit` reports it; size budget in `app/pages/__tests__/` | 15, then a follow-up |
 | P2 | Resource data the finder loads is under 200 KB gzipped | PRD 10 | 928 KB uncompressed, all 67 columns. The 22 columns the finder uses come to about 634 KB, or 143 KB gzipped. | Test on the generated file | 8 |
-| P3 | Usable at 360 px wide and up, by touch | PRD 10 | Not measured | Browser pass before merge | 15 |
+| P3 | Usable at 360 px wide and up, by touch | PRD 10 | All three pages fit 360 px with no horizontal overflow (Lighthouse's 360 px screenshots and its viewport and tap-target audits pass). Touch is not yet tried on a phone | `npm run audit` at 360 px; a phone pass before merge | Done, 15 |
 
 ### Accessibility
 
 | ID | Requirement | Source | Today | How it is checked | Commit |
 |---|---|---|---|---|---|
-| A1 | Meets WCAG 2.1 AA on the landing page, finder and resource page | PRD 10 | Not measured | Automated checks plus a manual keyboard pass | 15 |
-| A2 | All results are reachable without using the map | PRD 7.7, 10 | List view exists | Manual keyboard pass | 15 |
+| A1 | Meets WCAG 2.1 AA on the landing page, finder and resource page | PRD 10 | Lighthouse accessibility 100 and best practices 100 on all three pages. The first run found the orange "Phone / online" badge at 2.9:1, now 5.2:1; the contrast test also found muted counts on pressed tiles and the "Eligibility not stated" tag under 4.5:1, both fixed in `finder.css`. Automated checks cover the loaded screen only; a keyboard pass through the three questions and the results is still to do | `npm run audit` (CI), static checks in `app/pages/__tests__/`, colour pairs in `app/components/__tests__/contrast.test.mjs`; a manual keyboard pass | Done, 15 |
+| A2 | All results are reachable without using the map | PRD 7.7, 10 | With the default filters the list holds every listed resource, in person or not, and every card links to its page; "Show on map" is now a button, so it is reachable by keyboard | `fallbacks.test.mjs` | Done, 15 |
 
 ### Privacy
 
@@ -116,8 +116,8 @@ One PR, reviewed commit by commit. Each commit should leave the checks passing a
 
 | ID | Requirement | Source | Today | How it is checked | Commit |
 |---|---|---|---|---|---|
-| R1 | If map tiles fail, the list still works | PRD 10 | Not tested | Manual test with tiles blocked | 15 |
-| R2 | If address search fails, ZIP search and a clear message remain | PRD 10 | Implemented in `geo.js` and `place-input.js` | Existing behaviour, manual test | 15 |
+| R1 | If map tiles fail, the list still works | PRD 10 | When MapLibre is missing, `createMap` returns null and the map tab says "The map could not load. The list still works." The list never depends on the map. Failed tiles leave a blank map with the pins still drawn, which is MapLibre's own behaviour | `fallbacks.test.mjs`; tiles blocked by hand before merge | Done, 15 |
+| R2 | If address search fails, ZIP search and a clear message remain | PRD 10 | When GeoSearch is down, a ZIP still resolves from the data and `searchPlaces` reports the failure so the input can say so; an abort is not treated as a failure | `fallbacks.test.mjs` | Done, 15 |
 | R3 | Core pages load no third-party script from a CDN | PRD 10 | `finder.html` loads MapLibre and supabase-js from `app/vendor/`; the reach prototype still uses CDNs, see the open decision on it | Done for the finder | 10 |
 | R4 | A merge keeps Vercel's current static behaviour | Decision 5 | Static today | Team's preview deployment | 16 |
 
@@ -138,7 +138,7 @@ R3 is only partly met while the Supabase fallback stays, because that library st
 |---|---|---|---|---|
 | F1 | Toggleable library, health facility and cooling center layers | PRD 7.1 | Libraries, Health facilities and Cooling sites buttons on the map tab; the files are committed copies of the ArcGIS layers, so the finder makes no run-time call to ArcGIS Online. The cooling layer is NYC Parks outdoor cooling sites, not indoor cooling centers, and is labelled so | Done | 14 |
 | F2 | Shareable link for each resource | PRD 7.4, 7.6 | `/resource.html?id=<stable id>` shows one resource with its map and a copyable link; every card links to it | Done | 12 |
-| F3 | Neighborhood search | PRD 7.2 | Not tested | 15 (test), then decide |
+| F3 | Neighborhood search | PRD 7.2 | **Not working, needs a decision.** GeoSearch's autocomplete returns addresses and venues only: "Bushwick", "Crown Heights", "East New York" and "Jackson Heights" each come back as street addresses with those words in them, never as a neighborhood. To support it the finder would need its own list of neighborhood names with a centre point, such as the NTA centroids from NYC Open Data, matched before GeoSearch is called. Borough search already works | Tested in 15; team to decide |
 | F4 | Hours, eligibility and referral details | PRD 7.4 | **Blocked:** not in the source data | Later |
 | F5 | Catchment or precinct filter | PRD 7.2, 7.5 | **Blocked:** model undecided | Later |
 | F6 | Organization type filter | PRD 7.5 | **Blocked:** no such field. `category` has 18 values but mixes services and audiences, such as "Formerly Incarcerated People" | Later |
@@ -151,6 +151,7 @@ R3 is only partly met while the Supabase fallback stays, because that library st
 |---|---|---|
 | NYC GeoSearch (`geosearch.planninglabs.nyc`) | Address lookup | Typed address text and the visitor's IP address |
 | OpenFreeMap (`tiles.openfreemap.org`) | Map background | Requested map areas and the visitor's IP address |
+| Google Fonts (`fonts.googleapis.com`, `fonts.gstatic.com`) | The Inter and Playfair Display fonts, imported on the first line of `app/brand/brand.css` on every page | The visitor's IP address; also about 1 s of render-blocking time, see P1 |
 | jsDelivr and unpkg | Library files, until commit 10 | The visitor's IP address |
 | Supabase | Fallback data source only | The visitor's IP address, when the fallback runs |
 

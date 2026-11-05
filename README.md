@@ -151,3 +151,5 @@ Then open http://localhost:5173/reach-prototype.html. Enter the client's address
 ## Scripts
 
 `npm run pipeline` runs the data pipeline; see [pipeline/README.md](pipeline/README.md) for what each stage does and how to run one on its own.
+
+`npm run check` runs the type check, the linters and the JS, TS and Python tests, as CI does. `npm run audit` runs Lighthouse on the landing page, the finder and a resource page as a phone on 4G and prints the performance, accessibility and best practices scores; it needs Chrome (set `CHROME_PATH` if it is not found) and fails when accessibility is below 100. CI runs it too. The findings so far are under P1 and A1 in [docs/technical-requirements.md](docs/technical-requirements.md).

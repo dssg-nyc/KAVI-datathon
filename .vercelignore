@@ -5,6 +5,7 @@ docs/
 supabase/
 PRD.md
 app/dev-server.mjs
+app/audit.mjs
 app/prototypes/reach/build_reach_transit.py
 **/__tests__/
 data/cleaned/

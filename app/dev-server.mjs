@@ -5,6 +5,7 @@
 import { createServer } from 'node:http';
 import { readFile } from 'node:fs/promises';
 import { extname, join, normalize, resolve, sep } from 'node:path';
+import { gzipSync } from 'node:zlib';
 
 const root = resolve(import.meta.dirname, '..');
 const { rewrites } = JSON.parse(await readFile(join(root, 'vercel.json'), 'utf8'));
@@ -36,7 +37,10 @@ createServer(async (req, res) => {
   }
   try {
     const body = await readFile(file);
-    res.writeHead(200, { 'Content-Type': types[extname(file)] ?? 'application/octet-stream' }).end(body);
+    const type = types[extname(file)] ?? 'application/octet-stream';
+    // Text is gzipped when the browser accepts it, as Vercel does, so local timings (npm run audit) mean something.
+    const gzip = !type.startsWith('image/') && /\bgzip\b/.test(req.headers['accept-encoding'] ?? '');
+    res.writeHead(200, { 'Content-Type': type, ...(gzip ? { 'Content-Encoding': 'gzip' } : {}) }).end(gzip ? gzipSync(body) : body);
   } catch {
     res.writeHead(404).end('Not found');
   }

@@ -31,7 +31,7 @@ function render(resource, meta) {
   statusEl.hidden = true;
   const url = location.href;
   app.innerHTML = `<p class="crumbs"><a href="/finder.html">← Find resources</a></p>
-    <article class="card">${cardHtml(resource, { link: false })}</article>
+    <article class="card">${cardHtml(resource, { link: false, map: false })}</article>
     <p class="source">${escapeHtml(sourceLine(meta))}</p>
     ${resource.inPerson ? '<div class="detail-map" id="detail-map" role="region" aria-label="Map"></div>' : ''}
     <div class="share">

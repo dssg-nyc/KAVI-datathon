@@ -12,3 +12,6 @@ node_modules/
 
 # Python bytecode
 __pycache__/
+.ruff_cache/
+# Lighthouse reports from npm run audit -- --save
+.lighthouse/

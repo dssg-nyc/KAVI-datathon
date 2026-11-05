@@ -13,6 +13,7 @@
     "build:data": "node pipeline/6_build/build_data.ts",
     "layers": "node pipeline/6_build/reference_layers.ts",
     "osm": "node notebooks/osm/osm_resources_nyc.ts",
+    "audit": "node app/audit.mjs",
     "typecheck": "tsc --noEmit",
     "lint": "eslint --no-error-on-unmatched-pattern notebooks/osm pipeline/6_build pipeline/5_load/__tests__",
     "lint:py": "uvx ruff check pipeline notebooks/analysis",
@@ -25,6 +26,7 @@
     "@eslint/js": "^10.0.1",
     "@types/node": "^26.6.6",
     "eslint": "^10.14.0",
+    "lighthouse": "^12.8.2",
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.72.1"
   }
