@@ -5,7 +5,8 @@ import { BOROUGHS, distinctValues, fetchRows, isListed, serviceColor, toResource
 import { RADII, countBy, matchingResources, newFilters } from '../lib/filter.js';
 import { cardHtml, escapeHtml, popupHtml } from '../components/cards.js';
 import { createPlaceInput } from '../components/place-input.js';
-import { createMap } from '../components/map.js';
+import { createMap, mapLibreReady } from '../components/map.js';
+import { vendorReady } from '../lib/vendor.js';
 import { isLocalPreview, loadLocalCsv } from '../lib/preview.js';
 import { fetchLayerIndex, layerPopupHtml } from '../lib/layers.js';
 
@@ -37,8 +38,9 @@ function explainError(error) {
 }
 
 // Returns a Supabase client, or null after showing why the page cannot connect.
-function connect() {
+async function connect() {
   const config = window.APP_CONFIG;
+  await vendorReady('supabase'); // loaded only now, since the data file is the usual source
   if (!config?.SUPABASE_URL || !config?.SUPABASE_PUBLISHABLE_KEY) {
     showSetupHelp('This page has no Supabase connection details: app/config.js is missing or does not set SUPABASE_URL and SUPABASE_PUBLISHABLE_KEY.');
     return null;
@@ -48,7 +50,7 @@ function connect() {
     return null;
   }
   if (!window.supabase?.createClient) {
-    showSetupHelp('The Supabase library did not load from app/vendor/. Check that the folder is deployed, then reload.');
+    showSetupHelp('The Supabase library did not load from app/vendor/ (see app/lib/vendor.js). Check that the folder is deployed, then reload.');
     return null;
   }
   return window.supabase.createClient(config.SUPABASE_URL, config.SUPABASE_PUBLISHABLE_KEY);
@@ -106,12 +108,16 @@ function renderStep() {
   app.innerHTML = `<div class="wrap">${stepHtml()}</div>`;
   view = {};
   if (step === 2) {
-    const map = createMap(document.getElementById('step-map'), {
-      // No resource pins here: places show only after "Show N resources".
-      onPick: (place) => { filters.place = place; view.placeInput.sync(); updateStep(); },
-      popupHtml,
+    const current = view;
+    mapLibreReady().then(() => {
+      if (view !== current) return; // the step changed while the library was still loading
+      view.map = createMap(document.getElementById('step-map'), {
+        // No resource pins here: places show only after "Show N resources".
+        onPick: (place) => { filters.place = place; view.placeInput.sync(); updateStep(); },
+        popupHtml,
+      });
+      view.map?.setPlace(filters.place, filters.radius);
     });
-    view.map = map;
     view.placeInput = createPlaceInput(document.getElementById('step-place'), {
       resources,
       getPlace: () => filters.place,
@@ -257,15 +263,20 @@ function setTab(next) {
   document.getElementById('layers').hidden = tab !== 'map' || !layers.length;
   if (tab !== 'map') return;
   if (!view.map) {
-    // Created on first use, so the tiles load only when someone opens the map.
-    view.map = createMap(mapEl, {
-      onPick: (place) => { filters.place = place; view.placeInput.sync(); refreshResults(); },
-      popupHtml,
-      layerPopupHtml,
+    // Created on first use, so the tiles load only when someone opens the map. Once per results view.
+    const current = view;
+    view.mapPending ??= mapLibreReady().then(() => {
+      if (view !== current) return; // the results were re-rendered meanwhile
+      view.map = createMap(mapEl, {
+        onPick: (place) => { filters.place = place; view.placeInput.sync(); refreshResults(); },
+        popupHtml,
+        layerPopupHtml,
+      });
+      view.map?.setResources(view.list, pinColor);
+      view.map?.setPlace(filters.place, filters.radius);
+      for (const l of layers) view.map?.setLayer(l, layersOn.has(l.key));
+      view.map?.resize();
     });
-    view.map?.setResources(view.list, pinColor);
-    view.map?.setPlace(filters.place, filters.radius);
-    for (const l of layers) view.map?.setLayer(l, layersOn.has(l.key));
   }
   updateLayerButtons();
   view.map?.resize();
@@ -369,7 +380,7 @@ app.addEventListener('input', (e) => {
 
 // ---------- Start ----------
 async function loadRowsFromSupabase() {
-  const db = connect();
+  const db = await connect();
   if (!db) return null;
   try {
     return await fetchRows(db);
@@ -385,6 +396,7 @@ async function loadRowsFromSupabase() {
 }
 
 async function main() {
+  const layersPending = fetchLayerIndex(); // alongside the data; [] when the files are missing
   let rows;
   try {
     const local = await loadLocalCsv();
@@ -405,7 +417,7 @@ async function main() {
     if (!rows) return;
   }
   resources = rows.filter(isListed).map((row, i) => toResource(row, i));
-  layers = await fetchLayerIndex(); // [] when the files are missing: the map then has no layer toggles
+  layers = await layersPending; // the map then has no layer toggles when it is []
   serviceValues = distinctValues(resources, 'services');
   audienceValues = distinctValues(resources, 'audiences');
   statusEl.hidden = true;

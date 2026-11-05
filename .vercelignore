@@ -3,7 +3,6 @@ pipeline/
 notebooks/
 docs/
 supabase/
-PRD.md
 app/dev-server.mjs
 app/audit.mjs
 app/prototypes/reach/build_reach_transit.py
@@ -15,3 +14,8 @@ data/review/
 data/NYPL*
 data/nypl*
 data/nyc_osm*
+pyproject.toml
+uv.lock
+.python-version
+.gitattributes
+.lighthouse/

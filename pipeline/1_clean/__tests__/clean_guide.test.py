@@ -13,6 +13,7 @@ from pathlib import Path
 
 import pandas as pd
 
+sys.dont_write_bytecode = True  # no __pycache__ next to the module under test
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from clean_guide import borough, clean_resources, description_match, row_type, title  # noqa: E402
 

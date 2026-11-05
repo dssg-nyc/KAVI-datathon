@@ -63,7 +63,7 @@ The steps are in different languages, so they share nothing but the files. [`sch
 
 ```sh
 npm run check:data                            # every file that exists; also part of npm run check and CI
-python3 pipeline/check_data.py kavi_resources # one file, by schema name
+uv run pipeline/check_data.py kavi_resources # one file, by schema name
 ```
 
 | Schema | Checks |
@@ -96,7 +96,7 @@ Steps 1 and 4 were first written as notebooks, which are still in [`notebooks/`]
 
 The steps are in Python, TypeScript and JavaScript because different people wrote them, and the rule in this repo is to move code rather than rewrite it. Each language needs only one tool:
 
-- **Python** (`.py`): [uv](https://docs.astral.sh/uv/). Each script's header declares what it needs (`pandas` or `pymupdf`), and `uv run` installs that into a cache on first run. There is no project environment to set up. `run.py`, `check_data.py` and `check_audiences.py` need only the standard library, so `python3` runs them.
+- **Python** (`.py`): [uv](https://docs.astral.sh/uv/), and nothing else to install. `pyproject.toml` at the repo root names the project, the Python version (`.python-version`, 3.12, which uv downloads if the machine lacks it) and ruff; `uv.lock` pins them. Each script's header also declares what it needs (`pandas` or `pymupdf`), and `uv run pipeline/<stage>/<script>.py` installs that into a cache on first run. `uv run` is how every Python command in `package.json` and `run.py` starts, so they all use the same interpreter. No `__pycache__` folders are written: the tests and `run.py` turn bytecode off, so `pipeline/` shows only source.
 - **TypeScript** (`.ts`) and **JavaScript** (`.mjs`): Node 22.18 or later, no npm dependencies. The geocoder is TypeScript, which Node runs directly. The loader is `.mjs` so Node treats it as an ES module; `map_resources.mjs` turns the files into rows and `load_supabase.mjs` sends them to Supabase over plain HTTP, so the mapping can be reused without a database. `link_env.mjs` is a small helper for git worktrees that makes `.env` a symlink to the main checkout's, so the secret key is not copied.
 
-Each step's tests sit in its own `__tests__/` folder, and `check_data.py`'s in `pipeline/__tests__/`: `npm run test:py` runs the Python ones, `npm test` the geocoder's, the mapping's and the build's. `npm run lint:py` runs [ruff](https://docs.astral.sh/ruff/) over the Python (settings in `ruff.toml`); `npm run lint` runs eslint over the TypeScript tooling. `npm run check` runs all of it, and CI runs `npm run check`. Database schema changes go in [`supabase/migrations/`](../supabase/migrations).
+Each step's tests sit in its own `__tests__/` folder, and `check_data.py`'s in `pipeline/__tests__/`: `npm run test:py` runs the Python ones, `npm test` the geocoder's, the mapping's and the build's. `npm run lint:py` runs [ruff](https://docs.astral.sh/ruff/) over the Python (settings under `[tool.ruff]` in `pyproject.toml`); `npm run lint` runs eslint over the TypeScript tooling. `npm run check` runs all of it, and CI runs `npm run check`. Database schema changes go in [`supabase/migrations/`](../supabase/migrations).

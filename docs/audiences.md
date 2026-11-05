@@ -60,7 +60,7 @@ script reads it on every run, applies it over the rules, and never overwrites it
 ## Data quality check
 
 ```sh
-python3 pipeline/4_audiences/check_audiences.py
+uv run pipeline/4_audiences/check_audiences.py
 ```
 
 Run it from the repo root after `tag_audiences.py` (`npm run pipeline -- audiences` does both) and before every import. It needs only the standard library and

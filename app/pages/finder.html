@@ -6,9 +6,25 @@
   <title>Find resources — EMPOWER</title>
   <meta name="description" content="Search EMPOWER for nearby community resources across New York City.">
   <link rel="icon" href="/app/brand/logo-triangle.png">
-  <link rel="stylesheet" href="/app/vendor/maplibre-gl@5.6.0/maplibre-gl.css">
+  <link rel="preload" href="/data/public/resources.public.json" as="fetch" crossorigin>
+  <link rel="preload" href="/app/vendor/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/app/vendor/fonts/playfair-display-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- Every module finder.js imports, so they all download at once instead of one import level per round
+       trip. The page test checks this list against the imports. -->
+  <link rel="modulepreload" href="/app/components/cards.js">
+  <link rel="modulepreload" href="/app/components/map.js">
+  <link rel="modulepreload" href="/app/components/place-input.js">
+  <link rel="modulepreload" href="/app/lib/csv.js">
+  <link rel="modulepreload" href="/app/lib/filter.js">
+  <link rel="modulepreload" href="/app/lib/geo.js">
+  <link rel="modulepreload" href="/app/lib/layers.js">
+  <link rel="modulepreload" href="/app/lib/preview.js">
+  <link rel="modulepreload" href="/app/lib/resources.js">
+  <link rel="modulepreload" href="/app/lib/share.js">
+  <link rel="modulepreload" href="/app/lib/vendor.js">
   <link rel="stylesheet" href="/app/brand/brand.css">
   <link rel="stylesheet" href="/app/components/finder.css">
+  <link rel="stylesheet" href="/app/components/page.css">
 </head>
 <body>
   <header class="site-header">
@@ -54,10 +70,13 @@
 
   <p id="status">Loading resources…</p>
   <main id="app"></main>
+  <footer class="page-foot">
+    <a href="/privacy.html">Privacy</a> · <span>Not an official NYC government website.</span>
+  </footer>
 
   <script src="/app/config.js"></script>
-  <script src="/app/vendor/supabase-js@2.117.3/supabase.js"></script>
-  <script src="/app/vendor/maplibre-gl@5.6.0/maplibre-gl.js"></script>
+  <!-- MapLibre and supabase-js (app/vendor/) are loaded by app/lib/vendor.js when first needed, so the
+       questions appear before 300 KB of map code arrives. -->
   <script type="module" src="/app/pages/finder.js"></script>
 </body>
 </html>

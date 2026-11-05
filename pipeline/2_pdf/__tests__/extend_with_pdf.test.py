@@ -10,6 +10,7 @@
 import sys
 from pathlib import Path
 
+sys.dont_write_bytecode = True  # no __pycache__ next to the module under test
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from extend_with_pdf import joined, service_types_in  # noqa: E402
 

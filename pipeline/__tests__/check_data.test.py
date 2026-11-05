@@ -1,8 +1,9 @@
-# Tests for pipeline/check_data.py. Run from the repo root:  python3 pipeline/__tests__/check_data.test.py
+# Tests for pipeline/check_data.py. Run from the repo root:  uv run pipeline/__tests__/check_data.test.py
 import sys
 import unittest
 from pathlib import Path
 
+sys.dont_write_bytecode = True  # no __pycache__ next to the module under test
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 import check_data  # noqa: E402

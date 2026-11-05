@@ -1,0 +1,9 @@
+/* A plain text page (privacy.html) and the small footer the finder pages share. Colours from brand.css. */
+.page { max-width: 720px; margin: 0 auto; padding: var(--space-xl) var(--space-lg) var(--space-3xl); }
+.page h1 { font-family: var(--font-display); color: var(--primary-blue); font-size: 2rem; margin: 0 0 var(--space-md); }
+.page h2 { font-size: 1.25rem; color: var(--primary-blue); margin: var(--space-xl) 0 var(--space-sm); }
+.page .lead { font-size: 1.1rem; line-height: 1.7; color: var(--gray-600); }
+.page li { margin-bottom: var(--space-sm); line-height: 1.6; }
+.page .muted { color: var(--muted); font-size: 0.9rem; }
+.page-foot { max-width: 1200px; margin: 0 auto; padding: var(--space-lg); color: var(--muted); font-size: 13px; text-align: center; }
+.page-foot a { color: var(--primary-blue); }

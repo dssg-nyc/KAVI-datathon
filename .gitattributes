@@ -1,0 +1,7 @@
+# Collapsed in GitHub diffs and left out of its language statistics.
+app/vendor/** linguist-vendored
+data/public/** linguist-generated
+data/cleaned/** linguist-generated
+data/extracted/** linguist-generated
+package-lock.json linguist-generated
+uv.lock linguist-generated

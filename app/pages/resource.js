@@ -8,7 +8,7 @@ import { localCsvPath } from '../lib/preview.js';
 import { isListed, toResource } from '../lib/resources.js';
 import { findRow, idFromSearch, pageTitle } from '../lib/share.js';
 import { cardHtml, escapeHtml, popupHtml } from '../components/cards.js';
-import { createMap } from '../components/map.js';
+import { createMap, mapLibreReady } from '../components/map.js';
 
 const app = document.getElementById('app');
 const statusEl = document.getElementById('status');
@@ -52,9 +52,11 @@ function render(resource, meta) {
     }
   });
   if (resource.inPerson) {
-    const map = createMap(document.getElementById('detail-map'), { popupHtml });
-    map?.setResources([resource]);
-    map?.show(resource);
+    mapLibreReady().then(() => {
+      const map = createMap(document.getElementById('detail-map'), { popupHtml });
+      map?.setResources([resource]);
+      map?.show(resource);
+    });
   }
 }
 

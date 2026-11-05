@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy — EMPOWER</title>
+  <meta name="description" content="What the EMPOWER resource finder does with the addresses you type and the other information your browser sends.">
+  <link rel="icon" href="/app/brand/logo-triangle.png">
+  <link rel="preload" href="/app/vendor/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/app/vendor/fonts/playfair-display-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/app/brand/brand.css">
+  <link rel="stylesheet" href="/app/components/page.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="wordmark" href="/">
+        <img class="mark" src="/app/brand/logo-triangle.png" alt="">
+        EMPOWER
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="/#kavi">KAVI</a>
+        <a href="/#city">City initiatives</a>
+        <a href="/#contributors">Contributors</a>
+        <a class="btn btn-pill" href="/finder.html">Find resources</a>
+      </nav>
+      <div class="cobrands" aria-label="Partner organizations">
+        <span class="logo-chip" title="KAVI Brooklyn">
+          <img src="/app/brand/logo-kavi.png" alt="KAVI Brooklyn">
+        </span>
+        <span class="logo-chip" title="DSSG NYC">
+          <img src="/app/brand/logo-liberty.png" alt="DSSG NYC">
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <main class="page">
+    <h1>Privacy</h1>
+    <p class="lead">EMPOWER is a directory of community resources. It has no accounts, no cookies and no analytics, and it keeps no record of what you search for. This page says what your browser sends, and to whom, when you use it.</p>
+
+    <h2>What stays on your device</h2>
+    <ul>
+      <li><strong>Your filters and results.</strong> The whole resource list is downloaded once from this site, and the filtering, distances and counts are worked out in your browser. Nothing you choose is sent back.</li>
+      <li><strong>"Use my location".</strong> Your browser asks your permission first. The position it gives is only used to measure distances to resources, in your browser. It is not sent to this site or anyone else.</li>
+    </ul>
+
+    <h2>What leaves your device</h2>
+    <ul>
+      <li><strong>This site.</strong> Loading a page sends the usual web request to the site's host, Vercel, which keeps short-lived server logs that include your IP address. A link to a resource, such as <code>/resource.html?id=…</code>, contains only that resource's id.</li>
+      <li><strong>Addresses you type.</strong> As you type into the address box, the text is sent to NYC GeoSearch, a free service run by the NYC Department of City Planning, to suggest matching addresses. GeoSearch receives the text and your IP address. A 5-digit ZIP code on its own is matched here and is not sent anywhere.</li>
+      <li><strong>The map background.</strong> The map tiles come from OpenFreeMap, which receives the areas of the map you look at and your IP address. The pins on top of the map are drawn from this site's own data.</li>
+      <li><strong>A fallback data source.</strong> If the resource file on this site fails to load, the page asks a database hosted by Supabase for the same data instead, which then receives your IP address.</li>
+    </ul>
+    <p>The fonts, map library and everything else the pages need are served from this site, so no other company sees your visit.</p>
+
+    <h2>The resource data</h2>
+    <p>The listings come from the New York Public Library's Connections guide and from public city datasets. They describe organizations, not people. If a listing is wrong or should not be here, contact KAVI Brooklyn at <a href="mailto:info@kavibrooklyn.org">info@kavibrooklyn.org</a>.</p>
+
+    <h2>Questions</h2>
+    <p>This site is run by KAVI Brooklyn with DSSG NYC. For questions about this page, write to <a href="mailto:info@kavibrooklyn.org">info@kavibrooklyn.org</a>.</p>
+    <p class="muted">Last updated 5 November 2026.</p>
+  </main>
+
+  <footer class="page-foot">
+    <a href="/">EMPOWER</a> · <a href="/finder.html">Find resources</a> · <span>Not an official NYC government website.</span>
+  </footer>
+</body>
+</html>

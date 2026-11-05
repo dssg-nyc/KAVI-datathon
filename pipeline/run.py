@@ -1,8 +1,8 @@
 # Runs the data pipeline's stages in order, from the repo root. Standard library only.
 #
-#   python3 pipeline/run.py              every stage whose inputs are present
-#   python3 pipeline/run.py clean pdf    only these stages, in pipeline order
-#   python3 pipeline/run.py --list       the stages, their inputs and outputs
+#   uv run pipeline/run.py               every stage whose inputs are present
+#   uv run pipeline/run.py clean pdf     only these stages, in pipeline order
+#   uv run pipeline/run.py --list        the stages, their inputs and outputs
 #
 # A stage whose input file is missing is skipped with a note (the guide PDF is not in git), unless
 # it was named on the command line, when that is an error. A stage that fails stops the run. The last
@@ -10,6 +10,7 @@
 # Loading into Supabase is not a stage here: it writes to a shared database, so it stays a
 # separate, deliberate command (npm run import).
 
+import os
 import subprocess
 import sys
 from dataclasses import dataclass
@@ -50,7 +51,7 @@ STAGES = (
           (f"{DATA}/cleaned/resource_audiences.csv", f"{DATA}/review/audience_review.csv",
            f"{DATA}/review/audience_no_match.csv"),
           (("uv", "run", "pipeline/4_audiences/tag_audiences.py"),
-           ("python3", "pipeline/4_audiences/check_audiences.py"))),
+           ("uv", "run", "pipeline/4_audiences/check_audiences.py"))),
     Stage("ids", "give every row a stable id, kept in data/resource_ids.csv",
           (f"{DATA}/nypl_connections_resources.geojson", f"{DATA}/cleaned/resources_extended.csv",
            f"{DATA}/cleaned/resource_audiences.csv"),
@@ -64,7 +65,7 @@ STAGES = (
     Stage("check", "check every data file against its schema in pipeline/schemas/",
           (),
           (),
-          (("python3", "pipeline/check_data.py"),)),
+          (("uv", "run", "pipeline/check_data.py"),)),
 )
 
 
@@ -78,7 +79,8 @@ def list_stages():
 def run(stage):
     for command in stage.commands:
         print(f"$ {' '.join(command)}", flush=True)
-        subprocess.run(command, cwd=ROOT, check=True)
+        # No __pycache__ folders next to the stage scripts.
+        subprocess.run(command, cwd=ROOT, check=True, env={**os.environ, "PYTHONDONTWRITEBYTECODE": "1"})
 
 
 def main(argv):

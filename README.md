@@ -2,35 +2,42 @@
 
 Code and data for the KAVI datathon (October 23–25): a searchable map and directory of community resources for KAVI Brooklyn and other NYC community violence intervention (CVI) organizations.
 
-**What we're building and why:** see the product requirements document, [PRD.md](PRD.md).
+**What we're building and why:** see the product requirements document, [docs/PRD.md](docs/PRD.md).
+**Taking the project over:** [docs/handoff.md](docs/handoff.md) says what is deployed, how to update the data and what is still to decide.
 **This README:** where the data lives and how to get to it.
 
 ## Repository layout
 
 ```
-PRD.md          product requirements (what to build and why)
-vercel.json     maps the public URLs (/, /finder.html, /resource.html) to the pages in app/
+LICENSE         the licence for the code and data in this repo (app/vendor/ keeps its own)
+vercel.json     maps the public URLs (/, /finder.html, /resource.html, /privacy.html) to the
+                pages in app/, and sets the security headers
 .vercelignore   keeps everything the site does not load off the public site
 app/            the website; see app/README.md
-  pages/          landing page and finder pages
-  components/     map, result cards, place input and finder styles
-  lib/            filtering, data loading and geocoding, with tests in __tests__/
+  pages/          landing page, finder, resource page, privacy page
+  components/     map, result cards, place input and the pages' styles
+  lib/            filtering, data loading, geocoding and library loading, with tests in __tests__/
   brand/          DSSG design-system CSS and cobrand logos
+  vendor/         MapLibre, supabase-js and the fonts, committed so no page needs a CDN
   prototypes/     reach prototype (throwaway)
 pipeline/       the data pipeline, one folder per stage; see pipeline/README.md
-  cleaning/       clean the Connections Guide
-  pdf/            extend it from the printed guide PDF
-  geocode/        add coordinates
-  audiences/      tag who each resource serves
-  load/           load the result into Supabase
+  1_clean/        clean the Connections Guide
+  2_pdf/          extend it from the printed guide PDF
+  3_geocode/      add coordinates
+  4_audiences/    tag who each resource serves
+  5_load/         load the result into Supabase
+  6_build/        stable ids, the public data files and the map's reference layers
+  schemas/        what each data file must look like; check_data.py checks them
 notebooks/      exploratory work the site does not use: the cleaning and audience notebooks,
                 the location analysis, and the OpenStreetMap layer
 data/           every dataset, in one place
+  public/         what the site downloads: resources.public.json and layers/
   reference/      lookup tables the pipeline reads
   review/         human review decisions the pipeline reads back
   cleaned/, extracted/   pipeline output
 supabase/       database schema (migrations) for the Supabase project
-docs/           technical requirements and notes
+docs/           the PRD (what to build and why), technical requirements, the handoff and notes
+pyproject.toml  the Python project (uv) and the ruff settings; .python-version pins Python 3.12
 .env.example    template for .env, which holds only the secret key for data imports
 ```
 
@@ -152,4 +159,4 @@ Then open http://localhost:5173/reach-prototype.html. Enter the client's address
 
 `npm run pipeline` runs the data pipeline; see [pipeline/README.md](pipeline/README.md) for what each stage does and how to run one on its own.
 
-`npm run check` runs the type check, the linters and the JS, TS and Python tests, as CI does. `npm run audit` runs Lighthouse on the landing page, the finder and a resource page as a phone on 4G and prints the performance, accessibility and best practices scores; it needs Chrome (set `CHROME_PATH` if it is not found) and fails when accessibility is below 100. CI runs it too. The findings so far are under P1 and A1 in [docs/technical-requirements.md](docs/technical-requirements.md).
+`npm run check` runs the type check, the linters and the JS, TS and Python tests, as CI does. The Python ones run through [uv](https://docs.astral.sh/uv/), which installs Python 3.12 and ruff on first use; nothing else to set up. `npm run audit` runs Lighthouse on the landing page, the finder and a resource page as a phone on 4G and prints the performance, accessibility and best practices scores; it needs Chrome (set `CHROME_PATH` if it is not found) and fails when accessibility is below 100. CI runs it too. The findings so far are under P1 and A1 in [docs/technical-requirements.md](docs/technical-requirements.md).

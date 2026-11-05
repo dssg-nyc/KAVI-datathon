@@ -1,6 +1,11 @@
 // MapLibre map with OpenFreeMap tiles: a location pin with its radius circle, and optionally resource pins.
 // The tiles are the background only; every pin comes from public.resources.
 import { circle } from '../lib/geo.js';
+import { vendorReady } from '../lib/vendor.js';
+
+// Loads MapLibre (script and stylesheet) the first time it is called and resolves once it is there, or
+// false if it failed. Call createMap() after it; createMap() shows the fallback message on its own.
+export const mapLibreReady = () => vendorReady('maplibregl');
 
 const STYLE = 'https://tiles.openfreemap.org/styles/liberty';
 const NYC_BOUNDS = [-74.26, 40.49, -73.7, 40.92];

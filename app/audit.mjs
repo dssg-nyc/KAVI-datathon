@@ -13,7 +13,7 @@ const PORT = 5177;
 const PAGES = [
   ['landing page', '/'],
   ['finder', '/finder.html'],
-  ['resource page', '/resource.html?id=176'],
+  ['resource page (with a map)', '/resource.html?id=4'],
 ];
 const LCP_TARGET_MS = 2000;
 const save = process.argv.includes('--save');

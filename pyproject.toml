@@ -1,0 +1,20 @@
+# The Python side of the repo, for uv: the Python version, the linter, and its settings. The pipeline
+# scripts declare their own dependencies (pandas, pymupdf) in their headers, so `uv run <script>` installs
+# what each needs; this file adds ruff for `npm run lint:py`. Nothing here is installed as a package.
+[project]
+name = "kavi-datathon"
+version = "0.0.0"
+requires-python = ">=3.10"
+dependencies = []
+
+[dependency-groups]
+dev = ["ruff>=0.14"]
+
+# Only pyflakes rules, so the existing scripts pass as they are; style rules can be added once the team
+# agrees on them.
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["F"]

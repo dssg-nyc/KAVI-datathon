@@ -1,6 +1,7 @@
 {
   "name": "kavi-resource-map",
   "private": true,
+  "license": "MIT",
   "type": "module",
   "engines": {
     "node": ">=22.18"
@@ -8,7 +9,7 @@
   "scripts": {
     "dev": "node app/dev-server.mjs",
     "import": "node pipeline/5_load/load_supabase.mjs",
-    "pipeline": "python3 pipeline/run.py",
+    "pipeline": "uv run pipeline/run.py",
     "ids": "node pipeline/6_build/resource_ids.ts",
     "build:data": "node pipeline/6_build/build_data.ts",
     "layers": "node pipeline/6_build/reference_layers.ts",
@@ -16,10 +17,10 @@
     "audit": "node app/audit.mjs",
     "typecheck": "tsc --noEmit",
     "lint": "eslint --no-error-on-unmatched-pattern notebooks/osm pipeline/6_build pipeline/5_load/__tests__",
-    "lint:py": "uvx ruff check pipeline notebooks/analysis",
+    "lint:py": "uv run ruff check pipeline notebooks/analysis",
     "test": "node --test \"app/**/__tests__/*.test.mjs\" \"pipeline/**/__tests__/*.test.ts\"",
-    "test:py": "uv run pipeline/1_clean/__tests__/clean_guide.test.py && uv run pipeline/2_pdf/__tests__/extend_with_pdf.test.py && python3 pipeline/__tests__/check_data.test.py",
-    "check:data": "python3 pipeline/check_data.py",
+    "test:py": "uv run pipeline/1_clean/__tests__/clean_guide.test.py && uv run pipeline/2_pdf/__tests__/extend_with_pdf.test.py && uv run pipeline/__tests__/check_data.test.py",
+    "check:data": "uv run pipeline/check_data.py",
     "check": "npm run -s typecheck && npm run -s lint && npm run -s lint:py && npm run -s test && npm run -s test:py && npm run -s check:data"
   },
   "devDependencies": {

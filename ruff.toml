@@ -1,7 +1,0 @@
-# Python lint (npm run lint:py, via uvx so nothing is installed). Only pyflakes rules, so the
-# existing scripts pass as they are; style rules can be added once the team agrees on them.
-line-length = 120
-target-version = "py310"
-
-[lint]
-select = ["F"]

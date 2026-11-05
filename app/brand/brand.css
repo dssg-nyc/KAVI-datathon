@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap");
+@import url("/app/vendor/fonts/fonts.css"); /* Inter and Playfair Display, served from this site; see app/vendor/README.md */
 
 :root {
   --primary-orange: #F47E2D;

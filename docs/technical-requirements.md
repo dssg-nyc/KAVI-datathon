@@ -1,6 +1,6 @@
 # Technical requirements and roadmap
 
-**Status: proposed, for team review.** [PRD.md](../PRD.md) says what to build. This covers where the code stands, how it should change, and the order of work. All targets are proposals, and none has been agreed with KAVI.
+**Status: proposed, for team review.** [PRD.md](PRD.md) says what to build. This covers where the code stands, how it should change, and the order of work. All targets are proposals, and none has been agreed with KAVI.
 
 ## Where things stand
 
@@ -8,7 +8,8 @@ The site is static HTML, CSS and browser JS with no build step. The website is i
 
 - **Finder:** `app/pages/finder.html`, `app/components/` and `app/lib/`. `app/config.js` sets `RESOURCES_FILE`, so the browser downloads `data/public/resources.public.json`, with Supabase as the fallback data source.
 - **Data pipeline:** Python and notebooks clean and enrich the Connections Guide, TS scripts geocode it, and `pipeline/5_load/load_supabase.mjs` loads it into Supabase.
-- **Tests:** they exist in JS, TS and Python, but there is no CI and no `npm test`.
+- **Tests:** `npm run check` runs the type check, linters and the JS, TS and Python tests; `npm run audit` runs Lighthouse. CI runs both on every push. (At the start there was no CI and no `npm test`.)
+- **Handoff:** [handoff.md](handoff.md) says what is deployed, how to update the data and what the team still has to decide.
 - **PRD coverage:** map, service, keyword, address, ZIP and borough search, and hotlines are built. The gaps are listed under [PRD features](#prd-features).
 
 ### Who built what
@@ -34,6 +35,8 @@ The site is static HTML, CSS and browser JS with no build step. The website is i
 5. **Keep Vercel's behaviour unchanged.** To our understanding of Vercel's default for projects with no framework, that means no `build` script in `package.json` and no top-level `public/` or `api/` directory. The HTML pages moved to `app/`, so `vercel.json` rewrites keep the public URLs and `.vercelignore` keeps internal files off the site. The team should confirm this on a preview deployment before merging.
 6. **Take stable IDs from the source data.** The database `id` changes on each `import --replace`, so IDs come from `resource_id`, with a suffix where it repeats, such as the NEON sites. The mapping is committed.
 7. **Leave Supabase in place.** The refactor does not change `supabase/` or run the import against the database, and the finder's fallback stays. Retiring it is the team's decision.
+8. **Serve nothing from other companies, and say so.** Fonts and libraries are in `app/vendor/`, so a core page makes requests only to this site, the map tiles, GeoSearch and, as a fallback, Supabase. `vercel.json` sets a content security policy that allows exactly those hosts, plus `X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy` and `Permissions-Policy`; the dev server sends the same headers so a mistake shows up locally. `/privacy.html` lists the same hosts for visitors. The reach prototype is excluded from the policy because it still uses CDNs.
+9. **One tool per language.** Python runs through [uv](https://docs.astral.sh/uv/) (`pyproject.toml`, `.python-version`, `uv.lock`), Node through npm. No `__pycache__` folders are written by the tests or the pipeline, so `pipeline/` stays readable.
 
 ## Open decisions for the team
 
@@ -46,7 +49,8 @@ The site is static HTML, CSS and browser JS with no build step. The website is i
 | Future of Supabase | Two data paths remain until this is decided | Fallback stays |
 | Unlink or integrate the reach prototype? | It is not in the PRD and its author marked it throwaway, but it works (about 540 lines plus a transit data builder). Unlinking is one footer link in `index.html`; the page and its URL stay. Integrating is a few commits with these acceptance criteria: it reads `data/public/resources.public.json`, not Supabase; its scripts come from `app/vendor/`, not a CDN; someone owns rebuilding `data/prototype/reach_transit_PROTOTYPE.json` (910 KB, from MTA GTFS) when routes change; the team accepts a volunteer-run Valhalla routing server with no uptime guarantee, or the isochrone is dropped; the "times are estimates from distance, not schedules" caveat is part of the UI, not a banner; it gets tests and the same accessibility pass as the finder | Stays linked and unchanged until decided |
 | When can audience tags be used with clients? | [audience_matching.md](audience_matching.md) calls them demo only | Labelled in the UI |
-| Repo license | The repo has none, which limits reuse by partners | Team to choose |
+| Repo license | Without one, partners cannot legally reuse the code. The vendored libraries and fonts keep their own licences in `app/vendor/` whatever is chosen | MIT, in `LICENSE` at the repo root, chosen in the refactor; the team can change it |
+| Privacy page wording | `/privacy.html` was written from the code and names KAVI's public address as the contact | As written, until KAVI reviews it |
 
 ## Roadmap
 
@@ -69,7 +73,7 @@ One PR, reviewed commit by commit. Each commit should leave the checks passing a
 | 13 | `feat(finder): show data confidence labels` | `build_data.ts` derives `review_flags` into the public file (schema and data regenerated) and writes `resources.meta.json`; small edits to `cards.js`, `resources.js`, `csv.js`, `types.js`, `finder.css`; the resource page shows the source and data date |
 | 14 | `feat(map): add ArcGIS reference layers` | New `pipeline/6_build/reference_layers.ts` (`npm run layers`) downloads the library, health facility and cooling site layers into committed `data/public/layers/*.geojson` plus an `index.json`; new `app/lib/layers.js`; small edits to `map.js` (`setLayer`), `finder.js` (toggle buttons on the map tab) |
 | 15 | `test: add performance and accessibility checks` | New `app/audit.mjs` (`npm run audit`, Lighthouse on the three pages, also a CI job) and tests under `app/pages/__tests__/`, `app/lib/__tests__/fallbacks.test.mjs`, `app/components/__tests__/contrast.test.mjs`; small edits for the findings: `cards.js` ("Show on map" is a button), `finder.js`, `resource.js`, three colour rules in `finder.css`, and `dev-server.mjs` gzips text like Vercel |
-| 16 | `docs: update README and add team handoff` | `README.md` |
+| 16 | `chore: prepare for production and add team handoff` | Production readiness and the docs in one commit. Performance (P1): fonts self-hosted in `app/vendor/fonts/` (one line of `brand.css`), MapLibre and supabase-js loaded on demand by new `app/lib/vendor.js` (tags removed from `finder.html` and `resource.html`, `map.js` and `finder.js` call it), the partner logos in `app/brand/` resized from 1024 px to 176 px, `modulepreload` and font preloads in the pages, `finder.js` fetches the layer index alongside the data. Security headers and a content security policy in `vercel.json`, mirrored by `dev-server.mjs`. New `app/pages/privacy.html` and `app/components/page.css`, linked from the footers (one line in `index.html`). `LICENSE`. Python through uv: `pyproject.toml`, `.python-version`, `uv.lock` replace `ruff.toml`; `package.json` and `run.py` call `uv run`; no `__pycache__`. `.gitattributes` marks vendored and generated files. Tests for all of it; `README.md`, `app/README.md`, `app/vendor/README.md`, `pipeline/README.md`, this file, and new `docs/handoff.md` |
 
 **Not on this roadmap:** PRD Stage 2 and Section 9 (overlays, referral tracking, gap analysis, impact reporting, Apricot 360 integration). These need team decisions, new data or a backend.
 
@@ -81,7 +85,7 @@ One PR, reviewed commit by commit. Each commit should leave the checks passing a
 
 | ID | Requirement | Source | Today | How it is checked | Commit |
 |---|---|---|---|---|---|
-| P1 | First results within 2 s on a mid-range phone over 4G | PRD 10 | **Over target.** Lighthouse (mobile, simulated 4G, gzip) measures the largest contentful paint at 3.8 s on the landing page, 6.3 s on the finder and 6.9 s on a resource page. Three causes, in order: the Google Fonts `@import` on the first line of `brand.css` blocks rendering for about 1 s; MapLibre (249 KB gzipped) and supabase-js (56 KB) load before the finder's own module; the data file is 162 KB gzipped. Proposed follow-up commit: load the two libraries after the first paint and preconnect to or self-host the fonts. A size budget on the app's own code, the data and the vendored libraries is tested | `npm run audit` reports it; size budget in `app/pages/__tests__/` | 15, then a follow-up |
+| P1 | First results within 2 s on a mid-range phone over 4G | PRD 10 | **Landing page within target, finder and resource page over it.** Lighthouse (mobile, simulated 4G, gzip) measures the largest contentful paint at 1.8 s on the landing page (was 3.8 s), 3.2 s on the finder (was 6.3 s) and 3.2 s on a resource page with a map (was 6.9 s); performance scores 100, 88 and 88. Commit 16 removed the Google Fonts request (fonts are now in `app/vendor/fonts/`, preloaded), loads MapLibre and supabase-js only when a map or the fallback is needed (`app/lib/vendor.js`), shrank the two partner logos from 470 KB to 36 KB, and preloads the finder's modules and data file. The finder now downloads 327 KB before its first screen, of which the data file is 158 KB. What remains is the data download plus the first render on a throttled phone CPU: the first question's tiles are built from the data, so the heading waits for it. The next steps would be to show the first question from a small, committed list of service types before the data arrives, or to split the file. A size budget on the app's own code, the fonts, the data and the on-demand libraries is tested | `npm run audit` reports it; size budget in `app/pages/__tests__/` | 15, 16; a follow-up for the finder |
 | P2 | Resource data the finder loads is under 200 KB gzipped | PRD 10 | 928 KB uncompressed, all 67 columns. The 22 columns the finder uses come to about 634 KB, or 143 KB gzipped. | Test on the generated file | 8 |
 | P3 | Usable at 360 px wide and up, by touch | PRD 10 | All three pages fit 360 px with no horizontal overflow (Lighthouse's 360 px screenshots and its viewport and tap-target audits pass). Touch is not yet tried on a phone | `npm run audit` at 360 px; a phone pass before merge | Done, 15 |
 
@@ -97,9 +101,9 @@ One PR, reviewed commit by commit. Each commit should leave the checks passing a
 | ID | Requirement | Source | Today | How it is checked | Commit |
 |---|---|---|---|---|---|
 | S1 | No participant-level data anywhere in the site or repo | PRD 7.6, 10 | None seen in the resource data | Review | All |
-| S2 | No logging or analytics on searches, addresses or location | PRD 10 | No logging code seen in the finder | Review; test that no analytics scripts are added | 15 |
+| S2 | No logging or analytics on searches, addresses or location | PRD 10 | No logging code in the finder, and the content security policy in `vercel.json` stops the pages from loading a script from, or sending data to, any host it does not name | Page test: no CDN tags and the policy names only the known hosts | 15, 16 |
 | S3 | Review and source fields are not loaded by the finder | PRD 10 | They are, in the CSV | Test on the generated file | 8 |
-| S4 | Third parties are listed, with what each receives | PRD 10 | Not documented | See [Third-party services](#third-party-services) | 1 |
+| S4 | Third parties are listed, with what each receives | PRD 10 | [Third-party services](#third-party-services) below, and for visitors `/privacy.html`, which the team should check before launch | Page test: the privacy page names every host | 1, 16 |
 
 ### Data quality
 
@@ -118,17 +122,15 @@ One PR, reviewed commit by commit. Each commit should leave the checks passing a
 |---|---|---|---|---|---|
 | R1 | If map tiles fail, the list still works | PRD 10 | When MapLibre is missing, `createMap` returns null and the map tab says "The map could not load. The list still works." The list never depends on the map. Failed tiles leave a blank map with the pins still drawn, which is MapLibre's own behaviour | `fallbacks.test.mjs`; tiles blocked by hand before merge | Done, 15 |
 | R2 | If address search fails, ZIP search and a clear message remain | PRD 10 | When GeoSearch is down, a ZIP still resolves from the data and `searchPlaces` reports the failure so the input can say so; an abort is not treated as a failure | `fallbacks.test.mjs` | Done, 15 |
-| R3 | Core pages load no third-party script from a CDN | PRD 10 | `finder.html` loads MapLibre and supabase-js from `app/vendor/`; the reach prototype still uses CDNs, see the open decision on it | Done for the finder | 10 |
-| R4 | A merge keeps Vercel's current static behaviour | Decision 5 | Static today | Team's preview deployment | 16 |
-
-R3 is only partly met while the Supabase fallback stays, because that library still loads from a CDN (decision 7).
+| R3 | Core pages load no third-party script from a CDN | PRD 10 | MapLibre, supabase-js and the fonts come from `app/vendor/`, and the content security policy would block anything else. The reach prototype still uses CDNs, see the open decision on it | Page test: no CDN tags; `npm run audit` shows no console errors under the policy | 10, 16 |
+| R4 | A merge keeps Vercel's current static behaviour | Decision 5 | Static today, with no `build` script. New in `vercel.json`: a `/privacy.html` rewrite and the security headers (decision 8). The dev server applies both, and the audit runs against it, but Vercel itself has not been tried | Team's preview deployment: open the four pages, the map, and check the response headers; see [handoff.md](handoff.md) | 16 |
 
 ### Maintainability
 
 | ID | Requirement | Source | Today | How it is checked | Commit |
 |---|---|---|---|---|---|
 | M1 | Moved files keep their history | Decision 1 | n/a | `git log --follow` | 3 |
-| M2 | One command runs all tests and checks, and CI runs it | PRD 10 | No CI or `npm test` | GitHub Actions | 2 |
+| M2 | One command runs all tests and checks, and CI runs it | PRD 10 | `npm run check`; CI runs it and the Lighthouse audit | GitHub Actions | 2, 15 |
 | M3 | A data update needs no code changes and shows a readable diff | PRD 5.5 | Regenerate and import by hand | Generated change summary | 8 |
 | M4 | A resource can be updated without an engineer | PRD 10 | Not possible | **Blocked:** needs a database and admin area (decision 2) | Later |
 
@@ -151,8 +153,9 @@ R3 is only partly met while the Supabase fallback stays, because that library st
 |---|---|---|
 | NYC GeoSearch (`geosearch.planninglabs.nyc`) | Address lookup | Typed address text and the visitor's IP address |
 | OpenFreeMap (`tiles.openfreemap.org`) | Map background | Requested map areas and the visitor's IP address |
-| Google Fonts (`fonts.googleapis.com`, `fonts.gstatic.com`) | The Inter and Playfair Display fonts, imported on the first line of `app/brand/brand.css` on every page | The visitor's IP address; also about 1 s of render-blocking time, see P1 |
-| jsDelivr and unpkg | Library files, until commit 10 | The visitor's IP address |
-| Supabase | Fallback data source only | The visitor's IP address, when the fallback runs |
+| Vercel | Hosting | The usual request logs, including the visitor's IP address |
+| Supabase (`xwpuphhocwstfgbjreeg.supabase.co`) | Fallback data source only | The visitor's IP address, when the fallback runs |
 
-Typed addresses go straight from the browser to GeoSearch. The team should decide whether that is acceptable for public use. The site has no privacy notice yet, so this should go in one.
+Until commit 16 the pages also loaded fonts from Google Fonts and, until commit 10, libraries from jsDelivr and unpkg; both now come from `app/vendor/`. The content security policy in `vercel.json` allows only the hosts in this table, so adding a service means adding it there, to this table and to `/privacy.html`.
+
+Typed addresses go straight from the browser to GeoSearch. The team should decide whether that is acceptable for public use. `/privacy.html` says so to visitors; it was written from the code, not reviewed by KAVI, and names `info@kavibrooklyn.org` as the contact.
