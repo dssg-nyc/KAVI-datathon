@@ -27,9 +27,11 @@ pipeline/       the data pipeline, one folder per stage; see pipeline/README.md
   4_audiences/    tag who each resource serves
   5_load/         load the result into Supabase
   6_build/        stable ids, the public data files and the map's reference layers
+  supplement/     side branch, not in the runner: OpenStreetMap and other lists matched to the guide,
+                  the review queue and the website crawl; writes only data/supplement/
   schemas/        what each data file must look like; check_data.py checks them
 notebooks/      exploratory work the site does not use: the cleaning and audience notebooks,
-                the location analysis, and the OpenStreetMap layer
+                the location analysis, and the supplement findings and review map (osm/)
 data/           every dataset, in one place
   public/         what the site downloads: resources.public.json and layers/
   reference/      lookup tables the pipeline reads
@@ -60,7 +62,7 @@ Raw Connections Guide export → cleaned, enriched CSV → Supabase → finder. 
 | `NYPL Connections Resources.csv` | The Connections Guide extracted from the PDF, one row per resource. | 760 | Project Google Drive |
 | `nypl_connections_resources.geojson` | The same 760 rows in the same order, with coordinates and `geocode_*` fields added. This is what the Supabase `resources` table is loaded from. | 760 | `node pipeline/3_geocode/geocode.ts`; see [docs/geocoding.md](docs/geocoding.md) |
 | `NYPLConnections_NoMatch.csv` | Copies of Connections Guide rows that could not be geocoded (no usable address, or hotlines), with `lat`/`lon` added for 5 NYC NEON clothing closet sites. The import adds those 5 as extra rows; the other 40 are already in the GeoJSON. Encoded as Windows-1252, not UTF-8. | 45 | Project Google Drive |
-| `nyc_osm_resources.csv` / `.geojson` | NYC service locations from OpenStreetMap, with category, borough and coordinates. Credit "© OpenStreetMap contributors" wherever it is shown. | 1,104 | `npm run osm`; see [notebooks/osm/README.md](notebooks/osm/README.md) |
+| `nyc_osm_resources.csv` / `.geojson` | First OSM snapshot of NYC service locations, with category, borough and coordinates. Nothing reads it now, and the script that made it was removed; `data/supplement/osm.csv` replaces it. Credit "© OpenStreetMap contributors" wherever it is shown. | 1,104 | Snapshot of 2026-10-24; see [notebooks/osm/README.md](notebooks/osm/README.md) |
 | `public/resources.public.json` | The file the finder reads: the columns it shows and filters on, keyed by a stable id. `public/resources.provenance.json` holds the other columns, joined by id. | 765 | `npm run build:data` |
 | `public/layers/*.geojson` | The reference layers the finder's map can show: libraries (221), health facilities (2,744) and NYC Parks cooling sites (269), copied from ArcGIS Online and trimmed to name, address and kind. `index.json` lists them. | 3,234 | `npm run layers` |
 | `kavi_resources.csv` | Full `public.resources` export (guide columns, geocode, service types, audiences). The finder read it before the public file existed; kept for comparison. | 765 | Supabase export, 2026-10-25 |

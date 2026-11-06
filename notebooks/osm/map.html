@@ -3,183 +3,485 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>NYC OSM Resources</title>
+<title>What each source adds to the NYPL guide</title>
 <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.6.0/dist/maplibre-gl.css">
 <script src="https://unpkg.com/maplibre-gl@5.6.0/dist/maplibre-gl.js"></script>
 <style>
   :root {
-    --bg: #fafaf9; --panel: #ffffff; --text: #1c1917; --muted: #78716c; --line: #e7e5e4; --accent: #0f766e;
+    --bg: #fafaf9; --panel: #ffffff; --text: #1c1917; --muted: #68625c; --line: #e7e5e4; --link: #1c5fb0;
   }
   * { box-sizing: border-box; }
   html, body { margin: 0; height: 100%; }
   body { background: var(--bg); color: var(--text); font: 14px/1.4 system-ui, -apple-system, sans-serif; display: flex; }
-  aside { width: 340px; flex: none; display: flex; flex-direction: column; background: var(--panel); border-right: 1px solid var(--line); }
-  #map { flex: 1; }
-  header { padding: 16px 16px 8px; }
+  aside { width: 400px; flex: none; display: flex; flex-direction: column; background: var(--panel); border-right: 1px solid var(--line); overflow-y: auto; }
+  main { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+  #stage { flex: 1 1 58%; min-height: 0; display: flex; }
+  #map { flex: 1; min-width: 0; }
+  #card { display: none; flex: 0 0 50%; min-width: 0; overflow-y: auto; padding: 14px 18px; background: var(--panel); border-left: 1px solid var(--line); position: relative; }
+  main.open #card { display: block; }
+  main.open #results { flex-basis: 30%; }
+  #results { flex: 0 0 42%; min-height: 0; display: flex; flex-direction: column; border-top: 1px solid var(--line); background: var(--panel); }
+  #results-bar { display: flex; align-items: center; gap: 12px; padding: 8px 16px; border-bottom: 1px solid var(--line); flex-wrap: wrap; }
+  .switch { display: inline-flex; border: 1px solid var(--line); border-radius: 7px; overflow: hidden; flex: none; }
+  .switch button { border: 0; background: #fff; color: var(--text); font: inherit; font-size: 13px; padding: 5px 12px; cursor: pointer; font-variant-numeric: tabular-nums; }
+  .switch button + button { border-left: 1px solid var(--line); }
+  .switch button[aria-pressed=true] { background: var(--text); color: #fff; font-weight: 600; }
+  .switch button:focus-visible { outline: 2px solid var(--link); outline-offset: -2px; }
+  header { padding: 14px 16px 8px; }
   h1 { font-size: 17px; margin: 0 0 2px; }
+  h2 { font-size: 12px; font-weight: 600; color: var(--muted); margin: 0 0 4px; }
   .sub { color: var(--muted); font-size: 12px; margin: 0; }
-  .controls { padding: 8px 16px; display: grid; gap: 8px; border-bottom: 1px solid var(--line); }
-  input, select { width: 100%; padding: 7px 9px; border: 1px solid var(--line); border-radius: 6px; font: inherit; background: #fff; }
-  .cats { display: grid; gap: 2px; }
-  .cats label { display: flex; align-items: center; gap: 8px; cursor: pointer; padding: 2px 0; }
-  .cats input { width: auto; margin: 0; }
+  .controls { padding: 6px 16px 10px; display: grid; gap: 10px; border-bottom: 1px solid var(--line); }
+  .row { display: flex; gap: 8px; }
+  [hidden] { display: none !important; }
+  input[type=search], select { width: 100%; padding: 7px 9px; border: 1px solid var(--line); border-radius: 6px; font: inherit; background: #fff; }
+  label.check { display: flex; align-items: center; gap: 7px; cursor: pointer; padding: 1px 0; }
+  label.check input { margin: 0; flex: none; }
   .dot { width: 11px; height: 11px; border-radius: 50%; flex: none; border: 1.5px solid #fff; box-shadow: 0 0 0 1px rgba(0,0,0,.25); }
   .count { margin-left: auto; color: var(--muted); font-variant-numeric: tabular-nums; }
-  #summary { padding: 8px 16px; color: var(--muted); font-size: 12px; }
-  #list { list-style: none; margin: 0; padding: 0 0 16px; overflow-y: auto; flex: 1; }
-  #list li { padding: 8px 16px; border-top: 1px solid var(--line); cursor: pointer; display: flex; gap: 8px; }
-  #list li:hover { background: var(--bg); }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th { text-align: right; font-weight: 600; font-size: 11px; color: var(--muted); padding: 0 0 3px 8px; white-space: nowrap; }
+  th:first-child { text-align: left; padding-left: 0; }
+  td { padding: 1px 0 1px 8px; text-align: right; font-variant-numeric: tabular-nums; }
+  td:first-child { text-align: left; padding-left: 0; }
+  #domains { display: grid; grid-template-columns: 1fr 1fr; column-gap: 12px; font-size: 13px; }
+  #summary { color: var(--muted); font-size: 12px; flex: 1 1 280px; }
+  #unclassified-toggle { font-size: 12px; display: flex; align-items: center; gap: 5px; cursor: pointer; }
+  #list { list-style: none; margin: 0; padding: 0; overflow-y: auto; flex: 1; display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); align-content: start; }
+  #list li { padding: 7px 16px; border-bottom: 1px solid var(--line); cursor: pointer; display: flex; gap: 8px; }
+  #list li.empty { grid-column: 1 / -1; cursor: default; color: var(--muted); border: 0; }
+  #list .when { font-size: 12px; font-weight: 600; }
+  #list li:hover, #list li:focus { background: var(--bg); }
   #list .dot { margin-top: 4px; }
   #list .meta { color: var(--muted); font-size: 12px; }
-  .popup h3 { margin: 0 0 4px; font-size: 14px; }
-  .popup .tag { display: inline-block; font-size: 11px; color: #fff; border-radius: 4px; padding: 1px 6px; margin-bottom: 6px; }
-  .popup p { margin: 2px 0; font-size: 12px; }
-  .popup a { color: var(--accent); }
-  @media (max-width: 700px) {
-    body { flex-direction: column; }
-    aside { width: 100%; max-height: 45vh; border-right: 0; border-bottom: 1px solid var(--line); }
-    #list { display: none; }
-    #summary { padding-bottom: 12px; }
+  #card-close { position: absolute; top: 8px; right: 10px; border: 0; background: none; font-size: 20px; line-height: 1; padding: 4px 8px; cursor: pointer; color: var(--muted); }
+  #card-close:hover { color: var(--text); }
+  #card article + article { border-top: 1px solid var(--line); margin-top: 14px; padding-top: 14px; }
+  #card h3 { margin: 0 28px 6px 0; font-size: 18px; line-height: 1.25; }
+  #card h4 { margin: 14px 0 3px; font-size: 13px; }
+  #card h5 { margin: 8px 0 1px; font-size: 12px; }
+  #card p { margin: 3px 0; }
+  #card ul { margin: 3px 0; padding-left: 18px; }
+  #card .note { color: var(--muted); font-size: 12px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 4px; margin: 6px 0; }
+  .chips span { border: 1px solid #a8a29e; border-radius: 10px; padding: 1px 8px; font-size: 12px; }
+  .chips span.suggested { border-style: dashed; color: var(--muted); }
+  .status { display: inline-flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 600; margin-bottom: 4px; }
+  a { color: var(--link); }
+  #error { display: none; padding: 12px 16px; background: #fdf3e7; font-size: 13px; }
+  code { font-size: 12px; }
+  @media (max-width: 800px) {
+    body { flex-direction: column; height: auto; }
+    aside { width: 100%; border-right: 0; border-bottom: 1px solid var(--line); overflow: visible; }
+    main { flex: none; }
+    #stage { flex: none; flex-direction: column; }
+    #map { flex: none; height: 60vh; }
+    main.open #map { height: 40vh; }
+    #card { flex: none; border-left: 0; border-top: 1px solid var(--line); }
+    #results, main.open #results { flex: none; }
+    #list { overflow: visible; }
   }
 </style>
 </head>
 <body>
 <aside>
   <header>
-    <h1>NYC resources from OpenStreetMap</h1>
-    <p class="sub">Supplementary layer for the KAVI resource map. Data © OpenStreetMap contributors (ODbL).</p>
+    <h1>What each source adds to the NYPL guide</h1>
+    <p class="sub">Local review map. Nothing here is verified or feeds the finder. Includes © OpenStreetMap contributors (ODbL).</p>
   </header>
+  <div id="error">Map data not found. Run <code>python3 notebooks/osm/build_map_data.py</code>, then serve the repo root over HTTP.</div>
   <div class="controls">
-    <input id="q" type="search" placeholder="Search name, address, operator…" aria-label="Search">
-    <select id="borough" aria-label="Borough"><option value="">All boroughs</option></select>
-    <div class="cats" id="cats"></div>
+    <input id="q" type="search" placeholder="Search name or address…" aria-label="Search">
+    <div class="row">
+      <select id="borough" aria-label="Borough"><option value="">All boroughs</option></select>
+      <select id="adds" aria-label="What a source adds">
+        <option value="">All points</option>
+        <option value="any">Adds something new</option>
+        <option value="phone">Adds a phone</option>
+        <option value="website">Adds a website</option>
+        <option value="hours">Adds hours</option>
+        <option value="services">Adds a service type</option>
+        <option value="events">Adds upcoming events</option>
+      </select>
+    </div>
+    <div><h2>Status</h2><div id="statuses"></div></div>
+    <div id="source-block">
+      <h2>Source</h2>
+      <table>
+        <thead><tr>
+          <th scope="col">Name</th>
+          <th scope="col" title="Guide sites this source lists at the same location">Matched</th>
+          <th scope="col" title="Of those, sites where it has something the guide lacks">Adds</th>
+          <th scope="col" title="Places not in the guide, awaiting human review">Review</th>
+        </tr></thead>
+        <tbody id="sources"></tbody>
+      </table>
+    </div>
+    <div><h2>Area of support</h2><div id="domains"></div></div>
   </div>
-  <div id="summary"></div>
-  <ul id="list"></ul>
 </aside>
-<div id="map"></div>
+<main>
+  <div id="stage">
+    <div id="map"></div>
+    <section id="card" aria-label="Organization details" tabindex="-1">
+      <button type="button" id="card-close" aria-label="Close details">×</button>
+      <div id="card-body"></div>
+    </section>
+  </div>
+  <section id="results" aria-label="Results">
+    <div id="results-bar">
+      <div class="switch" role="group" aria-label="Show in the map and list">
+        <button type="button" id="view-places" aria-pressed="true">Organizations <span id="count-places"></span></button>
+        <button type="button" id="view-events" aria-pressed="false">Events <span id="count-events"></span></button>
+      </div>
+      <label id="unclassified-toggle" hidden><input type="checkbox" id="show-unclassified"> Show <span id="count-unclassified"></span> with no service match</label>
+      <div id="summary" role="status"></div>
+    </div>
+    <ul id="list"></ul>
+  </section>
+</main>
 
 <script>
-// Category keys match the `category` column written by osm_resources_nyc.ts.
-const CATEGORIES = [
-  ['food', 'Food assistance', '#E69F00'],
-  ['housing', 'Housing / shelter', '#0072B2'],
-  ['mental_health', 'Mental health', '#CC79A7'],
-  ['employment', 'Employment', '#56B4E9'],
-  ['childcare', 'Childcare', '#8E6BBF'],
-  ['community_centre', 'Community centres', '#D55E00'],
-  ['social_services', 'Other social services', '#009E73'],
+const STATUSES = [
+  ['matched', 'Matched: a source lists this guide site', '#2a78d6'],
+  ['review', 'Needs review: not in the guide', '#eb6834'],
+  ['guide', 'In the guide, nothing matched', '#8a8a84'],
 ]
-const COLOR = Object.fromEntries(CATEGORIES.map(([k, , c]) => [k, c]))
-const LABEL = Object.fromEntries(CATEGORIES.map(([k, l]) => [k, l]))
+const SHORT = { matched: 'Matched', review: 'Needs review', guide: 'In the guide' }
+const COLOR = Object.fromEntries(STATUSES.map(([k, , c]) => [k, c]))
+const MATCH_LABEL = { same_site: 'same site', program_at_host: 'program at this host', guide_website: "the guide's own website, unverified" }
+const ADD_LABEL = { phone: 'Phone', website: 'Website', hours: 'Hours', languages: 'Languages', description: 'Description' }
+const PRIORITY = {
+  '1_no_guide_site_nearby': 'no guide site of any kind nearby',
+  '2_service_missing_nearby': 'guide sites nearby lack a service proposed here',
+  '3_already_covered': 'guide sites nearby already offer this',
+  '4_no_location': 'no location',
+}
 const LIST_LIMIT = 200
 
 const $ = (id) => document.getElementById(id)
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c])
 const safeUrl = (u) => (/^https?:\/\//i.test(u) ? u : u ? `https://${u}` : '')
+const link = (u, text) => (u ? `<a href="${esc(safeUrl(u))}" target="_blank" rel="noopener">${esc(text)}</a>` : '')
+const dot = (status) => `<span class="dot" style="background:${COLOR[status]}"></span>`
 
 let all = []
-const active = new Set(CATEGORIES.map(([k]) => k))
+let events = []
+let eventsByPlace = new Map()
+let labels = {}
+let catchment = 800
+let crawlDate = ''
+let view = 'places'
+const activeStatus = new Set(['matched', 'review'])
+const activeSource = new Set()
+const activeDomain = new Set()
 
 const map = new maplibregl.Map({
   container: 'map',
-  style: 'https://tiles.openfreemap.org/styles/liberty',
+  style: 'https://tiles.openfreemap.org/styles/positron',
   bounds: [-74.26, 40.49, -73.70, 40.92],
   attributionControl: { compact: false },
 })
 map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-right')
-map.addControl(new maplibregl.GeolocateControl({ trackUserLocation: false }), 'top-right')
 
-function matches(f) {
+const sourceLabel = (s) => labels[s] ?? s
+
+// `adds` counts only the ticked sources, so the choice answers "what does this source add here".
+function addsWanted(p) {
+  const want = $('adds').value
+  if (!want) return true
+  return (p.enrich ?? []).some((e) => activeSource.has(e.source) && (want === 'any' ? Object.keys(e.adds).length > 0 : e.adds[want]))
+}
+
+const query = () => $('q').value.trim().toLowerCase()
+const placeText = (p) => `${p.name} ${p.address}`.toLowerCase()
+const inBorough = (p) => !$('borough').value || p.borough === $('borough').value
+
+function passesPlace(p) {
+  return inBorough(p) && p.domains.some((d) => activeDomain.has(d)) && (!query() || placeText(p).includes(query()))
+}
+
+// The crawl's "upcoming" goes stale, so an event that has passed drops out when the page opens. Undated events stay.
+const today = new Date().toLocaleDateString('en-CA')
+const notPast = (e) => !e.date || e.date >= today
+// Events that match no service are mostly concerts and fairs, with some real programs, so they are hidden until asked for.
+const hasService = (e) => e.domains.some((d) => d !== 'Not classified')
+const eventAllowed = (e) => hasService(e) || $('show-unclassified').checked
+
+// An event's area is its own, not its venue's. Its places are the ones the status and borough filters allow.
+function eventPlaces(e) {
+  return e.places.map((id) => all[id]).filter((f) => activeStatus.has(f.properties.status) && inBorough(f.properties))
+}
+
+function passesEvent(e) {
+  if (!notPast(e) || !eventAllowed(e) || !e.domains.some((d) => activeDomain.has(d))) return false
+  const places = eventPlaces(e)
+  const q = query()
+  return places.length > 0 && (!q || e.title.toLowerCase().includes(q) || places.some((f) => placeText(f.properties).includes(q)))
+}
+
+function passes(f) {
   const p = f.properties
-  if (!active.has(p.category)) return false
-  if ($('borough').value && p.borough !== $('borough').value) return false
-  const q = $('q').value.trim().toLowerCase()
-  return !q || [p.name, p.address, p.operator, p.subtype].join(' ').toLowerCase().includes(q)
+  if (!activeStatus.has(p.status) || !passesPlace(p) || !addsWanted(p)) return false
+  return p.status === 'guide' || p.sources.some((s) => activeSource.has(s))
 }
 
-function popupHtml(p) {
-  const web = safeUrl(p.website)
-  return `<div class="popup">
-    <span class="tag" style="background:${COLOR[p.category]}">${esc(LABEL[p.category])}</span>
-    <h3>${esc(p.name)}</h3>
-    ${p.address ? `<p>${esc(p.address)}</p>` : ''}
-    <p>${esc(p.borough)} · <span style="color:#78716c">${esc(p.subtype)}</span></p>
+function addsHtml(adds) {
+  const lines = Object.entries(ADD_LABEL).filter(([k]) => adds[k]).map(([k, label]) =>
+    `<li>${esc(label)}: ${k === 'website' ? link(adds[k], adds[k]) : esc(adds[k])}</li>`)
+  if (adds.services) lines.push(`<li>Possible service: ${esc(adds.services.join(', '))}</li>`)
+  if (adds.events) lines.push(`<li>Upcoming events: ${adds.events.length}</li>`)
+  return lines.length ? `<ul>${lines.join('')}</ul>` : '<p class="note">Confirms the site. Adds nothing new.</p>'
+}
+
+const chips = (items, cls = '') => (items.length ? `<div class="chips">${items.map((t) => `<span class="${cls}">${esc(t)}</span>`).join('')}</div>` : '')
+
+// The first source with this value, and which one, as guide rows can have several.
+function fromSource(p, key) {
+  const e = (p.enrich ?? []).find((x) => x.adds[key])
+  return e ? { value: e.adds[key], from: sourceLabel(e.source) } : null
+}
+
+function contactHtml(p) {
+  const hours = p.status === 'review'
+    ? (p.osm_hours ? { value: p.osm_hours, from: sourceLabel('osm') } : p.hours ? { value: p.hours, from: 'its website' } : null)
+    : fromSource(p, 'hours')
+  const languages = p.status === 'review' ? (p.languages ? { value: p.languages, from: 'its website' } : null) : fromSource(p, 'languages')
+  const unverified = (x) => `<span class="note">(${esc(x.from)}, unverified)</span>`
+  return `${p.address ? `<p>${esc(p.address)}</p>` : ''}
     ${p.phone ? `<p>☎ <a href="tel:${esc(p.phone)}">${esc(p.phone)}</a></p>` : ''}
-    ${web ? `<p><a href="${esc(web)}" target="_blank" rel="noopener">Website</a></p>` : ''}
-    ${p.opening_hours ? `<p>Hours: ${esc(p.opening_hours)}</p>` : ''}
-    ${p.operator ? `<p>Operator: ${esc(p.operator)}</p>` : ''}
-    <p><a href="${esc(p.osm_url)}" target="_blank" rel="noopener">View / edit on OSM</a></p>
-  </div>`
+    ${p.website ? `<p>${link(p.website, 'Website')}</p>` : ''}
+    ${hours ? `<p>Hours: ${esc(hours.value)} ${unverified(hours)}</p>` : ''}
+    ${languages ? `<p>Languages: ${esc(languages.value)} ${unverified(languages)}</p>` : ''}`
 }
 
-function showPopup(f) {
-  new maplibregl.Popup({ maxWidth: '280px' }).setLngLat(f.geometry.coordinates).setHTML(popupHtml(f.properties)).addTo(map)
+function guideHtml(p) {
+  const found = p.enrich.map((e) => `<h5>${esc(sourceLabel(e.source))}</h5>
+    <p class="note">${esc(MATCH_LABEL[e.match] ?? e.match)}${e.listing ? `: ${esc(e.listing)}` : ''} ${link(e.url, 'open')}</p>
+    ${addsHtml(e.adds)}`).join('')
+  return `${p.description ? `<p>${esc(p.description)}</p>` : ''}
+    <p class="note">NYPL guide, p. ${esc(p.page)}</p>
+    ${chips(p.guide_types)}
+    ${chips(p.domains.filter((d) => !p.guide_types.includes(d) && d !== 'Not classified'), 'suggested')}
+    ${chips(p.labels)}
+    ${contactHtml(p)}
+    ${eventsHtml(p)}
+    <h4>What sources add</h4>
+    ${found || '<p class="note">No source lists this site.</p>'}`
+}
+
+function reviewHtml(p) {
+  const gaps = p.gaps.length ? `<p>Would fill a gap within ${catchment} m: ${esc(p.gaps.join(', '))}</p>` : ''
+  return `${p.description ? `<p>${esc(p.description)}</p><p class="note">From ${link(p.site_url, 'its website')}, unverified</p>` : ''}
+    ${chips(p.domains, 'suggested')}
+    ${contactHtml(p)}
+    ${eventsHtml(p)}
+    <h4>Why it is up for review</h4>
+    ${gaps}
+    <p class="note">Priority: ${esc(PRIORITY[p.priority] ?? p.priority)}${p.m_to_guide ? `, nearest guide site ${esc(p.m_to_guide)} m` : ''}</p>
+    <p class="note">Score ${esc(p.score)}. ${esc(p.signals)}</p>
+    <p class="note">Listed by: ${esc(p.sources.map(sourceLabel).join(', '))} ${link(p.url, 'open')}</p>
+    ${p.local_reason ? '<p class="note">Local only, not in the committed queue.</p>' : ''}`
+}
+
+function eventsHtml(p) {
+  const upcoming = (eventsByPlace.get(p.id) ?? []).filter(notPast)
+  const list = upcoming.filter(eventAllowed)
+  if (!upcoming.length) return ''
+  const hidden = upcoming.length - list.length
+  return `<h4>Events on its website, unverified</h4>
+    ${list.length ? `<ul>${list.map((e) => `<li>${esc(e.when)}: ${link(e.url, e.title)}</li>`).join('')}</ul>` : ''}
+    ${hidden ? `<p class="note">${hidden} more with no service match. Tick the box in the Events list to show them.</p>` : ''}`
+}
+
+function articleHtml(p) {
+  return `<article>
+    <div class="status">${dot(p.status)}${SHORT[p.status]}</div>
+    <h3>${esc(p.name)}</h3>
+    ${p.status === 'review' ? reviewHtml(p) : guideHtml(p)}
+  </article>`
+}
+
+// Half map, half card. The map's size changes, so it has to be told before it moves.
+let cardFeatures = []
+const fillCard = () => { $('card-body').innerHTML = cardFeatures.map((f) => articleHtml(f.properties)).join('') }
+
+function openCard(features) {
+  const narrow = matchMedia('(max-width: 800px)').matches
+  cardFeatures = features
+  fillCard()
+  $('card').scrollTop = 0
+  document.querySelector('main').classList.add('open')
+  map.resize()
+  map.setFilter('selected', ['in', ['get', 'id'], ['literal', features.map((f) => f.properties.id)]])
+  map.flyTo({ center: features[0].geometry.coordinates, zoom: Math.max(map.getZoom(), 15) })
+  $('card').focus({ preventScroll: true })
+  if (narrow) $('stage').scrollIntoView()
+}
+
+function closeCard() {
+  document.querySelector('main').classList.remove('open')
+  map.resize()
+  map.setFilter('selected', ['==', ['get', 'id'], -1])
+}
+
+function renderCounts() {
+  const counts = {}
+  const statusCount = {}
+  for (const f of all) {
+    const p = f.properties
+    if (!passesPlace(p)) continue
+    statusCount[p.status] = (statusCount[p.status] ?? 0) + 1
+    for (const e of p.enrich ?? []) {
+      const c = (counts[e.source] ??= { matched: 0, adds: 0, review: 0 })
+      c.matched++
+      if (Object.keys(e.adds).length) c.adds++
+    }
+    if (p.status === 'review') for (const s of p.sources) (counts[s] ??= { matched: 0, adds: 0, review: 0 }).review++
+  }
+  for (const [k] of STATUSES) $(`status-${k}`).textContent = statusCount[k] ?? 0
+  for (const s of Object.keys(labels)) {
+    const c = counts[s] ?? { matched: 0, adds: 0, review: 0 }
+    for (const col of ['matched', 'adds', 'review']) $(`${col}-${s}`).textContent = c[col]
+  }
+}
+
+function placeItem(f, i) {
+  const p = f.properties
+  const via = p.sources.length ? p.sources.map(sourceLabel).join(', ') : 'no source'
+  return `<li data-i="${i}" tabindex="0">${dot(p.status)}
+    <div><div>${esc(p.name)}</div><div class="meta">${SHORT[p.status]} · ${esc(p.borough)} · ${esc(via)}</div></div></li>`
+}
+
+function eventItem(e, i) {
+  const places = eventPlaces(e)
+  const first = places[0].properties
+  const more = places.length > 1 ? ` and ${places.length - 1} more` : ''
+  return `<li data-i="${i}" tabindex="0">${dot(first.status)}
+    <div><div class="when">${esc(e.when)}</div><div>${link(e.url, e.title)}</div>
+    <div class="meta">${esc(first.name)}${more} · ${esc(first.borough)} · ${esc(e.domains.join(', '))}</div></div></li>`
+}
+
+function fillList(items, itemHtml, target, emptyText) {
+  $('list').innerHTML = items.length ? items.map(itemHtml).join('') : `<li class="empty">${esc(emptyText)}</li>`
+  const open = (li) => {
+    openCard([target(items[+li.dataset.i])])
+  }
+  const row = (e) => e.target.closest('li[data-i]')
+  // A link in a row opens the page without also moving the map.
+  $('list').onclick = (e) => { if (row(e) && !e.target.closest('a')) open(row(e)) }
+  $('list').onkeydown = (e) => { if (e.key === 'Enter' && row(e) && !e.target.closest('a')) open(row(e)) }
 }
 
 function render() {
-  const shown = all.filter(matches)
-  map.getSource('resources')?.setData({ type: 'FeatureCollection', features: shown })
-
-  const counts = {}
-  for (const f of all) {
-    const p = f.properties
-    if ($('borough').value && p.borough !== $('borough').value) continue
-    counts[p.category] = (counts[p.category] ?? 0) + 1
-  }
-  for (const [k] of CATEGORIES) $(`count-${k}`).textContent = counts[k] ?? 0
-
-  $('summary').textContent = `${shown.length} of ${all.length} places` + (shown.length > LIST_LIMIT ? ` · list shows first ${LIST_LIMIT}` : '')
-  const sorted = shown.slice().sort((a, b) => a.properties.name.localeCompare(b.properties.name)).slice(0, LIST_LIMIT)
-  $('list').innerHTML = sorted.map((f, i) => {
-    const p = f.properties
-    return `<li data-i="${i}"><span class="dot" style="background:${COLOR[p.category]}"></span>
-      <div><div>${esc(p.name)}</div><div class="meta">${esc(LABEL[p.category])} · ${esc(p.address || p.borough)}</div></div></li>`
-  }).join('')
-  $('list').onclick = (e) => {
-    const li = e.target.closest('li')
-    if (!li) return
-    const f = sorted[+li.dataset.i]
-    map.flyTo({ center: f.geometry.coordinates, zoom: 16 })
-    showPopup(f)
+  const places = all.filter(passes)
+  const shownEvents = events.filter(passesEvent)
+  const atEvents = new Map(shownEvents.flatMap((e) => eventPlaces(e).map((f) => [f.properties.id, f])))
+  map.getSource('places')?.setData({ type: 'FeatureCollection', features: view === 'events' ? [...atEvents.values()] : places })
+  renderCounts()
+  $('count-places').textContent = places.length
+  $('count-events').textContent = shownEvents.length
+  $('count-unclassified').textContent = events.filter((e) => notPast(e) && !hasService(e)).length
+  if (view === 'events') {
+    const crawled = crawlDate ? ` Crawled ${crawlDate}.` : ''
+    $('summary').textContent = `At ${atEvents.size} places. From their own websites and unverified, so check the link.${crawled}`
+    fillList(shownEvents, eventItem, (e) => eventPlaces(e)[0], events.length ? 'No events match these filters.' : 'No events yet. Run crawl_sites.py, then build_map_data.py.')
+  } else {
+    $('summary').textContent = places.length > LIST_LIMIT ? `List shows the first ${LIST_LIMIT} by name. Filter to narrow it.` : ''
+    const sorted = places.slice().sort((a, b) => a.properties.name.localeCompare(b.properties.name)).slice(0, LIST_LIMIT)
+    fillList(sorted, placeItem, (f) => f, 'No places match these filters.')
   }
 }
 
-$('cats').innerHTML = CATEGORIES.map(([k, label, color]) =>
-  `<label><input type="checkbox" value="${k}" checked><span class="dot" style="background:${color}"></span>${label}<span class="count" id="count-${k}"></span></label>`
-).join('')
-$('cats').onchange = (e) => {
-  e.target.checked ? active.add(e.target.value) : active.delete(e.target.value)
+// Source and "adds" describe what a source contributes to a guide row, which has no meaning for an event.
+function setView(next) {
+  view = next
+  $('view-places').setAttribute('aria-pressed', String(view === 'places'))
+  $('view-events').setAttribute('aria-pressed', String(view === 'events'))
+  $('source-block').hidden = view === 'events'
+  $('adds').hidden = view === 'events'
+  $('unclassified-toggle').hidden = view !== 'events'
+  $('q').placeholder = view === 'events' ? 'Search event, name or address…' : 'Search name or address…'
   render()
 }
+
+function buildControls(data) {
+  labels = data.meta.source_labels
+  catchment = data.meta.catchment_m
+  crawlDate = data.meta.crawl_date
+  all = data.features
+  events = data.events
+  for (const e of events) for (const id of e.places) eventsByPlace.set(id, [...(eventsByPlace.get(id) ?? []), e])
+  const left = data.meta.left_out
+  $('statuses').innerHTML = STATUSES.map(([k, label]) =>
+    `<label class="check"><input type="checkbox" value="${k}"${activeStatus.has(k) ? ' checked' : ''}>${dot(k)}${esc(label)}<span class="count" id="status-${k}"></span></label>`).join('')
+  $('statuses').onchange = (e) => { e.target.checked ? activeStatus.add(e.target.value) : activeStatus.delete(e.target.value); render() }
+
+  for (const s of Object.keys(labels)) activeSource.add(s)
+  $('sources').innerHTML = Object.entries(labels).map(([s, label]) => `<tr>
+    <td><label class="check"><input type="checkbox" value="${esc(s)}" checked>${esc(label)}</label></td>
+    <td id="matched-${esc(s)}"></td><td id="adds-${esc(s)}"></td><td id="review-${esc(s)}"></td></tr>`).join('')
+  $('sources').onchange = (e) => { e.target.checked ? activeSource.add(e.target.value) : activeSource.delete(e.target.value); render() }
+
+  const domains = [...new Set([...all.flatMap((f) => f.properties.domains), ...events.flatMap((e) => e.domains)])].sort((a, b) => (a === 'Not classified') - (b === 'Not classified') || a.localeCompare(b))
+  for (const d of domains) activeDomain.add(d)
+  $('domains').innerHTML = domains.map((d) => `<label class="check"><input type="checkbox" value="${esc(d)}" checked>${esc(d)}</label>`).join('')
+  $('domains').onchange = (e) => { e.target.checked ? activeDomain.add(e.target.value) : activeDomain.delete(e.target.value); render() }
+
+  const boroughs = [...new Set(all.map((f) => f.properties.borough).filter(Boolean))].sort()
+  $('borough').innerHTML += boroughs.map((b) => `<option>${esc(b)}</option>`).join('')
+  if (left.sensitive) $('error').insertAdjacentHTML('afterend', `<p class="sub" style="padding:0 16px 6px">${left.sensitive} survivor services and shelters awaiting review are left off this map. They are in the local review queue.</p>`)
+  render()
+}
+
 $('q').oninput = render
 $('borough').onchange = render
+$('adds').onchange = render
+$('show-unclassified').onchange = () => { render(); fillCard() }
+$('card-close').onclick = closeCard
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeCard() })
+$('view-places').onclick = () => setView('places')
+$('view-events').onclick = () => setView('events')
 
 // The list works as soon as the data arrives; the map layer joins when the style has loaded.
-const dataReady = fetch('../../data/nyc_osm_resources.geojson').then((r) => r.json()).then((data) => {
-  all = data.features
-  const boroughs = [...new Set(all.map((f) => f.properties.borough))].sort()
-  $('borough').innerHTML += boroughs.map((b) => `<option>${esc(b)}</option>`).join('')
-  render()
-})
+const dataReady = fetch('../../data/supplement/map_data.geojson')
+  .then((r) => { if (!r.ok) throw new Error(r.status); return r.json() })
+  .then(buildControls)
+  .catch(() => { $('error').style.display = 'block' })
 
 map.on('load', async () => {
   await dataReady
-  map.addSource('resources', { type: 'geojson', data: { type: 'FeatureCollection', features: [] } })
+  map.addSource('places', { type: 'geojson', data: { type: 'FeatureCollection', features: [] } })
   map.addLayer({
-    id: 'resources',
+    id: 'places',
     type: 'circle',
-    source: 'resources',
+    source: 'places',
+    layout: { 'circle-sort-key': ['match', ['get', 'status'], 'guide', 0, 'review', 1, 2] },
     paint: {
-      'circle-color': ['match', ['get', 'category'], ...CATEGORIES.flatMap(([k, , c]) => [k, c]), '#888'],
-      'circle-radius': ['interpolate', ['linear'], ['zoom'], 10, 3.5, 14, 7, 17, 10],
+      'circle-color': ['match', ['get', 'status'], ...STATUSES.flatMap(([k, , c]) => [k, c]), '#888'],
+      'circle-radius': ['interpolate', ['linear'], ['zoom'], 10, ['match', ['get', 'status'], 'guide', 3, 4.5], 14, ['match', ['get', 'status'], 'guide', 5, 7], 17, ['match', ['get', 'status'], 'guide', 7, 10]],
       'circle-stroke-width': 1.5,
       'circle-stroke-color': '#ffffff',
     },
   })
-  map.on('click', 'resources', (e) => showPopup(e.features[0]))
-  map.on('mouseenter', 'resources', () => (map.getCanvas().style.cursor = 'pointer'))
-  map.on('mouseleave', 'resources', () => (map.getCanvas().style.cursor = ''))
+  map.addLayer({
+    id: 'selected',
+    type: 'circle',
+    source: 'places',
+    filter: ['==', ['get', 'id'], -1],
+    paint: { 'circle-radius': 13, 'circle-color': 'transparent', 'circle-stroke-width': 2.5, 'circle-stroke-color': '#1c1917' },
+  })
+  // Rendered features lose nested properties, so look the full record up by id. Points can share one address.
+  const byId = new Map(all.map((f) => [f.properties.id, f.properties]))
+  map.on('click', 'places', (e) => openCard(e.features.slice(0, 8).map((f) => all[f.properties.id])))
+  const hover = new maplibregl.Popup({ closeButton: false, closeOnClick: false, offset: 8 })
+  map.on('mousemove', 'places', (e) => {
+    map.getCanvas().style.cursor = 'pointer'
+    const p = byId.get(e.features[0].properties.id)
+    const more = e.features.length > 1 ? ` · ${e.features.length} here` : ''
+    hover.setLngLat(e.lngLat).setHTML(`<strong>${esc(p.name)}</strong><br>${SHORT[p.status]}${more}`).addTo(map)
+  })
+  map.on('mouseleave', 'places', () => { map.getCanvas().style.cursor = ''; hover.remove() })
   render()
 })
 </script>

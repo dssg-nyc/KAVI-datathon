@@ -1,56 +1,51 @@
-# OpenStreetMap resources layer
+# Supplementing the NYPL guide
 
-A supplementary layer for the resource map: service locations in NYC that volunteers have mapped in
-[OpenStreetMap](https://www.openstreetmap.org) (OSM). It complements the published ArcGIS layers
-(NYPL Connections, public libraries, health facilities, cooling centers), so libraries and general
-clinics and hospitals are left out on purpose.
+The NYPL Connections Guide PDF is human-verified, so it's our source of truth. This folder tests whether OpenStreetMap (OSM)
+and similar public lists add anything to it: places it lacks, especially outside Manhattan, and details missing from the
+places it has.
+
+This is exploratory. Nothing here feeds the finder, `data/kavi_resources.csv`, `data/public/` or Supabase. The scripts that
+build the data are in [`pipeline/supplement/`](../../pipeline/supplement/README.md), with how to run them, review the list and
+what is committed. This folder has the notebook, the review map and two one-off probes.
+
+For the results, read [`osm_eda.ipynb`](osm_eda.ipynb). In short:
+
+- **Matching:** the other sources find 201 of the guide's 400 mapped rows at the same site, and OSM adds 23 more.
+- **Gaps:** of 2,596 map cells where a service has no guide site nearby, other sources reach 1,559 and OSM adds 68. Most of the
+  places they propose are health and mental health. Brooklyn's widest gaps (disability, reentry, food) barely move.
+- **Ranking:** the relevance score does little better than a baseline against the guide (AUC 0.794 vs 0.783), and worse
+  than one against other service lists (0.487 vs 0.788). Treat it as a filter for human review, not as a measure of relevance.
+- **Website crawl:** site text doesn't help judge relevance, because nearly every site mentions a service type. It's more useful
+  for selective details and upcoming events, which still need checking.
+
+## See it on a map
 
 ```sh
-npm run osm      # node notebooks/osm/osm_resources_nyc.ts; writes data/nyc_osm_resources.{csv,geojson}
-python3 -m http.server 8000 --bind 127.0.0.1   # from the repo root; then open http://localhost:8000/notebooks/osm/map.html
+python3 pipeline/supplement/build_map_data.py    # writes the ignored data/supplement/map_data.geojson
+python3 -m http.server 8000 --bind 127.0.0.1     # from the repo root
+# open http://localhost:8000/notebooks/osm/map.html
 ```
 
-The script needs Node 22.18 or later and has no dependencies. It runs one query against the free public
-[Overpass API](https://overpass-api.de) and retries with backoff when the server is busy. The map (`notebooks/osm/map.html`) is a
-single HTML file (MapLibre GL + OpenFreeMap tiles). It has to be served over HTTP, not opened as
-a file, because it fetches the GeoJSON.
+The map shows mapped guide sites and places awaiting review, with the list below it. Filter by status, source, area of support,
+borough or what a source adds. Click a point or a row to split the view into a zoomed map and the organization's card: its
+description and labels, contact details, upcoming events, then what each source would add or why it is up for review.
 
-## What OSM offers
+The switch above the list changes both the list and the map from organizations to events: upcoming events found on those places'
+websites, soonest first, then events that recur. Events that match no service are hidden until you tick the box above the list,
+because most are concerts and fairs, though that check also misses some real programs.
 
-The query covers every named feature with one of these tags inside each of the five boroughs. Each row gets
-one of the PRD's service categories (first match wins) and its borough. Counts are from a run on 2026-10-24.
+| Status | Meaning |
+|---|---|
+| Matched | A source lists this guide site, or the guide's own website had something to add. |
+| Needs review | Not in the guide, and above the relevance threshold. A person decides whether it belongs. |
+| In the guide, nothing matched | No source lists this site. Off by default. |
 
-| Category | OSM tags | Count | Notes |
-|---|---|---|---|
-| Childcare | `amenity=childcare`, `amenity=kindergarten` | 442 | Daycares and pre-K. Best-covered category. |
-| Community centres | `amenity=community_centre` (incl. youth/cultural centres), `amenity=social_centre` | 175 | Local places to hand off to. |
-| Mental health | `healthcare=counselling`, `healthcare=psychotherapist` | 76 | `healthcare:counselling=*` sometimes says addiction, family, etc. |
-| Housing | `social_facility=shelter`, `group_home`, `transitional_housing` | 48 | `social_facility:for=homeless` / `migrant` marks shelters. Group homes are mostly for seniors. |
-| Food | `social_facility=food_bank`, `soup_kitchen`, `amenity=food_bank` | 29 | Far below the real number of NYC pantries. |
-| Employment | `office=employment_agency` | 26 | Staffing agencies and job-support programmes are mixed together. |
-| Other social services | the rest of `amenity=social_facility` | 308 | Outreach (54) is the useful part. Nursing homes, assisted living and senior day care are mostly noise for CVI referrals. |
+Survivor services and shelters awaiting review are left off the map. ENDGBV listings with confidential addresses never link to a
+site. Crawled hours, languages and events are unverified, so check the link before relying on one. Events that have passed
+drop off when the page opens, and the list shrinks until the crawl runs again. `build_map_data.py` only reads the saved
+crawl output. `crawl_sites.py` sends real requests to the organizations' websites, so only run it on purpose.
 
-Total: 1,104 places.
+## Probes
 
-### Fields
-
-`category, subtype, borough, name, lat, lon, address, phone, website, opening_hours, operator, osm_url`
-
-`subtype` is the raw OSM tag, e.g. `social_facility:shelter (for homeless)`. About half the rows have
-a phone number or website, and about 10% have opening hours.
-
-## Limits
-
-- **No eligibility or referral information.** OSM records what a place is and where it is. It doesn't
-  record who a place serves or how to get referred. Use this as a "what's nearby" layer next to the Connections
-  Guide, not as resource cards.
-- **Uneven coverage.** Results depend on where volunteers have mapped. The Bronx has very few
-  rows in every category, which shows a gap in the mapping, not a lack of services. Don't use this
-  layer for service-gap analysis.
-- **No reentry category.** OSM has no tag that is used for reentry support.
-- **Better sources exist for some categories.** NYC Open Data has fuller lists for childcare (DOHMH
-  licensed child care centers) and food (city food pantry and community food program locations).
-  They are worth using in place of OSM for those two categories.
-- **Licence.** OSM data is under [ODbL](https://opendatacommons.org/licenses/odbl/): credit
-  "© OpenStreetMap contributors" wherever the data is shown. Fixes made on openstreetmap.org
-  (every row links to its OSM page) show up the next time the script runs.
+`probe_overpass.py` and `probe_analyze.py` are one-off checks of whether our OSM tag filter misses guide sites. Their inputs are in
+`data/osm/`, along with `nypl_aliases.csv`, the name aliases used for matching.

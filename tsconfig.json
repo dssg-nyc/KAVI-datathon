@@ -1,5 +1,5 @@
 {
-  // Type checks new TS tooling only (pipeline/6_build, the loader's tests) plus the OSM script. Existing files are not edited to satisfy it.
+  // Type checks new TS tooling only (pipeline/6_build, the loader's tests). Existing files are not edited to satisfy it.
   "compilerOptions": {
     "target": "es2023",
     "module": "nodenext",
@@ -13,5 +13,5 @@
     "verbatimModuleSyntax": true,
     "skipLibCheck": true
   },
-  "include": ["notebooks/osm/**/*.ts", "pipeline/6_build/**/*.ts", "pipeline/5_load/**/*.ts", "pipeline/5_load/*.d.mts"]
+  "include": ["pipeline/6_build/**/*.ts", "pipeline/5_load/**/*.ts", "pipeline/5_load/*.d.mts"]
 }

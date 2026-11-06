@@ -47,7 +47,7 @@ import re
 import sys
 from pathlib import Path
 
-from match_pdf import index_by_name, load, match, norm
+from core.pipeline.match_pdf import index_by_name, load, match, norm
 
 ROOT = Path(__file__).resolve().parents[2]
 CLEAN_IN = ROOT / "data" / "cleaned" / "resources_clean.csv"

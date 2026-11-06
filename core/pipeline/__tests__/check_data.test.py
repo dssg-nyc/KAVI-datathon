@@ -6,7 +6,7 @@ from pathlib import Path
 sys.dont_write_bytecode = True  # no __pycache__ next to the module under test
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-import check_data  # noqa: E402
+import core.pipeline.check_data as check_data  # noqa: E402
 
 SCHEMA = {
     "booleans": "python",

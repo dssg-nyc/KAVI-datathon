@@ -23,7 +23,7 @@ The site is static HTML, CSS and browser JS with no build step. The website is i
 | Cleaning and audiences | `pipeline/1_clean/clean_guide.py`, `pipeline/4_audiences/tag_audiences.py`, `notebooks/` | Franziska |
 | PDF extension | `pipeline/2_pdf/extract_pdf.py`, `match_pdf.py`, `extend_with_pdf.py` | Akai, Rita |
 | Geocoding | `pipeline/3_geocode/geocode.ts` | Rita, Akai |
-| OSM layer | `notebooks/osm/` | Ramsey |
+| OSM layer | `pipeline/supplement/`, `notebooks/osm/` | Ramsey |
 | Database import | `pipeline/5_load/load_supabase.mjs`, `supabase/` | Akai, Franziska |
 
 ## Design decisions

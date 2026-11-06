@@ -35,6 +35,14 @@ npm run import -- --dry-run      # read and check the files, insert nothing
 npm run import                   # needs SUPABASE_SECRET_KEY in .env
 ```
 
+## Side branch: supplement
+
+[`supplement/`](supplement/README.md) holds the scripts that compare OpenStreetMap and other public lists with the guide, queue
+the places the guide lacks for human review, and read organizations' websites for details and events. It is not numbered
+and not a stage of `run.py`: most of its steps need the network, its output changes from day to day, and it writes only to
+`data/supplement/`, never to the resource table. Nothing it finds reaches the finder unless a person has reviewed it first.
+Its tests are in `supplement/__tests__/` and run with the others.
+
 ## Stable IDs
 
 The database `id` changes on every `npm run import -- --replace`, and `resource_id` is a row's position in the guide export, which repeats (the NEON clothing closets are six rows with one `resource_id`) and would shift if NYPL re-exported the guide. So step 6 gives each row an id of its own, taken from `resource_id` with `-2`, `-3`... where it repeats and `feature-N` for the one row without one, and keeps the result in `data/resource_ids.csv`, which is committed. On the next run a row is first looked up in that file by name and address, so it keeps its id even if its `resource_id` moved; only rows not seen before get a new id, and a row that has left the data stays in the file as `retired` so its id is never reused.
