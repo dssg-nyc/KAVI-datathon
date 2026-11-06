@@ -1,6 +1,6 @@
 # Technical requirements and roadmap
 
-**Status: proposed, for team review.** [PRD.md](PRD.md) says what to build. This covers where the code stands, how it should change, and the order of work. All targets are proposals, and none has been agreed with KAVI.
+**Status: proposed, for team review.** [PRD.md](PRD.md) says what to build; [architecture.md](architecture.md) describes how the system is put together. This covers where the code stands, how it should change, and the order of work. All targets are proposals, and none has been agreed with KAVI.
 
 ## Where things stand
 
@@ -8,7 +8,7 @@ The site is static HTML, CSS and browser JS with no build step. The website is i
 
 - **Finder:** `app/pages/finder.html`, `app/components/` and `app/lib/`. `app/config.js` sets `RESOURCES_FILE`, so the browser downloads `data/public/resources.public.json`, with Supabase as the fallback data source.
 - **Data pipeline:** Python scripts and notebooks clean, enrich and geocode the Connections Guide, and `supabase/load_supabase.mjs` loads it into Supabase.
-- **Tests:** `npm run check` runs the type check, linters and the JS, TS and Python tests; `npm run audit` runs Lighthouse. CI runs both on every push. (At the start there was no CI and no `npm test`.)
+- **Tests:** `npm run check` runs the linters and the JS and Python tests; `npm run audit` runs Lighthouse. CI runs both on every push. (At the start there was no CI and no `npm test`.)
 - **Handoff:** [handoff.md](handoff.md) says what is deployed, how to update the data and what the team still has to decide.
 - **PRD coverage:** map, service, keyword, address, ZIP and borough search, and hotlines are built. The gaps are listed under [PRD features](#prd-features).
 
@@ -31,7 +31,7 @@ The site is static HTML, CSS and browser JS with no build step. The website is i
 1. **Build on the existing code.** Move files with `git mv`, edit them in place, and add new files for new behaviour. Renames get their own commits so history follows the files.
 2. **Keep the site static for now.** A Next.js port with Postgres would replace most of the finder and need a database and hosting changes. The cost is that updating a resource still means a data file change and a PR, until the team adds a database and admin area.
 3. **Commit generated data.** `npm run build:data` joins and validates the source files, then writes `data/public/resources.public.json` for the finder and `resources.provenance.json` for review and source fields. Filtering stays in the browser, because 765 rows do not need a search API.
-4. **Python, JS and TS all stay.** Python handles cleaning and analysis, JS handles the browser, and new Node tooling is TS. Scripts in different languages connect only through data files checked against a schema.
+4. **Python for data, plain JS for the browser.** The pipeline is Python. The browser code, the Supabase loader and the dev tooling are plain JS (ES modules) with no build step and no TypeScript; `app/lib/types.js` documents the shapes with JSDoc. Scripts in different languages connect only through data files checked against a schema, and the one piece of logic in both languages (the row mapping in `map_resources.py` and `supabase/map_resources.mjs`) is kept in step by a test.
 5. **Keep Vercel's behaviour unchanged.** To our understanding of Vercel's default for projects with no framework, that means no `build` script in `package.json` and no top-level `public/` or `api/` directory. The HTML pages moved to `app/`, so `vercel.json` rewrites keep the public URLs and `.vercelignore` keeps internal files off the site. The team should confirm this on a preview deployment before merging.
 6. **Take stable IDs from the source data.** The database `id` changes on each `import --replace`, so IDs come from `resource_id`, with a suffix where it repeats, such as the NEON sites. The mapping is committed.
 7. **Leave Supabase in place.** The refactor does not change `supabase/` or run the import against the database, and the finder's fallback stays. Retiring it is the team's decision.
@@ -48,7 +48,7 @@ The site is static HTML, CSS and browser JS with no build step. The website is i
 | Is an organization type filter useful? (PRD 7.5) | The data has no organization type field | Not built |
 | Future of Supabase | Two data paths remain until this is decided | Fallback stays |
 | Unlink or integrate the reach prototype? | It is not in the PRD and its author marked it throwaway, but it works (about 540 lines plus a transit data builder). Unlinking is one footer link in `index.html`; the page and its URL stay. Integrating is a few commits with these acceptance criteria: it reads `data/public/resources.public.json`, not Supabase; its scripts come from `app/vendor/`, not a CDN; someone owns rebuilding `data/prototype/reach_transit_PROTOTYPE.json` (910 KB, from MTA GTFS) when routes change; the team accepts a volunteer-run Valhalla routing server with no uptime guarantee, or the isochrone is dropped; the "times are estimates from distance, not schedules" caveat is part of the UI, not a banner; it gets tests and the same accessibility pass as the finder | Stays linked and unchanged until decided |
-| When can audience tags be used with clients? | [audience_matching.md](audience_matching.md) calls them demo only | Labelled in the UI |
+| When can audience tags be used with clients? | [audience_matching.md](datathon/audience_matching.md) calls them demo only | Labelled in the UI |
 | Repo license | Without one, partners cannot legally reuse the code. The vendored libraries and fonts keep their own licences in `app/vendor/` whatever is chosen | MIT, in `LICENSE` at the repo root, chosen in the refactor; the team can change it |
 | Privacy page wording | `/privacy.html` was written from the code and names KAVI's public address as the contact | As written, until KAVI reviews it |
 

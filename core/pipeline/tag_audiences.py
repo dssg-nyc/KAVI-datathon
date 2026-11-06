@@ -5,7 +5,7 @@
 # Tags who each resource serves ("Who is it for?") in data/cleaned/resource_audiences.csv.
 #
 # This is notebooks/audience_enrichment.ipynb (Franziska) as a script, with the same rules in the
-# same order and the same output. docs/audiences.md explains the rules and the columns; the notebook
+# same order and the same output. docs/datathon/audiences.md explains the rules and the columns; the notebook
 # shows the intermediate results. Change the rules here and in the notebook together, or retire the
 # notebook.
 #

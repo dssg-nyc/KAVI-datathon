@@ -9,6 +9,69 @@ Nothing here writes to the resource table: not `data/kavi_resources.csv`, `data/
 The findings are in [`notebooks/osm/osm_eda.ipynb`](../../notebooks/osm/osm_eda.ipynb), and the review map is
 [`notebooks/osm/map.html`](../../notebooks/osm/map.html).
 
+## Sources
+
+Each source is fetched, cut to NYC and normalized to `data/supplement/<source>.csv`. "Site-level" counts the guide's 400 mapped rows
+that the matcher placed at the same site (the organization itself, or the building hosting its program). These are accepted matches
+with no gold labels, so they are not accuracy. Counts are from the 2026-11-05 fetch.
+
+| Source | Publisher and dataset | What it adds | NYC rows | Guide rows matched at site level | Terms |
+|---|---|---|---|---|---|
+| `osm` | OpenStreetMap, pulled broadly (no type filter) | Any mapped place; sometimes hours, email, wheelchair access | 9,166 | 74 | ODbL: attribution, maybe share-alike |
+| `facdb` | NYC DCP Facilities Database | Every city-listed facility; partly copies OMH, DYCD, DOHMH and Workforce1 | 34,305 | 190 | NYC Open Data (not read) |
+| `irs_eo` | IRS Exempt Organizations Business Master File, NY | Registered nonprofits, usually at a mailing address, so organization matches only | 51,791 | 0 (285 by organization) | None stated |
+| `omh` | NYS Office of Mental Health, local programs | Mental health programs | 1,931 | 52 | OPEN-NY: reuse allowed |
+| `doh_childcare` | NYC DOHMH active child care programs | Licensed childcare | 2,755 | 5 | NYC Open Data (not read) |
+| `dycd` | NYC DYCD program sites | Youth and community programs | 2,660 | 47 | NYC Open Data (not read) |
+| `endgbv` | NYC ENDGBV resource directory | Domestic and gender-based violence services; some locations confidential | 286 | 9 | NYC Open Data (not read) |
+| `workforce1` | NYC SBS Workforce1 centers | Job centers | 41 | 0 | NYC Open Data (not read) |
+| `hrsa` | HRSA health center service delivery sites | Community health centers | 491 | 14 | "Usage limitations: None" |
+| `cms_otp` | CMS opioid treatment program providers | Methadone and other OTPs | 51 | 6 | US government work |
+
+Not used: OASAS and SAMHSA (search tools only, no bulk list; CMS's list stands in for opioid treatment), Findhelp and 211.
+The full terms notes are at the top of [`fetch_sources.py`](fetch_sources.py).
+
+## What we found
+
+From [`notebooks/osm/osm_eda.ipynb`](../../notebooks/osm/osm_eda.ipynb), run on 2026-11-05 and 2026-11-06. Every place outside the
+guide is unreviewed, so the numbers about gaps are upper limits.
+
+- **The guide is thin outside Manhattan.** Per 100,000 residents it has 9.4 locations in Manhattan, 3.7 in the Bronx, 3.0 in Staten
+  Island, 2.5 in Brooklyn and 1.5 in Queens. 71% of neighbourhood cells citywide are over 800 m from any guide site. Brooklyn's widest
+  service gaps are Disability Services (99% of cells out of range), Reentry Support (92%) and Food (89%).
+- **OSM matches part of the guide.** 74 of 400 mapped rows match at site level (61 before matching used phone, website, address,
+  aliases and building IDs). For 142 rows OSM has nothing named nearby, so no matcher can help.
+- **OSM must be pulled broadly.** The old type filter would have kept 19 of those 74 matches. Libraries, associations, government
+  offices, colleges and clinics host many guide programs.
+- **OSM adds a few fields to guide rows, not contact details.** Across 42 same-site rows it adds opening hours (16), email (7),
+  operator (6), who it serves (6) and wheelchair access (4). It fills no missing phone or website.
+- **The government lists add more than OSM.** Without OSM they find 201 of 400 guide rows at site level, and OSM adds 23. Their
+  places reach 1,559 of 2,596 gap cells; OSM alone adds 68.
+- **They don't close the widest gaps.** Most candidate places are health providers (1,138 of 1,769 proposed service types), so
+  Brooklyn's Disability Services, Reentry Support and Food gaps barely move. That needs a different source, such as a food pantry list.
+- **The relevance score sorts the list but does not show relevance.** AUC 0.794 against the guide, barely above a baseline of
+  0.783 from source and type alone.
+- **The website crawl is useful for checking the guide, not for finding services.** Nearly every live site matches some service
+  type, so it cannot judge relevance. It does find hours and referral wording, and the guide rows whose site has moved, shows another
+  address or mentions closure (`guide_checks.csv`). Event extraction was fully right for about 9 of 16 events checked.
+
+## Using it
+
+Nothing here is ready to go on the site without a person checking it. In order of how ready it is:
+
+1. **Check the guide with `guide_checks.csv`.** 306 rows, each a guide entry, a flag and a link: 41 show a different address on the
+   organization's own site, 4 closure wording, 4 an unreachable or moved website, and 257 list details the guide has no column for
+   (hours, email, languages, eligibility, referral). Corrections go to the guide itself, so they reach the site through the normal
+   pipeline.
+2. **Review the first batch of new places.** `review_queue.csv` holds 706 places from OSM, OMH, HRSA and CMS, all `pending`. The 214 in
+   Queens and Brooklyn with priority 1 (no guide site nearby) are the suggested first batch. A reviewer sets `hitl_review` and `review_note`; the team
+   still has to agree what the verdict values are. Those verdicts are the first real relevance labels, and would show whether the
+   score and the sources are worth keeping.
+3. **Decide how a confirmed place reaches the site.** Today the only route is adding it to the guide. A reviewed-additions file read
+   by `core/pipeline/` is possible, but it would need its own provenance and review flag, and a licence check first (below).
+4. **Add OSM fields to matched guide rows.** Opening hours and wheelchair access on same-site matches are the most useful. They need
+   ODbL attribution wherever shown, and the guide has no hours column yet.
+
 ## Run it
 
 Run from the repo root with Python 3.10 or later. The scripts use only the standard library. Steps 1–3 and 7 send requests

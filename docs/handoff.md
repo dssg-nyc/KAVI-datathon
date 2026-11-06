@@ -1,6 +1,6 @@
 # Handoff: running EMPOWER after the datathon
 
-For the KAVI Brooklyn and DSSG NYC team taking the site over. It says what is deployed, how to change it, what to check before the next deployment, and what still needs a decision. The longer story is in [technical-requirements.md](technical-requirements.md); what the product is for is in [PRD.md](PRD.md).
+For the KAVI Brooklyn and DSSG NYC team taking the site over. It says what is deployed, how to change it, what to check before the next deployment, and what still needs a decision. How the system fits together is in [architecture.md](architecture.md), the longer story in [technical-requirements.md](technical-requirements.md); what the product is for is in [PRD.md](PRD.md).
 
 ## What is deployed
 
@@ -35,14 +35,14 @@ You need git, Node 22 or later, and [uv](https://docs.astral.sh/uv/). Nothing el
    ```sh
    npm ci
    npm run pipeline      # cleans, extends, geocodes, tags audiences, assigns ids, builds the public files
-   npm run check         # type check, linters, tests and the data schemas
+   npm run check         # linters, tests and the data schemas
    ```
 
 3. Look at the diff of `data/public/resources.public.json`. It is one resource per line, so a small change shows as a small diff.
 4. Open a pull request. CI runs the same checks plus a Lighthouse audit, and Vercel builds a preview to click through.
 5. Merge. Vercel deploys `main`.
 
-`npm run pipeline -- --list` shows the stages, and [../pipeline/README.md](../pipeline/README.md) says how to run one on its own. The Supabase import (`npm run import`) is separate and needs the secret key; the site does not need it to be run, because it reads the committed file first.
+`npm run pipeline -- --list` shows the stages, and [core/README.md](../core/README.md) says how to run one on its own. The Supabase import (`npm run import`) is separate and needs the secret key; the site does not need it to be run, because it reads the committed file first.
 
 ## What to check on a preview deployment
 
@@ -58,9 +58,9 @@ These were tested locally against a server that imitates Vercel, but not on Verc
 | Command | What it does |
 |---|---|
 | `npm run dev` | Serves the site locally at http://127.0.0.1:5173 with the same URL rewrites and headers as Vercel |
-| `npm run check` | Everything CI runs except Lighthouse: type check, lint, tests in JS, TS and Python, and the data schemas |
+| `npm run check` | Everything CI runs except Lighthouse: lint, tests in JS and Python, and the data schemas |
 | `npm run audit` | Lighthouse on the landing page, the finder and a resource page, as a phone on 4G. Needs Chrome. Fails if accessibility drops below 100 |
-| `npm test` | The JS and TS tests only, in about a second |
+| `npm test` | The JS tests only, in about a second |
 
 ## Known gaps
 
@@ -68,7 +68,7 @@ These were tested locally against a server that imitates Vercel, but not on Verc
 - **Neighborhood search (F3)** does not work: GeoSearch only knows addresses, so "Bushwick" returns streets. Borough and ZIP search work. Supporting neighborhoods needs a list of names with a centre point, such as the NTA centroids on NYC Open Data.
 - **Keyboard and touch pass.** Automated accessibility checks pass at 100, but nobody has yet gone through the three questions with a keyboard only, or on a real phone.
 - **Hours, eligibility and referral details** are not in the source data. The schema has room for them.
-- **Audience tags** are labelled as unreviewed in the UI; see [audience_matching.md](audience_matching.md) before relying on them with clients.
+- **Audience tags** are labelled as unreviewed in the UI; see [audience_matching.md](datathon/audience_matching.md) before relying on them with clients.
 
 ## Decisions for the team
 

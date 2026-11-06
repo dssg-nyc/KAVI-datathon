@@ -96,7 +96,7 @@ export const EXTENDED_COLUMNS = {
   needs_review_extended: 'boolean',
   review_notes_extended: 'text',
 };
-// resource_audiences.csv column -> type (see docs/audiences.md and
+// resource_audiences.csv column -> type (see docs/datathon/audiences.md and
 // supabase/migrations/*_add_audience_columns_to_resources.sql).
 export const AUDIENCE_COLUMNS = {
   audiences_all: 'list',

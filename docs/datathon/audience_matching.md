@@ -5,7 +5,7 @@
 > [Limitations](#limitations) and [Next steps](#next-steps)).
 
 This explains how `notebooks/audience_enrichment.ipynb` tags each resource with the people it serves, and
-how the finder uses those tags. Column details are in [docs/audiences.md](../docs/audiences.md).
+how the finder uses those tags. Column details are in [audiences.md](audiences.md).
 
 ## How a resource gets its audiences
 

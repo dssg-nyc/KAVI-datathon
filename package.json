@@ -14,20 +14,16 @@
     "build:data": "uv run core/pipeline/build_data.py",
     "layers": "uv run core/pipeline/reference_layers.py",
     "audit": "node app/audit.mjs",
-    "typecheck": "tsc --noEmit",
-    "lint": "eslint supabase/__tests__/map_resources.test.ts",
-    "lint:py": "uv run ruff check core/pipeline notebooks/analysis",
-    "test": "node --test \"app/**/__tests__/*.test.mjs\" \"supabase/__tests__/*.test.ts\"",
+    "lint": "eslint supabase",
+    "lint:py": "uv run ruff check core notebooks/analysis",
+    "test": "node --test \"app/**/__tests__/*.test.mjs\" \"supabase/__tests__/*.test.mjs\"",
     "test:py": "uv run core/pipeline/__tests__/clean_guide.test.py && uv run core/pipeline/__tests__/extend_with_pdf.test.py && uv run core/pipeline/__tests__/geocode.test.py && uv run core/pipeline/__tests__/map_resources.test.py && uv run core/pipeline/__tests__/resource_ids.test.py && uv run core/pipeline/__tests__/build_data.test.py && uv run core/pipeline/__tests__/reference_layers.test.py && uv run core/pipeline/__tests__/check_data.test.py && uv run core/supplement/__tests__/fetch_sources.test.py && uv run core/supplement/__tests__/match_nypl.test.py && uv run core/supplement/__tests__/build_supplement.test.py && uv run core/supplement/__tests__/review_recommendations.test.py && uv run core/supplement/__tests__/crawl_sites.test.py && uv run core/supplement/__tests__/build_map_data.test.py",
     "check:data": "uv run core/pipeline/check_data.py",
-    "check": "npm run -s typecheck && npm run -s lint && npm run -s lint:py && npm run -s test && npm run -s test:py && npm run -s check:data"
+    "check": "npm run -s lint && npm run -s lint:py && npm run -s test && npm run -s test:py && npm run -s check:data"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
-    "@types/node": "^26.6.6",
     "eslint": "^10.14.0",
-    "lighthouse": "^12.8.2",
-    "typescript": "^6.0.3",
-    "typescript-eslint": "^8.72.1"
+    "lighthouse": "^12.8.2"
   }
 }

@@ -1,5 +1,5 @@
 // Tests for supabase/map_resources.mjs, the loader's mapping from the pipeline's files to the rows of
-// public.resources. Run with: node --test supabase/__tests__/map_resources.test.ts
+// public.resources. Run with: node --test supabase/__tests__/map_resources.test.mjs
 // core/pipeline/__tests__/map_resources.test.py checks that this copy and map_resources.py agree.
 import { describe, test } from 'node:test';
 import assert from 'node:assert/strict';
@@ -46,7 +46,7 @@ describe('mapResources on the committed data', async () => {
     assert.equal(counts.unmatchedFeatures, 1);
   });
   test('NoMatch extras follow their parent and carry its fields', () => {
-    const extras = records.map((r, i) => [r, i] as const).filter(([r]) => r.geocode_source === 'nomatch_csv');
+    const extras = records.map((r, i) => [r, i]).filter(([r]) => r.geocode_source === 'nomatch_csv');
     assert.equal(extras.length, counts.extras);
     for (const [extra, i] of extras) {
       const parent = records.slice(0, i).findLast((r) => r.geocode_source !== 'nomatch_csv');

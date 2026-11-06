@@ -1,5 +1,5 @@
 > **Product requirements document (PRD)** for the KAVI datathon, October 23–25. It describes what to build and why.
-> For how to access the data, database and scripts, see [README.md](README.md).
+> For how to access the data, database and scripts, see [README.md](../README.md).
 
 <html><head></head><body><h1>PRD: NYC CVI Resource Connections Map</h1>
 <h2>1. Engagement Summary</h2>

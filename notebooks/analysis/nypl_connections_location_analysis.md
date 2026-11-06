@@ -15,7 +15,7 @@ python3 notebooks/analysis/analyze_nypl_connections_location.py
 
 **760** resources (rows) are present in `NYPL Connections Resources.csv`, and all 760 carry
 through to the output GeoJSON as features — the script never drops a row (see
-[`nypl_connections.md`](../../docs/geocoding.md)).
+[`nypl_connections.md`](../../docs/datathon/geocoding.md)).
 
 ## 2. Census Bureau geocoding match rate
 

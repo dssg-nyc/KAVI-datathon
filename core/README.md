@@ -93,10 +93,10 @@ The check reports structure: types, allowed values, uniqueness, column sets. Whe
 
 The rules behind each step and the columns it adds are written up in `docs/`:
 
-- [docs/cleaning.md](../docs/cleaning.md) for step 1
-- [docs/pdf_extension.md](../docs/pdf_extension.md) for step 2
-- [docs/geocoding.md](../docs/geocoding.md) for step 3
-- [docs/audiences.md](../docs/audiences.md) and [docs/audience_matching.md](../docs/audience_matching.md) for step 4
+- [docs/datathon/cleaning.md](../docs/datathon/cleaning.md) for step 1
+- [docs/datathon/pdf_extension.md](../docs/datathon/pdf_extension.md) for step 2
+- [docs/datathon/geocoding.md](../docs/datathon/geocoding.md) for step 3
+- [docs/datathon/audiences.md](../docs/datathon/audiences.md) and [docs/datathon/audience_matching.md](../docs/datathon/audience_matching.md) for step 4
 
 Steps 1 and 4 were first written as notebooks, which are still in [`notebooks/`](../notebooks); the scripts here are the same rules with the same output. The notebooks stay as the place to look at intermediate results. Change a rule in both, or retire the notebook.
 
@@ -107,4 +107,4 @@ Every step is Python. The one piece of JavaScript left, the Supabase loader, liv
 - **Python** (`.py`): [uv](https://docs.astral.sh/uv/), and nothing else to install. `pyproject.toml` at the repo root names the project, the Python version (`.python-version`, 3.12, which uv downloads if the machine lacks it) and ruff; `uv.lock` pins them. Each script's header also declares what it needs (`pandas` or `pymupdf`), and `uv run core/pipeline/<script>.py` installs that into a cache on first run. `uv run` is how every Python command in `package.json` and `run.py` starts, so they all use the same interpreter. No `__pycache__` folders are written: the tests and `run.py` turn bytecode off, so `core/pipeline/` shows only source.
 - **The loader** (`supabase/*.mjs`): Node 22.18 or later, no npm dependencies. `load_supabase.mjs` sends the rows to Supabase over plain HTTP. So that it runs without Python, it keeps a JavaScript copy of the mapping, `supabase/map_resources.mjs`. `map_resources.py` here is the same mapping, and its test `test_the_loader_maps_the_same_rows` runs both on the committed data and fails if any row differs, so change the two together. `link_env.mjs` is a small helper for git worktrees that makes `.env` a symlink to the main checkout's, so the secret key is not copied.
 
-Every step's tests sit in `core/pipeline/__tests__/`, and the supplement's in `core/supplement/__tests__/`: `npm run test:py` runs them; `npm test` runs the app's tests and the loader's (`supabase/__tests__/`). `npm run lint:py` runs [ruff](https://docs.astral.sh/ruff/) over the Python (settings under `[tool.ruff]` in `pyproject.toml`); `npm run lint` runs eslint over the loader's test. `npm run check` runs all of it, and CI runs `npm run check`. Database schema changes go in [`supabase/migrations/`](../supabase/migrations).
+Every step's tests sit in `core/pipeline/__tests__/`, and the supplement's in `core/supplement/__tests__/`: `npm run test:py` runs them; `npm test` runs the app's tests and the loader's (`supabase/__tests__/`). `npm run lint:py` runs [ruff](https://docs.astral.sh/ruff/) over the Python (settings under `[tool.ruff]` in `pyproject.toml`); `npm run lint` runs eslint over `supabase/` (the loader, its mapping and its test). `npm run check` runs all of it, and CI runs `npm run check`. Database schema changes go in [`supabase/migrations/`](../supabase/migrations).

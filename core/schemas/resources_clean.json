@@ -1,7 +1,7 @@
 {
   "file": "data/cleaned/resources_clean.csv",
   "format": "csv",
-  "description": "Output of step 1 (clean_guide.py): one row per guide entry, text trimmed, ZIPs and websites fixed, a first service_type assigned. Rules in docs/cleaning.md.",
+  "description": "Output of step 1 (clean_guide.py): one row per guide entry, text trimmed, ZIPs and websites fixed, a first service_type assigned. Rules in docs/datathon/cleaning.md.",
   "booleans": "python",
   "lists": "semicolon",
   "columns": {

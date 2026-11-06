@@ -1,7 +1,7 @@
 # Audience enrichment
 
 > **Demo only:** the audience tags come from keyword rules and haven't been reviewed by a person. See
-> [docs/audience_matching.md](audience_matching.md) for how matching works and its limitations.
+> [docs/datathon/audience_matching.md](audience_matching.md) for how matching works and its limitations.
 
 `core/pipeline/tag_audiences.py` answers the finder's question *"Who is it for?"* for every resource. It reads
 `data/cleaned/resources_extended.csv` and the PDF listing text in `data/extracted/connections_pdf_listings.csv`, and
