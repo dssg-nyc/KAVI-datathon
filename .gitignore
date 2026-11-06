@@ -12,3 +12,12 @@ node_modules/
 
 # Python bytecode
 __pycache__/
+.ruff_cache/
+# Lighthouse reports from npm run audit -- --save
+.lighthouse/
+
+# uv project environment (ruff for npm run lint:py)
+.venv/
+
+# Vercel CLI project link (vercel link); holds project ids, not needed to deploy from GitHub
+.vercel/

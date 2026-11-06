@@ -1,11 +1,13 @@
 # Human review: resources with no service type
 
+(`needs_address.csv` is a different list: rows that name a street but have no point on the map, written by `npm run build:data`. See `pipeline/README.md`.)
+
 `new_service_types_review.csv` lists the 25 resources whose `service_types_all` is blank in
 `data/cleaned/resources_extended.csv` (PR #16, listed there under "Remaining work"). They offer services
 outside the 10 existing service types, so the finder's "What kind of help?" question can't find them.
 
 The goal is a **proposal** for the team, not a final change: which new service types to add, and which
-rows fit an existing type after all. `scripts/pdf/extend_clean_resources.py` applies both CSVs in this folder to
+rows fit an existing type after all. `pipeline/2_pdf/extend_with_pdf.py` applies both CSVs in this folder to
 `description_service_types` and `service_types_all` in `data/cleaned/resources_extended.csv`: `proposed_service_type`
 and `fits_existing_type` together for the 25 rows here, and `human_service_types` for every `change` row in
 `reviewed_service_types_human_check.csv`. It stops if the two files give one row different types. After editing
@@ -44,7 +46,7 @@ up in the source data.
 
 ## Human check of Claude's service type review
 
-`reviewed_service_types_human_check.csv` is a copy of the 123 rows in `scripts/pdf/reviewed_service_types.csv`
+`reviewed_service_types_human_check.csv` is a copy of the 123 rows in `reviewed_service_types.csv` (in this folder)
 (PR #16), whose service types Claude reviewed but no person has checked yet. It adds each row's `description`
 from `resources_extended.csv` and three columns for the reviewer. PR #16's file itself is not changed.
 

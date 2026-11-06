@@ -1,0 +1,26 @@
+{
+  "file": "data/cleaned/resource_audiences.csv",
+  "format": "csv",
+  "description": "Output of step 4 (tag_audiences.py): who each resource serves, one row per resources_extended.csv row. Rules in docs/datathon/audiences.md.",
+  "booleans": "python",
+  "lists": "semicolon",
+  "columns": {
+    "resource_id": {"type": "integer", "required": true, "unique": true},
+    "org_name": {"type": "text", "required": true},
+    "pdf_audiences": {"type": "list", "items": "$audiences"},
+    "confirmed_pdf_audiences": {"type": "list", "items": "$audiences"},
+    "unconfirmed_pdf_audiences": {"type": "list", "items": "$audiences"},
+    "pdf_audience_check": {"type": "text", "values": "$pdf_audience_checks"},
+    "name_audiences": {"type": "list", "items": "$audiences"},
+    "description_audiences": {"type": "list", "items": "$audiences"},
+    "pdf_text_audiences": {"type": "list", "items": "$audiences"},
+    "restricted_audiences": {"type": "list", "items": "$audiences"},
+    "focus_audiences": {"type": "list", "items": "$audiences"},
+    "audience_restriction": {"type": "text", "required": true, "values": "$audience_restrictions"},
+    "restriction_evidence": {"type": "text"},
+    "everyone_basis": {"type": "text", "values": "$everyone_bases"},
+    "audiences_all": {"type": "list", "required": true, "items": "$audiences", "description": "what the finder shows under Who is it for?"},
+    "audience_needs_review": {"type": "boolean", "required": true},
+    "audience_reviewed": {"type": "boolean", "required": true}
+  }
+}

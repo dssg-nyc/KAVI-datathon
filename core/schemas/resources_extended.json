@@ -1,0 +1,29 @@
+{
+  "file": "data/cleaned/resources_extended.csv",
+  "format": "csv",
+  "description": "Output of step 2 (extend_with_pdf.py): every column of resources_clean.csv, then what the printed guide adds. Rules in docs/datathon/pdf_extension.md.",
+  "extends": "resources_clean",
+  "columns": {
+    "pdf_match_method": {"type": "text", "required": true, "values": "$pdf_match_methods"},
+    "pdf_listing_id": {"type": "integer", "description": "listing_id in connections_pdf_listings.csv; blank when no_match"},
+    "pdf_chapter": {"type": "text", "values": "$guide_chapters"},
+    "pdf_section": {"type": "text"},
+    "pdf_preceding_subheading": {"type": "text"},
+    "pdf_guide_page": {"type": "integer", "min": 1},
+    "pdf_is_cross_reference": {"type": "boolean"},
+    "pdf_section_service_type": {"type": "text", "values": "$service_types"},
+    "pdf_appearances": {"type": "list", "description": "chapter > section (p. N) for each place the organization is listed"},
+    "pdf_org_service_types": {"type": "list", "items": "$service_types"},
+    "pdf_audiences": {"type": "list", "items": "$audiences"},
+    "service_type_extended": {"type": "text", "values": "$service_types"},
+    "service_type_extended_source": {"type": "text", "required": true, "values": "$service_type_extended_sources"},
+    "service_subtype_extended": {"type": "text"},
+    "description_keyword_types": {"type": "list", "items": "$service_types"},
+    "description_service_types": {"type": "list", "items": "$service_types_extended"},
+    "description_service_types_source": {"type": "list"},
+    "service_types_all": {"type": "list", "required": true, "items": "$service_types_extended", "description": "what the finder filters on"},
+    "pdf_contradiction": {"type": "text"},
+    "needs_review_extended": {"type": "boolean", "required": true},
+    "review_notes_extended": {"type": "text"}
+  }
+}

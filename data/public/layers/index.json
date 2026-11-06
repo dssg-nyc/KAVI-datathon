@@ -1,0 +1,32 @@
+[
+  {
+    "key": "libraries",
+    "label": "Libraries",
+    "note": "Public library branches (NYC Facilities Database)",
+    "color": "#7c3aed",
+    "file": "data/public/layers/libraries.geojson",
+    "count": 221,
+    "source": "NYC Department of City Planning Facilities Database, via the DSSG NYC ArcGIS Online layer public_libraries_points",
+    "fetched": "2026-11-05"
+  },
+  {
+    "key": "health_facilities",
+    "label": "Health facilities",
+    "note": "Hospitals, clinics, mental health and substance use programs (NYC Facilities Database)",
+    "color": "#0891b2",
+    "file": "data/public/layers/health_facilities.geojson",
+    "count": 2744,
+    "source": "NYC Department of City Planning Facilities Database, via the DSSG NYC ArcGIS Online layer health_facilities_points",
+    "fetched": "2026-11-05"
+  },
+  {
+    "key": "cooling_sites",
+    "label": "Cooling sites",
+    "note": "NYC Parks spray showers, misting stations and other outdoor cooling sites; not indoor cooling centers",
+    "color": "#2563eb",
+    "file": "data/public/layers/cooling_sites.geojson",
+    "count": 269,
+    "source": "NYC Parks cooling sites, via the DSSG NYC ArcGIS Online layer Cooling_Sites_points",
+    "fetched": "2026-11-05"
+  }
+]

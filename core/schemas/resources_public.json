@@ -1,0 +1,32 @@
+{
+  "file": "data/public/resources.public.json",
+  "format": "json",
+  "description": "The file the finder will read (roadmap commit 9): the columns it shows and filters on, one object per row, for every row the loader produces, keyed by the stable id. Written by build_data.py and committed. Each column is checked as in kavi_resources.json; the rest of that table is in resources_provenance.json.",
+  "booleans": "python",
+  "lists": "semicolon",
+  "columns": {
+    "id": {"type": "text", "required": true, "unique": true, "pattern": "^(\\d+(-\\d+)?|feature-\\d+)$", "description": "the stable id from data/resource_ids.csv"},
+    "resource_id": {"type": "integer", "description": "repeats for the extra NoMatch rows, blank for one of them"},
+    "organization_name": {"type": "text"},
+    "street_number": {"type": "text"},
+    "street": {"type": "text"},
+    "address_line_2": {"type": "text"},
+    "city": {"type": "text"},
+    "state": {"type": "text"},
+    "zip_code": {"type": "text"},
+    "phone_number": {"type": "text"},
+    "website": {"type": "text"},
+    "description": {"type": "text"},
+    "spanish_speaking": {"type": "boolean"},
+    "latitude": {"type": "number", "min": -90, "max": 90},
+    "longitude": {"type": "number", "min": -180, "max": 180},
+    "borough": {"type": "text", "values": "$boroughs"},
+    "row_type": {"type": "text", "values": "$row_types"},
+    "service_types_all": {"type": "list", "items": "$service_types_extended"},
+    "audiences_all": {"type": "list", "items": "$audiences"},
+    "restricted_audiences": {"type": "list", "items": "$audiences"},
+    "focus_audiences": {"type": "list", "items": "$audiences"},
+    "pdf_audiences": {"type": "list", "items": "$audiences"},
+    "review_flags": {"type": "list", "items": ["services", "audiences", "eligibility", "location", "details"], "description": "derived by build_data.py review_flags(): the parts of the row nobody has confirmed yet, which the finder labels"}
+  }
+}

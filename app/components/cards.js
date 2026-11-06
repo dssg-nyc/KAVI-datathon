@@ -1,0 +1,70 @@
+// HTML for resource cards (list and map popups). Every data value passes through escapeHtml().
+import { REVIEW_LABELS, serviceColor } from '../lib/resources.js';
+import { resourcePath } from '../lib/share.js';
+
+export function escapeHtml(value) {
+  return String(value ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
+}
+
+// Only http(s) links; a bare "www.example.org" gets https:// in front.
+function safeUrl(url) {
+  const u = url.trim();
+  if (!u) return '';
+  if (/^https?:\/\//i.test(u)) return u;
+  return /^[\w.-]+\.[a-z]{2,}(\/|$)/i.test(u) ? `https://${u}` : '';
+}
+
+// A tel: link only when the field holds exactly one 10- or 11-digit US number.
+function phoneHtml(phone) {
+  const digits = phone.replace(/\D/g, '');
+  const linkable = digits.length === 10 || (digits.length === 11 && digits.startsWith('1'));
+  return linkable ? `<a href="tel:+${digits.length === 10 ? '1' : ''}${digits}">${escapeHtml(phone)}</a>` : escapeHtml(phone);
+}
+
+function tagsHtml(r) {
+  const madeFor = r.madeForPicked ?? [];
+  return [
+    ...madeFor.map((a) => `<span class="tag who made-for">Made for ${escapeHtml(a)}</span>`),
+    ...r.services.map((s) => `<span class="tag"><span class="dot" style="background:${serviceColor(s)}"></span>${escapeHtml(s)}</span>`),
+    ...r.audiences.filter((a) => !madeFor.includes(a)).map((a) => `<span class="tag who">${escapeHtml(a)}</span>`),
+    r.forEveryone ? (r.everyoneStated ? '<span class="tag who open">Open to everyone</span>' : '<span class="tag who unstated">Eligibility not stated</span>') : '',
+    r.spanish ? '<span class="tag lang">Spanish-speaking</span>' : '',
+  ].join('');
+}
+
+// What nobody has checked yet on this card, from review_flags; nothing when the row is confirmed.
+function reviewHtml(r) {
+  const parts = (r.review ?? []).filter((f) => f !== 'eligibility').map((f) => REVIEW_LABELS[f]);
+  return parts.length ? `<div class="review">Not yet checked: ${escapeHtml(parts.join(', '))}</div>` : '';
+}
+
+function badgeHtml(r) {
+  if (r.distance != null) return `<span class="dist">${r.distance.toFixed(1)} mi</span>`;
+  if (!r.inPerson) return `<span class="dist remote">${escapeHtml(r.remoteLabel)}</span>`;
+  return '';
+}
+
+// link: a "Link to this resource" line pointing at its page (off on that page itself).
+// map: a "Show on map" button for in-person resources (off where the map is already in view).
+export function cardHtml(r, { compact = false, link = true, map = !compact } = {}) {
+  const web = safeUrl(r.website);
+  const contact = [
+    r.phone ? phoneHtml(r.phone) : '',
+    web ? `<a href="${escapeHtml(web)}" target="_blank" rel="noopener">${escapeHtml(r.website.replace(/^https?:\/\//i, '').replace(/\/$/, ''))}</a>` : '',
+  ].filter(Boolean).join(' · ');
+  const desc = compact && r.description.length > 220 ? `${r.description.slice(0, 220)}…` : r.description;
+  return `<div class="card-head"><strong>${escapeHtml(r.name)}</strong>${badgeHtml(r)}</div>
+    ${r.address ? `<div class="meta">${escapeHtml(r.address)}</div>` : ''}
+    ${contact ? `<div class="meta">${contact}</div>` : ''}
+    ${desc ? `<p class="desc">${escapeHtml(desc)}</p>` : ''}
+    <div class="tags">${tagsHtml(r)}</div>
+    ${reviewHtml(r)}
+    ${map && r.inPerson ? '<div><button type="button" class="on-map" data-show-map>Show on map →</button></div>' : ''}
+    ${link && r.id != null ? `<div class="card-link"><a href="${escapeHtml(resourcePath(r.id))}">Link to this resource</a></div>` : ''}`;
+}
+
+export function popupHtml(group) {
+  if (group.length === 1) return cardHtml(group[0], { compact: true });
+  return `<div class="popup-head">${group.length} places at this address</div>`
+    + group.map((r) => `<div class="popup-item">${cardHtml(r, { compact: true })}</div>`).join('');
+}
