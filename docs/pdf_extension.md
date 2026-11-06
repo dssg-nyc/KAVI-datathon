@@ -4,9 +4,9 @@ These scripts read the printed guide, `data/NYPL_JPS_Connections_2026.pdf`, and 
 data without replacing any of it. The PDF is not in git; put a copy at that path first.
 
 ```sh
-uv run pipeline/2_pdf/extract_pdf.py         # PDF -> data/extracted/connections_pdf_listings.csv
-uv run pipeline/2_pdf/match_pdf.py           # team CSV vs PDF -> data/extracted/connections_pdf_vs_csv.csv
-uv run pipeline/2_pdf/extend_with_pdf.py   # resources_clean.csv + PDF -> data/cleaned/resources_extended.csv
+uv run core/pipeline/extract_pdf.py         # PDF -> data/extracted/connections_pdf_listings.csv
+uv run core/pipeline/match_pdf.py           # team CSV vs PDF -> data/extracted/connections_pdf_vs_csv.csv
+uv run core/pipeline/extend_with_pdf.py   # resources_clean.csv + PDF -> data/cleaned/resources_extended.csv
 ```
 
 `extend_with_pdf.py` reads `data/cleaned/resources_clean.csv`, which `clean_guide.py` writes. Each script

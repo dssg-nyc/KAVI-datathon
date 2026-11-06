@@ -6,14 +6,15 @@
 Reads data/supplement/supplement_all.csv (build_supplement.py), data/kavi_resources.csv and, when present,
 data/supplement/crawl_pilot.csv. Nothing here feeds the front end.
 
-    python3 pipeline/supplement/review_recommendations.py           write the review files
-    python3 pipeline/supplement/review_recommendations.py --eval    also write ranker_eval.csv (slower, rebuilds links)
+    python3 core/supplement/review_recommendations.py           write the review files
+    python3 core/supplement/review_recommendations.py --eval    also write ranker_eval.csv (slower, rebuilds links)
 
 Writes, in data/supplement/:
   review_queue.csv        committed. Places whose data we may republish (COMMITTABLE_SOURCES), none sensitive.
   review_queue_local.csv  ignored. Column local_reason says why each row is here: sensitive (survivor services and
                           shelters), private_practice (may name a person), or nyc_open_data_terms (not yet read).
-  guide_checks.csv        committed. Guide rows whose own website shows another address or closure wording.
+  guide_checks.csv        committed. Guide rows whose own website has gone or moved, shows another address or closure
+                          wording, or lists details the guide lacks (field names and a link, no page text).
                           These are prompts to check the guide, not corrections, and hold no page text.
   ranker_eval.csv         ignored, aggregate numbers for the notebook.
 
@@ -39,8 +40,8 @@ from collections import Counter, defaultdict
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-import core.pipeline.supplement.build_supplement as b  # noqa: E402
-import core.pipeline.supplement.match_nypl as m  # noqa: E402
+import build_supplement as b  # noqa: E402
+import match_nypl as m  # noqa: E402
 
 SUPP = m.SUPP_DIR
 SUPPLEMENT_CSV = SUPP / "supplement_all.csv"
@@ -65,7 +66,8 @@ MIN_POSITIVES = 20  # fewer than this and an AUC is too unstable to report as a 
 QUEUE_COLUMNS = ["hitl_review", "review_note", "priority", "borough", "name", "address", "phone", "website",
                  "proposed_service_types", "service_gaps", "m_to_nearest_guide_site", "relevance_score", "relevance_signals",
                  "sources", "listings", "source", "source_id", "member_keys", "url", "crawl_site_status", "licence", "local_reason"]
-GUIDE_CHECK_COLUMNS = ["hitl_review", "review_note", "guide_id", "organization", "guide_address", "flag", "site_address", "evidence_url"]
+GUIDE_CHECK_COLUMNS = ["hitl_review", "review_note", "guide_id", "organization", "guide_address", "flag", "detail", "site_address",
+                       "evidence_url", "crawl_date"]
 EVAL_COLUMNS = ["label", "source", "places", "positives", "score_auc", "score_without_contact_auc", "baseline_auc", "enough_positives"]
 
 
@@ -211,8 +213,16 @@ def split_queue(recs):
     return public, local
 
 
+# Details a guide row has no column for (or left blank) that its own site lists: field, crawl column, page column.
+GAP_FIELDS = (("phone", "phone", "contact_url"), ("email", "email", "contact_url"), ("hours", "hours", "hours_url"),
+              ("languages", "languages", "languages_url"), ("eligibility", "eligibility", "eligibility_url"),
+              ("referral", "referral", "referral_url"))
+GUIDE_HAS = {"phone": "phone_number"}  # the only gap field the guide has a column for
+
+
 def guide_checks(crawl_rows, nypl_rows, previous=None):
-    """Guide rows whose own site disagrees. The flag and a link only: a person reads the page and decides."""
+    """Guide rows whose own site disagrees, has gone, or lists details the guide lacks. The flag, the field names and a
+    link only, never page text: a person reads the page and decides."""
     previous = previous or {}
     guide = {r["id"]: r for r in nypl_rows}
     out = []
@@ -220,16 +230,24 @@ def guide_checks(crawl_rows, nypl_rows, previous=None):
         if r["group"] != "B" or r["source_id"] not in guide:
             continue
         g = guide[r["source_id"]]
-        flags = []
+        flags = []  # (flag, detail, site_address, evidence_url)
+        if r.get("site_status") == "dead":
+            flags.append(("website unreachable", r.get("status_detail", ""), "", r.get("website", "")))
+        if r.get("site_status") == "redirected" and r.get("redirect_host"):
+            flags.append(("website moved", r["redirect_host"], "", r.get("final_url", "")))
         if r["address_check"] == "different_address_listed":
-            flags.append(("different address on site", r["site_address"], r["contact_url"] or r["final_url"]))
+            flags.append(("different address on site", "", r["site_address"], r["contact_url"] or r["final_url"]))
         if r["closure_wording"]:
-            flags.append(("closure wording on site", "", r["closure_url"]))
-        for flag, addr, url in flags:
+            flags.append(("closure wording on site", "", "", r["closure_url"]))
+        gaps = [(f, r.get(url) or r.get("final_url", "")) for f, col, url in GAP_FIELDS
+                if r.get(col) and not g.get(GUIDE_HAS.get(f, ""), "").strip()]
+        if gaps:
+            flags.append(("site lists details the guide lacks", "; ".join(f for f, _ in gaps), "", gaps[0][1]))
+        for flag, detail, addr, url in flags:
             verdict, note = previous.get((g["id"], flag), ("", ""))
             out.append({"hitl_review": verdict or "pending", "review_note": note, "guide_id": g["id"], "organization": g["organization_name"],
                         "guide_address": " ".join(x for x in (g["street_number"], g["street"], g["city"], g["zip_code"]) if x),
-                        "flag": flag, "site_address": addr, "evidence_url": url})
+                        "flag": flag, "detail": detail, "site_address": addr, "evidence_url": url, "crawl_date": r.get("crawl_date", "")})
     return sorted(out, key=lambda x: (x["organization"], x["guide_id"], x["flag"]))
 
 
@@ -301,7 +319,7 @@ def main():
     rows = m.read(SUPPLEMENT_CSV)
     nypl = m.read(m.NYPL_CSV)
     crawl_rows = m.read(CRAWL_CSV) if CRAWL_CSV.exists() else []
-    crawl = {f"osm:{r['source_id']}": r["site_status"] for r in crawl_rows if r["group"] == "A"}
+    crawl = {member_key(r): r["site_status"] for r in crawl_rows if r["group"] == "A"}  # OSM and HRSA places
     raws = {f"osm:{r['source_id']}": json.loads(r["raw_json"]) for r in m.read(SUPP / "osm.csv")}
     previous = read_previous((QUEUE_CSV, QUEUE_LOCAL_CSV))
     recs = recommendations(rows, nypl, crawl, raws, previous)

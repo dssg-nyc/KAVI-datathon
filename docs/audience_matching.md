@@ -55,7 +55,7 @@ them in the browser. Nothing is written.
 
 - **Keywords, not language understanding.** Negations ("does not serve youth") and wording without the expected
   words are missed.
-- **Not reviewed by a person.** `pipeline/4_audiences/check_audiences.py` (36 checks) makes sure the data is
+- **Not reviewed by a person.** `core/pipeline/check_audiences.py` (36 checks) makes sure the data is
   consistent and loads correctly, not that each tag is right.
 - **`Everyone` is mostly assumed.** For 666 resources there is simply no sign of a restriction; only 68 say they
   are open to all.

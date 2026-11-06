@@ -9,9 +9,9 @@
      matched_osm_id lists a site-level OSM match when there is one. They enrich the guide's records and act as a
      benchmark, because their service types (`service_types_all`) are human-reviewed.
 
-    python3 pipeline/supplement/crawl_sites.py --cache DIR            crawl (re-runs read the cache and make no requests)
-    python3 pipeline/supplement/crawl_sites.py --list                 only list the targets and the excluded count
-    python3 pipeline/supplement/crawl_sites.py --cache DIR --limit 5  first 5 domains only
+    python3 core/supplement/crawl_sites.py --cache DIR            crawl (re-runs read the cache and make no requests)
+    python3 core/supplement/crawl_sites.py --list                 only list the targets and the excluded count
+    python3 core/supplement/crawl_sites.py --cache DIR --limit 5  first 5 domains only
 
 Writes data/supplement/crawl_pilot.csv (one row per place or guide row) and data/supplement/crawl_events.csv (one
 row per event or program), both ignored by git. Nothing else is read for targets: no FacDB, OMH, IRS or other
@@ -55,8 +55,8 @@ from urllib import robotparser
 from urllib.parse import urljoin, urlsplit, urlunsplit
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-import core.pipeline.supplement.build_supplement as b  # noqa: E402
-import core.pipeline.supplement.match_nypl as m  # noqa: E402
+import build_supplement as b  # noqa: E402
+import match_nypl as m  # noqa: E402
 
 CRAWL_DATE = date.today()  # "today" for upcoming vs past, the same date as fetch_sources.ACCESSED
 USER_AGENT = "KAVI-datathon-pilot/0.1 (research pilot; obeys robots.txt)"

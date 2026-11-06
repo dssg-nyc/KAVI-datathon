@@ -22,7 +22,7 @@
 #
 # Writes data/extracted/connections_pdf_listings.csv.
 #
-#   uv run pipeline/2_pdf/extract_pdf.py [path-to-pdf]
+#   uv run core/pipeline/extract_pdf.py [path-to-pdf]
 #     path-to-pdf  defaults to data/NYPL_JPS_Connections_2026.pdf (not in git; get it from NYPL)
 
 import csv

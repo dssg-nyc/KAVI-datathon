@@ -21,7 +21,7 @@ Everything a page needs is in the repo: the map library, the Supabase client and
 
 ## Where the data comes from
 
-The listings are the NYPL Connections guide, cleaned and extended by the scripts in `pipeline/`, one numbered folder per stage. The final step writes two committed files: `data/public/resources.public.json` (what the site downloads) and `data/public/resources.provenance.json` (where each field came from, for review). Every resource has a stable id from `data/resource_ids.csv`, so links to resource pages keep working across rebuilds.
+The listings are the NYPL Connections guide, cleaned and extended by the scripts in `core/pipeline/`, one script per stage. The final step writes two committed files: `data/public/resources.public.json` (what the site downloads) and `data/public/resources.provenance.json` (where each field came from, for review). Every resource has a stable id from `data/resource_ids.csv`, so links to resource pages keep working across rebuilds.
 
 The map's reference layers (libraries, health facilities, cooling sites) are committed copies of the ArcGIS Online layers in `data/public/layers/`.
 

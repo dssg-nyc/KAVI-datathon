@@ -1,7 +1,7 @@
 {
   "file": "data/kavi_resources.csv",
   "format": "csv",
-  "description": "The file the finder reads: an export of the Supabase public.resources table, which step 5 (5_load/load_supabase.mjs) fills from the GeoJSON, resources_extended.csv and resource_audiences.csv. Postgres writes booleans as t/f and arrays as {a,\"b c\"}. The raw guide columns are not cleaned here, so they carry no patterns; the cleaned versions are checked in resources_clean.json. The columns marked planned are not in the data yet (PRD 7.4): a file with them passes, a file without them passes too.",
+  "description": "The file the finder reads: an export of the Supabase public.resources table, which step 5 (supabase/load_supabase.mjs) fills from the GeoJSON, resources_extended.csv and resource_audiences.csv. Postgres writes booleans as t/f and arrays as {a,\"b c\"}. The raw guide columns are not cleaned here, so they carry no patterns; the cleaned versions are checked in resources_clean.json. The columns marked planned are not in the data yet (PRD 7.4): a file with them passes, a file without them passes too.",
   "booleans": "postgres",
   "lists": "postgres",
   "columns": {

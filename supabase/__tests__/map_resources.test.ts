@@ -1,11 +1,12 @@
-// Tests for pipeline/5_load/map_resources.mjs, the mapping from the pipeline's files to the rows of
-// public.resources. Run with: node --test pipeline/5_load/__tests__/map_resources.test.ts
+// Tests for supabase/map_resources.mjs, the loader's mapping from the pipeline's files to the rows of
+// public.resources. Run with: node --test supabase/__tests__/map_resources.test.ts
+// core/pipeline/__tests__/map_resources.test.py checks that this copy and map_resources.py agree.
 import { describe, test } from 'node:test';
 import assert from 'node:assert/strict';
 import { resolve } from 'node:path';
 import { AUDIENCE_COLUMNS, EXTENDED_COLUMNS, mapResources, toBoolean, toExtendedValue } from '../map_resources.mjs';
 
-const root = resolve(import.meta.dirname, '..', '..', '..');
+const root = resolve(import.meta.dirname, '..', '..');
 
 describe('toExtendedValue', () => {
   test('blank is null for every type', () => {

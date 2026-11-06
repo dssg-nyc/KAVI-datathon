@@ -6,7 +6,7 @@
 Token weights come from the real data (data/kavi_resources.csv, data/supplement/osm.csv), so run
 extract_all.py first.
 
-    uv run pipeline/supplement/__tests__/match_nypl.test.py      
+    uv run core/supplement/__tests__/match_nypl.test.py      
 """
 
 import csv
@@ -18,7 +18,7 @@ from pathlib import Path
 
 sys.dont_write_bytecode = True  # no __pycache__ next to the module under test
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-import core.pipeline.supplement.match_nypl as m  # noqa: E402
+import match_nypl as m  # noqa: E402
 
 OSM_CSV = m.SUPP_DIR / "osm.csv"
 OUT_CSV = m.SUPP_DIR / "matches_osm.csv"

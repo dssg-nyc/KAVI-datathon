@@ -7,7 +7,7 @@
 // summary of those rows and sends them to Supabase.
 //
 // Usage:
-//   node pipeline/5_load/load_supabase.mjs [--dry-run] [--replace]
+//   node supabase/load_supabase.mjs [--dry-run] [--replace]
 //     --dry-run    read and map the files, print a summary, insert nothing
 //     --replace    delete every existing row in public.resources before inserting
 // Without --replace the script refuses to run when the table already has rows, so a second
@@ -16,7 +16,7 @@ import { readFile } from 'node:fs/promises';
 import { join, resolve } from 'node:path';
 import { YES_NO_COLUMNS, mapResources } from './map_resources.mjs';
 
-const root = resolve(import.meta.dirname, '..', '..');
+const root = resolve(import.meta.dirname, '..');
 const BATCH_SIZE = 500;
 
 const args = process.argv.slice(2);

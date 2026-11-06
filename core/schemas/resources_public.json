@@ -1,7 +1,7 @@
 {
   "file": "data/public/resources.public.json",
   "format": "json",
-  "description": "The file the finder will read (roadmap commit 9): the columns it shows and filters on, one object per row, for every row the loader produces, keyed by the stable id. Written by 6_build/build_data.ts and committed. Each column is checked as in kavi_resources.json; the rest of that table is in resources_provenance.json.",
+  "description": "The file the finder will read (roadmap commit 9): the columns it shows and filters on, one object per row, for every row the loader produces, keyed by the stable id. Written by build_data.py and committed. Each column is checked as in kavi_resources.json; the rest of that table is in resources_provenance.json.",
   "booleans": "python",
   "lists": "semicolon",
   "columns": {
@@ -27,6 +27,6 @@
     "restricted_audiences": {"type": "list", "items": "$audiences"},
     "focus_audiences": {"type": "list", "items": "$audiences"},
     "pdf_audiences": {"type": "list", "items": "$audiences"},
-    "review_flags": {"type": "list", "items": ["services", "audiences", "eligibility", "location", "details"], "description": "derived by 6_build/build_data.ts reviewFlags(): the parts of the row nobody has confirmed yet, which the finder labels"}
+    "review_flags": {"type": "list", "items": ["services", "audiences", "eligibility", "location", "details"], "description": "derived by build_data.py review_flags(): the parts of the row nobody has confirmed yet, which the finder labels"}
   }
 }

@@ -17,7 +17,7 @@
 #   review_list.csv                  the rows a person should look at (needs_review)
 #
 # Usage:
-#   uv run pipeline/1_clean/clean_guide.py
+#   uv run core/pipeline/clean_guide.py
 
 import re
 import sys

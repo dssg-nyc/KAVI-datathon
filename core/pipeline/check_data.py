@@ -1,8 +1,8 @@
-"""Checks the pipeline's data files against the schemas in pipeline/schemas/.
+"""Checks the pipeline's data files against the schemas in core/schemas/.
 
-    python3 pipeline/check_data.py                       every schema whose file exists
-    python3 pipeline/check_data.py resources_clean       only these schemas
-    python3 pipeline/check_data.py --max-problems 50     show more problems per file (default 20)
+    python3 core/pipeline/check_data.py                       every schema whose file exists
+    python3 core/pipeline/check_data.py resources_clean       only these schemas
+    python3 core/pipeline/check_data.py --max-problems 50     show more problems per file (default 20)
 
 Standard library only. Prints PASS or FAIL per file, with one line per problem (line number, column, what is
 wrong), and exits 1 if any file fails. A file that is missing is skipped with a note, unless its schema was
@@ -30,8 +30,8 @@ import re
 import sys
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
-SCHEMAS = ROOT / "pipeline" / "schemas"
+ROOT = Path(__file__).resolve().parents[2]
+SCHEMAS = Path(__file__).resolve().parents[1] / "schemas"
 
 BOOLEANS = {"python": {"True": True, "False": False}, "postgres": {"t": True, "f": False}}
 YES_NO = {"Y": True, "N": False}

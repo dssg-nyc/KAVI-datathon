@@ -1,5 +1,5 @@
 // Reference layers on the finder's map: libraries, health facilities and cooling sites (PRD 7.1), drawn
-// from the files pipeline/6_build/reference_layers.ts downloads into data/public/layers/. The index lists
+// from the files core/pipeline/reference_layers.py downloads into data/public/layers/. The index lists
 // them; a layer's features are fetched the first time someone switches it on. No UI here.
 import { escapeHtml } from '../components/cards.js';
 

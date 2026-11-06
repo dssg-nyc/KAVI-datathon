@@ -21,8 +21,8 @@ opening_hours, operator, last_edit, url, bin, raw_json), sorted by source_id so 
 every OSM tag (alt_name, brand, short_name, ... are read from it by match_nypl.py) plus osm_version.
 `bin` is nycdoitt:bin (the NYC building id imported with building outlines).
 
-    python3 pipeline/supplement/extract_all.py [--from-json raw.json]   (--from-json skips the network)
-    python3 pipeline/supplement/extract_all.py --from-legacy-csv old_osm_extract.csv   (convert the first-stage csv)
+    python3 core/supplement/extract_all.py [--from-json raw.json]   (--from-json skips the network)
+    python3 core/supplement/extract_all.py --from-legacy-csv old_osm_extract.csv   (convert the first-stage csv)
 """
 
 import argparse

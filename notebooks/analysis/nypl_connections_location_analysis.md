@@ -1,7 +1,7 @@
 # NYPL Connections → GeoJSON: data analysis
 
 Analysis of `data/nypl_connections_resources.geojson`, the output of
-[`geocode.ts`](../../pipeline/3_geocode/geocode.ts) run against
+`geocode.ts` (now [`geocode.py`](../../core/pipeline/geocode.py)) run against
 `data/NYPL Connections Resources.csv` on 2026-10-25.
 
 Every number below is reproducible by running

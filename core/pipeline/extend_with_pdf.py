@@ -40,14 +40,14 @@
 #
 # Writes data/cleaned/resources_extended.csv. Run extract_pdf.py first.
 #
-#   uv run pipeline/2_pdf/extend_with_pdf.py
+#   uv run core/pipeline/extend_with_pdf.py
 
 import csv
 import re
 import sys
 from pathlib import Path
 
-from core.pipeline.match_pdf import index_by_name, load, match, norm
+from match_pdf import index_by_name, load, match, norm
 
 ROOT = Path(__file__).resolve().parents[2]
 CLEAN_IN = ROOT / "data" / "cleaned" / "resources_clean.csv"

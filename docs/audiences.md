@@ -3,18 +3,18 @@
 > **Demo only:** the audience tags come from keyword rules and haven't been reviewed by a person. See
 > [docs/audience_matching.md](audience_matching.md) for how matching works and its limitations.
 
-`pipeline/4_audiences/tag_audiences.py` answers the finder's question *"Who is it for?"* for every resource. It reads
+`core/pipeline/tag_audiences.py` answers the finder's question *"Who is it for?"* for every resource. It reads
 `data/cleaned/resources_extended.csv` and the PDF listing text in `data/extracted/connections_pdf_listings.csv`, and
 writes `data/cleaned/resource_audiences.csv`, one row per `resource_id`, to be joined onto the resource table. It
 doesn't change any existing file.
 
-Run it with `uv run pipeline/4_audiences/tag_audiences.py`, or `npm run pipeline -- audiences`, which also runs the check below.
+Run it with `uv run core/pipeline/tag_audiences.py`, or `npm run pipeline -- audiences`, which also runs the check below.
 It is the script version of `notebooks/audience_enrichment.ipynb`, with the same rules and the same output; the
 notebook shows the intermediate results. Change a rule in both, or retire the notebook.
 
 ## Why
 
-`pdf_audiences` (from `pipeline/2_pdf/extend_with_pdf.py`) only knows the PDF's audience chapters, so it is
+`pdf_audiences` (from `core/pipeline/extend_with_pdf.py`) only knows the PDF's audience chapters, so it is
 blank for every organization listed only in a service chapter (Health, Legal, Housing, …). A blank can mean
 "open to everyone" or "not stated", and the data can't tell these apart.
 
@@ -60,7 +60,7 @@ script reads it on every run, applies it over the rules, and never overwrites it
 ## Data quality check
 
 ```sh
-uv run pipeline/4_audiences/check_audiences.py
+uv run core/pipeline/check_audiences.py
 ```
 
 Run it from the repo root after `tag_audiences.py` (`npm run pipeline -- audiences` does both) and before every import. It needs only the standard library and
@@ -74,7 +74,7 @@ import's `resource_id` → GeoJSON join). It exits with status 1 when a check fa
 1. `supabase db push` applies `supabase/migrations/*_add_audience_columns_to_resources.sql`, which adds the columns
    above (lists as `text[]`, plus a GIN index on `audiences_all`).
 2. `npm run import -- --replace` reads `data/cleaned/resource_audiences.csv` next to `resources_extended.csv` and
-   joins it by `resource_id` (see `AUDIENCE_COLUMNS` in `pipeline/5_load/load_supabase.mjs`).
+   joins it by `resource_id` (see `AUDIENCE_COLUMNS` in `core/pipeline/map_resources.py`).
 
 For the finder, `app/lib/resources.js` would read `audiences_all` in place of `pdf_audiences`, and `app/lib/filter.js`
 would apply the ranking above: a resource matches a chosen audience when `audiences_all` contains it or `Everyone`.

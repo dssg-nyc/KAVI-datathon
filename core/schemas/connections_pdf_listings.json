@@ -1,7 +1,7 @@
 {
   "file": "data/extracted/connections_pdf_listings.csv",
   "format": "csv",
-  "description": "Output of step 2 (2_pdf/extract_pdf.py): every listing in the printed Connections Guide, in page order.",
+  "description": "Output of step 2 (extract_pdf.py): every listing in the printed Connections Guide, in page order.",
   "booleans": "python",
   "lists": "semicolon",
   "columns": {

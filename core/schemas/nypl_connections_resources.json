@@ -1,7 +1,7 @@
 {
   "file": "data/nypl_connections_resources.geojson",
   "format": "geojson",
-  "description": "Output of step 3 (3_geocode/geocode.ts): one Point feature per raw guide row, in file order, with the raw guide columns as properties. Geometry is null when no geocoder placed the row. Rules in docs/geocoding.md.",
+  "description": "Output of step 3 (geocode.py): one Point feature per raw guide row, in file order, with the raw guide columns as properties. Geometry is null when no geocoder placed the row. Rules in docs/geocoding.md.",
   "booleans": "python",
   "lists": "semicolon",
   "columns": {

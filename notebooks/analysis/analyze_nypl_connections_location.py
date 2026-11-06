@@ -2,7 +2,7 @@
 """Reproduces the numbers in notebooks/analysis/nypl_connections_location_analysis.md.
 
 Reads data/nypl_connections_resources.geojson (the output of
-geocode.ts) and prints: total entities, Census geocoder match counts,
+geocode.ts, now core/pipeline/geocode.py) and prints: total entities, Census geocoder match counts,
 a per-state table, a per-city table, and density stats (densest grid cell, nearest-neighbor
 distances) computed from the matched points' coordinates.
 

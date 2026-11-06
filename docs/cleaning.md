@@ -21,8 +21,8 @@ above, so it was merged into that row's `review_notes`.
 ## Run it
 
 ```sh
-uv run pipeline/1_clean/clean_guide.py                 # or: npm run pipeline -- clean
-uv run pipeline/1_clean/__tests__/clean_guide.test.py  # the tests
+uv run core/pipeline/clean_guide.py                 # or: npm run pipeline -- clean
+uv run core/pipeline/__tests__/clean_guide.test.py  # the tests
 ```
 
 [uv](https://docs.astral.sh/uv/) installs pandas from the script's header. The script overwrites both

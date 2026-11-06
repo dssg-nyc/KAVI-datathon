@@ -15,15 +15,15 @@ Run from the repo root with Python 3.10 or later. The scripts use only the stand
 over the network; the rest only read files in `data/`.
 
 ```sh
-python3 pipeline/supplement/extract_all.py                      # 1. OSM snapshot: data/supplement/osm.csv
-python3 pipeline/supplement/fetch_sources.py                    # 2. the other sources; name some to fetch only those
-python3 pipeline/supplement/fetch_bins.py                       # 3. building IDs for the guide's addresses (cached)
-python3 pipeline/supplement/match_nypl.py --source osm          # 4. match to the guide; repeat for each source
-python3 pipeline/supplement/coverage_report.py --source osm     # 5. coverage by source; repeat for each source
-python3 pipeline/supplement/build_supplement.py                 # 6. one table of every place, with score and review column
-python3 pipeline/supplement/crawl_sites.py --cache <dir>        # 7. optional website crawl; --list makes no requests
-python3 pipeline/supplement/review_recommendations.py           # 8. the review list; --eval also writes the ranker results
-python3 pipeline/supplement/build_map_data.py                   # 9. data for the review map in notebooks/osm/
+python3 core/supplement/extract_all.py                      # 1. OSM snapshot: data/supplement/osm.csv
+python3 core/supplement/fetch_sources.py                    # 2. the other sources; name some to fetch only those
+python3 core/supplement/fetch_bins.py                       # 3. building IDs for the guide's addresses (cached)
+python3 core/supplement/match_nypl.py --source osm          # 4. match to the guide; repeat for each source
+python3 core/supplement/coverage_report.py --source osm     # 5. coverage by source; repeat for each source
+python3 core/supplement/build_supplement.py                 # 6. one table of every place, with score and review column
+python3 core/supplement/crawl_sites.py --cache <dir>        # 7. optional website crawl; --list makes no requests
+python3 core/supplement/review_recommendations.py           # 8. the review list; --eval also writes the ranker results
+python3 core/supplement/build_map_data.py                   # 9. data for the review map in notebooks/osm/
 ```
 
 Step 7 sends real requests to the organizations' own websites (robots.txt obeyed, one request per 2 seconds per site), so
@@ -33,7 +33,7 @@ again. Step 9 and everything after step 7 only read its saved output.
 Then re-run `notebooks/osm/osm_eda.ipynb`. Tests, each runnable on its own:
 
 ```sh
-for f in pipeline/supplement/__tests__/*.test.py; do uv run "$f"; done
+for f in core/supplement/__tests__/*.test.py; do uv run "$f"; done
 ```
 
 A clean clone skips the tests that need local data files.
@@ -48,8 +48,10 @@ and a verdict on a row applies to every listing of that place (`member_keys`). R
 3. `3_already_covered`: nearby guide sites already offer it, or no service is proposed.
 4. `4_no_location`: the source gives no coordinates, so someone has to locate the place first.
 
-`guide_checks.csv` lists guide rows whose own website shows another address or closure wording. These are prompts to check the guide,
-not corrections.
+`guide_checks.csv` is the freshness check the crawl feeds. It lists guide rows whose own website is unreachable or has moved,
+shows another address or closure wording, or lists details the guide has no column for (phone if blank, email, hours,
+languages, eligibility, referral). Each row is a flag, the field names, a link and the crawl date, never page text. These are
+prompts to check the guide, not corrections; the values sit in the ignored `crawl_pilot.csv` and on the review map.
 
 ## What's committed
 

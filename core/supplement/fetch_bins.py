@@ -4,13 +4,13 @@
 """Fetch the NYC Building Identification Number (BIN) for each mapped NYPL address, once, cached.
 
 Uses NYC GeoSearch (https://geosearch.planninglabs.nyc/v2/search), the same service as
-pipeline/3_geocode/geocode.ts; its result carries properties.addendum.pad.bin. One request at a time,
+core/pipeline/geocode.py; its result carries properties.addendum.pad.bin. One request at a time,
 a pause between requests. Rows already in the cache are never fetched again. A BIN is kept only when
-the returned zip and house number match the NYPL row (same rule as geocode.ts), else bin is blank.
+the returned zip and house number match the NYPL row (same rule as geocode.py), else bin is blank.
 
 Writes data/supplement/nypl_bin_cache.csv (key = the query text).
 
-    python3 pipeline/supplement/fetch_bins.py
+    python3 core/supplement/fetch_bins.py
 """
 
 import csv

@@ -2,10 +2,10 @@
 # requires-python = ">=3.10"
 # dependencies = ["pandas"]
 # ///
-# Tests for pipeline/1_clean/clean_guide.py: the row-level rules on their own, and the whole stage on a
+# Tests for core/pipeline/clean_guide.py: the row-level rules on their own, and the whole stage on a
 # small guide. No file I/O. Run:
 #
-#   uv run pipeline/1_clean/__tests__/clean_guide.test.py
+#   uv run core/pipeline/__tests__/clean_guide.test.py
 
 import sys
 import unittest

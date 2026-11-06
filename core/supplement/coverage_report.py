@@ -22,7 +22,7 @@ Definitions
                parents that have a mapped row.
 No precision or recall here: there are no gold labels, these are rates of rows the matcher accepted.
 
-    python3 pipeline/supplement/coverage_report.py --source osm
+    python3 core/supplement/coverage_report.py --source osm
 """
 
 import argparse
@@ -32,7 +32,7 @@ from collections import Counter, defaultdict
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-import core.pipeline.supplement.match_nypl as m  # noqa: E402
+import match_nypl as m  # noqa: E402
 
 DOMAIN_MERGE_MAX = 4
 SITE = ("same_site", "program_at_host")

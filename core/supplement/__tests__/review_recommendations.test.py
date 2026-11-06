@@ -1,6 +1,6 @@
 """Tests for review_recommendations.py, on small synthetic rows plus checks of the real queue files when present.
 
-    uv run pipeline/supplement/__tests__/review_recommendations.test.py
+    uv run core/supplement/__tests__/review_recommendations.test.py
 """
 
 import csv
@@ -11,9 +11,9 @@ from pathlib import Path
 
 sys.dont_write_bytecode = True  # no __pycache__ next to the module under test
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-import core.pipeline.supplement.build_supplement as b  # noqa: E402
-import core.pipeline.supplement.match_nypl as m  # noqa: E402
-import core.pipeline.supplement.review_recommendations as r  # noqa: E402
+import build_supplement as b  # noqa: E402
+import match_nypl as m  # noqa: E402
+import review_recommendations as r  # noqa: E402
 
 GUIDE = [{"id": "g1", "row_type": "mapped", "latitude": "40.7000", "longitude": "-74.0000", "service_types_all": '{Food}', "borough": "Brooklyn"},
          {"id": "g2", "row_type": "web_only", "latitude": "", "longitude": "", "service_types_all": '{Housing}', "borough": ""}]
@@ -160,6 +160,18 @@ class GuideChecks(unittest.TestCase):
         out = r.guide_checks(crawl, guide)
         self.assertEqual([x["flag"] for x in out], ["closure wording on site", "different address on site"])
         self.assertNotIn("closed for good", str(out))
+
+    def test_dead_moved_and_gaps(self):
+        guide = [{"id": "g", "organization_name": "Org", "street_number": "", "street": "", "city": "", "zip_code": "", "phone_number": "212"}]
+        base = {"group": "B", "source_id": "g", "address_check": "", "closure_wording": "", "website": "w", "final_url": "f", "crawl_date": "2026-11-06"}
+        dead = r.guide_checks([{**base, "site_status": "dead", "status_detail": "HTTP 404"}], guide)
+        self.assertEqual([(x["flag"], x["detail"]) for x in dead], [("website unreachable", "HTTP 404")])
+        moved = r.guide_checks([{**base, "site_status": "redirected", "redirect_host": "new.org"}], guide)
+        self.assertEqual([(x["flag"], x["detail"], x["evidence_url"]) for x in moved], [("website moved", "new.org", "f")])
+        gaps = r.guide_checks([{**base, "site_status": "live", "phone": "718", "hours": "Mon 9-5", "hours_url": "h", "languages": ""}], guide)
+        self.assertEqual([(x["flag"], x["detail"], x["evidence_url"]) for x in gaps], [("site lists details the guide lacks", "hours", "h")])
+        self.assertNotIn("Mon 9-5", str(gaps))
+        self.assertEqual(gaps[0]["crawl_date"], "2026-11-06")
 
 
 @unittest.skipUnless(r.QUEUE_CSV.exists(), "run review_recommendations.py first")

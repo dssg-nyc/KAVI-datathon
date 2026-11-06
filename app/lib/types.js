@@ -1,9 +1,9 @@
 // The shapes the finder works with, as JSDoc types so editors can check uses of them.
-// PublicRow mirrors pipeline/schemas/resources_public.json, the file the finder reads; keep the two in step.
+// PublicRow mirrors core/schemas/resources_public.json, the file the finder reads; keep the two in step.
 // This file has no code: import it only for its types, `import('./types.js').PublicRow`.
 
 /**
- * One row of data/public/resources.public.json, written by pipeline/6_build/build_data.ts.
+ * One row of data/public/resources.public.json, written by core/pipeline/build_data.py.
  * Blank values are null. Lists are arrays of strings.
  * @typedef {object} PublicRow
  * @property {string} id stable id from data/resource_ids.csv: "176", "176-2", "feature-695"

@@ -7,7 +7,7 @@ export const COLUMNS = [
   'service_types_all', 'pdf_audiences', 'resource_id',
 ].join(',');
 
-// "Who is it for?" columns from pipeline/4_audiences/tag_audiences.py (supabase/migrations/*_add_audience_columns_to_resources.sql).
+// "Who is it for?" columns from core/pipeline/tag_audiences.py (supabase/migrations/*_add_audience_columns_to_resources.sql).
 // Until that migration is applied they don't exist, and the finder falls back to pdf_audiences.
 export const AUDIENCE_COLUMNS = ['audiences_all', 'restricted_audiences', 'focus_audiences'].join(',');
 
@@ -32,7 +32,7 @@ export const serviceColor = (label) => SERVICE_COLORS[label] ?? '#6b7280';
 // How someone reaches a resource that has no point on the map, by row_type.
 const REMOTE_LABEL = { hotline: 'Hotline', web_only: 'Online', mailing_address: 'By mail or phone', outside_nyc: 'Outside NYC' };
 
-// What each review_flags value (set by pipeline/6_build/build_data.ts reviewFlags()) means on a card.
+// What each review_flags value (set by core/pipeline/build_data.py review_flags()) means on a card.
 export const REVIEW_LABELS = {
   services: 'service types',
   audiences: 'who it is for',

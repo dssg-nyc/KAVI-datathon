@@ -19,7 +19,7 @@
 #                      same chapter (names under 12 normalized characters are not searched)
 # When several PDF listings share the name, the one in the CSV row's chapter and section wins.
 #
-#   uv run pipeline/2_pdf/match_pdf.py
+#   uv run core/pipeline/match_pdf.py
 
 import csv
 import re

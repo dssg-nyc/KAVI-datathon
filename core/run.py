@@ -1,12 +1,12 @@
 # Runs the data pipeline's stages in order, from the repo root. Standard library only.
 #
-#   uv run pipeline/run.py               every stage whose inputs are present
-#   uv run pipeline/run.py clean pdf     only these stages, in pipeline order
-#   uv run pipeline/run.py --list        the stages, their inputs and outputs
+#   uv run core/run.py               every stage whose inputs are present
+#   uv run core/run.py clean pdf     only these stages, in pipeline order
+#   uv run core/run.py --list        the stages, their inputs and outputs
 #
 # A stage whose input file is missing is skipped with a note (the guide PDF is not in git), unless
 # it was named on the command line, when that is an error. A stage that fails stops the run. The last
-# stage, check, validates every data file against the schemas in pipeline/schemas/.
+# stage, check, validates every data file against the schemas in core/schemas/.
 # Loading into Supabase is not a stage here: it writes to a shared database, so it stays a
 # separate, deliberate command (npm run import).
 
@@ -33,39 +33,39 @@ STAGES = (
     Stage("clean", "clean the Connections Guide export",
           (f"{DATA}/NYPL Connections Resources.csv", f"{DATA}/NYPLConnections_NoMatch.csv"),
           (f"{DATA}/cleaned/resources_clean.csv", f"{DATA}/cleaned/review_list.csv"),
-          (("uv", "run", "pipeline/1_clean/clean_guide.py"),)),
+          (("uv", "run", "core/pipeline/clean_guide.py"),)),
     Stage("pdf", "extend it with the printed guide PDF",
           (f"{DATA}/NYPL_JPS_Connections_2026.pdf", f"{DATA}/cleaned/resources_clean.csv"),
           (f"{DATA}/extracted/connections_pdf_listings.csv", f"{DATA}/extracted/connections_pdf_vs_csv.csv",
            f"{DATA}/cleaned/resources_extended.csv"),
-          (("uv", "run", "pipeline/2_pdf/extract_pdf.py"),
-           ("uv", "run", "pipeline/2_pdf/match_pdf.py"),
-           ("uv", "run", "pipeline/2_pdf/extend_with_pdf.py"))),
+          (("uv", "run", "core/pipeline/extract_pdf.py"),
+           ("uv", "run", "core/pipeline/match_pdf.py"),
+           ("uv", "run", "core/pipeline/extend_with_pdf.py"))),
     Stage("geocode", "add coordinates (NYC GeoSearch, then Census; needs the network)",
           (f"{DATA}/NYPL Connections Resources.csv",),
           (f"{DATA}/nypl_connections_resources.geojson",),
-          (("node", "pipeline/3_geocode/geocode.ts"),)),
+          (("uv", "run", "core/pipeline/geocode.py"),)),
     Stage("audiences", "tag who each resource serves, then check the result",
           (f"{DATA}/cleaned/resources_extended.csv", f"{DATA}/extracted/connections_pdf_listings.csv",
            f"{DATA}/nypl_connections_resources.geojson"),
           (f"{DATA}/cleaned/resource_audiences.csv", f"{DATA}/review/audience_review.csv",
            f"{DATA}/review/audience_no_match.csv"),
-          (("uv", "run", "pipeline/4_audiences/tag_audiences.py"),
-           ("uv", "run", "pipeline/4_audiences/check_audiences.py"))),
+          (("uv", "run", "core/pipeline/tag_audiences.py"),
+           ("uv", "run", "core/pipeline/check_audiences.py"))),
     Stage("ids", "give every row a stable id, kept in data/resource_ids.csv",
           (f"{DATA}/nypl_connections_resources.geojson", f"{DATA}/cleaned/resources_extended.csv",
            f"{DATA}/cleaned/resource_audiences.csv"),
           (f"{DATA}/resource_ids.csv",),
-          (("node", "pipeline/6_build/resource_ids.ts", "--write"),)),
+          (("uv", "run", "core/pipeline/resource_ids.py", "--write"),)),
     Stage("build", "write the files the site reads to data/public/",
           (f"{DATA}/resource_ids.csv",),
           (f"{DATA}/public/resources.public.json", f"{DATA}/public/resources.provenance.json",
            f"{DATA}/review/needs_address.csv"),
-          (("node", "pipeline/6_build/build_data.ts", "--write"),)),
-    Stage("check", "check every data file against its schema in pipeline/schemas/",
+          (("uv", "run", "core/pipeline/build_data.py", "--write"),)),
+    Stage("check", "check every data file against its schema in core/schemas/",
           (),
           (),
-          (("uv", "run", "pipeline/check_data.py"),)),
+          (("uv", "run", "core/pipeline/check_data.py"),)),
 )
 
 

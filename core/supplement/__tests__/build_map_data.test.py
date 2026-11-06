@@ -1,4 +1,4 @@
-"""Tests for build_map_data.py. Run: uv run pipeline/supplement/__tests__/build_map_data.test.py"""
+"""Tests for build_map_data.py. Run: uv run core/supplement/__tests__/build_map_data.test.py"""
 
 import json
 import sys
@@ -8,7 +8,7 @@ from pathlib import Path
 
 sys.dont_write_bytecode = True  # no __pycache__ next to the module under test
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-import core.pipeline.supplement.build_map_data as d  # noqa: E402
+import build_map_data as d  # noqa: E402
 
 
 def guide(gid="1", phone="212-555-0100", website="", types='{Food}', row_type="mapped", lat="40.7"):

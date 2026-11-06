@@ -6,9 +6,9 @@
 Sources carry a service or facility type, which OSM rarely does. This script only fetches and
 normalizes; matching to NYPL rows is a later stage.
 
-    python3 pipeline/supplement/fetch_sources.py [source ...]       (no arguments = every source)
-    python3 pipeline/supplement/fetch_sources.py --list
-    python3 pipeline/supplement/fetch_sources.py --cache DIR --out DIR facdb
+    python3 core/supplement/fetch_sources.py [source ...]       (no arguments = every source)
+    python3 core/supplement/fetch_sources.py --list
+    python3 core/supplement/fetch_sources.py --cache DIR --out DIR facdb
 
 Standard library only. Downloads go to a fresh directory under the system temp dir (or --cache,
 which must be new or empty) and are treated as untrusted data: they are only parsed as CSV/JSON.
@@ -50,7 +50,7 @@ well as the NYC.gov Privacy Policy" and that re-publishers should identify sourc
 modifications. Permission for the NYC sources is therefore unverified; confirm before redistributing.
 
 Regeneration: data/supplement/.gitignore leaves out every downloaded source except osm.csv. Rebuild them with
-`python3 pipeline/supplement/fetch_sources.py` (network needed); name sources to fetch only those.
+`python3 core/supplement/fetch_sources.py` (network needed); name sources to fetch only those.
 
 Skipped: OASAS (no bulk directory; the provider directory is an HTML search tool), SAMHSA
 (findtreatment.gov is a search tool; the data.gov entry links only to it; CMS's OTP list stands in). Findhelp and 211 are
@@ -380,7 +380,7 @@ def build_workforce1(cache: Path) -> list[dict]:
     return unique_ids(sorted(out, key=lambda x: x["source_id"]))
 
 
-GEOSEARCH = "https://geosearch.planninglabs.nyc/v2/search"  # NYC GeoSearch, as in pipeline/3_geocode/geocode.ts
+GEOSEARCH = "https://geosearch.planninglabs.nyc/v2/search"  # NYC GeoSearch, as in core/pipeline/geocode.py
 
 
 def geosearch(address: str, zip_: str, tmp: Path) -> tuple[str, str, str]:

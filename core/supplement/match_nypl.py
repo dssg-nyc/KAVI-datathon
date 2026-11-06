@@ -9,7 +9,7 @@ own fields, e.g. OSM tags). Output: data/supplement/matches_<source>.csv, one ro
 (NYPL row x source feature), plus one match_class=no_match row (source_id blank) for every NYPL row that
 has no candidate, so the denominators stay visible. is_best marks the top candidate of each NYPL row.
 
-    python3 pipeline/supplement/match_nypl.py --source osm
+    python3 core/supplement/match_nypl.py --source osm
     flags: --no-address --no-aliases --no-bin switch one kind of evidence off (to measure its contribution)
 
 match_class (best first)
@@ -56,7 +56,7 @@ from collections import Counter, defaultdict
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-import core.pipeline.supplement.fetch_bins as fetch_bins  # noqa: E402
+import fetch_bins as fetch_bins  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
 NYPL_CSV = ROOT / "data" / "kavi_resources.csv"

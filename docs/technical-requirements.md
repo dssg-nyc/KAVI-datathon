@@ -4,10 +4,10 @@
 
 ## Where things stand
 
-The site is static HTML, CSS and browser JS with no build step. The website is in `app/`, the data pipeline is in `pipeline/`, one folder per stage, and the notebooks, one-off analysis and the OSM layer are in `notebooks/`, and `vercel.json` maps the public URLs to the pages.
+The site is static HTML, CSS and browser JS with no build step. The website is in `app/`, the data pipeline is in `core/pipeline/`, one script per stage, and the notebooks, one-off analysis and the OSM layer are in `notebooks/`, and `vercel.json` maps the public URLs to the pages.
 
 - **Finder:** `app/pages/finder.html`, `app/components/` and `app/lib/`. `app/config.js` sets `RESOURCES_FILE`, so the browser downloads `data/public/resources.public.json`, with Supabase as the fallback data source.
-- **Data pipeline:** Python and notebooks clean and enrich the Connections Guide, TS scripts geocode it, and `pipeline/5_load/load_supabase.mjs` loads it into Supabase.
+- **Data pipeline:** Python scripts and notebooks clean, enrich and geocode the Connections Guide, and `supabase/load_supabase.mjs` loads it into Supabase.
 - **Tests:** `npm run check` runs the type check, linters and the JS, TS and Python tests; `npm run audit` runs Lighthouse. CI runs both on every push. (At the start there was no CI and no `npm test`.)
 - **Handoff:** [handoff.md](handoff.md) says what is deployed, how to update the data and what the team still has to decide.
 - **PRD coverage:** map, service, keyword, address, ZIP and borough search, and hotlines are built. The gaps are listed under [PRD features](#prd-features).
@@ -20,11 +20,11 @@ The site is static HTML, CSS and browser JS with no build step. The website is i
 | CSV loader | `app/lib/csv.js`, `preview.js` | Cursor Agent (jyr-ai's PRs), Franziska |
 | Landing page and brand | `app/pages/index.html`, `app/brand/` | Cursor Agent (jyr-ai's PRs), Akai |
 | Reach prototype | `app/prototypes/reach/` | Akai |
-| Cleaning and audiences | `pipeline/1_clean/clean_guide.py`, `pipeline/4_audiences/tag_audiences.py`, `notebooks/` | Franziska |
-| PDF extension | `pipeline/2_pdf/extract_pdf.py`, `match_pdf.py`, `extend_with_pdf.py` | Akai, Rita |
-| Geocoding | `pipeline/3_geocode/geocode.ts` | Rita, Akai |
-| OSM layer | `pipeline/supplement/`, `notebooks/osm/` | Ramsey |
-| Database import | `pipeline/5_load/load_supabase.mjs`, `supabase/` | Akai, Franziska |
+| Cleaning and audiences | `core/pipeline/clean_guide.py`, `core/pipeline/tag_audiences.py`, `notebooks/` | Franziska |
+| PDF extension | `core/pipeline/extract_pdf.py`, `match_pdf.py`, `extend_with_pdf.py` | Akai, Rita |
+| Geocoding | `core/pipeline/geocode.py` (ported from Rita's `geocode.ts`) | Rita, Akai |
+| OSM layer | `core/supplement/`, `notebooks/osm/` | Ramsey |
+| Database import | `supabase/` (`load_supabase.mjs`, migrations) | Akai, Franziska |
 
 ## Design decisions
 
@@ -36,7 +36,7 @@ The site is static HTML, CSS and browser JS with no build step. The website is i
 6. **Take stable IDs from the source data.** The database `id` changes on each `import --replace`, so IDs come from `resource_id`, with a suffix where it repeats, such as the NEON sites. The mapping is committed.
 7. **Leave Supabase in place.** The refactor does not change `supabase/` or run the import against the database, and the finder's fallback stays. Retiring it is the team's decision.
 8. **Serve nothing from other companies, and say so.** Fonts and libraries are in `app/vendor/`, so a core page makes requests only to this site, the map tiles, GeoSearch and, as a fallback, Supabase. `vercel.json` sets a content security policy that allows exactly those hosts, plus `X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy` and `Permissions-Policy`; the dev server sends the same headers so a mistake shows up locally. `/privacy.html` lists the same hosts for visitors. The reach prototype is excluded from the policy because it still uses CDNs.
-9. **One tool per language.** Python runs through [uv](https://docs.astral.sh/uv/) (`pyproject.toml`, `.python-version`, `uv.lock`), Node through npm. No `__pycache__` folders are written by the tests or the pipeline, so `pipeline/` stays readable.
+9. **One tool per language.** Python runs through [uv](https://docs.astral.sh/uv/) (`pyproject.toml`, `.python-version`, `uv.lock`), Node through npm. No `__pycache__` folders are written by the tests or the pipeline, so `core/pipeline/` stays readable.
 
 ## Open decisions for the team
 
@@ -63,17 +63,17 @@ One PR, reviewed commit by commit. Each commit should leave the checks passing a
 | 3 | `chore: reorganize into app/, core/ and docs/` | Renames only |
 | 4 | `chore: fix paths after the reorganization` | Paths only, plus new `vercel.json` and `.vercelignore` |
 | 4a | `refactor(pipeline): rewrite the cleaning stage in Python and add a single pipeline command` | `package.json` and READMEs; `clean_guide.py` is new and reproduces the notebook's output |
-| 5 | `feat(data): add schemas for resource data` | `package.json` and `pipeline/run.py` (a `check` stage); schemas in `pipeline/schemas/`, validator `pipeline/check_data.py` |
+| 5 | `feat(data): add schemas for resource data` | `package.json` and `core/run.py` (a `check` stage); schemas in `core/schemas/`, validator `core/pipeline/check_data.py` |
 | 6 | `refactor(data): export the import mapping` | `load_supabase.mjs`: the file-to-row mapping moved to `map_resources.mjs`, same output; `package.json`, `tsconfig.json` |
-| 7 | `feat(data): add stable resource IDs` | `package.json` (an `ids` script), `tsconfig.json`, `eslint.config.js` and `pipeline/run.py` (an `ids` stage); the mapping is `data/resource_ids.csv`, made by `pipeline/6_build/resource_ids.ts` |
-| 8 | `feat(data): generate public and provenance data files` | `package.json` (a `build:data` script), `pipeline/run.py` (a `build` stage), `pipeline/check_data.py` (reads JSON files too); the files are `data/public/resources.public.json` and `resources.provenance.json`, made by `pipeline/6_build/build_data.ts` |
+| 7 | `feat(data): add stable resource IDs` | `package.json` (an `ids` script), `tsconfig.json`, `eslint.config.js` and `core/run.py` (an `ids` stage); the mapping is `data/resource_ids.csv`, made by `core/pipeline/resource_ids.ts` |
+| 8 | `feat(data): generate public and provenance data files` | `package.json` (a `build:data` script), `core/run.py` (a `build` stage), `core/pipeline/check_data.py` (reads JSON files too); the files are `data/public/resources.public.json` and `resources.provenance.json`, made by `core/pipeline/build_data.ts` |
 | 9 | `feat(finder): load the generated public data file` | `csv.js` reads the JSON file as well as a CSV, `preview.js` and `app/config.js` point at it (`RESOURCES_FILE`; `RESOURCES_CSV` still works), one comment line in `finder.js`; `app/lib/types.js` is new |
 | 10 | `chore(finder): vendor MapLibre instead of loading it from a CDN` | Three tags in `finder.html` point at `app/vendor/` (MapLibre and supabase-js, same versions, with licences); one message in `finder.js` and one comment in `map.js` |
 | 12 | `feat(finder): add shareable resource pages` | New `app/pages/resource.html`, `resource.js`, `app/components/resource.css` and `app/lib/share.js`; `cards.js` gained a "Link to this resource" line, `finder.css` one rule, `vercel.json` one rewrite |
 | 13 | `feat(finder): show data confidence labels` | `build_data.ts` derives `review_flags` into the public file (schema and data regenerated) and writes `resources.meta.json`; small edits to `cards.js`, `resources.js`, `csv.js`, `types.js`, `finder.css`; the resource page shows the source and data date |
-| 14 | `feat(map): add ArcGIS reference layers` | New `pipeline/6_build/reference_layers.ts` (`npm run layers`) downloads the library, health facility and cooling site layers into committed `data/public/layers/*.geojson` plus an `index.json`; new `app/lib/layers.js`; small edits to `map.js` (`setLayer`), `finder.js` (toggle buttons on the map tab) |
+| 14 | `feat(map): add ArcGIS reference layers` | New `core/pipeline/reference_layers.ts` (`npm run layers`) downloads the library, health facility and cooling site layers into committed `data/public/layers/*.geojson` plus an `index.json`; new `app/lib/layers.js`; small edits to `map.js` (`setLayer`), `finder.js` (toggle buttons on the map tab) |
 | 15 | `test: add performance and accessibility checks` | New `app/audit.mjs` (`npm run audit`, Lighthouse on the three pages, also a CI job) and tests under `app/pages/__tests__/`, `app/lib/__tests__/fallbacks.test.mjs`, `app/components/__tests__/contrast.test.mjs`; small edits for the findings: `cards.js` ("Show on map" is a button), `finder.js`, `resource.js`, three colour rules in `finder.css`, and `dev-server.mjs` gzips text like Vercel |
-| 16 | `chore: prepare for production and add team handoff` | Production readiness and the docs in one commit. Performance (P1): fonts self-hosted in `app/vendor/fonts/` (one line of `brand.css`), MapLibre and supabase-js loaded on demand by new `app/lib/vendor.js` (tags removed from `finder.html` and `resource.html`, `map.js` and `finder.js` call it), the partner logos in `app/brand/` resized from 1024 px to 176 px, `modulepreload` and font preloads in the pages, `finder.js` fetches the layer index alongside the data. Security headers and a content security policy in `vercel.json`, mirrored by `dev-server.mjs`. New `app/pages/privacy.html` and `app/components/page.css`, linked from the footers (one line in `index.html`). `LICENSE`. Python through uv: `pyproject.toml`, `.python-version`, `uv.lock` replace `ruff.toml`; `package.json` and `run.py` call `uv run`; no `__pycache__`. `.gitattributes` marks vendored and generated files. Tests for all of it; `README.md`, `app/README.md`, `app/vendor/README.md`, `pipeline/README.md`, this file, and new `docs/handoff.md` |
+| 16 | `chore: prepare for production and add team handoff` | Production readiness and the docs in one commit. Performance (P1): fonts self-hosted in `app/vendor/fonts/` (one line of `brand.css`), MapLibre and supabase-js loaded on demand by new `app/lib/vendor.js` (tags removed from `finder.html` and `resource.html`, `map.js` and `finder.js` call it), the partner logos in `app/brand/` resized from 1024 px to 176 px, `modulepreload` and font preloads in the pages, `finder.js` fetches the layer index alongside the data. Security headers and a content security policy in `vercel.json`, mirrored by `dev-server.mjs`. New `app/pages/privacy.html` and `app/components/page.css`, linked from the footers (one line in `index.html`). `LICENSE`. Python through uv: `pyproject.toml`, `.python-version`, `uv.lock` replace `ruff.toml`; `package.json` and `run.py` call `uv run`; no `__pycache__`. `.gitattributes` marks vendored and generated files. Tests for all of it; `README.md`, `app/README.md`, `app/vendor/README.md`, `core/README.md`, this file, and new `docs/handoff.md` |
 
 **Not on this roadmap:** PRD Stage 2 and Section 9 (overlays, referral tracking, gap analysis, impact reporting, Apricot 360 integration). These need team decisions, new data or a backend.
 
@@ -109,7 +109,7 @@ One PR, reviewed commit by commit. Each commit should leave the checks passing a
 
 | ID | Requirement | Source | Today | How it is checked | Commit |
 |---|---|---|---|---|---|
-| D1 | Every row passes a schema before reaching the site | PRD 8 | `pipeline/check_data.py` checks each pipeline output, `kavi_resources.csv` and the two files in `data/public/` against `pipeline/schemas/`; runs in `npm run check` and as the pipeline's last stage | Done | 5, 8 |
+| D1 | Every row passes a schema before reaching the site | PRD 8 | `core/pipeline/check_data.py` checks each pipeline output, `kavi_resources.csv` and the two files in `data/public/` against `core/schemas/`; runs in `npm run check` and as the pipeline's last stage | Done | 5, 8 |
 | D2 | No resources are dropped between source and site | PRD 8 | `data/public/resources.public.json` holds every row the loader produces, and a test checks the count; the finder leaves out cross-references and blank rows at load time, as before | Done | 8 |
 | D3 | Resource IDs are unique and do not change between builds | PRD 8 | `data/resource_ids.csv` is committed; `npm run ids` fails if it would change, and a test checks it is unique and reproduced from the data | Done | 7 |
 | D4 | Unreviewed values are labelled for the user | PRD 10 | `review_flags` in the public file (services, audiences, eligibility, location, details, derived from the pipeline's own flags); cards say "Not yet checked: …" | Tests on each flag combination, in the build and on the card | Done, 13 |
@@ -145,7 +145,7 @@ One PR, reviewed commit by commit. Each commit should leave the checks passing a
 | F5 | Catchment or precinct filter | PRD 7.2, 7.5 | **Blocked:** model undecided | Later |
 | F6 | Organization type filter | PRD 7.5 | **Blocked:** no such field. `category` has 18 values but mixes services and audiences, such as "Formerly Incarcerated People" | Later |
 | F7 | Report of rows that may need an address | PRD 8, 13 | All `mapped` rows have coordinates. Of the 325 rows without them, 34 are `mailing_address` or `outside_nyc` and may need checking; the rest are web-only, hotline, cross-reference or the one blank row. `build:data` writes those 34 to `data/review/needs_address.csv` | Done, 8 |
-| F8 | Schema leaves room for hours, eligibility and referral fields | PRD 7.4, 8 | `hours`, `eligibility` and `referral_process` are planned columns in `pipeline/schemas/kavi_resources.json`: checked when present, not required | 5 |
+| F8 | Schema leaves room for hours, eligibility and referral fields | PRD 7.4, 8 | `hours`, `eligibility` and `referral_process` are planned columns in `core/schemas/kavi_resources.json`: checked when present, not required | 5 |
 
 ## Third-party services
 

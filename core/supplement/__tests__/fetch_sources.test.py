@@ -1,6 +1,6 @@
 """Tests for the pure helpers in fetch_sources.py (no network).
 
-    uv run pipeline/supplement/__tests__/fetch_sources.test.py
+    uv run core/supplement/__tests__/fetch_sources.test.py
 """
 
 import csv
@@ -12,7 +12,7 @@ from pathlib import Path
 
 sys.dont_write_bytecode = True  # no __pycache__ next to the module under test
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-import core.pipeline.supplement.fetch_sources as f  # noqa: E402
+import fetch_sources as f  # noqa: E402
 
 
 class Helpers(unittest.TestCase):

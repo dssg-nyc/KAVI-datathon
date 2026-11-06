@@ -1,12 +1,15 @@
 // Maps the pipeline's data files to the rows of public.resources. This is the import mapping that
-// load_supabase.mjs sends to Supabase, kept apart from the network code so other tools (the build
-// of the site's data file) can produce the same rows without a database. No side effects: it reads
+// load_supabase.mjs sends to Supabase, kept apart from the network code. No side effects: it reads
 // the files and returns the rows.
+//
+// The pipeline has a Python copy, core/pipeline/map_resources.py, which builds the site's data files
+// from the same rows. Change both together: core/pipeline/__tests__/map_resources.test.py runs the two
+// on the committed data and fails if they disagree.
 //
 // Rows come from four files in data/:
 //   nypl_connections_resources.geojson  one feature per row of "NYPL Connections Resources.csv",
 //                                       in the same order, with coordinates and geocode_* fields
-//                                       (built by pipeline/3_geocode/geocode.ts).
+//                                       (built by core/pipeline/geocode.py).
 //   cleaned/resources_extended.csv      the cleaned rows with service types, row types and PDF
 //                                       fields (clean_guide.py, extend_with_pdf.py). Its columns in
 //                                       EXTENDED_COLUMNS are added to the GeoJSON row it was

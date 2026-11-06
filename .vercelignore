@@ -1,5 +1,5 @@
 # Files the site does not load. Everything else in the repo would be published.
-pipeline/
+core/
 notebooks/
 docs/
 supabase/

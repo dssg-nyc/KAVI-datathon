@@ -3,7 +3,7 @@
 # ///
 """Data for the local review map (map.html): what each source could add to the guide, by service area.
 
-    python3 pipeline/supplement/build_map_data.py
+    python3 core/supplement/build_map_data.py
 
 Run it after review_recommendations.py. Writes data/supplement/map_data.geojson, which is ignored by git because it
 holds NYC Open Data rows and crawled page text that we may not republish. Nothing here feeds the front end.
@@ -41,10 +41,10 @@ from datetime import date
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-import core.pipeline.supplement.build_supplement as b  # noqa: E402
-import core.pipeline.supplement.crawl_sites as c  # noqa: E402
-import core.pipeline.supplement.match_nypl as m  # noqa: E402
-import core.pipeline.supplement.review_recommendations as r  # noqa: E402
+import build_supplement as b  # noqa: E402
+import crawl_sites as c  # noqa: E402
+import match_nypl as m  # noqa: E402
+import review_recommendations as r  # noqa: E402
 
 OUT = m.SUPP_DIR / "map_data.geojson"
 EVENTS_CSV = m.SUPP_DIR / "crawl_events.csv"

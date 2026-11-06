@@ -1,6 +1,6 @@
 # Pipeline
 
-Turns the Connections Guide, a spreadsheet the NYPL team exported, into the resource table the finder shows. One numbered folder per step, in the order they run; `run.py` runs them all. Each step reads files from [`data/`](../data), adds columns, and writes new files back to `data/`. Nothing in the app imports this code; the app only reads the data it produces.
+Turns the Connections Guide, a spreadsheet the NYPL team exported, into the resource table the finder shows. The step scripts are all Python and sit side by side in [`pipeline/`](pipeline); the step numbers below give the order, and `run.py` runs them all. Each step reads files from [`data/`](../data), adds columns, and writes new files back to `data/`. Nothing in the app imports this code; the app only reads the data it produces.
 
 ```sh
 npm run pipeline                 # every step whose inputs are present, in order
@@ -12,19 +12,19 @@ npm run pipeline -- --list       # the steps with their inputs and outputs
 
 | # | Step | Script | Reads | Writes |
 |---|---|---|---|---|
-| 1 | **clean** the guide: trim text, fix ZIPs and websites, merge address-only rows, derive `borough`, `row_type` and a first `service_type` | `1_clean/clean_guide.py` | `data/NYPL Connections Resources.csv` (the raw guide, 760 rows), `data/NYPLConnections_NoMatch.csv` | `data/cleaned/resources_clean.csv` (759 rows), `data/cleaned/review_list.csv` |
-| 2 | **pdf**: pull every listing out of the printed guide | `2_pdf/extract_pdf.py` | `data/NYPL_JPS_Connections_2026.pdf` (not in git) | `data/extracted/connections_pdf_listings.csv` |
-| | match each guide row to its PDF listing | `2_pdf/match_pdf.py` | the two files above | `data/extracted/connections_pdf_vs_csv.csv` |
-| | extend the cleaned rows with what the PDF says (chapter, section, audiences), tag the services each description mentions, apply the human reviews in `data/review/` | `2_pdf/extend_with_pdf.py` | `resources_clean.csv`, the PDF listings, `data/reference/`, `data/review/` | `data/cleaned/resources_extended.csv` |
-| 3 | **geocode** every address (NYC GeoSearch, then the Census geocoder; needs the network) | `3_geocode/geocode.ts` | `data/NYPL Connections Resources.csv` | `data/nypl_connections_resources.geojson` |
-| 4 | **audiences**: tag who each resource serves ("Who is it for?") | `4_audiences/tag_audiences.py` | `resources_extended.csv`, the PDF listings, `data/review/reviewed_audiences.csv` | `data/cleaned/resource_audiences.csv`, two review lists in `data/review/` |
-| | check that output before it is loaded | `4_audiences/check_audiences.py` | the files above and the GeoJSON | nothing; exits 1 on a failed check |
+| 1 | **clean** the guide: trim text, fix ZIPs and websites, merge address-only rows, derive `borough`, `row_type` and a first `service_type` | `clean_guide.py` | `data/NYPL Connections Resources.csv` (the raw guide, 760 rows), `data/NYPLConnections_NoMatch.csv` | `data/cleaned/resources_clean.csv` (759 rows), `data/cleaned/review_list.csv` |
+| 2 | **pdf**: pull every listing out of the printed guide | `extract_pdf.py` | `data/NYPL_JPS_Connections_2026.pdf` (not in git) | `data/extracted/connections_pdf_listings.csv` |
+| | match each guide row to its PDF listing | `match_pdf.py` | the two files above | `data/extracted/connections_pdf_vs_csv.csv` |
+| | extend the cleaned rows with what the PDF says (chapter, section, audiences), tag the services each description mentions, apply the human reviews in `data/review/` | `extend_with_pdf.py` | `resources_clean.csv`, the PDF listings, `data/reference/`, `data/review/` | `data/cleaned/resources_extended.csv` |
+| 3 | **geocode** every address (NYC GeoSearch, then the Census geocoder; needs the network) | `geocode.py` | `data/NYPL Connections Resources.csv` | `data/nypl_connections_resources.geojson` |
+| 4 | **audiences**: tag who each resource serves ("Who is it for?") | `tag_audiences.py` | `resources_extended.csv`, the PDF listings, `data/review/reviewed_audiences.csv` | `data/cleaned/resource_audiences.csv`, two review lists in `data/review/` |
+| | check that output before it is loaded | `check_audiences.py` | the files above and the GeoJSON | nothing; exits 1 on a failed check |
 | | **check** every data file above against its schema | `check_data.py` | the files above and `data/kavi_resources.csv` | nothing; exits 1 on an invalid row |
-| 5 | **load**: join the GeoJSON, `resources_extended.csv` and `resource_audiences.csv` into the rows of the Supabase `public.resources` table | `5_load/map_resources.mjs` | the three files above, `data/NYPLConnections_NoMatch.csv` | nothing; the rows, for the next script |
-| | send those rows to Supabase | `5_load/load_supabase.mjs` | the rows | the database |
-| 6 | **ids**: give every row an id that does not change between builds | `6_build/resource_ids.ts` | the rows from step 5 | `data/resource_ids.csv` |
-| | **build** the files the site reads | `6_build/build_data.ts` | the rows from step 5, `data/resource_ids.csv` | `data/public/resources.public.json`, `data/public/resources.provenance.json`, `data/public/resources.meta.json`, `data/review/needs_address.csv` |
-| | **layers**: copy the reference layers the map can show (`npm run layers`, needs the network, not in `run.py`) | `6_build/reference_layers.ts` | the three supplementary layers on ArcGIS Online | `data/public/layers/{libraries,health_facilities,cooling_sites}.geojson`, `data/public/layers/index.json` |
+| 5 | **load**: join the GeoJSON, `resources_extended.csv` and `resource_audiences.csv` into the rows of the Supabase `public.resources` table | `map_resources.py` | the three files above, `data/NYPLConnections_NoMatch.csv` | nothing; the rows, for the next script |
+| | send those rows to Supabase (`npm run import`, not in `run.py`) | [`supabase/load_supabase.mjs`](../supabase/load_supabase.mjs) | the rows | the database |
+| 6 | **ids**: give every row an id that does not change between builds | `resource_ids.py` | the rows from step 5 | `data/resource_ids.csv` |
+| | **build** the files the site reads | `build_data.py` | the rows from step 5, `data/resource_ids.csv` | `data/public/resources.public.json`, `data/public/resources.provenance.json`, `data/public/resources.meta.json`, `data/review/needs_address.csv` |
+| | **layers**: copy the reference layers the map can show (`npm run layers`, needs the network, not in `run.py`) | `reference_layers.py` | the three supplementary layers on ArcGIS Online | `data/public/layers/{libraries,health_facilities,cooling_sites}.geojson`, `data/public/layers/index.json` |
 
 Step 3 reads the raw guide, not step 1's output, and step 5 joins everything by row order and `resource_id`. Every step is deterministic: running it again on the same inputs gives the same files, so the outputs are committed and can be diffed.
 
@@ -54,9 +54,9 @@ npm run ids -- --write   # update the file after the data changed, then commit i
 
 ## The files the site reads
 
-`build_data.ts` takes the same rows the loader sends to Supabase, keyed by the stable id, and writes them to `data/public/`, split in two: `resources.public.json` has the columns the finder shows and filters on, `resources.provenance.json` has everything else (the raw guide fields the finder does not show, the geocoder's match, the PDF listing, the service type and audience tagging and their review flags), joined to the public file by `id`. The public file also gets `review_flags`, derived from those review flags: which of `services`, `audiences`, `eligibility`, `location` and `details` nobody has confirmed yet, so the finder can say so on the card (see `reviewFlags()` in `build_data.ts` for the exact rules). `resources.meta.json` names the source and the day the row files last changed; the finder's resource page shows both. Every row goes into both files, cross-references and the one blank row included; the finder decides what to list, as it does today. The files are committed and served as they are, so the site needs no build step and a data change shows up as a diff, one row per line. `data/review/needs_address.csv` lists the rows that name a street but have no point on the map, for someone to check.
+`build_data.py` takes the same rows the loader sends to Supabase, keyed by the stable id, and writes them to `data/public/`, split in two: `resources.public.json` has the columns the finder shows and filters on, `resources.provenance.json` has everything else (the raw guide fields the finder does not show, the geocoder's match, the PDF listing, the service type and audience tagging and their review flags), joined to the public file by `id`. The public file also gets `review_flags`, derived from those review flags: which of `services`, `audiences`, `eligibility`, `location` and `details` nobody has confirmed yet, so the finder can say so on the card (see `review_flags()` in `build_data.py` for the exact rules). `resources.meta.json` names the source and the day the row files last changed; the finder's resource page shows both. Every row goes into both files, cross-references and the one blank row included; the finder decides what to list, as it does today. The files are committed and served as they are, so the site needs no build step and a data change shows up as a diff, one row per line. `data/review/needs_address.csv` lists the rows that name a street but have no point on the map, for someone to check.
 
-`reference_layers.ts` (`npm run layers`) copies the three supplementary ArcGIS Online layers from PRD section 8 into `data/public/layers/`: public libraries and health facilities (both from the NYC Facilities Database) and NYC Parks cooling sites (outdoor spray showers and misting stations, not indoor cooling centers). Each becomes a GeoJSON file of points with only `name`, `address` and `kind` (and `status` for cooling sites), one feature per line, and `index.json` lists the layers with their label, colour, count and the day they last changed. The finder draws them as toggleable layers under the resource pins and never calls ArcGIS Online itself. The script needs the network, so it is not a `run.py` stage; rerun it when a layer changes, and the diff shows what moved. Each file has a schema (`schemas/layer_*.json`) that `check_data.py` checks.
+`reference_layers.py` (`npm run layers`) copies the three supplementary ArcGIS Online layers from PRD section 8 into `data/public/layers/`: public libraries and health facilities (both from the NYC Facilities Database) and NYC Parks cooling sites (outdoor spray showers and misting stations, not indoor cooling centers). Each becomes a GeoJSON file of points with only `name`, `address` and `kind` (and `status` for cooling sites), one feature per line, and `index.json` lists the layers with their label, colour, count and the day they last changed. The finder draws them as toggleable layers under the resource pins and never calls ArcGIS Online itself. The script needs the network, so it is not a `run.py` stage; rerun it when a layer changes, and the diff shows what moved. Each file has a schema (`schemas/layer_*.json`) that `check_data.py` checks.
 
 ```sh
 npm run build:data              # check: fails if a file in data/public/ would change
@@ -67,11 +67,11 @@ Until the finder switches to `resources.public.json` ([roadmap](../docs/technica
 
 ## Schemas: what each data file must contain
 
-The steps are in different languages, so they share nothing but the files. [`schemas/`](schemas) says what each file must look like, one JSON file per data file, and `check_data.py` checks the files against them:
+The steps share nothing but the files. [`schemas/`](schemas) says what each file must look like, one JSON file per data file, and `check_data.py` checks the files against them:
 
 ```sh
 npm run check:data                            # every file that exists; also part of npm run check and CI
-uv run pipeline/check_data.py kavi_resources # one file, by schema name
+uv run core/pipeline/check_data.py kavi_resources # one file, by schema name
 ```
 
 | Schema | Checks |
@@ -87,7 +87,7 @@ A schema lists every column with its `type` (`text`, `integer`, `number`, `boole
 
 `kavi_resources.json` also lists three `planned` columns, `hours`, `eligibility` and `referral_process`, which the PRD asks for and the data does not have yet. A planned column is checked when it is present and not missed when it is absent, so adding it later is a data change, not a schema change.
 
-The check reports structure: types, allowed values, uniqueness, column sets. Whether the columns agree with each other (for example an `Everyone` audience on a row marked `restricted`) is what `4_audiences/check_audiences.py` tests, and the join between the files is what `npm run import -- --dry-run` tests.
+The check reports structure: types, allowed values, uniqueness, column sets. Whether the columns agree with each other (for example an `Everyone` audience on a row marked `restricted`) is what `check_audiences.py` tests, and the join between the files is what `npm run import -- --dry-run` tests.
 
 ## What each step decides, and why
 
@@ -102,9 +102,9 @@ Steps 1 and 4 were first written as notebooks, which are still in [`notebooks/`]
 
 ## Languages and tooling
 
-The steps are in Python, TypeScript and JavaScript because different people wrote them, and the rule in this repo is to move code rather than rewrite it. Each language needs only one tool:
+Every step is Python. The one piece of JavaScript left, the Supabase loader, lives in [`supabase/`](../supabase) with the database schema rather than here: it needs the secret key and is run by hand (`npm run import`), not by `run.py`. Each needs only one tool:
 
-- **Python** (`.py`): [uv](https://docs.astral.sh/uv/), and nothing else to install. `pyproject.toml` at the repo root names the project, the Python version (`.python-version`, 3.12, which uv downloads if the machine lacks it) and ruff; `uv.lock` pins them. Each script's header also declares what it needs (`pandas` or `pymupdf`), and `uv run pipeline/<stage>/<script>.py` installs that into a cache on first run. `uv run` is how every Python command in `package.json` and `run.py` starts, so they all use the same interpreter. No `__pycache__` folders are written: the tests and `run.py` turn bytecode off, so `pipeline/` shows only source.
-- **TypeScript** (`.ts`) and **JavaScript** (`.mjs`): Node 22.18 or later, no npm dependencies. The geocoder is TypeScript, which Node runs directly. The loader is `.mjs` so Node treats it as an ES module; `map_resources.mjs` turns the files into rows and `load_supabase.mjs` sends them to Supabase over plain HTTP, so the mapping can be reused without a database. `link_env.mjs` is a small helper for git worktrees that makes `.env` a symlink to the main checkout's, so the secret key is not copied.
+- **Python** (`.py`): [uv](https://docs.astral.sh/uv/), and nothing else to install. `pyproject.toml` at the repo root names the project, the Python version (`.python-version`, 3.12, which uv downloads if the machine lacks it) and ruff; `uv.lock` pins them. Each script's header also declares what it needs (`pandas` or `pymupdf`), and `uv run core/pipeline/<script>.py` installs that into a cache on first run. `uv run` is how every Python command in `package.json` and `run.py` starts, so they all use the same interpreter. No `__pycache__` folders are written: the tests and `run.py` turn bytecode off, so `core/pipeline/` shows only source.
+- **The loader** (`supabase/*.mjs`): Node 22.18 or later, no npm dependencies. `load_supabase.mjs` sends the rows to Supabase over plain HTTP. So that it runs without Python, it keeps a JavaScript copy of the mapping, `supabase/map_resources.mjs`. `map_resources.py` here is the same mapping, and its test `test_the_loader_maps_the_same_rows` runs both on the committed data and fails if any row differs, so change the two together. `link_env.mjs` is a small helper for git worktrees that makes `.env` a symlink to the main checkout's, so the secret key is not copied.
 
-Each step's tests sit in its own `__tests__/` folder, and `check_data.py`'s in `pipeline/__tests__/`: `npm run test:py` runs the Python ones, `npm test` the geocoder's, the mapping's and the build's. `npm run lint:py` runs [ruff](https://docs.astral.sh/ruff/) over the Python (settings under `[tool.ruff]` in `pyproject.toml`); `npm run lint` runs eslint over the TypeScript tooling. `npm run check` runs all of it, and CI runs `npm run check`. Database schema changes go in [`supabase/migrations/`](../supabase/migrations).
+Every step's tests sit in `core/pipeline/__tests__/`, and the supplement's in `core/supplement/__tests__/`: `npm run test:py` runs them; `npm test` runs the app's tests and the loader's (`supabase/__tests__/`). `npm run lint:py` runs [ruff](https://docs.astral.sh/ruff/) over the Python (settings under `[tool.ruff]` in `pyproject.toml`); `npm run lint` runs eslint over the loader's test. `npm run check` runs all of it, and CI runs `npm run check`. Database schema changes go in [`supabase/migrations/`](../supabase/migrations).

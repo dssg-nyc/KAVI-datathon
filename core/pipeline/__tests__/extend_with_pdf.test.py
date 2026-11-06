@@ -1,18 +1,18 @@
 # /// script
 # requires-python = ">=3.10"
 # ///
-# Tests for the description-keyword tagging in pipeline/2_pdf/extend_with_pdf.py: that it finds
+# Tests for the description-keyword tagging in core/pipeline/extend_with_pdf.py: that it finds
 # every secondary service a description names, and that those secondary services are added even to
 # a row that already has a primary service type (issue #19). Run:
 #
-#   uv run pipeline/2_pdf/__tests__/extend_with_pdf.test.py
+#   uv run core/pipeline/__tests__/extend_with_pdf.test.py
 
 import sys
 from pathlib import Path
 
 sys.dont_write_bytecode = True  # no __pycache__ next to the module under test
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from core.pipeline.extend_with_pdf import joined, service_types_in  # noqa: E402
+from extend_with_pdf import joined, service_types_in  # noqa: E402
 
 # Hetrick-Martin Institute's description, quoted in issue #19: an LGBTQIA+ youth organization
 # whose description names several other services it offers beyond that primary focus.

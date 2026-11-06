@@ -1,7 +1,7 @@
 {
   "file": "data/cleaned/resource_audiences.csv",
   "format": "csv",
-  "description": "Output of step 4 (4_audiences/tag_audiences.py): who each resource serves, one row per resources_extended.csv row. Rules in docs/audiences.md.",
+  "description": "Output of step 4 (tag_audiences.py): who each resource serves, one row per resources_extended.csv row. Rules in docs/audiences.md.",
   "booleans": "python",
   "lists": "semicolon",
   "columns": {

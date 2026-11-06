@@ -1,7 +1,7 @@
 {
   "file": "data/cleaned/resources_extended.csv",
   "format": "csv",
-  "description": "Output of step 2 (2_pdf/extend_with_pdf.py): every column of resources_clean.csv, then what the printed guide adds. Rules in docs/pdf_extension.md.",
+  "description": "Output of step 2 (extend_with_pdf.py): every column of resources_clean.csv, then what the printed guide adds. Rules in docs/pdf_extension.md.",
   "extends": "resources_clean",
   "columns": {
     "pdf_match_method": {"type": "text", "required": true, "values": "$pdf_match_methods"},

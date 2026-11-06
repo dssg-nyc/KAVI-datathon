@@ -1,7 +1,7 @@
 """Tests for build_supplement.py. The output tests read the real data/supplement/supplement_all.csv
-(build it first: python3 pipeline/supplement/build_supplement.py); the rest use small synthetic places.
+(build it first: python3 core/supplement/build_supplement.py); the rest use small synthetic places.
 
-    uv run pipeline/supplement/__tests__/build_supplement.test.py
+    uv run core/supplement/__tests__/build_supplement.test.py
 """
 
 import csv
@@ -13,8 +13,8 @@ from pathlib import Path
 
 sys.dont_write_bytecode = True  # no __pycache__ next to the module under test
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-import core.pipeline.supplement.build_supplement as b  # noqa: E402
-import core.pipeline.supplement.match_nypl as m  # noqa: E402
+import build_supplement as b  # noqa: E402
+import match_nypl as m  # noqa: E402
 
 OUT = b.OUT_CSV
 LOCATION_COLS = ("address", "house_number", "street", "zip", "lat", "lon", "bin", "url")

@@ -1,7 +1,7 @@
 {
   "file": "data/resource_ids.csv",
   "format": "csv",
-  "description": "Output of 6_build/resource_ids.ts: the stable id of every row the loader produces, one per row, in row order, then rows that have left the data as retired. The id is the row's resource_id, with -2, -3 ... where it repeats, or feature-N for a row without one. Committed, so an id never changes or is reused.",
+  "description": "Output of resource_ids.py: the stable id of every row the loader produces, one per row, in row order, then rows that have left the data as retired. The id is the row's resource_id, with -2, -3 ... where it repeats, or feature-N for a row without one. Committed, so an id never changes or is reused.",
   "booleans": "python",
   "lists": "semicolon",
   "columns": {

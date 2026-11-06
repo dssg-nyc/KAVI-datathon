@@ -7,13 +7,13 @@ Reads data/supplement/<source>.csv (all sources in SOURCES), data/supplement/mat
 match_nypl.py) and data/kavi_resources.csv. Writes data/supplement/supplement_all.csv: one row per place,
 keyed by source + source_id, every row kept, no raw_json, with the source's licence.
 
-    python3 pipeline/supplement/build_supplement.py              build the table
-    python3 pipeline/supplement/build_supplement.py --validate   also print the held-out validation and threshold options
+    python3 core/supplement/build_supplement.py              build the table
+    python3 core/supplement/build_supplement.py --validate   also print the held-out validation and threshold options
 
 Score. relevance_score is a sum of fixed points, no fitted numbers (WEIGHTS):
   type_field       3.0  x 0 / 0.5 / 1   the source's own type: OSM tags, NTEE code, FacDB facsubgrp, OMH program
                                        category, DYCD program area, ENDGBV services, HRSA / CMS OTP / Workforce1
-  name_keywords    2.0  x 0 / 1         the name uses the guide's own service vocabulary (pipeline/2_pdf SERVICE_PATTERNS)
+  name_keywords    2.0  x 0 / 1         the name uses the guide's own service vocabulary (core/pipeline/extend_with_pdf.py SERVICE_PATTERNS)
   corroborated     2.0  x 0 / 1         another, independent source has the same place (phone, website domain, or
                                        name at the same spot / address)
   contact          1.0  x 0 / 1         phone plus an address, website or opening hours
@@ -48,9 +48,9 @@ from datetime import date
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-import core.pipeline.supplement.coverage_report as cov  # noqa: E402
-import core.pipeline.supplement.fetch_sources as fetch_sources  # noqa: E402
-import core.pipeline.supplement.match_nypl as m  # noqa: E402
+import coverage_report as cov  # noqa: E402
+import fetch_sources as fetch_sources  # noqa: E402
+import match_nypl as m  # noqa: E402
 
 OUT_CSV = m.SUPP_DIR / "supplement_all.csv"
 QUEUE_FILES = (m.SUPP_DIR / "review_queue.csv", m.SUPP_DIR / "review_queue_local.csv")
@@ -86,7 +86,7 @@ FOLDS = 5
 TE_PRIOR_ROWS = 5  # smoothing rows for the primary-type baseline
 WEBSITE_STRATUM_MIN = 40  # a category needs this many places with and without a website to be listed
 
-# The guide's own vocabulary: pipeline/2_pdf/extend_with_pdf.py SERVICE_PATTERNS (copied, not imported, because
+# The guide's own vocabulary: core/pipeline/extend_with_pdf.py SERVICE_PATTERNS (copied, not imported, because
 # that module reads the whole pipeline), plus a few extra words that name a service in an organization name.
 SERVICE_PATTERNS = {
     "Food": r"\bfood\b|pantr|soup kitchen|\bmeals?\b|grocer|nutrition",

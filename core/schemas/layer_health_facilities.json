@@ -1,7 +1,7 @@
 {
   "file": "data/public/layers/health_facilities.geojson",
   "format": "geojson",
-  "description": "Hospitals, clinics, mental health and substance use programs from the NYC Facilities Database, downloaded from the DSSG NYC ArcGIS Online layer health_facilities_points by 6_build/reference_layers.ts. Drawn as a reference layer on the finder's map (PRD 7.1). kind is the facility type.",
+  "description": "Hospitals, clinics, mental health and substance use programs from the NYC Facilities Database, downloaded from the DSSG NYC ArcGIS Online layer health_facilities_points by reference_layers.py. Drawn as a reference layer on the finder's map (PRD 7.1). kind is the facility type.",
   "booleans": "python",
   "lists": "semicolon",
   "columns": {

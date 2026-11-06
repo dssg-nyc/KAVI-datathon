@@ -1,7 +1,7 @@
 """Tests for crawl_sites.py. Pure functions use small synthetic pages; the fetch tests talk to a throwaway server
 on 127.0.0.1 (no outside requests). The last class reads data/supplement/crawl_pilot.csv if it has been built.
 
-    uv run pipeline/supplement/__tests__/crawl_sites.test.py
+    uv run core/supplement/__tests__/crawl_sites.test.py
 """
 
 import csv
@@ -16,7 +16,7 @@ from pathlib import Path
 
 sys.dont_write_bytecode = True  # no __pycache__ next to the module under test
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-import core.pipeline.supplement.crawl_sites as c  # noqa: E402
+import crawl_sites as c  # noqa: E402
 
 PAGES = {}
 HITS = []
@@ -348,11 +348,14 @@ class RealOutput(unittest.TestCase):
                 self.assertEqual(e["timing"], "undated")
 
     def test_excluded_places_absent(self):
+        # Group A is every review source (OSM and HRSA), so names come from the supplement table; only OSM has tags.
         osm = {r["source_id"]: json.loads(r["raw_json"] or "{}") for r in c.read_csv(c.OSM_CSV)}
-        names = {r["source_id"]: r["name"] for r in c.read_csv(c.OSM_CSV)}
+        names = {(r["source"], r["source_id"]): r["name"] for r in c.read_csv(c.SUPP_ALL)}
         for r in self.rows:
             if r["group"] == "A":
-                self.assertFalse(c.is_abuse_related(names[r["source_id"]], osm[r["source_id"]]))
+                name = names[(r["source"], r["source_id"])]
+                self.assertFalse(c.is_abuse_related(name, osm.get(r["source_id"], {})))
+                self.assertIsNone(c.GUIDE_ABUSE_RE.search(name))
 
 
 if __name__ == "__main__":

@@ -5,7 +5,7 @@ and similar public lists add anything to it: places it lacks, especially outside
 places it has.
 
 This is exploratory. Nothing here feeds the finder, `data/kavi_resources.csv`, `data/public/` or Supabase. The scripts that
-build the data are in [`pipeline/supplement/`](../../pipeline/supplement/README.md), with how to run them, review the list and
+build the data are in [`core/supplement/`](../../core/supplement/README.md), with how to run them, review the list and
 what is committed. This folder has the notebook, the review map and two one-off probes.
 
 For the results, read [`osm_eda.ipynb`](osm_eda.ipynb). In short:
@@ -21,7 +21,7 @@ For the results, read [`osm_eda.ipynb`](osm_eda.ipynb). In short:
 ## See it on a map
 
 ```sh
-python3 pipeline/supplement/build_map_data.py    # writes the ignored data/supplement/map_data.geojson
+python3 core/supplement/build_map_data.py    # writes the ignored data/supplement/map_data.geojson
 python3 -m http.server 8000 --bind 127.0.0.1     # from the repo root
 # open http://localhost:8000/notebooks/osm/map.html
 ```

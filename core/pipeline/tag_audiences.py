@@ -19,7 +19,7 @@
 #   review/audience_no_match.csv             rows the patterns could not match or confirm
 #
 # Usage:
-#   uv run pipeline/4_audiences/tag_audiences.py
+#   uv run core/pipeline/tag_audiences.py
 
 import re
 import sys
