@@ -1,0 +1,17 @@
+# Local working data: everything here is ignored unless listed at the bottom.
+# Source downloads:  python3 core/supplement/fetch_sources.py   (no arguments = every source)
+# BIN lookups:       python3 core/supplement/fetch_bins.py
+# Other matches:     python3 core/supplement/match_nypl.py --source <name>, then coverage_report.py --source <name>
+# supplement_all.csv (about 37 MB): python3 core/supplement/build_supplement.py  (reads the other files here; keeps reviewer verdicts)
+*.csv
+# Local map data: python3 core/supplement/build_map_data.py
+*.geojson
+
+# Review list: python3 core/supplement/review_recommendations.py (keeps verdicts); review_queue_local.csv stays local.
+# Committed: the OSM snapshot and its match results, which notebooks/osm/osm_eda.ipynb reads.
+!osm.csv
+!matches_osm.csv
+!parent_orgs_osm.csv
+# Committed: the review list and guide checks, where reviewers record verdicts.
+!review_queue.csv
+!guide_checks.csv

@@ -1,0 +1,466 @@
+parent,n_rows,n_mapped,category,service_type,borough,any_site,any_org,any_building,mapped_site_share,name_variants,merged_via,domains,row_ids,row_types
+nyc housing authority,15,13,Organizations for Job Seekers,Employment,Brooklyn,True,True,False,0.154,nyc housing authority,,index.page opportunitynycha.org,3961 3962 3970 4407 4543 4544 4545 4546 4547 4548 4549 4550 4551 4552 4553,"mapped,web_only"
+nyc human resources administration,13,5,Parents & Caregivers,(unclassified),Manhattan,False,True,False,0.000,nyc human resources administration,,burial-assistance.page cash-assistance.page child-support-services.page hiv-aids-services.page homebase.page legal-services-for-tenants.page snap-benefits-food-program.page,3965 3971 3979 3982 3983 3984 4073 4097 4516 4518 4519 4520 4521,"hotline,mapped,web_only"
+brooklyn public library,10,8,Education,(unclassified),Brooklyn,True,True,False,1.000,brooklyn public library,,bklynlibrary.org,3825 3878 3898 4022 4058 4271 4392 4466 4495 4539,"mapped,web_only"
+nyc health hospitals,10,7,Physical & Mental Health,Health & Mental Health,Brooklyn,True,True,False,0.429,nyc health hospitals,,,4030 4031 4032 4033 4034 4035 4036 4037 4049 4426,"mapped,web_only"
+the new york public library,9,4,Education,Education,Manhattan,True,True,False,1.000,the new york public library,,nypl.org,3877 3897 4021 4270 4328 4329 4494 4537 4538,"mapped,web_only"
+nys department of education,8,0,People with Disabilities,(unclassified),(none),False,False,False,,nys department of education,,nysed.gov,3881 4331 4332 4333 4334 4335 4336 4337,"outside_nyc,web_only"
+city university of new york,7,2,Education,Education,Bronx,True,True,False,0.500,bronx community college | city university of new york,domain cuny.edu,cuny.edu,3883 3885 3902 3908 3909 4282 4322,"mapped,web_only"
+nyc commission on human rights,7,5,Legal,Legal & Rights,Bronx,False,False,True,0.000,nyc commission on human rights,,,4088 4249 4250 4251 4252 4253 4254,"cross_reference,mapped,web_only"
+osborne association,7,2,Formerly Incarcerated People,(unclassified),Bronx,False,False,False,0.000,osborne association,,osborneny.org,3856 3857 3948 4391 4427 4457 4491,"cross_reference,hotline,mapped"
+queens public library,7,6,Education,Education,Queens,True,True,False,0.833,queens public library,,queenslibrary.org,3826 3827 3879 3880 3899 4272 4540,"mapped,web_only"
+services and advocacy for lgbtq elders,7,6,LGBTQI+,(unclassified),Manhattan,True,True,False,0.167,services and advocacy for lgbtq elders,,sageusa.org,4401 4429 4430 4431 4432 4433 4434,"cross_reference,mapped"
+taxpayer advocate services,7,2,Financial Assistance,Financial Assistance,Brooklyn,False,False,True,0.000,internal revenue service | taxpayer advocate services,domain irs.gov,irs.gov,4014 4015 4016 4017 4018 4019 4020,"mapped,outside_nyc,web_only"
+nyc department of correction,6,5,Legal,Legal & Rights,Queens,True,True,False,0.200,nyc department of correction,,directives.page,4237 4238 4239 4240 4241 4260,"hotline,mapped"
+nyc health,6,0,Physical & Mental Health,Health & Mental Health,(none),False,False,False,,nyc health,,abortion.page child-care.page doula-care.page hepatitis-c.page sexual-health-clinics.page teenspace.page,4039 4063 4064 4089 4469 4526,"hotline,web_only"
+nyc mayors office to combat domestic violence,6,5,Parents & Caregivers,(unclassified),Bronx,False,False,True,0.000,nyc mayors office to combat domestic violence,,family-justice-centers.page,4371 4498 4499 4500 4501 4502,"cross_reference,mapped"
+nyc neon,6,5,Financial Assistance,Financial Assistance,Brooklyn,False,False,True,0.000,nyc neon,,clothing-closet.page,3997 3998 3999 4000 4001 4002,"hotline,mapped"
+nys department of health,6,0,Physical & Mental Health,Health & Mental Health,(none),False,True,False,,nys department of health,,,4050 4051 4070 4071 4074 4370,"hotline,mailing_address,outside_nyc,web_only"
+opportunities for a better tomorrow,6,4,Organizations for Job Seekers,Employment,Brooklyn,False,True,False,0.000,opportunities for a better tomorrow,,obtjobs.org,3891 4303 4564 4565 4566 4567,"cross_reference,mapped"
+us department of veterans affairs,6,6,Veterans,Financial Assistance,Manhattan,True,True,False,0.167,us department of veterans affairs,,,4308 4309 4310 4311 4312 4313,mapped
+black veterans for social justice,5,1,Formerly Incarcerated People,(unclassified),Brooklyn,False,False,True,0.000,black veterans for social justice,,bvsj.org,3829 3943 4100 4320 4555,"cross_reference,mapped"
+brooklyn defender services,5,4,Legal,Legal & Rights,Brooklyn,True,True,False,0.250,brooklyn defender services,,bds.org,4198 4199 4200 4201 4277,"mapped,web_only"
+community justice connect,5,5,Legal,Legal & Rights,Brooklyn,True,True,False,0.200,center for justice innovation | community justice connect,domain innovatingjustice.org,innovatingjustice.org,3835 3836 4202 4203 4204,mapped
+prisoners legal services of new york,5,0,Legal,Legal & Rights,(none),False,False,False,,prisoners legal services of new york,,plsny.org,4087 4222 4223 4224 4225,"cross_reference,outside_nyc"
+public access law libraries,5,5,Legal,Legal & Rights,Bronx,False,False,True,0.000,public access law libraries,,,4232 4233 4234 4235 4236,mapped
+center for alternative sentencing and employment services,4,4,Physical & Mental Health,(unclassified),Brooklyn,False,False,False,0.000,center for alternative sentencing and employment services,,cases.org,3832 4101 4102 4444,mapped
+center for family representation,4,4,Parents & Caregivers,(unclassified),Manhattan,False,False,False,0.000,center for family representation,,cfrny.org,4509 4510 4511 4512,mapped
+exponents,4,1,Formerly Incarcerated People,Addiction & Recovery,Manhattan,False,False,False,0.000,exponents,,exponents.org,3843 3886 4156 4534,"cross_reference,mapped"
+new york county lawyers association,4,1,Formerly Incarcerated People,(unclassified),Manhattan,False,True,False,0.000,new york county lawyers association,,nycla.org,3855 4028 4218 4357,"cross_reference,mapped"
+nyc department of homeless services,4,2,Housing,Housing,Bronx,False,False,False,0.000,nyc department of homeless services,,adult-families.page families-with-children-applying.page single-adults.page,3930 3931 3939 3940,"hotline,mapped,web_only"
+safe horizon,4,4,Youth,(unclassified),Manhattan,False,False,True,0.000,safe horizon,,safehorizon.org,4382 4478 4479 4504,mapped
+the bedford stuyvesant family health center,4,4,Physical & Mental Health,Health & Mental Health,Brooklyn,True,True,False,0.250,the bedford stuyvesant family health center,,bsfhc.org,4041 4042 4043 4044,mapped
+the fortune society,4,2,Formerly Incarcerated People,Health & Mental Health,Queens,False,False,False,0.000,the fortune society,,fortunedigitalequity.org fortunesociety.org,3846 3895 3946 4082,"cross_reference,mapped,web_only"
+venture house,4,4,Physical & Mental Health,Health & Mental Health,Bronx,False,False,False,0.000,venture house,,venturehouse.org,4118 4119 4120 4121,mapped
+youth justice network,4,4,Youth,(unclassified),Manhattan,False,False,True,0.000,youth justice network,,youthjustice.org,4461 4462 4463 4464,mapped
+acacia network,3,2,Housing,Housing,Queens,True,True,False,0.500,acacia network | queens village committee for mental health for j cap inc,domain acacianetwork.org,acacianetwork.org,3942 4172 4362,"cross_reference,mapped"
+after hours project,3,3,Addiction,Addiction & Recovery,Brooklyn,True,True,False,0.667,after hours project,,afterhoursproject.org,4193 4194 4195,mapped
+albert einstein college of medicine,3,3,Addiction,Addiction & Recovery,Bronx,False,True,False,0.000,albert einstein college of medicine,,einsteinmed.edu,4159 4160 4161,mapped
+ali forney center,3,2,Youth,(unclassified),Manhattan,False,False,False,0.000,ali forney center,,aliforneycenter.org,4411 4470 4471,"cross_reference,mapped"
+argus community,3,2,Addiction,Addiction & Recovery,Bronx,False,False,False,0.000,argus community | create inc,domain arguscommunity.org,arguscommunity.org,4075 4162 4166,"cross_reference,mapped"
+bronxworks,3,0,Housing,Housing,(none),False,False,False,,bronxworks,,bronxworks.org,3957 4276 4529,"cross_reference,hotline,web_only"
+camba,3,2,Housing,Housing,Brooklyn,False,True,False,0.000,camba,,camba.org,3934 4024 4279,"mapped,web_only"
+center for community alternatives,3,2,Formerly Incarcerated People,(unclassified),Brooklyn,False,False,False,0.000,center for community alternatives,,communityalternatives.org,3833 4154 4445,"cross_reference,mapped"
+chinese american planning council,3,1,Education,(unclassified),Manhattan,False,True,False,0.000,chinese american planning council,,cpc-nyc.org,3884 4281 4395,"cross_reference,mapped"
+coalition for the homeless,3,1,Financial Assistance,Food,Manhattan,True,True,False,1.000,coalition for the homeless,,coalitionforthehomeless.org,3958 3987 3990,"cross_reference,mapped,web_only"
+community access,3,3,Physical & Mental Health,Health & Mental Health,Manhattan,False,False,False,0.000,community access,,blueprintsed.org communityaccess.org,4103 4104 4105,mapped
+community service society,3,1,Formerly Incarcerated People,(unclassified),Manhattan,False,False,True,0.000,community service society,,cssny.org,3838 4025 4583,"hotline,mapped,web_only"
+elite learners,3,3,Youth,Reentry Support,Brooklyn,False,False,False,0.000,elite learners,,elitelearners.org,4448 4449 4450,mapped
+exodus transitional community,3,2,Formerly Incarcerated People,(unclassified),Manhattan,False,False,False,0.000,exodus transitional community,,etcny.org,3842 4155 4452,"cross_reference,mapped"
+fountain house,3,3,Physical & Mental Health,Health & Mental Health,Manhattan,True,True,False,0.333,fountain house,,fountainhouse.org,4106 4107 4108,mapped
+getting out and staying out,3,1,Formerly Incarcerated People,Reentry Support,Manhattan,False,True,False,0.000,getting out and staying out,,gosonyc.org,3847 4453 4454,"cross_reference,mailing_address,mapped"
+hour children,3,1,Housing,(unclassified),Queens,False,False,False,0.000,hour children,,hourchildren.org,3947 4363 4489,"cross_reference,mapped"
+john jay college,3,3,Education,Education,Manhattan,True,True,False,1.000,john jay college,,justiceandopportunity.org,3889 3906 3925,mapped
+justice through code at columbia university,3,2,Formerly Incarcerated People,(unclassified),Manhattan,False,False,False,0.000,columbia human rights law review | columbia law school | justice through code at columbia university,domain columbia.edu,columbia.edu,3849 3904 4227,"mapped,web_only"
+legal action center,3,2,Legal,Employment,Manhattan,False,False,True,0.000,legal action center,,lac.org,4211 4571 4582,"mapped,web_only"
+make the road new york,3,3,Immigrants,(unclassified),Brooklyn,True,True,False,0.667,make the road new york,,maketheroadny.org,4294 4295 4296,mapped
+metropolitan transportation authority,3,0,Financial Assistance,Financial Assistance,(none),False,False,False,,metropolitan transportation authority,,mta.info,4009 4355 4397,hotline
+nyc department of consumer and worker protection,3,2,Financial Assistance,(unclassified),Manhattan,False,False,True,0.000,nyc department of consumer and worker protection,,get-free-financial-counseling.page index.page,4023 4255 4576,"hotline,mapped"
+nyc department of housing preservation and development,3,1,Housing,Housing,Manhattan,True,True,False,1.000,nyc department of housing preservation and development,,index.page tenants-rights-and-responsibilities.page,3964 3966 3969,"hotline,mapped"
+nys department of labor,3,0,Organizations for Job Seekers,Employment,(none),False,True,False,,nys department of labor,,,4541 4573 4574,web_only
+revcore recovery center,3,3,Physical & Mental Health,Health & Mental Health,Brooklyn,True,True,False,0.333,revcore recovery center,,revcorerecovery.com,4114 4115 4116,mapped
+the bowery mission,3,1,Housing,(unclassified),Manhattan,False,False,False,0.000,the bowery mission,,bowery.org,3955 4165 4372,"cross_reference,mapped"
+volunteers of legal service,3,3,Financial Assistance,Financial Assistance,Manhattan,False,False,False,0.000,volunteers of legal service,,volsprobono.org,3981 4367 4402,mapped
+womens prison association,3,1,Formerly Incarcerated People,Legal & Rights,Manhattan,False,False,False,0.000,womens prison association,,wpaonline.org,3861 3953 4369,"cross_reference,mapped"
+addiction care interventions,2,2,Addiction,Addiction & Recovery,Brooklyn,False,False,False,0.000,addiction care interventions,,acirehab.org,4151 4152,mapped
+anti violence project,2,1,Physical & Mental Health,Health & Mental Health,Manhattan,False,False,False,0.000,anti violence project,,avp.org,4129 4412,"cross_reference,mapped"
+arms acres,2,2,Addiction,Addiction & Recovery,Bronx,False,False,False,0.000,arms acres,,armsacres.com,4163 4164,mapped
+bard prison initiative,2,0,Education,Education,(none),False,False,False,,bard college | bard prison initiative,domain bard.edu,bard.edu,3901 3921,"mailing_address,web_only"
+boom health,2,2,Physical & Mental Health,Health & Mental Health,Bronx,False,False,False,0.000,boom health,,boomhealth.org,4076 4077,mapped
+bridging access to care,2,2,Physical & Mental Health,Health & Mental Health,Brooklyn,False,False,False,0.000,bridging access to care,,bac-ny.org,4078 4079,mapped
+callen lorde community health center,2,2,LGBTQI+,Health & Mental Health,Brooklyn,True,True,False,0.500,callen lorde community health center,,callen-lorde.org,4414 4415,mapped
+center for employment opportunities,2,1,Formerly Incarcerated People,(unclassified),Manhattan,False,False,False,0.000,center for employment opportunities,,ceoworks.org,3834 4530,"cross_reference,mapped"
+center for independence of the disabled in new york,2,2,People with Disabilities,(unclassified),Manhattan,False,False,False,0.000,center for independence of the disabled in new york | queens center for independence of the disabled ny,domain cidny.org,cidny.org,4347 4351,mapped
+children of promise nyc,2,2,Parents & Caregivers,(unclassified),Bronx,False,False,False,0.000,children of promise nyc,,cpnyc.org,4485 4486,mapped
+cornell university,2,0,Education,Education,(none),False,True,False,,cornell university | northeast ada center inferred name,domain cornell.edu,cornell.edu,3922 4324,"outside_nyc,web_only"
+covenant house new york,2,1,Housing,Housing,Manhattan,True,True,False,1.000,covenant house new york,,covenanthouse.org,3959 4472,"cross_reference,mapped"
+crime victims treatment center,2,1,Physical & Mental Health,Health & Mental Health,Manhattan,True,True,False,1.000,crime victims treatment center,,cvtcnyc.org,4130 4377,"cross_reference,mapped"
+defy ventures,2,0,Formerly Incarcerated People,(unclassified),(none),False,False,False,,defy ventures,,defyventures.org,3839 4531,"cross_reference,web_only"
+disability rights new york,2,1,People with Disabilities,Legal & Rights,Brooklyn,False,False,False,0.000,disability rights new york,,drny.org,4325 4326,"mapped,outside_nyc"
+drive change,2,0,Formerly Incarcerated People,(unclassified),(none),False,False,False,,drive change,,drivechangenyc.org,3840 4533,"cross_reference,mailing_address"
+education justice project,2,0,Formerly Incarcerated People,(unclassified),(none),False,False,False,,education justice project,,educationjustice.net,3841 4283,outside_nyc
+elderly pharmaceutical insurance coverage,2,0,Financial Assistance,Financial Assistance,(none),False,False,False,,elderly pharmaceutical insurance coverage,,,4005 4405,web_only
+emerald isle immigration center,2,2,Immigrants,Reentry Support,Bronx,True,True,False,0.500,emerald isle immigration center,,eiic.org,4284 4285,mapped
+federal bureau of prisons,2,0,Legal,Legal & Rights,(none),False,True,False,,federal bureau of prisons,,bop.gov prevention.jsp,4263 4264,outside_nyc
+federal defenders of new york,2,2,Legal,Legal & Rights,Brooklyn,False,False,False,0.000,federal defenders of new york,,federaldefendersny.org,4206 4207,mapped
+federal trade commission,2,0,Financial Assistance,Financial Assistance,(none),False,False,False,,federal trade commission,,ftc.gov identitytheft.gov,4011 4244,web_only
+forging ahead for community empowerment and support,2,2,Formerly Incarcerated People,(unclassified),Manhattan,False,False,False,0.000,forging ahead for community empowerment and support,,facesny.org,3845 4081,mapped
+freedom agenda,2,1,Formerly Incarcerated People,(unclassified),Manhattan,False,True,False,0.000,freedom agenda | urban justice center,domain urbanjustice.org,urbanjustice.org,3866 4226,"mapped,web_only"
+goodwill industries,2,2,Physical & Mental Health,Health & Mental Health,Brooklyn,False,False,False,0.000,goodwill industries | goodwill nynj,domain goodwillnynj.org,goodwillnynj.org,4109 4559,mapped
+hetrick martin institute,2,1,LGBTQI+,(unclassified),Manhattan,True,True,False,1.000,hetrick martin institute,,hmi.org,4419 4476,"cross_reference,mapped"
+hot bread kitchen,2,1,Women,(unclassified),Manhattan,False,False,False,0.000,hot bread kitchen,,hotbreadkitchen.org,4379 4562,"cross_reference,mapped"
+housing works community healthcare,2,1,Formerly Incarcerated People,(unclassified),Brooklyn,False,False,False,0.000,housing works | housing works community healthcare,domain housingworks.org,housingworks.org,3848 3960,"mapped,web_only"
+hudson link for higher education in prison,2,0,Education,Education,(none),False,False,False,,hudson link for higher education in prison,,hudsonlink.org,3923 3924,mailing_address
+lambda legal,2,1,Legal,Legal & Rights,Manhattan,False,False,False,0.000,lambda legal,,lambdalegal.org,4210 4421,"cross_reference,mapped"
+medicare,2,0,Financial Assistance,Financial Assistance,(none),False,False,False,,medicare,,,4004 4404,web_only
+mercy center,2,2,Immigrants,(unclassified),Bronx,False,False,False,0.000,mercy center,,mercycenterbronx.org,4297 4298,mapped
+mobilization for justice,2,2,Legal,Legal & Rights,Bronx,False,False,False,0.000,mobilization for justice,,mobilizationforjustice.org,4215 4216,mapped
+national alliance on mental illness,2,1,Physical & Mental Health,Health & Mental Health,Manhattan,False,False,False,0.000,national alliance on mental illness,,nami.org naminycmetro.org,4112 4113,"mapped,outside_nyc"
+national center for lgbtq rights,2,0,LGBTQI+,(unclassified),(none),False,False,False,,national center for lgbtq rights,,nclrights.org,4423 4424,outside_nyc
+new york peace institute,2,1,Housing,(unclassified),Manhattan,False,False,True,0.000,new york peace institute,,nypeace.org,3976 4220,"cross_reference,mapped"
+nontraditional employment for women,2,1,Women,(unclassified),Manhattan,False,False,False,0.000,nontraditional employment for women,,new-nyc.org,4380 4563,"cross_reference,mapped"
+nyc 311,2,0,Financial Assistance,Food,(none),False,False,False,,nyc 311,,,3985 4065,"hotline,web_only"
+nyc administration for childrens services,2,2,Youth,(unclassified),Manhattan,False,False,True,0.000,nyc administration for childrens services,,advocacy.page juvenile-justice.page,4467 4514,mapped
+nyc department of education,2,0,Education,Education,(none),False,True,False,,nyc department of education,,,3882 4497,web_only
+nyc department of health and mental hygiene,2,0,Physical & Mental Health,Health & Mental Health,(none),False,True,False,,nyc department of health and mental hygiene,,smoking-nyc-quits.page,4052 4185,"hotline,web_only"
+nyc department of small business services,2,0,Veterans,Employment,(none),False,False,False,,nyc department of small business services,,veteran-services.page virtual-wf1cc.page,4317 4542,hotline
+nyc public libraries,2,0,Education,Education,(none),False,False,False,,nyc public libraries,,bklynlibrary.org culturepass.nyc index.html nypl.org queenslibrary.org,3896 4493,web_only
+nys department of corrections and community supervision,2,0,Legal,Legal & Rights,(none),False,True,False,,nys department of corrections and community supervision,,,4242 4581,outside_nyc
+nys division of human rights,2,0,Legal,Legal & Rights,(none),False,False,False,,nys division of human rights,,,4246 4586,hotline
+nys office of mental health,2,1,Physical & Mental Health,Health & Mental Health,Bronx,True,True,False,1.000,nys office of mental health,,covid-19-resources.html,4096 4098,"mapped,web_only"
+onpoint nyc,2,2,Addiction,Addiction & Recovery,Manhattan,True,True,False,1.000,onpoint nyc,,onpointnyc.org,4190 4191,mapped
+part of the solution,2,2,Housing,Housing,Bronx,False,False,False,0.000,part of the solution,,potsbronx.org,3949 3950,mapped
+per scholas institute for technology,2,2,Education,Education,Bronx,False,False,False,0.000,per scholas institute for technology,,perscholas.org,3892 3893,mapped
+police athletic league,2,2,Youth,Legal & Rights,Brooklyn,False,True,False,0.000,police athletic league,,palnyc.org,4458 4459,mapped
+project hospitality,2,2,Housing,Housing,Staten Island,False,True,False,0.000,project hospitality,,projecthospitality.org,3936 3937,mapped
+providence house,2,1,Housing,Housing,Brooklyn,True,True,False,1.000,providence house,,providencehouse.org,3952 4365,"cross_reference,mapped"
+realization center,2,2,Addiction,Addiction & Recovery,Brooklyn,False,False,False,0.000,realization center,,realizationcenternyc.com,4157 4158,mapped
+repro legal helpline,2,0,Physical & Mental Health,(unclassified),(none),False,False,False,,repro legal helpline,,reprolegalhelpline.org,4069 4389,hotline
+samaritan daytop village,2,2,Addiction,Addiction & Recovery,Queens,True,True,False,0.500,samaritan daytop village,,samaritanvillage.org,4173 4174,mapped
+the childrens village,2,2,Youth,(unclassified),Bronx,False,False,False,0.000,the childrens village,,childrensvillage.org,4446 4447,mapped
+the doe fund,2,1,Housing,Housing,Manhattan,False,False,False,0.000,the doe fund,,doe.org,3945 4532,"mapped,web_only"
+the jailhouse lawyers handbook,2,1,Legal,Legal & Rights,Manhattan,False,False,False,0.000,the jailhouse lawyers handbook,,jailhouselaw.org,4228 4229,"mailing_address,mapped"
+us immigration and customs enforcement,2,0,Legal,Legal & Rights,(none),False,False,False,,ice detention removals and information line | us immigration and customs enforcement,domain ice.gov,ice.gov,4266 4267,web_only
+visions,2,2,People with Disabilities,(unclassified),Manhattan,False,False,False,0.000,visions,,visionsvcb.org,4359 4360,mapped
+vocal ny,2,2,Formerly Incarcerated People,Addiction & Recovery,Brooklyn,True,True,False,1.000,vocal ny,,vocal-ny.org,3875 4192,mapped
+win nyc,2,1,Women,Housing,Manhattan,False,False,False,0.000,win nyc,,winnyc.org,4384 4508,"cross_reference,mapped"
+,1,0,(blank),(unclassified),(none),False,False,False,,,,,4517,(blank)
+,1,1,(blank),Employment,Brooklyn,False,False,False,0.000,,,,4561,mapped
+1in6,1,0,Physical & Mental Health,Health & Mental Health,(none),False,False,False,,1in6,,1in6.org,4127,outside_nyc
+30th street intake for men,1,1,Housing,Housing,Manhattan,False,False,False,0.000,30th street intake for men,,,3932,mapped
+988 suicide crisis lifeline,1,0,Physical & Mental Health,Health & Mental Health,(none),False,False,False,,988 suicide crisis lifeline,,988lifeline.org,4132,hotline
+a beautiful heart ministries,1,1,Women,(unclassified),Queens,False,False,False,0.000,a beautiful heart ministries,,abeautifulheartministries.org,4361,mapped
+a call for change,1,0,Physical & Mental Health,Health & Mental Health,(none),False,False,False,,a call for change,,acallforchangehelpline.org,4128,hotline
+about face,1,0,Veterans,Legal & Rights,(none),False,False,False,,about face,,aboutfaceveterans.org,4318,web_only
+abraham house,1,1,Housing,Housing,Bronx,False,False,False,0.000,abraham house,,abrahamhouse.org,3941,mapped
+access nyc,1,0,Financial Assistance,Financial Assistance,(none),False,False,False,,access nyc,,,3980,web_only
+ace programs for the homeless,1,1,Housing,Housing,Queens,False,False,False,0.000,ace programs for the homeless,,acenewyork.org,3954,mapped
+aclu,1,1,Physical & Mental Health,Health & Mental Health,Manhattan,True,True,False,1.000,aclu,,aclu.org,4062,mapped
+advocates for children,1,1,Youth,(unclassified),Manhattan,False,False,False,0.000,advocates for children,,advocatesforchildren.org,4439,mapped
+advocates for trans equality,1,1,LGBTQI+,(unclassified),Manhattan,False,False,False,0.000,advocates for trans equality,,transequality.org,4410,mapped
+al anon,1,1,Addiction,Addiction & Recovery,Manhattan,False,False,False,0.000,al anon,,nycalanon.org,4177,mapped
+alcoholics anonymous,1,1,Addiction,Addiction & Recovery,Manhattan,False,False,False,0.000,alcoholics anonymous,,nyintergroup.org,4178,mapped
+alliance of families for justice,1,1,Formerly Incarcerated People,(unclassified),Manhattan,False,False,True,0.000,alliance of families for justice,,afj-ny.org,3828,mapped
+america works,1,1,Organizations for Job Seekers,Employment,Manhattan,False,False,False,0.000,america works,,americaworks.com,4554,mapped
+american cancer society,1,0,Women,(unclassified),(none),False,True,False,,american cancer society,,cancer.org new-york.html,4385,mailing_address
+american cancer society helpline,1,0,Physical & Mental Health,Health & Mental Health,(none),False,False,False,,american cancer society helpline,,cancer.org,4060,hotline
+american heart association,1,0,Addiction,Addiction & Recovery,(none),False,False,False,,american heart association,,heart.org,4186,web_only
+american immigration lawyers association,1,0,Veterans,Legal & Rights,(none),False,False,False,,american immigration lawyers association,,aila.org,4319,web_only
+american indian college fund,1,0,Education,Education,(none),False,False,False,,american indian college fund,,collegefund.org,3916,outside_nyc
+american italian cancer foundations mammogram bus,1,0,Women,Health & Mental Health,(none),False,False,False,,american italian cancer foundations mammogram bus,,americanitaliancancer.org breast-cancer-screening-schedule.html,4376,hotline
+american liver foundation,1,0,Physical & Mental Health,Health & Mental Health,(none),False,False,False,,american liver foundation,,liverfoundation.org,4090,web_only
+anxiety and depression association of america,1,0,Physical & Mental Health,Health & Mental Health,(none),False,False,False,,anxiety and depression association of america,,adaa.org,4136,web_only
+artistic noise,1,1,Youth,(unclassified),Manhattan,True,True,False,1.000,artistic noise,,artisticnoise.org,4441,mapped
+asian pacific islander american scholarship fund,1,0,Education,Education,(none),False,False,False,,asian pacific islander american scholarship fund,,apiascholars.org,3917,outside_nyc
+avenues for justice,1,1,Youth,(unclassified),Manhattan,False,False,True,0.000,avenues for justice,,avenuesforjustice.org,4442,mapped
+baltic street wellness solutions,1,1,Physical & Mental Health,Health & Mental Health,Brooklyn,False,False,False,0.000,baltic street wellness solutions,,balticstreet.org,4099,mapped
+barrier free living,1,1,People with Disabilities,(unclassified),Bronx,False,False,False,0.000,barrier free living,,bflnyc.org,4342,mapped
+black pink nyc,1,0,LGBTQI+,(unclassified),(none),False,False,False,,black pink nyc,,blackandpink.org,4413,mailing_address
+body politic,1,0,Physical & Mental Health,Health & Mental Health,(none),False,False,False,,body politic,,wearebodypolitic.com,4095,web_only
+bowery residents committee,1,1,Formerly Incarcerated People,(unclassified),Manhattan,False,False,False,0.000,bowery residents committee,,brc.org,3830,mapped
+breaking ground,1,1,Housing,Housing,Manhattan,False,True,False,0.000,breaking ground,,breakingground.org,3956,mapped
+bronx independent living services,1,1,People with Disabilities,(unclassified),Bronx,False,False,False,0.000,bronx independent living services,,bils.org,4348,mapped
+bronxconnect,1,1,Youth,(unclassified),Bronx,False,False,False,0.000,bronxconnect,,bronxconnect.org,4443,mapped
+brooklyn center for independence of the disabled,1,1,People with Disabilities,(unclassified),Brooklyn,False,False,False,0.000,brooklyn center for independence of the disabled,,bcid.org,4349,mapped
+brooklyn center for psychotherapy,1,1,Addiction,Addiction & Recovery,Brooklyn,True,True,False,1.000,brooklyn center for psychotherapy,,newdirectionsbrooklyn.com,4153,mapped
+brooklyn district attorneys office,1,1,Formerly Incarcerated People,(unclassified),Brooklyn,False,False,True,0.000,brooklyn district attorneys office,,brooklynda.org,3831,mapped
+brooklyn workforce innovations,1,1,Organizations for Job Seekers,Employment,Brooklyn,True,True,False,1.000,brooklyn workforce innovations,,bwiny.org,4556,mapped
+bureau of labor statistics,1,0,Organizations for Job Seekers,Employment,(none),False,False,False,,bureau of labor statistics,,bls.gov,4572,web_only
+business outreach center network,1,1,Organizations for Job Seekers,Employment,Brooklyn,False,False,False,0.000,business outreach center network,,bocnet.org,4578,mapped
+cabrini immigrant services of nyc,1,1,Immigrants,(unclassified),Manhattan,False,False,False,0.000,cabrini immigrant services of nyc,,cis-nyc.org,4278,mapped
+call blackline,1,0,Physical & Mental Health,Health & Mental Health,(none),False,False,False,,call blackline,,callblackline.com,4133,web_only
+cathedral community cares,1,1,Financial Assistance,Food,Manhattan,False,False,False,0.000,cathedral community cares,,stjohndivine.org,3989,mapped
+catholic charities,1,1,Immigrants,Legal & Rights,Manhattan,False,True,False,0.000,catholic charities,,cccsny.org,4280,mapped
+center for anti violence education,1,0,LGBTQI+,(unclassified),(none),False,False,False,,center for anti violence education,,caeny.org,4416,web_only
+center for hearing and communication,1,1,People with Disabilities,(unclassified),Manhattan,False,False,False,0.000,center for hearing and communication,,chchearing.org,4343,mapped
+center for urban community services,1,1,Housing,Housing,Manhattan,False,False,False,0.000,center for urban community services,,cucs.org,3944,mapped
+centers healthcare,1,1,Older People,(unclassified),Bronx,False,False,False,0.000,centers healthcare,,centershealthcare.com,4408,mapped
+charles b wang community health center,1,0,Physical & Mental Health,Health & Mental Health,(none),False,True,False,,charles b wang community health center,,cbwchc.org,4045,web_only
+child find of america,1,0,Parents & Caregivers,Legal & Rights,(none),False,False,False,,child find of america,,childfindofamerica.org,4522,mailing_address
+children and adults with attention deficit hyperactivity disorder,1,0,Physical & Mental Health,Health & Mental Health,(none),False,False,False,,children and adults with attention deficit hyperactivity disorder,,chadd.org,4137,web_only
+childrens aid,1,1,Parents & Caregivers,(unclassified),Manhattan,False,True,False,0.000,childrens aid,,childrensaidnyc.org,4487,mapped
+childrens hospital of philadelphia,1,0,Physical & Mental Health,Health & Mental Health,(none),False,False,False,,childrens hospital of philadelphia,,chop.edu,4054,web_only
+chosen family law center,1,1,LGBTQI+,(unclassified),Manhattan,False,False,False,0.000,chosen family law center,,chosenfamilylawcenter.org,4417,mapped
+circles of support,1,1,Formerly Incarcerated People,(unclassified),Manhattan,False,False,False,0.000,circles of support,,circlesofsupport.org,3837,mapped
+city bar justice center,1,1,Veterans,(unclassified),Manhattan,False,False,False,0.000,city bar justice center,,citybarjusticecenter.org,4321,mapped
+city of new york department of investigation,1,1,Legal,Legal & Rights,Manhattan,False,False,False,0.000,city of new york department of investigation,,contact-doi.page,4261,mapped
+cleveland clinic,1,0,Physical & Mental Health,Health & Mental Health,(none),False,False,False,,cleveland clinic,,clevelandclinic.org,4055,web_only
+college community fellowship,1,1,Education,Education,Manhattan,False,False,False,0.000,college community fellowship,,collegeandcommunity.org,3903,mapped
+community connections for youth,1,1,Parents & Caregivers,Legal & Rights,Bronx,False,False,False,0.000,community connections for youth,,cc-fy.org,4488,mapped
+community health action of staten island,1,1,Physical & Mental Health,Health & Mental Health,Staten Island,False,True,False,0.000,community health action of staten island,,chasiny.org,4080,mapped
+community health advocates,1,0,Financial Assistance,Financial Assistance,(none),False,False,False,,community health advocates,,communityhealthadvocates.org,4006,web_only
+community healthcare network,1,1,Physical & Mental Health,Health & Mental Health,Manhattan,False,True,False,0.000,community healthcare network,,chnnyc.org,4046,mapped
+community mediation services,1,1,Parents & Caregivers,(unclassified),Queens,False,False,False,0.000,community mediation services,,mediatenyc.org,4523,mapped
+correctional association of ny,1,0,Formerly Incarcerated People,(unclassified),(none),False,False,False,,correctional association of ny,,correctionalassociation.org,3862,mailing_address
+court watch nyc,1,0,Formerly Incarcerated People,Legal & Rights,(none),False,False,False,,court watch nyc,,courtwatchnyc.org,3863,web_only
+crip justice,1,0,Formerly Incarcerated People,(unclassified),(none),False,False,False,,crip justice,,cripjustice.org,3864,web_only
+critical resistance,1,0,Formerly Incarcerated People,(unclassified),(none),False,False,False,,critical resistance,,criticalresistance.org,3865,mailing_address
+depression and bipolar support alliance,1,0,Physical & Mental Health,Health & Mental Health,(none),False,False,False,,depression and bipolar support alliance,,dbsalliance.org,4138,web_only
+destination tomorrow,1,1,LGBTQI+,(unclassified),Bronx,True,True,False,1.000,destination tomorrow,,destinationtomorrow.org,4418,mapped
+dhs office of inspector general,1,0,Legal,Legal & Rights,(none),False,False,False,,dhs office of inspector general,,,4268,outside_nyc
+disaster distress helpline,1,0,Physical & Mental Health,Health & Mental Health,(none),False,False,False,,disaster distress helpline,,samhsa.gov,4139,hotline
+dollar for,1,0,Financial Assistance,Financial Assistance,(none),False,False,False,,dollar for,,dollarfor.org,4007,web_only
+dorot,1,1,Older People,Education,Manhattan,False,False,False,0.000,dorot,,dorotusa.org,4396,mapped
+dress for success,1,1,Organizations for Job Seekers,Employment,Manhattan,False,False,False,0.000,dress for success,,dressforsuccessnyc.org,4557,mapped
+elmcor youth and adult activities inc,1,1,Addiction,Addiction & Recovery,Queens,False,False,False,0.000,elmcor youth and adult activities inc,,elmcor.org,4167,mapped
+emmas torch,1,1,Immigrants,(unclassified),Brooklyn,False,False,False,0.000,emmas torch,,emmastorch.org,4286,mapped
+envision freedom fund,1,1,Immigrants,(unclassified),Brooklyn,False,False,False,0.000,envision freedom fund,,envisionfreedom.org,4287,mapped
+epra,1,1,Organizations for Job Seekers,Employment,Manhattan,False,False,False,0.000,epra,,eprany.org,4558,mapped
+evelyn h lauder breast center,1,1,Women,Health & Mental Health,Manhattan,False,False,False,0.000,evelyn h lauder breast center,,,4375,mapped
+exalt youth,1,1,Youth,(unclassified),Manhattan,False,False,False,0.000,exalt youth,,exaltyouth.org,4451,mapped
+fair fares nyc program,1,0,Financial Assistance,Financial Assistance,(none),False,False,False,,fair fares nyc program,,index.page,4008,web_only
+families for freedom,1,1,Immigrants,(unclassified),Manhattan,False,False,False,0.000,families for freedom,,familiesforfreedom.org,4288,mapped
+family legal care,1,0,Parents & Caregivers,(unclassified),(none),False,False,False,,family legal care,,familylegalcare.org,4513,hotline
+family planning benefit program,1,0,Physical & Mental Health,Health & Mental Health,(none),False,False,False,,family planning benefit program,,familyplanbenprog.htm,4066,web_only
+family reentry program,1,0,Housing,Housing,(none),False,False,False,,family reentry program,,,3963,hotline
+fbi cjis division,1,0,Preparing for the Job Search,Employment,(none),False,False,False,,fbi cjis division,,fbi.gov,4585,outside_nyc
+fedcap rehabilitation services,1,1,People with Disabilities,(unclassified),Manhattan,False,False,True,0.000,fedcap rehabilitation services,,fedcap.org,4345,mapped
+finaid,1,0,Education,Education,(none),False,False,False,,finaid,,finaid.org,3912,web_only
+food bank for new york city,1,1,Financial Assistance,Food,Manhattan,True,True,False,1.000,food bank for new york city,,foodbanknyc.org,3988,mapped
+food help nyc,1,0,Financial Assistance,Food,(none),False,False,False,,food help nyc,,,3986,web_only
+franklin shelter and intake center for women,1,1,Housing,Housing,Bronx,False,False,False,0.000,franklin shelter and intake center for women,,,3933,mapped
+freedom for immigrants,1,0,Immigrants,(unclassified),(none),False,False,False,,freedom for immigrants,,freedomforimmigrants.org,4289,outside_nyc
+gam anon for new york,1,0,Addiction,Addiction & Recovery,(none),False,False,False,,gam anon for new york,,gam-anon.org,4179,mailing_address
+generation nyc,1,0,Youth,(unclassified),(none),False,False,False,,generation nyc,,cityofnewyork.us,4474,web_only
+girl vow,1,1,Youth,(unclassified),Bronx,False,False,False,0.000,girl vow,,girlvow.org,4455,mapped
+girls educational and mentoring services,1,0,Youth,(unclassified),(none),False,False,False,,girls educational and mentoring services,,gems-girls.org,4475,mailing_address
+gmhc,1,1,Physical & Mental Health,Health & Mental Health,Manhattan,False,False,False,0.000,gmhc,,gmhc.org,4083,mapped
+goddard riverside,1,1,Education,Education,Manhattan,False,True,False,0.000,goddard riverside,,goddard.org,3887,mapped
+good call,1,0,Legal,Legal & Rights,(none),False,False,False,,good call,,goodcall.org,4208,web_only
+grace institute,1,1,Women,(unclassified),Manhattan,False,False,False,0.000,grace institute,,graceinstitute.org,4378,mapped
+grand central neighborhood social services corporation,1,1,Housing,Housing,Manhattan,True,True,False,1.000,grand central neighborhood social services corporation,,grandcentralneighborhood.org,3935,mapped
+greenwich house,1,1,Addiction,Addiction & Recovery,Manhattan,False,False,False,0.000,greenwich house,,greenwichhouse.org,4168,mapped
+growing up nyc,1,0,Parents & Caregivers,(unclassified),(none),False,False,False,,growing up nyc,,cityofnewyork.us,4527,web_only
+grownyc,1,0,Financial Assistance,Food,(none),False,False,False,,grownyc,,grownyc.org,3991,mailing_address
+haitian american community coalition,1,1,Physical & Mental Health,Health & Mental Health,Brooklyn,False,False,False,0.000,haitian american community coalition,,hccinc.org,4084,mapped
+harlem east life plan,1,1,Physical & Mental Health,Health & Mental Health,Manhattan,True,True,False,1.000,harlem east life plan,,harlemeastlifeplan.com,4110,mapped
+harlem independent living center,1,1,People with Disabilities,(unclassified),Manhattan,False,False,False,0.000,harlem independent living center,,hilc.org,4350,mapped
+health insurance information counseling and assistance program,1,0,Older People,(unclassified),(none),False,False,False,,health insurance information counseling and assistance program,,health-insurance-assistance.page,4403,web_only
+hearing loss association of america,1,0,People with Disabilities,(unclassified),(none),False,False,False,,hearing loss association of america,,hearinglossnyc.org,4346,mailing_address
+hispanic scholarship fund,1,0,Education,Education,(none),False,False,False,,hispanic scholarship fund,,hsf.net,3918,web_only
+holy apostles soup kitchen,1,1,Financial Assistance,Food,Manhattan,False,False,False,0.000,holy apostles soup kitchen,,holyapostlesnyc.org,3992,mapped
+housing court answers,1,0,Housing,Housing,(none),False,False,False,,housing court answers,,housingcourtanswers.org,3973,hotline
+how our lives link altogether,1,1,Youth,Education,Manhattan,False,False,False,0.000,how our lives link altogether,,healwithholla.com,4456,mapped
+identity house,1,1,LGBTQI+,Health & Mental Health,Manhattan,False,False,False,0.000,identity house,,identityhouse.org,4420,mapped
+imani house inc,1,1,Education,Education,Brooklyn,True,True,False,1.000,imani house inc,,imanihouse.org,3888,mapped
+immigrant defense project,1,0,Immigrants,(unclassified),(none),False,False,False,,immigrant defense project,,immigrantdefenseproject.org,4290,hotline
+immigration advocates network,1,0,Immigrants,Legal & Rights,(none),False,False,False,,immigration advocates network,,immigrationadvocates.org,4291,web_only
+immigration equality,1,0,Immigrants,Legal & Rights,(none),False,False,False,,immigration equality,,immigrationequality.org,4292,web_only
+industrial workers of the world,1,0,Formerly Incarcerated People,(unclassified),(none),False,False,False,,industrial workers of the world,,incarceratedworkers.org,3867,mailing_address
+informed immigrant,1,0,Immigrants,(unclassified),(none),False,False,False,,informed immigrant,,informedimmigrant.com,4293,web_only
+innocence project,1,1,Legal,Legal & Rights,Manhattan,False,False,False,0.000,innocence project,,innocenceproject.org,4209,mapped
+international ocd foundation,1,0,Physical & Mental Health,Health & Mental Health,(none),False,False,False,,international ocd foundation,,iocdf.org,4140,web_only
+intimate partner and sexual violence helpline,1,0,Women,Health & Mental Health,(none),False,False,False,,intimate partner and sexual violence helpline,,manhattanda.org,4387,hotline
+james j peters va medical center,1,1,Veterans,Health & Mental Health,Bronx,True,True,False,1.000,james j peters va medical center,,,4314,mapped
+jbi library,1,1,People with Disabilities,(unclassified),Manhattan,False,False,False,0.000,jbi library,,jbilibrary.org,4327,mapped
+jmacforfamilies,1,0,Formerly Incarcerated People,(unclassified),(none),False,False,False,,jmacforfamilies,,jmacforfamilies.org,3868,web_only
+job path,1,1,People with Disabilities,Employment,Manhattan,False,False,False,0.000,job path,,jobpathnyc.org,4353,mapped
+jobs nyc,1,0,Organizations for Job Seekers,Employment,(none),False,False,False,,jobs nyc,,,4575,web_only
+just detention international,1,0,Physical & Mental Health,Health & Mental Health,(none),False,False,False,,just detention international,,justdetention.org,4122,outside_nyc
+justfix nyc,1,0,Housing,Housing,(none),False,False,False,,justfix nyc,,justfix.nyc,3974,web_only
+justleadershipusa,1,0,Formerly Incarcerated People,(unclassified),(none),False,False,False,,justleadershipusa,,jlusa.org,3850,mailing_address
+latinx therapy,1,0,Physical & Mental Health,Health & Mental Health,(none),False,False,False,,latinx therapy,,latinxtherapy.com,4146,web_only
+lawhelpny,1,0,Legal,Legal & Rights,(none),False,False,False,,lawhelpny,,lawhelpny.org,4231,web_only
+legal aid society,1,1,Legal,Legal & Rights,Manhattan,False,False,False,0.000,legal aid society,,legalaidnyc.org,4212,mapped
+legal services nyc,1,1,Legal,Legal & Rights,Manhattan,False,False,False,0.000,legal services nyc,,legalservicesnyc.org,4213,mapped
+lehman college,1,1,Education,Education,Bronx,True,True,False,1.000,lehman college,,lehman.edu,3905,mapped
+lesbian gay bisexual and transgender community center,1,1,LGBTQI+,(unclassified),Manhattan,True,True,False,1.000,lesbian gay bisexual and transgender community center,,gaycenter.org,4422,mapped
+lgbt bar association of greater new york,1,0,Legal,Legal & Rights,(none),False,False,False,,lgbt bar association of greater new york,,lgbtbarny.org,4214,web_only
+liberty fund nyc,1,1,Formerly Incarcerated People,(unclassified),Manhattan,False,False,False,0.000,liberty fund nyc,,libertyfund.nyc,3851,mapped
+lighthouse guild vision plus health,1,1,People with Disabilities,(unclassified),Manhattan,True,True,False,1.000,lighthouse guild vision plus health,,lighthouseguild.org,4354,mapped
+literacy partners,1,1,Education,Education,Manhattan,False,False,False,0.000,literacy partners,,literacypartners.org,3890,mapped
+love is respect,1,0,Youth,(unclassified),(none),False,False,False,,love is respect,,loveisrespect.org,4477,mailing_address
+lower eastside service center,1,1,Addiction,Addiction & Recovery,Manhattan,False,False,False,0.000,lower eastside service center,,lesc.org,4169,mapped
+malesurvivor,1,0,Physical & Mental Health,Health & Mental Health,(none),False,False,False,,malesurvivor,,malesurvivor.org,4131,web_only
+marymount manhattan college,1,1,Education,Education,Manhattan,True,True,False,1.000,marymount manhattan college,,mmm.edu,3926,mapped
+mayo clinic,1,0,Physical & Mental Health,Health & Mental Health,(none),False,False,False,,mayo clinic,,mayoclinic.org,4056,web_only
+medicaid,1,0,Financial Assistance,Financial Assistance,(none),False,False,False,,medicaid,,medicaid.gov,4003,hotline
+medicare rights center,1,0,Older People,(unclassified),(none),False,False,False,,medicare rights center,,medicarerights.org,4406,hotline
+metropolitan council on housing,1,0,Housing,Housing,(none),False,False,False,,metropolitan council on housing,,metcouncilonhousing.org,3967,hotline
+military and trans rights,1,0,Veterans,Health & Mental Health,(none),False,False,False,,military and trans rights,,militarytransrights.org,4307,web_only
+mixteca organization inc,1,1,Immigrants,(unclassified),Brooklyn,True,True,False,1.000,mixteca organization inc,,mixteca.org,4299,mapped
+money management international,1,0,Financial Assistance,Financial Assistance,(none),False,False,False,,money management international,,moneymanagement.org,4027,web_only
+mount sinai institute for advanced medicine,1,1,Physical & Mental Health,Health & Mental Health,Manhattan,False,False,False,0.000,mount sinai institute for advanced medicine,,mountsinai.org,4038,mapped
+msk ralph lauren center,1,1,Women,(unclassified),Manhattan,False,False,False,0.000,msk ralph lauren center,,mskcc.org,4374,mapped
+music on the inside,1,0,Formerly Incarcerated People,(unclassified),(none),False,False,False,,music on the inside,,musicontheinside.org,3852,web_only
+mustard seed counseling services,1,1,Physical & Mental Health,Health & Mental Health,Brooklyn,False,False,False,0.000,mustard seed counseling services,,mustardseedforensic.com,4123,mapped
+nadap,1,1,Organizations for Job Seekers,Employment,Manhattan,False,False,False,0.000,nadap,,nadap.org,4536,mapped
+narcotics anonymous,1,1,Addiction,Addiction & Recovery,Manhattan,False,False,True,0.000,narcotics anonymous,,newyorkna.org,4180,mapped
+national association for shoplifting prevention,1,0,Addiction,Addiction & Recovery,(none),False,False,False,,national association for shoplifting prevention,,shopliftingprevention.org,4187,outside_nyc
+national association of anorexia nervosa associated disorders,1,0,Physical & Mental Health,Health & Mental Health,(none),False,False,False,,national association of anorexia nervosa associated disorders,,anad.org,4141,mailing_address
+national domestic violence hotline,1,0,Women,(unclassified),(none),False,False,False,,national domestic violence hotline,,thehotline.org,4388,hotline
+national eating disorders association,1,0,Physical & Mental Health,Health & Mental Health,(none),False,False,False,,national eating disorders association,,nationaleatingdisorders.org,4142,web_only
+national immigration detention hotline,1,0,Legal,Legal & Rights,(none),False,False,False,,national immigration detention hotline,,,4269,hotline
+national parent youth helpline,1,0,Parents & Caregivers,Legal & Rights,(none),False,False,False,,national parent youth helpline,,nationalparentyouthhelpline.org,4528,hotline
+national queer and trans therapists of color network,1,0,Physical & Mental Health,Health & Mental Health,(none),False,False,False,,national queer and trans therapists of color network,,nqttcn.com,4147,web_only
+national resource center on children and families of the incarcerated,1,0,Parents & Caregivers,(unclassified),(none),False,False,False,,national resource center on children and families of the incarcerated,,rutgers.edu,4490,web_only
+national sexual assault hotline,1,0,Legal,Legal & Rights,(none),False,False,False,,national sexual assault hotline,,,4265,hotline
+neighborhood association for inter cultural affairs,1,1,Housing,Housing,Bronx,False,False,False,0.000,neighborhood association for inter cultural affairs,,naicany.org,3975,mapped
+neighbors together,1,1,Financial Assistance,Food,Brooklyn,False,False,False,0.000,neighbors together,,neighborstogether.org,3993,mapped
+network support services inc,1,1,Formerly Incarcerated People,(unclassified),Bronx,False,False,False,0.000,network support services inc,,networkssi.org,3853,mapped
+new economy project,1,1,Financial Assistance,Financial Assistance,Manhattan,False,False,False,0.000,new economy project,,neweconomynyc.org,4026,mapped
+new pride agenda,1,1,LGBTQI+,(unclassified),Manhattan,False,False,False,0.000,new pride agenda,,newprideagenda.org,4425,mapped
+new women new yorkers,1,0,Immigrants,(unclassified),(none),False,False,False,,new women new yorkers,,nywomenimmigrants.org,4301,web_only
+new york abortion access fund,1,0,Physical & Mental Health,Health & Mental Health,(none),False,False,False,,new york abortion access fund,,nyaaf.org,4067,web_only
+new york campaign for alternatives to isolated confinement,1,0,Formerly Incarcerated People,Legal & Rights,(none),False,False,False,,new york campaign for alternatives to isolated confinement,,nycaic.org,3870,web_only
+new york center for law and justice,1,1,People with Disabilities,(unclassified),Manhattan,False,False,False,0.000,new york center for law and justice,,lawjusticecenter.org,4356,mapped
+new york city bar legal referral service,1,1,Legal,Legal & Rights,Manhattan,True,True,False,1.000,new york city bar legal referral service,,nycbar.org,4217,mapped
+new york counseling for change,1,1,Physical & Mental Health,Health & Mental Health,Queens,False,False,False,0.000,new york counseling for change,,nyc4c.org,4124,mapped
+new york crystal meth anonymous intergroup,1,0,Addiction,Addiction & Recovery,(none),False,False,False,,new york crystal meth anonymous intergroup,,nycma.org,4181,hotline
+new york foundling,1,1,Parents & Caregivers,(unclassified),Manhattan,True,True,False,1.000,new york foundling,,nyfoundling.org,4503,mapped
+new york legal assistance group,1,1,Legal,Legal & Rights,Manhattan,False,False,False,0.000,new york legal assistance group,,nylag.org,4219,mapped
+new york state justice center,1,0,Legal,Legal & Rights,(none),False,False,False,,new york state justice center,,,4262,outside_nyc
+new york university,1,1,Education,Education,Manhattan,False,True,False,0.000,new york university,,nyu.edu,3927,mapped
+north county community college,1,0,Education,Education,(none),False,False,False,,north county community college,,nccc.edu,3928,outside_nyc
+northern manhattan coalition for immigrant rights,1,1,Immigrants,(unclassified),Manhattan,False,False,False,0.000,northern manhattan coalition for immigrant rights,,nmcir.org,4302,mapped
+notify nyc,1,0,Physical & Mental Health,Health & Mental Health,(none),False,False,False,,notify nyc,,,4093,web_only
+nyc,1,0,Legal,Legal & Rights,(none),False,False,False,,nyc,,,4247,hotline
+nyc 988,1,0,Addiction,Addiction & Recovery,(none),False,False,False,,nyc 988,,cityofnewyork.us,4189,hotline
+nyc board of correction,1,1,Legal,Legal & Rights,Manhattan,False,False,True,0.000,nyc board of correction,,index.page,4243,mapped
+nyc care,1,0,Physical & Mental Health,Health & Mental Health,(none),False,False,False,,nyc care,,nyccare.nyc,4048,web_only
+nyc civilian complaint review board,1,1,Legal,Legal & Rights,Manhattan,False,False,False,0.000,nyc civilian complaint review board,,index.page,4248,mapped
+nyc comptrollers office,1,1,LGBTQI+,(unclassified),Manhattan,False,False,True,0.000,nyc comptrollers office,,,4409,mapped
+nyc cool options,1,0,Physical & Mental Health,Health & Mental Health,(none),False,False,False,,nyc cool options,,,4094,hotline
+nyc department for the aging,1,0,Older People,(unclassified),(none),False,False,False,,nyc department for the aging,,,4394,web_only
+nyc department of health and mental hygiene hiv aids,1,0,Physical & Mental Health,Health & Mental Health,(none),False,False,False,,nyc department of health and mental hygiene hiv aids,,aids-hiv.page,4072,hotline
+nyc department of sanitation,1,0,Financial Assistance,Financial Assistance,(none),False,True,False,,nyc department of sanitation,,,3996,web_only
+nyc department of transportation,1,0,People with Disabilities,(unclassified),(none),False,True,False,,nyc department of transportation,,pppdinfo.shtml,4339,web_only
+nyc department of veterans services,1,1,Veterans,(unclassified),Manhattan,False,False,True,0.000,nyc department of veterans services,,,4316,mapped
+nyc department of youth and community development,1,1,Youth,(unclassified),Manhattan,False,False,True,0.000,nyc department of youth and community development,,,4468,mapped
+nyc free tax prep,1,0,Financial Assistance,Financial Assistance,(none),False,False,False,,nyc free tax prep,,file-your-taxes.page,4013,hotline
+nyc health climate and health,1,0,Physical & Mental Health,Health & Mental Health,(none),False,False,False,,nyc health climate and health,,climate-change-and-public-health.page,4092,web_only
+nyc mayors office for people with disabilities,1,1,People with Disabilities,(unclassified),Manhattan,False,False,True,0.000,nyc mayors office for people with disabilities,,,4340,mapped
+nyc mayors office of criminal justice,1,1,Formerly Incarcerated People,(unclassified),Manhattan,False,False,True,0.000,nyc mayors office of criminal justice,,cityofnewyork.us,3854,mapped
+nyc mayors office of immigrant affairs,1,0,Immigrants,(unclassified),(none),False,False,False,,nyc mayors office of immigrant affairs,,index.page,4275,hotline
+nyc mobile crisis teams,1,0,Physical & Mental Health,Health & Mental Health,(none),False,False,False,,nyc mobile crisis teams,,cityofnewyork.us,4145,web_only
+nyc office of technology innovation,1,0,Education,Education,(none),False,False,False,,nyc office of technology innovation,,,3900,hotline
+nyc public advocate,1,0,Legal,Legal & Rights,(none),False,False,False,,nyc public advocate,,,4256,hotline
+nyc public schools,1,0,Financial Assistance,Financial Assistance,(none),False,False,False,,nyc public schools,,,4010,web_only
+nyc small business services,1,0,Organizations for Job Seekers,Employment,(none),False,False,False,,nyc small business services,,index.page,4577,hotline
+nyc taxi and limousine commission,1,0,People with Disabilities,Financial Assistance,(none),False,True,False,,nyc taxi and limousine commission,,accessibledispatch.com,4341,hotline
+nyc tenant protection cabinet,1,0,Housing,Housing,(none),False,False,False,,nyc tenant protection cabinet,,,3972,web_only
+nyc tuberculosis provider hotline,1,0,Physical & Mental Health,Health & Mental Health,(none),False,False,False,,nyc tuberculosis provider hotline,,tuberculosis.page,4059,hotline
+nys cancer services program,1,0,Women,(unclassified),(none),False,False,False,,nys cancer services program,,,4373,web_only
+nys child protective services abuse hotline,1,0,Parents & Caregivers,(unclassified),(none),False,False,False,,nys child protective services abuse hotline,,,4524,hotline
+nys commission for the blind,1,0,People with Disabilities,(unclassified),(none),False,False,False,,nys commission for the blind,,,4330,web_only
+nys commission of correction,1,0,Legal,Legal & Rights,(none),False,False,False,,nys commission of correction,,,4258,outside_nyc
+nys council on children and families,1,0,Parents & Caregivers,(unclassified),(none),False,False,False,,nys council on children and families,,,4496,web_only
+nys criminal justice services,1,0,Preparing for the Job Search,Employment,(none),False,False,False,,nys criminal justice services,,,4584,outside_nyc
+nys department of veterans services,1,0,Veterans,(unclassified),(none),False,False,False,,nys department of veterans services,,,4315,hotline
+nys division of homes and community renewal,1,0,Housing,Housing,(none),False,False,False,,nys division of homes and community renewal,,nyshcr.org,3968,web_only
+nys doccs,1,0,Legal,Legal & Rights,(none),False,False,False,,nys doccs,,,4257,outside_nyc
+nys domestic and sexual violence hotline,1,0,Parents & Caregivers,(unclassified),(none),False,False,False,,nys domestic and sexual violence hotline,,,4525,hotline
+nys higher education services corporation,1,0,Education,Education,(none),False,False,False,,nys higher education services corporation,,,3911,outside_nyc
+nys hopeline,1,0,Addiction,Addiction & Recovery,(none),False,False,False,,nys hopeline,,,4188,web_only
+nys office for new americans,1,0,Immigrants,Education,(none),False,False,False,,nys office for new americans,,,4274,hotline
+nys office for people with developmental disabilities,1,0,People with Disabilities,Health & Mental Health,(none),False,False,False,,nys office for people with developmental disabilities,,,4338,outside_nyc
+nys office of addiction services and supports,1,0,Addiction,Addiction & Recovery,(none),False,False,False,,nys office of addiction services and supports,,,4150,hotline
+nys office of children and family services,1,0,Older People,(unclassified),(none),False,False,False,,nys office of children and family services,,,4393,web_only
+nys office of temporary and disability assistance,1,0,Parents & Caregivers,(unclassified),(none),False,False,False,,nys office of temporary and disability assistance,,,4515,hotline
+nys office of victim services,1,1,Financial Assistance,Financial Assistance,Brooklyn,False,False,False,0.000,nys office of victim services,,,4012,mapped
+nys smokers quitline,1,0,Addiction,Addiction & Recovery,(none),False,False,False,,nys smokers quitline,,nysmokefree.com,4184,web_only
+odyssey house,1,1,Addiction,Addiction & Recovery,Manhattan,False,True,False,0.000,odyssey house,,odysseyhousenyc.org,4170,mapped
+office of the state inspector general,1,0,Legal,Legal & Rights,(none),False,False,False,,office of the state inspector general,,,4259,web_only
+parole preparation project,1,1,Legal,Legal & Rights,Manhattan,False,False,False,0.000,parole preparation project,,paroleprepny.org,4221,mapped
+peer support space,1,0,Physical & Mental Health,Health & Mental Health,(none),False,False,False,,peer support space,,peersupportspace.org,4134,web_only
+phoenix house,1,0,Addiction,Addiction & Recovery,(none),False,False,False,,phoenix house,,phoenixhouseny.org,4171,web_only
+pills anonymous,1,0,Addiction,Addiction & Recovery,(none),False,False,False,,pills anonymous,,pillsanonymous.org,4182,web_only
+planned parenthood of greater new york,1,0,Women,Health & Mental Health,(none),False,False,False,,planned parenthood of greater new york,,ppgreaterny.org,4381,web_only
+planned parenthood of nyc,1,0,Physical & Mental Health,Health & Mental Health,(none),False,False,False,,planned parenthood of nyc,,projectstreetbeat.org,4086,web_only
+point of pride,1,0,LGBTQI+,(unclassified),(none),False,False,False,,point of pride,,pointofpride.org,4428,web_only
+possibility project,1,1,Youth,(unclassified),Manhattan,False,False,False,0.000,possibility project,,the-possibility-project.org,4460,mapped
+postpartum resource center in new york,1,0,Physical & Mental Health,Health & Mental Health,(none),False,False,False,,postpartum resource center in new york,,postpartumny.org,4068,web_only
+prison book program,1,0,Legal,Legal & Rights,(none),False,False,False,,prison book program,,prisonbookprogram.org,4230,outside_nyc
+prison legal news,1,0,Formerly Incarcerated People,Legal & Rights,(none),False,False,False,,prison legal news,,prisonlegalnews.org,3871,mailing_address
+prison policy initiative,1,0,Formerly Incarcerated People,Legal & Rights,(none),False,False,False,,prison policy initiative,,prisonpolicy.org,3872,mailing_address
+prison scholar fund,1,0,Education,Education,(none),False,False,False,,prison scholar fund,,prisonscholars.org,3915,outside_nyc
+project lets,1,0,Physical & Mental Health,Health & Mental Health,(none),False,False,False,,project lets,,projectlets.org,4135,web_only
+project renewal,1,1,Housing,Housing,Manhattan,False,True,False,0.000,project renewal,,projectrenewal.org,3951,mapped
+release aging people in prison project,1,1,Formerly Incarcerated People,(unclassified),Manhattan,False,False,False,0.000,release aging people in prison project,,rappcampaign.com,3873,mapped
+reserve,1,1,Older People,Employment,Manhattan,False,False,True,0.000,reserve,,reserveinc.org,4398,mapped
+rising ground,1,1,Women,Legal & Rights,Manhattan,False,False,False,0.000,rising ground,,risingground.org,4366,mapped
+rising hope inc,1,0,Education,Education,(none),False,False,False,,rising hope inc,,risinghopeinc.org,3929,outside_nyc
+riverside church,1,1,Financial Assistance,Food,Manhattan,False,False,False,0.000,riverside church,,trcnyc.org,3994,mapped
+safe passage project,1,1,Immigrants,(unclassified),Manhattan,False,False,False,0.000,safe passage project,,safepassageproject.org,4304,mapped
+sakhi for south asian survivors,1,0,Women,(unclassified),(none),False,False,False,,sakhi for south asian survivors,,sakhi.org,4383,mailing_address
+sam devorah foundation for trans youth,1,0,Youth,Education,(none),False,False,False,,sam devorah foundation for trans youth,,samanddevorah.org,4480,web_only
+sanctuary for families,1,0,Parents & Caregivers,(unclassified),(none),False,False,False,,sanctuary for families,,sanctuaryforfamilies.org,4505,mailing_address
+scarleteen,1,0,Youth,(unclassified),(none),False,False,False,,scarleteen,,scarleteen.com,4438,web_only
+schizophrenia psychosis action alliance,1,0,Physical & Mental Health,Health & Mental Health,(none),False,False,False,,schizophrenia psychosis action alliance,,sczaction.org,4143,web_only
+sco family of services,1,0,Parents & Caregivers,(unclassified),(none),False,True,False,,sco family of services,,sco.org,4506,hotline
+score new york city,1,0,Organizations for Job Seekers,Employment,(none),False,False,False,,score new york city,,score.org,4579,web_only
+senior planet from aarp,1,0,Older People,(unclassified),(none),False,False,False,,senior planet from aarp,,seniorplanet.org,4399,hotline
+service program for older people,1,1,Older People,Health & Mental Health,Manhattan,False,False,False,0.000,service program for older people,,spop.org,4400,mapped
+services for the underserved,1,1,Physical & Mental Health,Health & Mental Health,Manhattan,False,True,False,0.000,services for the underserved,,sus.org,4117,mapped
+sexual compulsives anonymous of new york,1,0,Addiction,Addiction & Recovery,(none),False,False,False,,sexual compulsives anonymous of new york,,scany.org,4183,mailing_address
+shawn carter foundation,1,0,Education,Education,(none),False,False,False,,shawn carter foundation,,shawncartersf.com,3919,web_only
+shiloh consulting,1,1,Physical & Mental Health,Health & Mental Health,Manhattan,False,False,False,0.000,shiloh consulting,,shilohconsultingllc.com,4125,mapped
+single parent resource center,1,1,Parents & Caregivers,(unclassified),Manhattan,False,False,False,0.000,single parent resource center,,singleparentusa.org,4492,mapped
+social justice network,1,1,Formerly Incarcerated People,(unclassified),Manhattan,False,False,False,0.000,social justice network,,sjnus.org,3858,mapped
+st anns corner of harm reduction,1,1,Addiction,Addiction & Recovery,Bronx,False,False,False,0.000,st anns corner of harm reduction,,sachr.org,4196,mapped
+st johns bread and life,1,1,Financial Assistance,Food,Brooklyn,False,False,False,0.000,st johns bread and life,,breadandlife.org,3995,mapped
+start care inc,1,1,Addiction,Addiction & Recovery,Brooklyn,False,False,True,0.000,start care inc,,startcare.org,4175,mapped
+start small think big,1,0,Organizations for Job Seekers,Employment,(none),False,False,False,,start small think big,,startsmallthinkbig.org,4580,web_only
+state university of new york,1,1,Education,Education,Manhattan,False,True,False,0.000,state university of new york,,suny.edu,3907,mapped
+staten island center for independent living,1,1,People with Disabilities,(unclassified),Staten Island,False,False,False,0.000,staten island center for independent living,,siciliving.org,4352,mapped
+stop it now,1,0,Physical & Mental Health,Health & Mental Health,(none),False,False,False,,stop it now,,stopitnow.org,4126,outside_nyc
+streetwise partners,1,1,Organizations for Job Seekers,Employment,Manhattan,False,False,False,0.000,streetwise partners,,streetwisepartners.org,4568,mapped
+strive international,1,1,Organizations for Job Seekers,Employment,Manhattan,False,False,False,0.000,strive international,,strive.org,4569,mapped
+stronghearts native helpline,1,0,Women,Legal & Rights,(none),False,False,False,,stronghearts native helpline,,strongheartshelpline.org,4390,hotline
+student borrower protection center,1,0,Education,Education,(none),False,False,False,,student borrower protection center,,protectborrowers.org,3914,web_only
+substance abuse and mental health services administration,1,0,Addiction,Addiction & Recovery,(none),False,False,False,,substance abuse and mental health services administration,,findtreatment.gov,4149,web_only
+suffolk county reentry task force,1,0,Formerly Incarcerated People,(unclassified),(none),False,False,False,,suffolk county reentry task force,,,3822,mailing_address
+supportive housing organized and united tenants,1,0,Housing,Housing,(none),False,False,False,,supportive housing organized and united tenants,,shoutnyc.org,3977,web_only
+surveillance technology oversight project,1,0,Formerly Incarcerated People,Education,(none),False,False,False,,surveillance technology oversight project,,stopspying.org,3874,web_only
+swop behind bars,1,0,Formerly Incarcerated People,(unclassified),(none),False,False,False,,swop behind bars,,swopbehindbars.org,3859,web_only
+sylvia rivera law project,1,1,LGBTQI+,(unclassified),Manhattan,False,False,False,0.000,sylvia rivera law project,,srlp.org,4435,mapped
+tara,1,0,Physical & Mental Health,Health & Mental Health,(none),False,False,False,,tara,,tara4bpd.org,4144,hotline
+team tlc nyc,1,1,Immigrants,(unclassified),Manhattan,False,False,False,0.000,team tlc nyc,,ttlcnyc.org,4305,mapped
+the alliance for positive change,1,1,Physical & Mental Health,Health & Mental Health,Manhattan,True,True,False,1.000,the alliance for positive change,,alliance.nyc,4040,mapped
+the animation project,1,0,Youth,(unclassified),(none),False,False,False,,the animation project,,theanimationproject.org,4440,web_only
+the bronx defenders,1,1,Legal,Legal & Rights,Bronx,False,False,False,0.000,the bronx defenders,,bronxdefenders.org,4197,mapped
+the child center of ny,1,1,Parents & Caregivers,(unclassified),Queens,False,False,False,0.000,the child center of ny,,childcenterny.org,4484,mapped
+the deaf hotline,1,0,People with Disabilities,(unclassified),(none),False,False,False,,the deaf hotline,,thedeafhotline.org,4344,hotline
+the door,1,1,Youth,(unclassified),Manhattan,True,True,False,1.000,the door,,door.org,4473,mapped
+the exoneration initiative,1,1,Legal,Legal & Rights,Manhattan,False,False,False,0.000,the exoneration initiative,,exonerationinitiative.org,4205,mapped
+the focus forward project,1,0,Formerly Incarcerated People,(unclassified),(none),False,False,False,,the focus forward project,,focusforwardproject.org,3844,mailing_address
+the gi rights hotline,1,0,Veterans,(unclassified),(none),False,False,False,,the gi rights hotline,,,4323,hotline
+the growing up healthy hotline,1,0,Women,(unclassified),(none),False,False,False,,the growing up healthy hotline,,guh.htm,4386,hotline
+the hispanic aids forum inc,1,1,Physical & Mental Health,Health & Mental Health,Bronx,False,False,False,0.000,the hispanic aids forum inc,,hafnyc.org,4085,mapped
+the hope program,1,1,Organizations for Job Seekers,Employment,Bronx,False,False,False,0.000,the hope program,,thehopeprogram.org,4560,mapped
+the horticultural society of new york,1,1,Organizations for Job Seekers,Employment,Manhattan,False,False,False,0.000,the horticultural society of new york,,thehort.org,4535,mapped
+the institute for family health,1,1,Physical & Mental Health,Health & Mental Health,Manhattan,False,True,False,0.000,the institute for family health,,institute.org,4047,mapped
+the institute of student loan advisors,1,0,Education,Education,(none),False,False,False,,the institute of student loan advisors,,freestudentloanadvice.org,3913,web_only
+the jewish board,1,1,Physical & Mental Health,Health & Mental Health,Manhattan,False,True,False,0.000,the jewish board,,jewishboard.org,4111,mapped
+the ladies of hope ministries,1,1,Women,(unclassified),Manhattan,False,False,True,0.000,the ladies of hope ministries,,thelohm.org,4364,mapped
+the marshall project,1,1,Formerly Incarcerated People,Legal & Rights,Manhattan,False,False,False,0.000,the marshall project,,themarshallproject.org,3869,mapped
+the new york historical,1,1,Immigrants,(unclassified),Manhattan,True,True,False,1.000,the new york historical,,nyhistory.org,4300,mapped
+the partnership for inclusive disaster strategies,1,0,People with Disabilities,(unclassified),(none),False,False,False,,the partnership for inclusive disaster strategies,,disasterstrategies.org,4358,hotline
+the poison control center hotline,1,0,Physical & Mental Health,Health & Mental Health,(none),False,False,False,,the poison control center hotline,,poison.org,4061,hotline
+the trevor project,1,0,Youth,(unclassified),(none),False,False,False,,the trevor project,,thetrevorproject.org,4481,mailing_address
+therapy for black girls,1,0,Physical & Mental Health,Health & Mental Health,(none),False,False,False,,therapy for black girls,,therapyforblackgirls.com,4148,web_only
+thrive for life prison project,1,1,Formerly Incarcerated People,(unclassified),Manhattan,False,False,False,0.000,thrive for life prison project,,thriveforlife.org,3860,mapped
+trans lifeline,1,0,LGBTQI+,(unclassified),(none),False,False,False,,trans lifeline,,translifeline.org,4436,mailing_address
+transgender law center,1,0,LGBTQI+,(unclassified),(none),False,False,False,,transgender law center,,transgenderlawcenter.org,4437,mailing_address
+ulster county reentry task force,1,0,Formerly Incarcerated People,(unclassified),(none),False,False,False,,ulster county reentry task force,,,3823,outside_nyc
+unfriend the nypd,1,0,Youth,(unclassified),(none),False,False,False,,unfriend the nypd,,welcometocup.org,4482,web_only
+union settlement,1,1,Education,Education,Manhattan,False,False,False,0.000,union settlement,,unionsettlement.org,3894,mapped
+united activities unlimited,1,1,Parents & Caregivers,(unclassified),Staten Island,True,True,False,1.000,united activities unlimited,,uaufatherhoodmatters.org,4507,mapped
+united negro college fund,1,0,Education,Education,(none),False,False,False,,united negro college fund,,uncf.org,3920,outside_nyc
+unlocal,1,1,Immigrants,(unclassified),Manhattan,False,False,False,0.000,unlocal,,unlocal.org,4306,mapped
+unlock nyc,1,0,Housing,Housing,(none),False,False,False,,unlock nyc,,weunlock.nyc,3978,web_only
+urban pathways,1,1,Housing,Housing,Manhattan,False,False,False,0.000,urban pathways,,urbanpathways.org,3938,mapped
+urban upbound,1,1,Financial Assistance,Financial Assistance,Queens,False,False,False,0.000,urban upbound,,urbanupbound.org,4029,mapped
+us air quality index,1,0,Physical & Mental Health,Health & Mental Health,(none),False,False,False,,us air quality index,,airnow.gov,4091,web_only
+us citizenship and immigration services,1,0,Immigrants,(unclassified),(none),False,False,False,,us citizenship and immigration services,,uscis.gov,4273,web_only
+us department of education,1,0,Education,Education,(none),False,False,False,,us department of education,,studentaid.gov,3910,web_only
+usa gov,1,0,Legal,Legal & Rights,(none),False,False,False,,usa gov,,,4245,web_only
+vip community services,1,1,Addiction,Addiction & Recovery,Bronx,False,False,False,0.000,vip community services,,vipservices.org,4176,mapped
+voices for vaccines,1,0,Physical & Mental Health,Health & Mental Health,(none),False,False,False,,voices for vaccines,,voicesforvaccines.org,4057,web_only
+westchester county reentry task force,1,0,Formerly Incarcerated People,(unclassified),(none),False,False,False,,westchester county reentry task force,,,3824,outside_nyc
+whatsok,1,0,Youth,(unclassified),(none),False,False,False,,whatsok,,whatsok.org,4483,hotline
+wildcat,1,0,Women,(unclassified),(none),False,False,False,,wildcat,,twp-nyc.org,4368,web_only
+workers defense league,1,0,Organizations for Job Seekers,Employment,(none),False,False,False,,workers defense league,,workersdefenseleague.org,4570,mailing_address
+world health organization,1,0,Physical & Mental Health,Health & Mental Health,(none),False,False,False,,world health organization,,who.int,4053,web_only
+worth rises,1,1,Formerly Incarcerated People,Legal & Rights,Manhattan,False,False,False,0.000,worth rises,,worthrises.org,3876,mapped
+youth represent,1,1,Youth,(unclassified),Manhattan,False,False,False,0.000,youth represent,,youthrepresent.org,4465,mapped

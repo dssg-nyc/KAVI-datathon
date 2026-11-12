@@ -1,0 +1,17 @@
+{
+  "file": "data/resource_ids.csv",
+  "format": "csv",
+  "description": "Output of resource_ids.py: the stable id of every row the loader produces, one per row, in row order, then rows that have left the data as retired. The id is the row's resource_id, with -2, -3 ... where it repeats, or feature-N for a row without one. Committed, so an id never changes or is reused.",
+  "booleans": "python",
+  "lists": "semicolon",
+  "columns": {
+    "id": {"type": "text", "required": true, "unique": true, "pattern": "^(\\d+(-\\d+)?|feature-\\d+)$"},
+    "status": {"type": "text", "required": true, "values": ["active", "retired"]},
+    "resource_id": {"type": "integer", "description": "the resource_id at the time of the last build; may repeat"},
+    "organization_name": {"type": "text", "description": "with the address, how a row is recognised across builds"},
+    "street_number": {"type": "text"},
+    "street": {"type": "text"},
+    "city": {"type": "text"},
+    "zip_code": {"type": "text"}
+  }
+}

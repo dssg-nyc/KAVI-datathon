@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resource — EMPOWER</title>
+  <meta name="description" content="One community resource from EMPOWER, with its address, contact details and map location.">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="/app/brand/logo-triangle.png">
+  <link rel="preload" href="/data/public/resources.public.json" as="fetch" crossorigin>
+  <link rel="preload" href="/app/vendor/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/app/vendor/fonts/playfair-display-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- Every module resource.js imports (see finder.html). -->
+  <link rel="modulepreload" href="/app/components/cards.js">
+  <link rel="modulepreload" href="/app/components/map.js">
+  <link rel="modulepreload" href="/app/lib/csv.js">
+  <link rel="modulepreload" href="/app/lib/geo.js">
+  <link rel="modulepreload" href="/app/lib/preview.js">
+  <link rel="modulepreload" href="/app/lib/resources.js">
+  <link rel="modulepreload" href="/app/lib/share.js">
+  <link rel="modulepreload" href="/app/lib/vendor.js">
+  <link rel="stylesheet" href="/app/brand/brand.css">
+  <link rel="stylesheet" href="/app/components/finder.css">
+  <link rel="stylesheet" href="/app/components/resource.css">
+  <link rel="stylesheet" href="/app/components/page.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="wordmark" href="/">
+        <img class="mark" src="/app/brand/logo-triangle.png" alt="">
+        EMPOWER
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="/#kavi">KAVI</a>
+        <a href="/#city">City initiatives</a>
+        <a href="/#contributors">Contributors</a>
+        <a class="btn btn-pill" href="/finder.html">Find resources</a>
+      </nav>
+      <div class="cobrands" aria-label="Partner organizations">
+        <span class="logo-chip" title="KAVI Brooklyn">
+          <img src="/app/brand/logo-kavi.png" alt="KAVI Brooklyn">
+        </span>
+        <span class="logo-chip" title="DSSG NYC">
+          <img src="/app/brand/logo-liberty.png" alt="DSSG NYC">
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <p id="status">Loading resource…</p>
+  <main id="app" class="resource-page"></main>
+  <footer class="page-foot">
+    <a href="/privacy.html">Privacy</a> · <span>Not an official NYC government website.</span>
+  </footer>
+
+  <script src="/app/config.js"></script>
+  <!-- MapLibre (app/vendor/) is loaded by app/lib/vendor.js once the resource is shown. -->
+  <script type="module" src="/app/pages/resource.js"></script>
+</body>
+</html>
